@@ -1,0 +1,1996 @@
+{
+  "1": {
+    "id": 1,
+    "nameKo": "이상해씨",
+    "nameEn": "bulbasaur",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      2
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1.png"
+  },
+  "2": {
+    "id": 2,
+    "nameKo": "이상해풀",
+    "nameEn": "ivysaur",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      3
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/2.png"
+  },
+  "3": {
+    "id": 3,
+    "nameKo": "이상해꽃",
+    "nameEn": "venusaur",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/3.png"
+  },
+  "4": {
+    "id": 4,
+    "nameKo": "파이리",
+    "nameEn": "charmander",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      5
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/4.png"
+  },
+  "5": {
+    "id": 5,
+    "nameKo": "리자드",
+    "nameEn": "charmeleon",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      6
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png"
+  },
+  "6": {
+    "id": 6,
+    "nameKo": "리자몽",
+    "nameEn": "charizard",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/6.png"
+  },
+  "7": {
+    "id": 7,
+    "nameKo": "꼬부기",
+    "nameEn": "squirtle",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      8
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/7.png"
+  },
+  "8": {
+    "id": 8,
+    "nameKo": "어니부기",
+    "nameEn": "wartortle",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      9
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/8.png"
+  },
+  "9": {
+    "id": 9,
+    "nameKo": "거북왕",
+    "nameEn": "blastoise",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/9.png"
+  },
+  "10": {
+    "id": 10,
+    "nameKo": "캐터피",
+    "nameEn": "caterpie",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      11
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/10.png"
+  },
+  "11": {
+    "id": 11,
+    "nameKo": "단데기",
+    "nameEn": "metapod",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      12
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/11.png"
+  },
+  "12": {
+    "id": 12,
+    "nameKo": "버터플",
+    "nameEn": "butterfree",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/12.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/12.png"
+  },
+  "13": {
+    "id": 13,
+    "nameKo": "뿔충이",
+    "nameEn": "weedle",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      14
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/13.png"
+  },
+  "14": {
+    "id": 14,
+    "nameKo": "딱충이",
+    "nameEn": "kakuna",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      15
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/14.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/14.png"
+  },
+  "15": {
+    "id": 15,
+    "nameKo": "독침붕",
+    "nameEn": "beedrill",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/15.png"
+  },
+  "16": {
+    "id": 16,
+    "nameKo": "구구",
+    "nameEn": "pidgey",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      17
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/16.png"
+  },
+  "17": {
+    "id": 17,
+    "nameKo": "피죤",
+    "nameEn": "pidgeotto",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      18
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/17.png"
+  },
+  "18": {
+    "id": 18,
+    "nameKo": "피죤투",
+    "nameEn": "pidgeot",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/18.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/18.png"
+  },
+  "19": {
+    "id": 19,
+    "nameKo": "꼬렛",
+    "nameEn": "rattata",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      20
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/19.png"
+  },
+  "20": {
+    "id": 20,
+    "nameKo": "레트라",
+    "nameEn": "raticate",
+    "captureRate": 127,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/20.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/20.png"
+  },
+  "21": {
+    "id": 21,
+    "nameKo": "깨비참",
+    "nameEn": "spearow",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      22
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/21.png"
+  },
+  "22": {
+    "id": 22,
+    "nameKo": "깨비드릴조",
+    "nameEn": "fearow",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/22.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/22.png"
+  },
+  "23": {
+    "id": 23,
+    "nameKo": "아보",
+    "nameEn": "ekans",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      24
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/23.png"
+  },
+  "24": {
+    "id": 24,
+    "nameKo": "아보크",
+    "nameEn": "arbok",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/24.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/24.png"
+  },
+  "25": {
+    "id": 25,
+    "nameKo": "피카츄",
+    "nameEn": "pikachu",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 2,
+    "evolvesTo": [
+      26
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png"
+  },
+  "26": {
+    "id": 26,
+    "nameKo": "라이츄",
+    "nameEn": "raichu",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/26.png"
+  },
+  "27": {
+    "id": 27,
+    "nameKo": "모래두지",
+    "nameEn": "sandshrew",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      28
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/27.png"
+  },
+  "28": {
+    "id": 28,
+    "nameKo": "고지",
+    "nameEn": "sandslash",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/28.png"
+  },
+  "29": {
+    "id": 29,
+    "nameKo": "니드런♀",
+    "nameEn": "nidoran-f",
+    "captureRate": 235,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      30
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/29.png"
+  },
+  "30": {
+    "id": 30,
+    "nameKo": "니드리나",
+    "nameEn": "nidorina",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      31
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/30.png"
+  },
+  "31": {
+    "id": 31,
+    "nameKo": "니드퀸",
+    "nameEn": "nidoqueen",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/31.png"
+  },
+  "32": {
+    "id": 32,
+    "nameKo": "니드런♂",
+    "nameEn": "nidoran-m",
+    "captureRate": 235,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      33
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/32.png"
+  },
+  "33": {
+    "id": 33,
+    "nameKo": "니드리노",
+    "nameEn": "nidorino",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      34
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/33.png"
+  },
+  "34": {
+    "id": 34,
+    "nameKo": "니드킹",
+    "nameEn": "nidoking",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/34.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/34.png"
+  },
+  "35": {
+    "id": 35,
+    "nameKo": "삐삐",
+    "nameEn": "clefairy",
+    "captureRate": 150,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      36
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/35.png"
+  },
+  "36": {
+    "id": 36,
+    "nameKo": "픽시",
+    "nameEn": "clefable",
+    "captureRate": 25,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png"
+  },
+  "37": {
+    "id": 37,
+    "nameKo": "식스테일",
+    "nameEn": "vulpix",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      38
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/37.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/37.png"
+  },
+  "38": {
+    "id": 38,
+    "nameKo": "나인테일",
+    "nameEn": "ninetales",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/38.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/38.png"
+  },
+  "39": {
+    "id": 39,
+    "nameKo": "푸린",
+    "nameEn": "jigglypuff",
+    "captureRate": 170,
+    "tier": "common",
+    "stage": 2,
+    "evolvesTo": [
+      40
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/39.png"
+  },
+  "40": {
+    "id": 40,
+    "nameKo": "푸크린",
+    "nameEn": "wigglytuff",
+    "captureRate": 50,
+    "tier": "rare",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/40.png"
+  },
+  "41": {
+    "id": 41,
+    "nameKo": "주뱃",
+    "nameEn": "zubat",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      42
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/41.png"
+  },
+  "42": {
+    "id": 42,
+    "nameKo": "골뱃",
+    "nameEn": "golbat",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      169
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/42.png"
+  },
+  "43": {
+    "id": 43,
+    "nameKo": "뚜벅쵸",
+    "nameEn": "oddish",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      44
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/43.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/43.png"
+  },
+  "44": {
+    "id": 44,
+    "nameKo": "냄새꼬",
+    "nameEn": "gloom",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      45,
+      182
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/44.png"
+  },
+  "45": {
+    "id": 45,
+    "nameKo": "라플레시아",
+    "nameEn": "vileplume",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/45.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/45.png"
+  },
+  "46": {
+    "id": 46,
+    "nameKo": "파라스",
+    "nameEn": "paras",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      47
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/46.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/46.png"
+  },
+  "47": {
+    "id": 47,
+    "nameKo": "파라섹트",
+    "nameEn": "parasect",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/47.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/47.png"
+  },
+  "48": {
+    "id": 48,
+    "nameKo": "콘팡",
+    "nameEn": "venonat",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      49
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/48.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/48.png"
+  },
+  "49": {
+    "id": 49,
+    "nameKo": "도나리",
+    "nameEn": "venomoth",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/49.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/49.png"
+  },
+  "50": {
+    "id": 50,
+    "nameKo": "디그다",
+    "nameEn": "diglett",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      51
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/50.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/50.png"
+  },
+  "51": {
+    "id": 51,
+    "nameKo": "닥트리오",
+    "nameEn": "dugtrio",
+    "captureRate": 50,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/51.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/51.png"
+  },
+  "52": {
+    "id": 52,
+    "nameKo": "나옹",
+    "nameEn": "meowth",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      53,
+      863
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/52.png"
+  },
+  "53": {
+    "id": 53,
+    "nameKo": "페르시온",
+    "nameEn": "persian",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/53.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/53.png"
+  },
+  "54": {
+    "id": 54,
+    "nameKo": "고라파덕",
+    "nameEn": "psyduck",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      55
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/54.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/54.png"
+  },
+  "55": {
+    "id": 55,
+    "nameKo": "골덕",
+    "nameEn": "golduck",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/55.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/55.png"
+  },
+  "56": {
+    "id": 56,
+    "nameKo": "망키",
+    "nameEn": "mankey",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      57
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/56.png"
+  },
+  "57": {
+    "id": 57,
+    "nameKo": "성원숭",
+    "nameEn": "primeape",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      979
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/57.png"
+  },
+  "58": {
+    "id": 58,
+    "nameKo": "가디",
+    "nameEn": "growlithe",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      59
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/58.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/58.png"
+  },
+  "59": {
+    "id": 59,
+    "nameKo": "윈디",
+    "nameEn": "arcanine",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/59.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/59.png"
+  },
+  "60": {
+    "id": 60,
+    "nameKo": "발챙이",
+    "nameEn": "poliwag",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      61
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/60.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/60.png"
+  },
+  "61": {
+    "id": 61,
+    "nameKo": "슈륙챙이",
+    "nameEn": "poliwhirl",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      62,
+      186
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/61.png"
+  },
+  "62": {
+    "id": 62,
+    "nameKo": "강챙이",
+    "nameEn": "poliwrath",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/62.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/62.png"
+  },
+  "63": {
+    "id": 63,
+    "nameKo": "캐이시",
+    "nameEn": "abra",
+    "captureRate": 200,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      64
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/63.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/63.png"
+  },
+  "64": {
+    "id": 64,
+    "nameKo": "윤겔라",
+    "nameEn": "kadabra",
+    "captureRate": 100,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      65
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/64.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/64.png"
+  },
+  "65": {
+    "id": 65,
+    "nameKo": "후딘",
+    "nameEn": "alakazam",
+    "captureRate": 50,
+    "tier": "rare",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/65.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/65.png"
+  },
+  "66": {
+    "id": 66,
+    "nameKo": "알통몬",
+    "nameEn": "machop",
+    "captureRate": 180,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      67
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/66.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/66.png"
+  },
+  "67": {
+    "id": 67,
+    "nameKo": "근육몬",
+    "nameEn": "machoke",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      68
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/67.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/67.png"
+  },
+  "68": {
+    "id": 68,
+    "nameKo": "괴력몬",
+    "nameEn": "machamp",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/68.png"
+  },
+  "69": {
+    "id": 69,
+    "nameKo": "모다피",
+    "nameEn": "bellsprout",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      70
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/69.png"
+  },
+  "70": {
+    "id": 70,
+    "nameKo": "우츠동",
+    "nameEn": "weepinbell",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      71
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/70.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/70.png"
+  },
+  "71": {
+    "id": 71,
+    "nameKo": "우츠보트",
+    "nameEn": "victreebel",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/71.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/71.png"
+  },
+  "72": {
+    "id": 72,
+    "nameKo": "왕눈해",
+    "nameEn": "tentacool",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      73
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/72.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/72.png"
+  },
+  "73": {
+    "id": 73,
+    "nameKo": "독파리",
+    "nameEn": "tentacruel",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/73.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/73.png"
+  },
+  "74": {
+    "id": 74,
+    "nameKo": "꼬마돌",
+    "nameEn": "geodude",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      75
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/74.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/74.png"
+  },
+  "75": {
+    "id": 75,
+    "nameKo": "데구리",
+    "nameEn": "graveler",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      76
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/75.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/75.png"
+  },
+  "76": {
+    "id": 76,
+    "nameKo": "딱구리",
+    "nameEn": "golem",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/76.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/76.png"
+  },
+  "77": {
+    "id": 77,
+    "nameKo": "포니타",
+    "nameEn": "ponyta",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      78
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/77.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/77.png"
+  },
+  "78": {
+    "id": 78,
+    "nameKo": "날쌩마",
+    "nameEn": "rapidash",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/78.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/78.png"
+  },
+  "79": {
+    "id": 79,
+    "nameKo": "야돈",
+    "nameEn": "slowpoke",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      80,
+      199
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/79.png"
+  },
+  "80": {
+    "id": 80,
+    "nameKo": "야도란",
+    "nameEn": "slowbro",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/80.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/80.png"
+  },
+  "81": {
+    "id": 81,
+    "nameKo": "코일",
+    "nameEn": "magnemite",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      82
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/81.png"
+  },
+  "82": {
+    "id": 82,
+    "nameKo": "레어코일",
+    "nameEn": "magneton",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      462
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/82.png"
+  },
+  "83": {
+    "id": 83,
+    "nameKo": "파오리",
+    "nameEn": "farfetchd",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      865
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/83.png"
+  },
+  "84": {
+    "id": 84,
+    "nameKo": "두두",
+    "nameEn": "doduo",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      85
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/84.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/84.png"
+  },
+  "85": {
+    "id": 85,
+    "nameKo": "두트리오",
+    "nameEn": "dodrio",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/85.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/85.png"
+  },
+  "86": {
+    "id": 86,
+    "nameKo": "쥬쥬",
+    "nameEn": "seel",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      87
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/86.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/86.png"
+  },
+  "87": {
+    "id": 87,
+    "nameKo": "쥬레곤",
+    "nameEn": "dewgong",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/87.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/87.png"
+  },
+  "88": {
+    "id": 88,
+    "nameKo": "질퍽이",
+    "nameEn": "grimer",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      89
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/88.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/88.png"
+  },
+  "89": {
+    "id": 89,
+    "nameKo": "질뻐기",
+    "nameEn": "muk",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/89.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/89.png"
+  },
+  "90": {
+    "id": 90,
+    "nameKo": "셀러",
+    "nameEn": "shellder",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      91
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/90.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/90.png"
+  },
+  "91": {
+    "id": 91,
+    "nameKo": "파르셀",
+    "nameEn": "cloyster",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/91.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/91.png"
+  },
+  "92": {
+    "id": 92,
+    "nameKo": "고오스",
+    "nameEn": "gastly",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      93
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/92.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/92.png"
+  },
+  "93": {
+    "id": 93,
+    "nameKo": "고우스트",
+    "nameEn": "haunter",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      94
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/93.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/93.png"
+  },
+  "94": {
+    "id": 94,
+    "nameKo": "팬텀",
+    "nameEn": "gengar",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/94.png"
+  },
+  "95": {
+    "id": 95,
+    "nameKo": "롱스톤",
+    "nameEn": "onix",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      208
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/95.png"
+  },
+  "96": {
+    "id": 96,
+    "nameKo": "슬리프",
+    "nameEn": "drowzee",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      97
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/96.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/96.png"
+  },
+  "97": {
+    "id": 97,
+    "nameKo": "슬리퍼",
+    "nameEn": "hypno",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/97.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/97.png"
+  },
+  "98": {
+    "id": 98,
+    "nameKo": "크랩",
+    "nameEn": "krabby",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      99
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/98.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/98.png"
+  },
+  "99": {
+    "id": 99,
+    "nameKo": "킹크랩",
+    "nameEn": "kingler",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/99.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/99.png"
+  },
+  "100": {
+    "id": 100,
+    "nameKo": "찌리리공",
+    "nameEn": "voltorb",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      101
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/100.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/100.png"
+  },
+  "101": {
+    "id": 101,
+    "nameKo": "붐볼",
+    "nameEn": "electrode",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/101.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/101.png"
+  },
+  "102": {
+    "id": 102,
+    "nameKo": "아라리",
+    "nameEn": "exeggcute",
+    "captureRate": 90,
+    "tier": "rare",
+    "stage": 1,
+    "evolvesTo": [
+      103
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/102.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/102.png"
+  },
+  "103": {
+    "id": 103,
+    "nameKo": "나시",
+    "nameEn": "exeggutor",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/103.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/103.png"
+  },
+  "104": {
+    "id": 104,
+    "nameKo": "탕구리",
+    "nameEn": "cubone",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      105
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/104.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/104.png"
+  },
+  "105": {
+    "id": 105,
+    "nameKo": "텅구리",
+    "nameEn": "marowak",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/105.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/105.png"
+  },
+  "106": {
+    "id": 106,
+    "nameKo": "시라소몬",
+    "nameEn": "hitmonlee",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/106.png"
+  },
+  "107": {
+    "id": 107,
+    "nameKo": "홍수몬",
+    "nameEn": "hitmonchan",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/107.png"
+  },
+  "108": {
+    "id": 108,
+    "nameKo": "내루미",
+    "nameEn": "lickitung",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      463
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/108.png"
+  },
+  "109": {
+    "id": 109,
+    "nameKo": "또가스",
+    "nameEn": "koffing",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      110
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/109.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/109.png"
+  },
+  "110": {
+    "id": 110,
+    "nameKo": "또도가스",
+    "nameEn": "weezing",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/110.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/110.png"
+  },
+  "111": {
+    "id": 111,
+    "nameKo": "뿔카노",
+    "nameEn": "rhyhorn",
+    "captureRate": 120,
+    "tier": "rare",
+    "stage": 1,
+    "evolvesTo": [
+      112
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/111.png"
+  },
+  "112": {
+    "id": 112,
+    "nameKo": "코뿌리",
+    "nameEn": "rhydon",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      464
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/112.png"
+  },
+  "113": {
+    "id": 113,
+    "nameKo": "럭키",
+    "nameEn": "chansey",
+    "captureRate": 30,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      242
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/113.png"
+  },
+  "114": {
+    "id": 114,
+    "nameKo": "덩쿠리",
+    "nameEn": "tangela",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      465
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/114.png"
+  },
+  "115": {
+    "id": 115,
+    "nameKo": "캥카",
+    "nameEn": "kangaskhan",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/115.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/115.png"
+  },
+  "116": {
+    "id": 116,
+    "nameKo": "쏘드라",
+    "nameEn": "horsea",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      117
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/116.png"
+  },
+  "117": {
+    "id": 117,
+    "nameKo": "시드라",
+    "nameEn": "seadra",
+    "captureRate": 75,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [
+      230
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/117.png"
+  },
+  "118": {
+    "id": 118,
+    "nameKo": "콘치",
+    "nameEn": "goldeen",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      119
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/118.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/118.png"
+  },
+  "119": {
+    "id": 119,
+    "nameKo": "왕콘치",
+    "nameEn": "seaking",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/119.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/119.png"
+  },
+  "120": {
+    "id": 120,
+    "nameKo": "별가사리",
+    "nameEn": "staryu",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      121
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/120.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/120.png"
+  },
+  "121": {
+    "id": 121,
+    "nameKo": "아쿠스타",
+    "nameEn": "starmie",
+    "captureRate": 60,
+    "tier": "rare",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/121.png"
+  },
+  "122": {
+    "id": 122,
+    "nameKo": "마임맨",
+    "nameEn": "mr-mime",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      866
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/122.png"
+  },
+  "123": {
+    "id": 123,
+    "nameKo": "스라크",
+    "nameEn": "scyther",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      212,
+      900
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/123.png"
+  },
+  "124": {
+    "id": 124,
+    "nameKo": "루주라",
+    "nameEn": "jynx",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/124.png"
+  },
+  "125": {
+    "id": 125,
+    "nameKo": "에레브",
+    "nameEn": "electabuzz",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      466
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/125.png"
+  },
+  "126": {
+    "id": 126,
+    "nameKo": "마그마",
+    "nameEn": "magmar",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      467
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/126.png"
+  },
+  "127": {
+    "id": 127,
+    "nameKo": "쁘사이저",
+    "nameEn": "pinsir",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/127.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/127.png"
+  },
+  "128": {
+    "id": 128,
+    "nameKo": "켄타로스",
+    "nameEn": "tauros",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/128.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/128.png"
+  },
+  "129": {
+    "id": 129,
+    "nameKo": "잉어킹",
+    "nameEn": "magikarp",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      130
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/129.png"
+  },
+  "130": {
+    "id": 130,
+    "nameKo": "갸라도스",
+    "nameEn": "gyarados",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/130.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/130.png"
+  },
+  "131": {
+    "id": 131,
+    "nameKo": "라프라스",
+    "nameEn": "lapras",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/131.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/131.png"
+  },
+  "132": {
+    "id": 132,
+    "nameKo": "메타몽",
+    "nameEn": "ditto",
+    "captureRate": 35,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/132.png"
+  },
+  "133": {
+    "id": 133,
+    "nameKo": "이브이",
+    "nameEn": "eevee",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      134,
+      135,
+      136,
+      196,
+      197,
+      470,
+      471,
+      700
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/133.png"
+  },
+  "134": {
+    "id": 134,
+    "nameKo": "샤미드",
+    "nameEn": "vaporeon",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/134.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/134.png"
+  },
+  "135": {
+    "id": 135,
+    "nameKo": "쥬피썬더",
+    "nameEn": "jolteon",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/135.png"
+  },
+  "136": {
+    "id": 136,
+    "nameKo": "부스터",
+    "nameEn": "flareon",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/136.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/136.png"
+  },
+  "137": {
+    "id": 137,
+    "nameKo": "폴리곤",
+    "nameEn": "porygon",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      233
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/137.png"
+  },
+  "138": {
+    "id": 138,
+    "nameKo": "암나이트",
+    "nameEn": "omanyte",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      139
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/138.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/138.png"
+  },
+  "139": {
+    "id": 139,
+    "nameKo": "암스타",
+    "nameEn": "omastar",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/139.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/139.png"
+  },
+  "140": {
+    "id": 140,
+    "nameKo": "투구",
+    "nameEn": "kabuto",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      141
+    ],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/140.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/140.png"
+  },
+  "141": {
+    "id": 141,
+    "nameKo": "투구푸스",
+    "nameEn": "kabutops",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/141.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/141.png"
+  },
+  "142": {
+    "id": 142,
+    "nameKo": "프테라",
+    "nameEn": "aerodactyl",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/142.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/142.png"
+  },
+  "143": {
+    "id": 143,
+    "nameKo": "잠만보",
+    "nameEn": "snorlax",
+    "captureRate": 25,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/143.png"
+  },
+  "144": {
+    "id": 144,
+    "nameKo": "프리져",
+    "nameEn": "articuno",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/144.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/144.png"
+  },
+  "145": {
+    "id": 145,
+    "nameKo": "썬더",
+    "nameEn": "zapdos",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/145.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/145.png"
+  },
+  "146": {
+    "id": 146,
+    "nameKo": "파이어",
+    "nameEn": "moltres",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/146.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/146.png"
+  },
+  "147": {
+    "id": 147,
+    "nameKo": "미뇽",
+    "nameEn": "dratini",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [
+      148
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/147.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/147.png"
+  },
+  "148": {
+    "id": 148,
+    "nameKo": "신뇽",
+    "nameEn": "dragonair",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 2,
+    "evolvesTo": [
+      149
+    ],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/148.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/148.png"
+  },
+  "149": {
+    "id": 149,
+    "nameKo": "망나뇽",
+    "nameEn": "dragonite",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/149.png"
+  },
+  "150": {
+    "id": 150,
+    "nameKo": "뮤츠",
+    "nameEn": "mewtwo",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/150.png"
+  },
+  "151": {
+    "id": 151,
+    "nameKo": "뮤",
+    "nameEn": "mew",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/151.png"
+  }
+}

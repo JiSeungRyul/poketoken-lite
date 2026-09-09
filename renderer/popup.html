@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>PokeTokenLite</title>
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 16px; background: #1e1e2e; color: #eee; }
+  img { width: 96px; image-rendering: pixelated; }
+  .bar-bg { background: #333; border-radius: 8px; height: 14px; overflow: hidden; margin-top: 12px; }
+  .bar-fill { background: #4caf50; height: 100%; width: 0%; transition: width .3s; }
+</style>
+</head>
+<body>
+  <h3 id="name">불러오는 중...</h3>
+  <img id="sprite" src="" alt="" />
+  <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
+  <p id="progress"></p>
+  <p id="pokedex"></p>
+
+  <script>
+    window.api.getStatus().then((s) => {
+      document.getElementById("name").textContent = s.label;
+
+      const sprite = document.getElementById("sprite");
+      if (s.sprite) {
+        sprite.src = s.sprite;
+        sprite.hidden = false;
+      } else {
+        sprite.hidden = true;
+      }
+
+      const pct = s.needed ? Math.min(100, Math.round((s.progress / s.needed) * 100)) : 100;
+      document.getElementById("bar").style.width = pct + "%";
+      document.getElementById("progress").textContent =
+        s.needed != null
+          ? `${s.progress.toLocaleString()} / ${s.needed.toLocaleString()} 토큰`
+          : `${s.progress.toLocaleString()} 토큰`;
+
+      document.getElementById("pokedex").textContent = `도감 ${s.pokedexCount}/151`;
+    });
+  </script>
+</body>
+</html>

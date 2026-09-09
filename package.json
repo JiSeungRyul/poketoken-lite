@@ -1,0 +1,28 @@
+{
+  "name": "poketoken-lite",
+  "version": "0.1.0",
+  "description": "Claude Code 토큰 사용량으로 1세대 포켓몬 키우기 (Windows 트레이 앱, 개인용 MVP)",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-data": "node scripts/build-gen1-data.js",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.kxoxxy.poketoken-lite",
+    "productName": "PokeTokenLite",
+    "win": {
+      "target": "portable"
+    },
+    "files": [
+      "src/**/*",
+      "renderer/**/*",
+      "data/**/*",
+      "assets/**/*"
+    ]
+  }
+}
