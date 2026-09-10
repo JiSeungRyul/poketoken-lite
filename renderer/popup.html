@@ -14,17 +14,50 @@
   }
   button:hover { background: #444; }
   button:disabled { opacity: .5; cursor: default; }
+
+  .tabs { display: flex; gap: 6px; justify-content: center; margin-bottom: 16px; }
+  .tab {
+    padding: 5px 12px; border: none; border-radius: 999px; margin-top: 0;
+    background: #2a2a3a; color: #aaa; font-size: 12px;
+  }
+  .tab.active { background: #4c6ef5; color: #fff; }
+  .coming-soon { color: #888; font-size: 13px; padding: 40px 0; }
 </style>
 </head>
 <body>
-  <h3 id="name">불러오는 중...</h3>
-  <img id="sprite" src="" alt="" />
-  <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
-  <p id="progress"></p>
-  <p id="pokedex"></p>
-  <button id="refreshBtn">🔄 새로고침</button>
+  <div class="tabs">
+    <button class="tab active" data-tool="claude-code">Claude Code</button>
+    <button class="tab" data-tool="codex">Codex</button>
+    <button class="tab" data-tool="gemini">Gemini</button>
+  </div>
+
+  <div id="claude-code-view">
+    <h3 id="name">불러오는 중...</h3>
+    <img id="sprite" src="" alt="" />
+    <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
+    <p id="progress"></p>
+    <p id="pokedex"></p>
+    <button id="refreshBtn">🔄 새로고침</button>
+  </div>
+
+  <div id="coming-soon-view" class="coming-soon" hidden>다음 라운드에 지원 예정입니다.</div>
 
   <script>
+    const tabs = document.querySelectorAll(".tab");
+    const claudeCodeView = document.getElementById("claude-code-view");
+    const comingSoonView = document.getElementById("coming-soon-view");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        const isClaudeCode = tab.dataset.tool === "claude-code";
+        claudeCodeView.hidden = !isClaudeCode;
+        comingSoonView.hidden = isClaudeCode;
+      });
+    });
+
     function render(s) {
       document.getElementById("name").textContent = s.label;
 
