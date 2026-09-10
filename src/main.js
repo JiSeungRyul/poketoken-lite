@@ -134,6 +134,10 @@ app.whenReady().then(() => {
   state = loadState(app.getPath("userData"));
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
+  ipcMain.handle("refresh", () => {
+    tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
+    return buildStatusPayload(lastTotalTokens);
+  });
   tick();
   setInterval(tick, POLL_INTERVAL_MS);
 });
