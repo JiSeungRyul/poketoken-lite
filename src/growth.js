@@ -80,10 +80,16 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds) {
     const needed = thresholds[nextStageIndex - 1];
     if (progressSinceHatch >= needed) {
       const isFinal = companion.stage + 1 >= species.maxStage;
+      // 진화할 종의 실제 PokeAPI id로 speciesId 갱신 — 이걸 안 하면 몇 단계를 진화하든
+      // 화면·도감에 계속 부화 당시 기본형 이름만 뜨는 버그가 남는다(실제로 발생했던 문제:
+      // 두두→두트리오처럼 진화하며 등급까지 바뀌는 경우도 계속 부화 시점 등급으로 계산됨).
+      // 가지치기 진화(이브이 등)는 evolvesTo[0]로 고정 — 분기 선택 UI는 스코프 밖.
+      const nextSpeciesId = species.evolvesTo[0] ?? companion.speciesId;
       return {
         event: isFinal ? "graduate" : "evolve",
         companion: {
           ...companion,
+          speciesId: nextSpeciesId,
           stage: companion.stage + 1,
           state: isFinal ? "graduated" : "growing",
         },
