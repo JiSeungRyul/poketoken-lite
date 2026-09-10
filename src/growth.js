@@ -25,11 +25,15 @@ const SHINY_DENOMINATOR = 64;
  * 특정 species의 진화 단계별 누적 임계치 배열을 계산.
  * 예: maxStage=3 (3단 진화)면 [부화, 1→2단, 2→3단] 두 번의 진화 임계치 반환.
  * 반환값은 "부화 시점부터의 누적 토큰" 기준.
+ *
+ * maxStage=1(전설 새들처럼 진화 트리가 자기 혼자뿐인 종)은 진화 횟수가 0이라
+ * 예전엔 빈 배열을 반환했는데, evaluate()가 빈 배열을 "체크할 임계치 없음"으로
+ * 처리해서 이런 종은 아무리 토큰을 모아도 영원히 졸업 판정이 안 나는 버그가 있었다.
+ * 진화가 없어도 "부화 → 졸업"까지 1단계는 있는 걸로 취급해서 최소 1개는 반환한다.
  */
 function stageThresholds(species) {
   const multiplier = TIER_MULTIPLIER[species.tier] ?? 1;
-  const stagesToClimb = species.maxStage - 1; // 진화 횟수
-  if (stagesToClimb <= 0) return []; // 이미 최종 진화(단일 형태)
+  const stagesToClimb = Math.max(species.maxStage - 1, 1);
 
   const perStage = (BASE_STAGE_GROWTH * multiplier) / stagesToClimb;
   const thresholds = [];

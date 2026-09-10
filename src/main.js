@@ -26,6 +26,27 @@ function loadGen1Data() {
   gen1Data = JSON.parse(fs.readFileSync(p, "utf-8"));
 }
 
+/**
+ * 1회성 보정: speciesId가 진화해도 안 바뀌던 예전 버그(2a2ab94 이전) 때문에,
+ * 그때 이미 졸업 기록된 도감 항목은 최종진화가 아닌 종(예: 부화 당시 기본형)으로
+ * 잘못 저장돼 있을 수 있다. evolvesTo를 따라가서 최종형까지 보정한다.
+ */
+function fixNonFinalPokedexEntries() {
+  let fixedCount = 0;
+  for (const entry of state.pokedex) {
+    let species = gen1Data[entry.speciesId];
+    while (species && species.evolvesTo.length > 0) {
+      entry.speciesId = species.evolvesTo[0];
+      species = gen1Data[entry.speciesId];
+      fixedCount += 1;
+    }
+  }
+  if (fixedCount > 0) {
+    console.log(`도감에서 최종진화가 아니었던 기록 ${fixedCount}건을 보정함`);
+    saveState(app.getPath("userData"), state);
+  }
+}
+
 function tick() {
   const totalTokens = getTotalTokens();
   lastTotalTokens = totalTokens;
@@ -261,6 +282,7 @@ function togglePopup() {
 app.whenReady().then(() => {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
+  fixNonFinalPokedexEntries();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
