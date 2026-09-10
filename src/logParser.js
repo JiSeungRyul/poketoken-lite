@@ -15,6 +15,7 @@
 const fs = require("fs");
 const path = require("path");
 const os = require("os");
+const { execFileSync } = require("child_process");
 
 function getClaudeProjectsDir() {
   return path.join(os.homedir(), ".claude", "projects");
@@ -29,29 +30,46 @@ function safeListDirs(dir) {
   }
 }
 
+// 설치된 WSL 배포판 이름 목록. 실측 확인: \\wsl.localhost\ 루트 자체는
+// 디렉토리 나열이 안 되지만(Get-ChildItem도 "경로가 없음" 에러),
+// \\wsl.localhost\<배포판명>\ 처럼 이름을 정확히 지정하면 바로 접근된다.
+// 그래서 루트를 훑는 대신 `wsl.exe -l -q`로 배포판 이름을 직접 물어본다.
+function listWslDistros() {
+  try {
+    // wsl.exe는 리다이렉션될 때 UTF-16LE로 출력하는 경우가 많아 그대로 두면
+    // 글자 사이에 null byte가 섞여 보임 — utf16le로 디코딩 후 남은 제어문자 제거.
+    const out = execFileSync("wsl.exe", ["-l", "-q"], { encoding: "utf16le" });
+    return out
+      .split(/\r?\n/)
+      .map((s) => s.replace(/[\u0000\uFEFF]/g, "").trim())
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
 /**
  * Windows에서 트레이 앱을 띄우되 실제 코딩은 WSL에서 하는 경우를 위해,
- * \\wsl.localhost(또는 구버전 \\wsl$) 밑의 모든 배포판 × 모든 유저 홈을 훑어서
- * .claude/projects가 있는 경로를 전부 찾는다. 배포판/사용자명을 하드코딩하지
- * 않으므로 다른 사람이 클론해서 써도 자기 WSL 환경에 맞게 자동으로 잡힘.
+ * 설치된 모든 배포판 × 모든 유저 홈을 훑어서 .claude/projects가 있는 경로를
+ * 전부 찾는다. 배포판/사용자명을 하드코딩하지 않으므로 다른 사람이 클론해도
+ * 자기 WSL 환경에 맞게 자동으로 잡힘.
  */
 function findWslClaudeProjectDirs() {
-  // 끝에 백슬래시가 없으면(예: "\\wsl.localhost") Win32가 UNC 루트를 제대로
-  // 못 찾아서 existsSync/readdirSync가 그냥 실패함 — 반드시 트레일링 슬래시 필요.
-  for (const root of ["\\\\wsl.localhost\\", "\\\\wsl$\\"]) {
-    const dirs = [];
-    for (const distro of safeListDirs(root)) {
-      const homeDir = path.join(root, distro.name, "home");
-      for (const user of safeListDirs(homeDir)) {
-        const projectsDir = path.join(homeDir, user.name, ".claude", "projects");
-        if (fs.existsSync(projectsDir)) dirs.push(projectsDir);
-      }
+  const dirs = [];
+  for (const distro of listWslDistros()) {
+    let homeDir = path.join("\\\\wsl.localhost\\", distro, "home");
+    let users = safeListDirs(homeDir);
+    if (users.length === 0) {
+      // 구버전 별칭으로도 한 번 더 시도
+      homeDir = path.join("\\\\wsl$\\", distro, "home");
+      users = safeListDirs(homeDir);
     }
-    // wsl.localhost와 wsl$는 같은 내용을 가리키는 별칭이라, 먼저 찾은 쪽에서
-    // 뭔가 나왔으면 거기서 멈춘다(둘 다 스캔하면 같은 jsonl을 두 번 읽게 됨).
-    if (dirs.length > 0) return dirs;
+    for (const user of users) {
+      const projectsDir = path.join(homeDir, user.name, ".claude", "projects");
+      if (fs.existsSync(projectsDir)) dirs.push(projectsDir);
+    }
   }
-  return [];
+  return dirs;
 }
 
 function getClaudeProjectsDirs() {
