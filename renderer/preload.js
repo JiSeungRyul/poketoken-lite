@@ -8,4 +8,5 @@ const { contextBridge, ipcRenderer } = require("electron");
 contextBridge.exposeInMainWorld("api", {
   getStatus: () => ipcRenderer.invoke("get-status"),
   refresh: () => ipcRenderer.invoke("refresh"),
+  getPokedex: () => ipcRenderer.invoke("get-pokedex"),
 });

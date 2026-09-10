@@ -31,6 +31,28 @@
   .tier-badge.common { background: #6c757d; }
   .tier-badge.rare { background: #4c6ef5; }
   .tier-badge.legendary { background: #f59f00; }
+
+  .link-btn {
+    margin-top: 6px; background: none; padding: 0; font-size: 13px;
+    color: #74c0fc; text-decoration: underline;
+  }
+  .link-btn:hover { background: none; color: #a5d8ff; }
+
+  #pokedex-subview { text-align: left; }
+  .pokedex-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  .pokedex-header h3 { margin: 0; font-size: 15px; }
+  .pokedex-list { max-height: 300px; overflow-y: auto; }
+  .pokedex-row {
+    display: flex; align-items: center; gap: 8px; padding: 6px 4px;
+    border-bottom: 1px solid #2a2a3a;
+  }
+  .pokedex-row img { width: 32px; height: 32px; image-rendering: pixelated; margin: 0; }
+  .pokedex-row .name { flex: 1; font-size: 13px; }
+  .pokedex-row .date { font-size: 10px; color: #888; }
+  .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
 </style>
 </head>
 <body>
@@ -41,15 +63,26 @@
   </div>
 
   <div id="claude-code-view">
-    <div class="name-row">
-      <h3 id="name">불러오는 중...</h3>
-      <span id="tierBadge" class="tier-badge" hidden></span>
+    <div id="companion-subview">
+      <div class="name-row">
+        <h3 id="name">불러오는 중...</h3>
+        <span id="tierBadge" class="tier-badge" hidden></span>
+      </div>
+      <img id="sprite" src="" alt="" />
+      <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
+      <p id="progress"></p>
+      <button id="pokedexLink" class="link-btn"></button>
+      <br />
+      <button id="refreshBtn">🔄 새로고침</button>
     </div>
-    <img id="sprite" src="" alt="" />
-    <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
-    <p id="progress"></p>
-    <p id="pokedex"></p>
-    <button id="refreshBtn">🔄 새로고침</button>
+
+    <div id="pokedex-subview" hidden>
+      <div class="pokedex-header">
+        <button id="backBtn" class="link-btn">← 뒤로</button>
+        <h3 id="pokedexTitle">도감</h3>
+      </div>
+      <div id="pokedexList" class="pokedex-list"></div>
+    </div>
   </div>
 
   <div id="coming-soon-view" class="coming-soon" hidden>다음 라운드에 지원 예정입니다.</div>
@@ -99,7 +132,7 @@
           ? `${s.progress.toLocaleString()} / ${s.needed.toLocaleString()} 토큰`
           : `${s.progress.toLocaleString()} 토큰`;
 
-      document.getElementById("pokedex").textContent = `도감 ${s.pokedexCount}/151`;
+      document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
     }
 
     window.api.getStatus().then(render);
@@ -113,6 +146,47 @@
         refreshBtn.disabled = false;
         refreshBtn.textContent = "🔄 새로고침";
       });
+    });
+
+    // --- 도감 보기 ---
+    const companionSubview = document.getElementById("companion-subview");
+    const pokedexSubview = document.getElementById("pokedex-subview");
+    const pokedexList = document.getElementById("pokedexList");
+
+    function formatDate(iso) {
+      const d = new Date(iso);
+      return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+    }
+
+    function renderPokedex(entries) {
+      document.getElementById("pokedexTitle").textContent = `도감 (${entries.length}/151)`;
+
+      if (entries.length === 0) {
+        pokedexList.innerHTML = `<div class="pokedex-empty">아직 졸업한 포켓몬이 없어요.<br />계속 키워보세요!</div>`;
+        return;
+      }
+
+      pokedexList.innerHTML = entries
+        .map(
+          (e) => `
+            <div class="pokedex-row">
+              <img src="${e.sprite}" alt="${e.nameKo}" />
+              <span class="name">${e.nameKo} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+              <span class="date">${formatDate(e.graduatedAt)}</span>
+            </div>`
+        )
+        .join("");
+    }
+
+    document.getElementById("pokedexLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      pokedexSubview.hidden = false;
+      window.api.getPokedex().then(renderPokedex);
+    });
+
+    document.getElementById("backBtn").addEventListener("click", () => {
+      pokedexSubview.hidden = true;
+      companionSubview.hidden = false;
     });
   </script>
 </body>
