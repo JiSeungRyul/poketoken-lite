@@ -109,7 +109,7 @@
     const TIER_LABELS = { common: "COMMON", rare: "RARE", legendary: "LEGENDARY" };
 
     function render(s) {
-      document.getElementById("name").textContent = s.label;
+      document.getElementById("name").textContent = s.label + (s.isShiny ? " ✨" : "");
 
       const tierBadge = document.getElementById("tierBadge");
       if (s.tier) {
@@ -176,7 +176,7 @@
           (e) => `
             <div class="pokedex-row">
               <img src="${e.sprite}" alt="${e.nameKo}" />
-              <span class="name">${e.nameKo} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+              <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
               <span class="date">${formatDate(e.graduatedAt)}</span>
             </div>`
         )

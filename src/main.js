@@ -34,13 +34,15 @@ function tick() {
     state.companion = newEgg(totalTokens);
   }
 
-  const result = evaluate(state.companion, gen1Data, totalTokens);
+  const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
+  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds);
   state.companion = result.companion;
 
   if (result.event === "graduate") {
     state.pokedex.push({
       speciesId: state.companion.speciesId,
       graduatedAt: new Date().toISOString(),
+      isShiny: !!state.companion.isShiny,
     });
     state.companion = newEgg(totalTokens); // 새 알 시작
   }
@@ -65,6 +67,7 @@ function buildStatusPayload(totalTokens) {
       label: "🥚 알",
       tier: null, // 부화 전엔 종이 아직 안 정해져서 등급도 없음
       sprite: null,
+      isShiny: false,
       progress,
       needed: HATCH_THRESHOLD,
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
@@ -76,12 +79,14 @@ function buildStatusPayload(totalTokens) {
   const thresholds = stageThresholds(species);
   const needed = thresholds[companion.stage - 1] ?? null; // null이면 최종 진화(다음 tick에 졸업 처리)
   const progress = totalTokens - companion.hatchedAtTotal;
+  const isShiny = !!companion.isShiny;
 
   return {
     state: companion.state,
     label: species.nameKo,
     tier: species.tier,
-    sprite: species.sprite,
+    sprite: isShiny ? species.spriteShiny : species.sprite,
+    isShiny,
     progress,
     needed,
     hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
@@ -95,10 +100,12 @@ function buildPokedexPayload() {
     .reverse()
     .map((entry) => {
       const species = gen1Data[entry.speciesId];
+      const isShiny = !!entry.isShiny;
       return {
         speciesId: entry.speciesId,
         nameKo: species.nameKo,
-        sprite: species.sprite,
+        sprite: isShiny ? species.spriteShiny : species.sprite,
+        isShiny,
         tier: species.tier,
         graduatedAt: entry.graduatedAt,
       };

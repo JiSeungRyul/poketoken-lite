@@ -17,6 +17,10 @@ const TIER_MULTIPLIER = {
   legendary: 8,
 };
 
+// 이로치(shiny) 부화 확률 분모. 원본(PokeTokenBar)도 본가 1/4096 대신 1/64를 씀
+// ("데스크톱 앱 규모에선 평생 못 봄"이라 완화) — 우리도 그대로 따름.
+const SHINY_DENOMINATOR = 64;
+
 /**
  * 특정 species의 진화 단계별 누적 임계치 배열을 계산.
  * 예: maxStage=3 (3단 진화)면 [부화, 1→2단, 2→3단] 두 번의 진화 임계치 반환.
@@ -36,18 +40,22 @@ function stageThresholds(species) {
 }
 
 /**
- * companion: { speciesId, hatchedAtTotal, stage, graduated }
+ * companion: { speciesId, hatchedAtTotal, stage, graduated, isShiny }
  * gen1Data: build-gen1-data.js가 만든 전체 데이터 맵
  * totalTokens: 현재까지 누적 토큰
+ * ownedSpeciesIds: 이미 도감에 있는 speciesId의 Set — 부화 가중치 계산용(선택)
  *
  * 반환: { event: 'none'|'hatch'|'evolve'|'graduate', ...업데이트된 companion }
  */
-function evaluate(companion, gen1Data, totalTokens) {
+function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds) {
   // 알 상태 (아직 부화 전)
   if (!companion || companion.state === "egg") {
     const progressTokens = totalTokens - (companion?.eggStartTotal ?? 0);
     if (progressTokens >= HATCH_THRESHOLD) {
-      const newSpecies = pickHatchSpecies(gen1Data);
+      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds);
+      // 이로치는 부화 시점에 확정되고 이후 진화해도 유지됨(아래 evolve/graduate 분기의
+      // `...companion` 스프레드가 그대로 물려줌 — 여기서만 한 번 굴리면 됨).
+      const isShiny = Math.random() < 1 / SHINY_DENOMINATOR;
       return {
         event: "hatch",
         companion: {
@@ -55,6 +63,7 @@ function evaluate(companion, gen1Data, totalTokens) {
           speciesId: newSpecies.id,
           stage: 1,
           hatchedAtTotal: totalTokens,
+          isShiny,
         },
       };
     }
@@ -90,15 +99,22 @@ function evaluate(companion, gen1Data, totalTokens) {
  * PokéAPI capture_rate에 비례한 가중치 랜덤 — capture_rate가 낮을수록(잡기 어려울수록)
  * 뽑힐 확률도 낮아짐. 예전엔 균등 랜덤이라 legendary(24/68종)가 35%나 나왔는데,
  * "legendary는 희귀해야 한다"는 의도에 안 맞아서 원본(PokeTokenBar)처럼 가중치를 줬다.
+ *
+ * ownedSpeciesIds가 주어지면, 이미 도감에 있는 종은 가중치를 절반으로 깎는다(완전 배제는
+ * 아님) — 원본이 "새 종을 2배 더 잘 나오게 하되, 재부화·샤이니 사냥은 막지 않는다"는
+ * 의도로 쓰는 방식을 그대로 따름.
  */
-function pickHatchSpecies(gen1Data) {
+function pickHatchSpecies(gen1Data, ownedSpeciesIds) {
   const starters = Object.values(gen1Data).filter((p) => p.stage === 1);
-  const totalWeight = starters.reduce((sum, p) => sum + p.captureRate, 0);
+  const weights = starters.map((p) =>
+    ownedSpeciesIds?.has(p.id) ? Math.max(1, p.captureRate / 2) : Math.max(1, p.captureRate)
+  );
+  const totalWeight = weights.reduce((sum, w) => sum + w, 0);
 
   let roll = Math.random() * totalWeight;
-  for (const p of starters) {
-    roll -= p.captureRate;
-    if (roll <= 0) return p;
+  for (let i = 0; i < starters.length; i++) {
+    roll -= weights[i];
+    if (roll <= 0) return starters[i];
   }
   return starters[starters.length - 1]; // 부동소수 오차 대비 fallback
 }
@@ -107,4 +123,11 @@ function newEgg(currentTotalTokens) {
   return { state: "egg", eggStartTotal: currentTotalTokens };
 }
 
-module.exports = { evaluate, stageThresholds, newEgg, HATCH_THRESHOLD, TIER_MULTIPLIER };
+module.exports = {
+  evaluate,
+  stageThresholds,
+  newEgg,
+  HATCH_THRESHOLD,
+  TIER_MULTIPLIER,
+  SHINY_DENOMINATOR,
+};
