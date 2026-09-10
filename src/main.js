@@ -124,6 +124,7 @@ function buildPokedexPayload() {
 /**
  * 도감에서 종을 직접 골라 키우기 시작. 알 티켓(eggInventory)을 1개 소모하고,
  * 알 상태일 때만 가능(이미 뭔가 키우는 중이면 그 진행을 버리게 되므로 막음).
+ * 알이 그동안 모아둔 부화 진행률은 버리지 않고 새 컴패니언의 진화 진행률로 이어받는다.
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
 function chooseSpecies(speciesId) {
@@ -142,7 +143,9 @@ function chooseSpecies(speciesId) {
     state: "growing",
     speciesId,
     stage: 1,
-    hatchedAtTotal: lastTotalTokens,
+    // 알이 그동안 모아뒀던 부화 진행률을 그대로 이어받음(버리지 않음) — 새 컴패니언의
+    // 1단계 진화 진행률이 0부터가 아니라 이 알이 쌓아온 만큼에서 바로 시작함.
+    hatchedAtTotal: state.companion.eggStartTotal,
     isShiny: Math.random() < 1 / SHINY_DENOMINATOR, // 직접 골라도 이로치 여부는 똑같이 랜덤
   };
   saveState(app.getPath("userData"), state);
