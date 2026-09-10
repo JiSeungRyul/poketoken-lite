@@ -67,6 +67,7 @@ function buildStatusPayload(totalTokens) {
       sprite: null,
       progress,
       needed: HATCH_THRESHOLD,
+      hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
       pokedexCount: state.pokedex.length,
     };
   }
@@ -78,11 +79,12 @@ function buildStatusPayload(totalTokens) {
 
   return {
     state: companion.state,
-    label: `${species.nameKo} (${companion.stage}/${species.maxStage}단계)`,
+    label: species.nameKo,
     tier: species.tier,
     sprite: species.sprite,
     progress,
     needed,
+    hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
     pokedexCount: state.pokedex.length,
   };
 }

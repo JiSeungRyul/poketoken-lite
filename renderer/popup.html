@@ -53,6 +53,8 @@
   .pokedex-row .name { flex: 1; font-size: 13px; }
   .pokedex-row .date { font-size: 10px; color: #888; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
+
+  #nextHint { color: #888; font-size: 11px; margin-top: 4px; }
 </style>
 </head>
 <body>
@@ -71,6 +73,7 @@
       <img id="sprite" src="" alt="" />
       <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
       <p id="progress"></p>
+      <p id="nextHint" hidden>다음 포켓몬: ???</p>
       <button id="pokedexLink" class="link-btn"></button>
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
@@ -131,6 +134,8 @@
         s.needed != null
           ? `${s.progress.toLocaleString()} / ${s.needed.toLocaleString()} 토큰`
           : `${s.progress.toLocaleString()} 토큰`;
+
+      document.getElementById("nextHint").hidden = !s.hasNextEvolution;
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
     }
