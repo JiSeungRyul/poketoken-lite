@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { getTotalTokens } = require("./logParser");
-const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds } = require("./growth");
+const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, SHINY_DENOMINATOR } = require("./growth");
 const { loadState, saveState } = require("./state");
 
 const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5분, 추정 기본값
@@ -37,6 +37,12 @@ function tick() {
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
   const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds);
   state.companion = result.companion;
+
+  // 진화(중간 단계 포함)/졸업 할 때마다 알 티켓 1개 적립 — 도감에서 직접 종을
+  // 골라 키우는 기능(choose-species)의 재화. 알 자체의 자동 부화 루프와는 별개.
+  if (result.event === "evolve" || result.event === "graduate") {
+    state.eggInventory += 1;
+  }
 
   if (result.event === "graduate") {
     state.pokedex.push({
@@ -72,6 +78,7 @@ function buildStatusPayload(totalTokens) {
       needed: HATCH_THRESHOLD,
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
       pokedexCount: state.pokedex.length,
+      eggInventory: state.eggInventory,
     };
   }
 
@@ -83,6 +90,7 @@ function buildStatusPayload(totalTokens) {
 
   return {
     state: companion.state,
+    speciesId: companion.speciesId,
     label: species.nameKo,
     tier: species.tier,
     sprite: isShiny ? species.spriteShiny : species.sprite,
@@ -91,6 +99,7 @@ function buildStatusPayload(totalTokens) {
     needed,
     hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
     pokedexCount: state.pokedex.length,
+    eggInventory: state.eggInventory,
   };
 }
 
@@ -110,6 +119,36 @@ function buildPokedexPayload() {
         graduatedAt: entry.graduatedAt,
       };
     });
+}
+
+/**
+ * 도감에서 종을 직접 골라 키우기 시작. 알 티켓(eggInventory)을 1개 소모하고,
+ * 알 상태일 때만 가능(이미 뭔가 키우는 중이면 그 진행을 버리게 되므로 막음).
+ * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
+ */
+function chooseSpecies(speciesId) {
+  if (state.eggInventory <= 0) {
+    return { ok: false, reason: "no-ticket", status: buildStatusPayload(lastTotalTokens) };
+  }
+  if (!state.companion || state.companion.state !== "egg") {
+    return { ok: false, reason: "not-egg-state", status: buildStatusPayload(lastTotalTokens) };
+  }
+  if (!gen1Data[speciesId]) {
+    return { ok: false, reason: "unknown-species", status: buildStatusPayload(lastTotalTokens) };
+  }
+
+  state.eggInventory -= 1;
+  state.companion = {
+    state: "growing",
+    speciesId,
+    stage: 1,
+    hatchedAtTotal: lastTotalTokens,
+    isShiny: Math.random() < 1 / SHINY_DENOMINATOR, // 직접 골라도 이로치 여부는 똑같이 랜덤
+  };
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+
+  return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
 
 function updateTrayIcon(totalTokens) {
@@ -162,6 +201,7 @@ app.whenReady().then(() => {
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
+  ipcMain.handle("choose-species", (event, speciesId) => chooseSpecies(speciesId));
   ipcMain.handle("refresh", () => {
     tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
     return buildStatusPayload(lastTotalTokens);

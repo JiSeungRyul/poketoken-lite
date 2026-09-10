@@ -51,10 +51,13 @@
   }
   .pokedex-row img { width: 32px; height: 32px; image-rendering: pixelated; margin: 0; }
   .pokedex-row .name { flex: 1; font-size: 13px; }
+  .pokedex-row .dex-no { font-size: 10px; color: #666; width: 34px; }
   .pokedex-row .date { font-size: 10px; color: #888; }
+  .pokedex-row .raise-btn { margin: 0; padding: 3px 8px; font-size: 11px; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
 
   #nextHint { color: #888; font-size: 11px; margin-top: 4px; }
+  #eggTicket { color: #ffd43b; font-size: 11px; margin-top: 2px; }
 </style>
 </head>
 <body>
@@ -74,6 +77,7 @@
       <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
       <p id="progress"></p>
       <p id="nextHint" hidden>다음 포켓몬: ???</p>
+      <p id="eggTicket"></p>
       <button id="pokedexLink" class="link-btn"></button>
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
@@ -107,8 +111,14 @@
     });
 
     const TIER_LABELS = { common: "COMMON", rare: "RARE", legendary: "LEGENDARY" };
+    let lastStatus = null; // 도감 뷰에서 "지금 알 상태인지 + 티켓 있는지" 판단용
+
+    function formatDexNo(speciesId) {
+      return "#" + String(speciesId).padStart(3, "0");
+    }
 
     function render(s) {
+      lastStatus = s;
       document.getElementById("name").textContent = s.label + (s.isShiny ? " ✨" : "");
 
       const tierBadge = document.getElementById("tierBadge");
@@ -136,6 +146,9 @@
           : `${s.progress.toLocaleString()} 토큰`;
 
       document.getElementById("nextHint").hidden = !s.hasNextEvolution;
+
+      document.getElementById("eggTicket").textContent =
+        s.eggInventory > 0 ? `🎫 알 티켓 ${s.eggInventory}개 — 도감에서 바로 키우기 가능` : "";
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
     }
@@ -171,17 +184,39 @@
         return;
       }
 
+      // 알 티켓이 있고 지금 알 상태일 때만 "키우기" 가능
+      const canRaise = lastStatus?.state === "egg" && lastStatus?.eggInventory > 0;
+
       pokedexList.innerHTML = entries
         .map(
           (e) => `
             <div class="pokedex-row">
+              <span class="dex-no">${formatDexNo(e.speciesId)}</span>
               <img src="${e.sprite}" alt="${e.nameKo}" />
               <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
               <span class="date">${formatDate(e.graduatedAt)}</span>
+              ${canRaise ? `<button class="raise-btn" data-species-id="${e.speciesId}">키우기</button>` : ""}
             </div>`
         )
         .join("");
     }
+
+    pokedexList.addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".raise-btn");
+      if (!btn) return;
+
+      const speciesId = Number(btn.dataset.speciesId);
+      btn.disabled = true;
+      window.api.chooseSpecies(speciesId).then((result) => {
+        if (!result.ok) {
+          btn.disabled = false;
+          return; // 티켓이 그새 없어졌거나 이미 알 상태가 아니게 된 경우 — 조용히 무시
+        }
+        render(result.status);
+        pokedexSubview.hidden = true;
+        companionSubview.hidden = false;
+      });
+    });
 
     document.getElementById("pokedexLink").addEventListener("click", () => {
       companionSubview.hidden = true;

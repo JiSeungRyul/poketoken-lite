@@ -9,4 +9,5 @@ contextBridge.exposeInMainWorld("api", {
   getStatus: () => ipcRenderer.invoke("get-status"),
   refresh: () => ipcRenderer.invoke("refresh"),
   getPokedex: () => ipcRenderer.invoke("get-pokedex"),
+  chooseSpecies: (speciesId) => ipcRenderer.invoke("choose-species", speciesId),
 });
