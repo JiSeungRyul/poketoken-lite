@@ -36,9 +36,9 @@ function safeListDirs(dir) {
  * 않으므로 다른 사람이 클론해서 써도 자기 WSL 환경에 맞게 자동으로 잡힘.
  */
 function findWslClaudeProjectDirs() {
-  for (const root of ["\\\\wsl.localhost", "\\\\wsl$"]) {
-    if (!fs.existsSync(root)) continue;
-
+  // 끝에 백슬래시가 없으면(예: "\\wsl.localhost") Win32가 UNC 루트를 제대로
+  // 못 찾아서 existsSync/readdirSync가 그냥 실패함 — 반드시 트레일링 슬래시 필요.
+  for (const root of ["\\\\wsl.localhost\\", "\\\\wsl$\\"]) {
     const dirs = [];
     for (const distro of safeListDirs(root)) {
       const homeDir = path.join(root, distro.name, "home");
