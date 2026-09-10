@@ -14,15 +14,17 @@ function getStatePath(userDataDir) {
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggInventory: 0 };
+    return { companion: null, pokedex: [], eggInventory: 0, storedCompanions: [] };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
-    state.eggInventory ??= 0; // 이 필드 추가 전 저장 파일 호환
+    // 이 필드들 추가 전 저장 파일 호환
+    state.eggInventory ??= 0;
+    state.storedCompanions ??= [];
     return state;
   } catch (err) {
     console.error("상태 파일 손상, 초기화:", err.message);
-    return { companion: null, pokedex: [], eggInventory: 0 };
+    return { companion: null, pokedex: [], eggInventory: 0, storedCompanions: [] };
   }
 }
 

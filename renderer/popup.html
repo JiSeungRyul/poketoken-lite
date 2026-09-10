@@ -80,6 +80,8 @@
       <p id="eggTicket"></p>
       <button id="pokedexLink" class="link-btn"></button>
       <br />
+      <button id="storageLink" class="link-btn"></button>
+      <br />
       <button id="refreshBtn">🔄 새로고침</button>
     </div>
 
@@ -89,6 +91,14 @@
         <h3 id="pokedexTitle">도감</h3>
       </div>
       <div id="pokedexList" class="pokedex-list"></div>
+    </div>
+
+    <div id="storage-subview" hidden>
+      <div class="pokedex-header">
+        <button id="storageBackBtn" class="link-btn">← 뒤로</button>
+        <h3 id="storageTitle">보관함</h3>
+      </div>
+      <div id="storageList" class="pokedex-list"></div>
     </div>
   </div>
 
@@ -151,6 +161,7 @@
         s.eggInventory > 0 ? `🎫 알 티켓 ${s.eggInventory}개 — 도감에서 바로 키우기 가능` : "";
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
+      document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;
     }
 
     window.api.getStatus().then(render);
@@ -184,8 +195,8 @@
         return;
       }
 
-      // 알 티켓이 있고 지금 알 상태일 때만 "키우기" 가능
-      const canRaise = lastStatus?.state === "egg" && lastStatus?.eggInventory > 0;
+      // 알 티켓만 있으면 키우기 가능 — 지금 뭔가 키우는 중이어도 보관함으로 자동 이동됨
+      const canRaise = lastStatus?.eggInventory > 0;
 
       pokedexList.innerHTML = entries
         .map(
@@ -210,7 +221,7 @@
       window.api.chooseSpecies(speciesId).then((result) => {
         if (!result.ok) {
           btn.disabled = false;
-          return; // 티켓이 그새 없어졌거나 이미 알 상태가 아니게 된 경우 — 조용히 무시
+          return; // 티켓이 그새 없어진 경우 등 — 조용히 무시
         }
         render(result.status);
         pokedexSubview.hidden = true;
@@ -226,6 +237,59 @@
 
     document.getElementById("backBtn").addEventListener("click", () => {
       pokedexSubview.hidden = true;
+      companionSubview.hidden = false;
+    });
+
+    // --- 보관함 보기 ---
+    const storageSubview = document.getElementById("storage-subview");
+    const storageList = document.getElementById("storageList");
+
+    function renderStorage(entries) {
+      document.getElementById("storageTitle").textContent = `보관함 (${entries.length}마리)`;
+
+      if (entries.length === 0) {
+        storageList.innerHTML = `<div class="pokedex-empty">보관 중인 포켓몬이 없어요.<br />도감에서 다른 애를 키우기 시작하면<br />지금 키우던 애가 여기로 들어와요.</div>`;
+        return;
+      }
+
+      storageList.innerHTML = entries
+        .map(
+          (e) => `
+            <div class="pokedex-row">
+              <span class="dex-no">${formatDexNo(e.speciesId)}</span>
+              <img src="${e.sprite}" alt="${e.nameKo}" />
+              <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+              <button class="raise-btn" data-index="${e.index}">다시 키우기</button>
+            </div>`
+        )
+        .join("");
+    }
+
+    storageList.addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".raise-btn");
+      if (!btn) return;
+
+      const index = Number(btn.dataset.index);
+      btn.disabled = true;
+      window.api.resumeStored(index).then((result) => {
+        if (!result.ok) {
+          btn.disabled = false;
+          return;
+        }
+        render(result.status);
+        storageSubview.hidden = true;
+        companionSubview.hidden = false;
+      });
+    });
+
+    document.getElementById("storageLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      storageSubview.hidden = false;
+      window.api.getStorage().then(renderStorage);
+    });
+
+    document.getElementById("storageBackBtn").addEventListener("click", () => {
+      storageSubview.hidden = true;
       companionSubview.hidden = false;
     });
   </script>

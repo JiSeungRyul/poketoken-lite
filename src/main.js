@@ -79,6 +79,7 @@ function buildStatusPayload(totalTokens) {
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
       pokedexCount: state.pokedex.length,
       eggInventory: state.eggInventory,
+      storedCount: state.storedCompanions.length,
     };
   }
 
@@ -100,6 +101,7 @@ function buildStatusPayload(totalTokens) {
     hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
     pokedexCount: state.pokedex.length,
     eggInventory: state.eggInventory,
+    storedCount: state.storedCompanions.length,
   };
 }
 
@@ -121,32 +123,90 @@ function buildPokedexPayload() {
     });
 }
 
+// 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
+// 특정 개체가 안 정해진 상태라 보관 없이 그냥 교체됨(부화 진행률은 호출부에서 별도 처리).
+function boxCurrentCompanionIfGrowing() {
+  if (state.companion && state.companion.state !== "egg") {
+    state.storedCompanions.push({
+      speciesId: state.companion.speciesId,
+      stage: state.companion.stage,
+      hatchedAtTotal: state.companion.hatchedAtTotal,
+      isShiny: !!state.companion.isShiny,
+      storedAt: new Date().toISOString(),
+    });
+  }
+}
+
 /**
- * 도감에서 종을 직접 골라 키우기 시작. 알 티켓(eggInventory)을 1개 소모하고,
- * 알 상태일 때만 가능(이미 뭔가 키우는 중이면 그 진행을 버리게 되므로 막음).
- * 알이 그동안 모아둔 부화 진행률은 버리지 않고 새 컴패니언의 진화 진행률로 이어받는다.
+ * 도감에서 종을 직접 골라 키우기 시작. 알 티켓(eggInventory)을 1개 소모한다.
+ * 지금 뭔가 성장 중이어도 가능 — 그 컴패니언은 버려지지 않고 보관함으로 들어가서
+ * 나중에 다시 꺼내 키울 수 있다. 지금 알 상태였다면 그 알이 모아둔 부화 진행률은
+ * 버리지 않고 새 컴패니언의 진화 진행률로 이어받는다.
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
 function chooseSpecies(speciesId) {
   if (state.eggInventory <= 0) {
     return { ok: false, reason: "no-ticket", status: buildStatusPayload(lastTotalTokens) };
   }
-  if (!state.companion || state.companion.state !== "egg") {
-    return { ok: false, reason: "not-egg-state", status: buildStatusPayload(lastTotalTokens) };
-  }
   if (!gen1Data[speciesId]) {
     return { ok: false, reason: "unknown-species", status: buildStatusPayload(lastTotalTokens) };
   }
+
+  const wasEgg = state.companion?.state === "egg";
+  const hatchedAtTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
+
+  boxCurrentCompanionIfGrowing();
 
   state.eggInventory -= 1;
   state.companion = {
     state: "growing",
     speciesId,
     stage: 1,
-    // 알이 그동안 모아뒀던 부화 진행률을 그대로 이어받음(버리지 않음) — 새 컴패니언의
-    // 1단계 진화 진행률이 0부터가 아니라 이 알이 쌓아온 만큼에서 바로 시작함.
-    hatchedAtTotal: state.companion.eggStartTotal,
+    hatchedAtTotal,
     isShiny: Math.random() < 1 / SHINY_DENOMINATOR, // 직접 골라도 이로치 여부는 똑같이 랜덤
+  };
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+
+  return { ok: true, status: buildStatusPayload(lastTotalTokens) };
+}
+
+// 보관함 목록을 종 정보와 합쳐서 반환.
+function buildStoragePayload() {
+  return state.storedCompanions.map((c, index) => {
+    const species = gen1Data[c.speciesId];
+    const isShiny = !!c.isShiny;
+    return {
+      index,
+      speciesId: c.speciesId,
+      nameKo: species.nameKo,
+      sprite: isShiny ? species.spriteShiny : species.sprite,
+      isShiny,
+      tier: species.tier,
+      stage: c.stage,
+      storedAt: c.storedAt,
+    };
+  });
+}
+
+/**
+ * 보관함에서 꺼내서 다시 키우기 시작(티켓 소모 없음 — 이미 갖고 있던 애를 꺼내는 거라).
+ * 지금 성장 중인 애가 있으면 그 애가 대신 보관함으로 들어간다(자리 교환).
+ */
+function resumeStoredCompanion(index) {
+  if (index < 0 || index >= state.storedCompanions.length) {
+    return { ok: false, reason: "invalid-index", status: buildStatusPayload(lastTotalTokens) };
+  }
+
+  boxCurrentCompanionIfGrowing();
+
+  const [resumed] = state.storedCompanions.splice(index, 1);
+  state.companion = {
+    state: "growing",
+    speciesId: resumed.speciesId,
+    stage: resumed.stage,
+    hatchedAtTotal: resumed.hatchedAtTotal,
+    isShiny: resumed.isShiny,
   };
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
@@ -205,6 +265,8 @@ app.whenReady().then(() => {
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
   ipcMain.handle("choose-species", (event, speciesId) => chooseSpecies(speciesId));
+  ipcMain.handle("get-storage", () => buildStoragePayload());
+  ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
   ipcMain.handle("refresh", () => {
     tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
     return buildStatusPayload(lastTotalTokens);

@@ -10,4 +10,6 @@ contextBridge.exposeInMainWorld("api", {
   refresh: () => ipcRenderer.invoke("refresh"),
   getPokedex: () => ipcRenderer.invoke("get-pokedex"),
   chooseSpecies: (speciesId) => ipcRenderer.invoke("choose-species", speciesId),
+  getStorage: () => ipcRenderer.invoke("get-storage"),
+  resumeStored: (index) => ipcRenderer.invoke("resume-stored", index),
 });
