@@ -85,11 +85,22 @@ function evaluate(companion, gen1Data, totalTokens) {
   return { event: "none", companion };
 }
 
-// 1단 진화(species.stage === 1)인 것들 중에서 랜덤 하나 뽑기 (부화 시 시작 종)
+/**
+ * 1단 진화(species.stage === 1)인 것들 중에서 부화 시 시작 종을 뽑는다.
+ * PokéAPI capture_rate에 비례한 가중치 랜덤 — capture_rate가 낮을수록(잡기 어려울수록)
+ * 뽑힐 확률도 낮아짐. 예전엔 균등 랜덤이라 legendary(24/68종)가 35%나 나왔는데,
+ * "legendary는 희귀해야 한다"는 의도에 안 맞아서 원본(PokeTokenBar)처럼 가중치를 줬다.
+ */
 function pickHatchSpecies(gen1Data) {
   const starters = Object.values(gen1Data).filter((p) => p.stage === 1);
-  const idx = Math.floor(Math.random() * starters.length);
-  return starters[idx];
+  const totalWeight = starters.reduce((sum, p) => sum + p.captureRate, 0);
+
+  let roll = Math.random() * totalWeight;
+  for (const p of starters) {
+    roll -= p.captureRate;
+    if (roll <= 0) return p;
+  }
+  return starters[starters.length - 1]; // 부동소수 오차 대비 fallback
 }
 
 function newEgg(currentTotalTokens) {

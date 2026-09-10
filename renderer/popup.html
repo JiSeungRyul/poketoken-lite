@@ -22,6 +22,15 @@
   }
   .tab.active { background: #4c6ef5; color: #fff; }
   .coming-soon { color: #888; font-size: 13px; padding: 40px 0; }
+
+  .name-row { display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .tier-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: bold; letter-spacing: .03em; color: #fff;
+  }
+  .tier-badge.common { background: #6c757d; }
+  .tier-badge.rare { background: #4c6ef5; }
+  .tier-badge.legendary { background: #f59f00; }
 </style>
 </head>
 <body>
@@ -32,7 +41,10 @@
   </div>
 
   <div id="claude-code-view">
-    <h3 id="name">불러오는 중...</h3>
+    <div class="name-row">
+      <h3 id="name">불러오는 중...</h3>
+      <span id="tierBadge" class="tier-badge" hidden></span>
+    </div>
     <img id="sprite" src="" alt="" />
     <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
     <p id="progress"></p>
@@ -58,8 +70,19 @@
       });
     });
 
+    const TIER_LABELS = { common: "COMMON", rare: "RARE", legendary: "LEGENDARY" };
+
     function render(s) {
       document.getElementById("name").textContent = s.label;
+
+      const tierBadge = document.getElementById("tierBadge");
+      if (s.tier) {
+        tierBadge.textContent = TIER_LABELS[s.tier] ?? s.tier.toUpperCase();
+        tierBadge.className = `tier-badge ${s.tier}`;
+        tierBadge.hidden = false;
+      } else {
+        tierBadge.hidden = true;
+      }
 
       const sprite = document.getElementById("sprite");
       if (s.sprite) {

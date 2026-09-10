@@ -63,6 +63,7 @@ function buildStatusPayload(totalTokens) {
     return {
       state: "egg",
       label: "🥚 알",
+      tier: null, // 부화 전엔 종이 아직 안 정해져서 등급도 없음
       sprite: null,
       progress,
       needed: HATCH_THRESHOLD,
@@ -78,6 +79,7 @@ function buildStatusPayload(totalTokens) {
   return {
     state: companion.state,
     label: `${species.nameKo} (${companion.stage}/${species.maxStage}단계)`,
+    tier: species.tier,
     sprite: species.sprite,
     progress,
     needed,
