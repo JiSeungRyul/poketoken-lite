@@ -323,11 +323,11 @@
     "nameEn": "pikachu",
     "captureRate": 190,
     "tier": "common",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [
       26
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png"
   },
@@ -337,9 +337,9 @@
     "nameEn": "raichu",
     "captureRate": 75,
     "tier": "rare",
-    "stage": 3,
+    "stage": 2,
     "evolvesTo": [],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/26.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/26.png"
   },
@@ -455,11 +455,11 @@
     "nameEn": "clefairy",
     "captureRate": 150,
     "tier": "rare",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [
       36
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/35.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/35.png"
   },
@@ -469,9 +469,9 @@
     "nameEn": "clefable",
     "captureRate": 25,
     "tier": "legendary",
-    "stage": 3,
+    "stage": 2,
     "evolvesTo": [],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/36.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/36.png"
   },
@@ -507,11 +507,11 @@
     "nameEn": "jigglypuff",
     "captureRate": 170,
     "tier": "common",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [
       40
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/39.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/39.png"
   },
@@ -521,9 +521,9 @@
     "nameEn": "wigglytuff",
     "captureRate": 50,
     "tier": "rare",
-    "stage": 3,
+    "stage": 2,
     "evolvesTo": [],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/40.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/40.png"
   },
@@ -537,7 +537,7 @@
     "evolvesTo": [
       42
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/41.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/41.png"
   },
@@ -548,10 +548,8 @@
     "captureRate": 90,
     "tier": "rare",
     "stage": 2,
-    "evolvesTo": [
-      169
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/42.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/42.png"
   },
@@ -577,8 +575,7 @@
     "tier": "rare",
     "stage": 2,
     "evolvesTo": [
-      45,
-      182
+      45
     ],
     "maxStage": 3,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/44.png",
@@ -682,8 +679,7 @@
     "tier": "common",
     "stage": 1,
     "evolvesTo": [
-      53,
-      863
+      53
     ],
     "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png",
@@ -737,7 +733,7 @@
     "evolvesTo": [
       57
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/56.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/56.png"
   },
@@ -748,10 +744,8 @@
     "captureRate": 75,
     "tier": "rare",
     "stage": 2,
-    "evolvesTo": [
-      979
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/57.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/57.png"
   },
@@ -803,8 +797,7 @@
     "tier": "rare",
     "stage": 2,
     "evolvesTo": [
-      62,
-      186
+      62
     ],
     "maxStage": 3,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/61.png",
@@ -1042,8 +1035,7 @@
     "tier": "common",
     "stage": 1,
     "evolvesTo": [
-      80,
-      199
+      80
     ],
     "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/79.png",
@@ -1071,7 +1063,7 @@
     "evolvesTo": [
       82
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/81.png"
   },
@@ -1082,10 +1074,8 @@
     "captureRate": 60,
     "tier": "rare",
     "stage": 2,
-    "evolvesTo": [
-      462
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/82.png"
   },
@@ -1096,10 +1086,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      865
-    ],
-    "maxStage": 2,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/83.png"
   },
@@ -1254,10 +1242,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      208
-    ],
-    "maxStage": 2,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/95.png"
   },
@@ -1397,9 +1383,9 @@
     "nameEn": "hitmonlee",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [],
-    "maxStage": 2,
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/106.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/106.png"
   },
@@ -1409,9 +1395,9 @@
     "nameEn": "hitmonchan",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [],
-    "maxStage": 2,
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/107.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/107.png"
   },
@@ -1422,10 +1408,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      463
-    ],
-    "maxStage": 2,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/108.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/108.png"
   },
@@ -1465,7 +1449,7 @@
     "evolvesTo": [
       112
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/111.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/111.png"
   },
@@ -1476,10 +1460,8 @@
     "captureRate": 60,
     "tier": "rare",
     "stage": 2,
-    "evolvesTo": [
-      464
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/112.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/112.png"
   },
@@ -1489,11 +1471,9 @@
     "nameEn": "chansey",
     "captureRate": 30,
     "tier": "legendary",
-    "stage": 2,
-    "evolvesTo": [
-      242
-    ],
-    "maxStage": 3,
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/113.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/113.png"
   },
@@ -1504,10 +1484,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      465
-    ],
-    "maxStage": 2,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/114.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/114.png"
   },
@@ -1533,7 +1511,7 @@
     "evolvesTo": [
       117
     ],
-    "maxStage": 3,
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/116.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/116.png"
   },
@@ -1544,10 +1522,8 @@
     "captureRate": 75,
     "tier": "rare",
     "stage": 2,
-    "evolvesTo": [
-      230
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/117.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/117.png"
   },
@@ -1609,11 +1585,9 @@
     "nameEn": "mr-mime",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
-    "evolvesTo": [
-      866
-    ],
-    "maxStage": 3,
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/122.png"
   },
@@ -1624,11 +1598,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      212,
-      900
-    ],
-    "maxStage": 2,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/123.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/123.png"
   },
@@ -1638,9 +1609,9 @@
     "nameEn": "jynx",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [],
-    "maxStage": 2,
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/124.png"
   },
@@ -1650,11 +1621,9 @@
     "nameEn": "electabuzz",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
-    "evolvesTo": [
-      466
-    ],
-    "maxStage": 3,
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/125.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/125.png"
   },
@@ -1664,11 +1633,9 @@
     "nameEn": "magmar",
     "captureRate": 45,
     "tier": "legendary",
-    "stage": 2,
-    "evolvesTo": [
-      467
-    ],
-    "maxStage": 3,
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/126.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/126.png"
   },
@@ -1756,12 +1723,7 @@
     "evolvesTo": [
       134,
       135,
-      136,
-      196,
-      197,
-      470,
-      471,
-      700
+      136
     ],
     "maxStage": 2,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
@@ -1810,10 +1772,8 @@
     "captureRate": 45,
     "tier": "legendary",
     "stage": 1,
-    "evolvesTo": [
-      233
-    ],
-    "maxStage": 3,
+    "evolvesTo": [],
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/137.png"
   },
@@ -1887,9 +1847,9 @@
     "nameEn": "snorlax",
     "captureRate": 25,
     "tier": "legendary",
-    "stage": 2,
+    "stage": 1,
     "evolvesTo": [],
-    "maxStage": 2,
+    "maxStage": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/143.png",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/143.png"
   },

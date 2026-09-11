@@ -38,15 +38,32 @@ async function fetchJson(url) {
   return res.json();
 }
 
-// evolution-chain 응답을 순회하며 { speciesId: { stage, evolvesTo: [speciesId,...] } } 로 변환
-function flattenChain(node, stage, out) {
+// evolution-chain 응답을 순회하며 { speciesId: { stage, evolvesTo: [speciesId,...] } } 로 변환.
+// PokéAPI의 evolution-chain은 세대 구분 없이 "그 종이 게임 역사상 진화한 모든 경로"를
+// 다 담고 있어서, 1세대 포켓몬이 후속 세대에서 얻은 진화(예: 마그네톤(82)→메탕그(462, 4세대))는
+// 물론, 후속 세대에 새로 추가된 "사전 진화체"까지 딸려온다(예: 에레키드(239, 2세대 아기)
+// →에레브(125, 1세대)→에레키블(466, 4세대) — 체인의 뿌리 자체가 범위 밖인 경우).
+// 그래서 "범위 밖이면 그 서브트리를 통째로 버리는" 방식은 안 되고, 범위 밖 노드는
+// 기록만 하지 않되 그 자손은 계속 내려가면서 "범위 안 조상 기준 상대 stage"를 매겨야 한다.
+// relativeStage: 지금까지 거쳐온 범위 안 조상 수 기준 단계(범위 안 조상이 아직 없으면 undefined).
+function flattenChain(node, out, maxId, relativeStage) {
   const id = idFromUrl(node.species.url);
-  out[id] = out[id] || { stage, evolvesTo: [] };
-  out[id].stage = stage;
+  const inRange = id >= 1 && id <= maxId;
+  const stage = inRange ? relativeStage ?? 1 : relativeStage;
+
+  if (inRange) {
+    out[id] = out[id] || { stage, evolvesTo: [] };
+    out[id].stage = stage;
+  }
+
   for (const next of node.evolves_to) {
     const nextId = idFromUrl(next.species.url);
-    out[id].evolvesTo.push(nextId);
-    flattenChain(next, stage + 1, out);
+    if (inRange && nextId >= 1 && nextId <= maxId) {
+      out[id].evolvesTo.push(nextId);
+    }
+    // 자손은 범위 밖 노드 밑이라도 계속 탐색 — 그 밑에 범위 안 후손(사전 진화체 패턴의
+    // 반대, 혹은 더 깊은 세대 추가분 밑에 또 범위 안이 나오는 경우는 없지만 방어적으로)이 있을 수 있음.
+    flattenChain(next, out, maxId, inRange ? stage + 1 : relativeStage);
   }
   return out;
 }
@@ -71,7 +88,7 @@ async function main() {
     let chainMap = chainCache.get(chainUrl);
     if (!chainMap) {
       const chain = await fetchJson(chainUrl);
-      chainMap = flattenChain(chain.chain, 1, {});
+      chainMap = flattenChain(chain.chain, {}, GEN1_COUNT, undefined);
       chainCache.set(chainUrl, chainMap);
     }
 

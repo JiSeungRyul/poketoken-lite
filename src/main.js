@@ -26,25 +26,96 @@ function loadGen1Data() {
   gen1Data = JSON.parse(fs.readFileSync(p, "utf-8"));
 }
 
+// 1세대 범위(1~151) 밖 진화형으로 잘못 흘러들어간 speciesId를 올바른 1세대 조상으로
+// 되돌리는 표. 실제 PokeAPI 진화 체인을 스크립트로 직접 조회해서 만든 값(추측 아님) —
+// 예전 build-gen1-data.js가 세대 구분 없이 진화 체인을 통째로 가져오면서, 1세대
+// 포켓몬이 후속 세대에서 얻은 진화형(예: 마그네톤(82)→메탕그(462, 4세대))까지
+// evolvesTo에 섞여 들어갔던 흔적. data/gen1.json은 이미 재빌드해서 더는 안 생기지만,
+// 그 버그가 살아있던 동안 저장된 state.json엔 이 값들이 남아있을 수 있다.
+const OUT_OF_RANGE_ANCESTOR = {
+  169: 42, 182: 44, 186: 61, 196: 133, 197: 133, 199: 79, 208: 95, 212: 123,
+  230: 117, 233: 137, 242: 113, 462: 82, 463: 108, 464: 112, 465: 114,
+  466: 125, 467: 126, 470: 133, 471: 133, 474: 137, 700: 133, 863: 52,
+  865: 83, 866: 122, 900: 123, 979: 57,
+};
+
+// speciesId가 gen1Data에 있으면 그대로, 없으면(범위 밖) 표에서 조상을 찾아 반환. 둘 다
+// 없으면 복구 불가(null).
+function resolveToGen1Id(speciesId) {
+  if (gen1Data[speciesId]) return speciesId;
+  const ancestor = OUT_OF_RANGE_ANCESTOR[speciesId];
+  return gen1Data[ancestor] ? ancestor : null;
+}
+
 /**
- * 1회성 보정: speciesId가 진화해도 안 바뀌던 예전 버그(2a2ab94 이전) 때문에,
- * 그때 이미 졸업 기록된 도감 항목은 최종진화가 아닌 종(예: 부화 당시 기본형)으로
- * 잘못 저장돼 있을 수 있다. evolvesTo를 따라가서 최종형까지 보정한다.
+ * 1회성 보정: 도감에 "제대로 안 키운" 기록이 두 가지 경로로 잘못 들어갈 수 있었다.
+ * 1) speciesId가 진화해도 안 바뀌던 버그(2a2ab94 이전) — 부화 당시 기본형이 그대로 기록됨
+ * 2) 진화 체인에 1세대 범위 밖 진화형이 섞여 들어가던 버그 — speciesId가 아예
+ *    gen1Data에 없는 값(예: 462)으로 기록됨
+ * 두 경우 다 "실제로 최종진화까지 정당하게 키운 게 아니다"인 게 핵심이라, 최종형이
+ * 아닌 종으로 귀결되는 기록은 도감에서 빼서 보관함에 1단계부터 다시 키울 수 있는
+ * 상태로 돌려놓는다(공짜로 도감에 등록해주지 않음). 복구했더니 이미 최종형이었던
+ * 경우(예: 2번 버그였지만 조상이 이미 1세대 최종형)는 speciesId만 바로잡고 도감에 유지.
  */
-function fixNonFinalPokedexEntries() {
-  let fixedCount = 0;
+function fixCorruptedPokedexEntries() {
+  const stillValid = [];
+  let movedToStorage = 0;
+  let renamedInPlace = 0;
+  const nowTotal = getTotalTokens();
+
   for (const entry of state.pokedex) {
-    let species = gen1Data[entry.speciesId];
-    while (species && species.evolvesTo.length > 0) {
-      entry.speciesId = species.evolvesTo[0];
-      species = gen1Data[entry.speciesId];
-      fixedCount += 1;
+    const resolvedId = resolveToGen1Id(entry.speciesId);
+    if (resolvedId == null) {
+      console.error(`도감 항목의 speciesId를 복구할 수 없어 삭제함: ${entry.speciesId}`, entry);
+      continue;
+    }
+
+    const species = gen1Data[resolvedId];
+    if (species.evolvesTo.length > 0) {
+      state.storedCompanions.push({
+        speciesId: resolvedId,
+        stage: 1,
+        hatchedAtTotal: nowTotal,
+        isShiny: !!entry.isShiny,
+        storedAt: new Date().toISOString(),
+      });
+      movedToStorage += 1;
+    } else {
+      if (resolvedId !== entry.speciesId) renamedInPlace += 1;
+      stillValid.push({ ...entry, speciesId: resolvedId });
     }
   }
-  if (fixedCount > 0) {
-    console.log(`도감에서 최종진화가 아니었던 기록 ${fixedCount}건을 보정함`);
+
+  if (movedToStorage > 0 || renamedInPlace > 0) {
+    state.pokedex = stillValid;
+    console.log(
+      `도감 보정: ${movedToStorage}건 보관함으로 이동(처음부터 다시 키울 수 있음), ${renamedInPlace}건 speciesId만 보정`
+    );
     saveState(app.getPath("userData"), state);
   }
+}
+
+// 지금 키우던 컴패니언의 speciesId도 같은 이유로 손상돼 있을 수 있음(성장 중 진화하며
+// 범위 밖 값으로 샌 경우). 복구 가능하면 그 조상 종의 1단계로 리셋, 불가능하면 통째로
+// 지워서 다음 tick에 새 알로 시작되게 한다.
+function fixCorruptedCompanion() {
+  const companion = state.companion;
+  if (!companion || companion.state === "egg" || gen1Data[companion.speciesId]) return;
+
+  const resolvedId = resolveToGen1Id(companion.speciesId);
+  console.error(`현재 컴패니언의 speciesId가 손상됨: ${companion.speciesId} → ${resolvedId ?? "복구 불가, 새 알로 리셋"}`);
+  if (resolvedId != null) {
+    state.companion = {
+      state: "growing",
+      speciesId: resolvedId,
+      stage: 1,
+      hatchedAtTotal: getTotalTokens(),
+      isShiny: !!companion.isShiny,
+    };
+  } else {
+    state.companion = null;
+  }
+  saveState(app.getPath("userData"), state);
 }
 
 function tick() {
@@ -294,7 +365,8 @@ function togglePopup() {
 app.whenReady().then(() => {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
-  fixNonFinalPokedexEntries();
+  fixCorruptedPokedexEntries();
+  fixCorruptedCompanion();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
