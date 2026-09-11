@@ -6,7 +6,7 @@ const { getTotalTokens } = require("./logParser");
 const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds } = require("./growth");
 const { loadState, saveState } = require("./state");
 
-const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5분, 추정 기본값
+const POLL_INTERVAL_MS = 2 * 60 * 1000; // 2분 (원본 PokeTokenBar 기본값과 동일)
 
 let tray = null;
 let popup = null;

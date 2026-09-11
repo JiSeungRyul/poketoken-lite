@@ -216,11 +216,17 @@
       if (speciesChanged) {
         sprite.classList.add("evolving");
         nameEl.classList.add("evolving");
+        // CSS 애니메이션 자체는 0.7초(evolve-flash)짜리인데, 예전엔 0.3초 만에 클래스를
+        // 지워서 애니메이션이 중간에 뚝 끊기며 사실상 즉시 전환처럼 보였음(사용자가 직접
+        // 확인). 내용 교체는 반짝임이 가장 밝은 지점(0.3초)에서 하되, 클래스는 애니메이션이
+        // 끝나는 0.7초까지 유지해야 끊기지 않고 끝까지 재생됨.
         setTimeout(() => {
           applyContent();
+        }, 300);
+        setTimeout(() => {
           sprite.classList.remove("evolving");
           nameEl.classList.remove("evolving");
-        }, 300); // 반짝이는 절반 지점에서 내용 교체 — 어두워졌다 밝아지는 사이에 바뀌어 보임
+        }, 700);
       } else {
         applyContent();
       }
@@ -252,7 +258,7 @@
 
     // 팝업이 열려있는 동안엔 수동으로 새로고침 안 눌러도 주기적으로 자동 갱신되게.
     // 서브뷰(도감/보관함/알보관함) 보는 중엔 화면이 안 바뀌니 컴패니언 화면일 때만.
-    const AUTO_REFRESH_MS = 10000;
+    const AUTO_REFRESH_MS = 2 * 60 * 1000; // 2분 — 백그라운드 폴링 주기와 동일하게
     setInterval(() => {
       if (!companionSubviewVisible()) return;
       window.api.refresh().then(render);
