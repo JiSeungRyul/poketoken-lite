@@ -127,21 +127,27 @@ function buildStatusPayload(totalTokens) {
 }
 
 // 도감(졸업한 포켓몬) 목록을 종 정보와 합쳐서 반환. 최근 졸업한 순.
+// gen1Data에 없는 speciesId(원인 불명의 손상 데이터)가 섞여 있어도 전체가
+// 죽지 않게 그 항목만 건너뛰고 콘솔에 남긴다.
 function buildPokedexPayload() {
-  return [...state.pokedex]
-    .reverse()
-    .map((entry) => {
-      const species = gen1Data[entry.speciesId];
-      const isShiny = !!entry.isShiny;
-      return {
-        speciesId: entry.speciesId,
-        nameKo: species.nameKo,
-        sprite: isShiny ? species.spriteShiny : species.sprite,
-        isShiny,
-        tier: species.tier,
-        graduatedAt: entry.graduatedAt,
-      };
+  const result = [];
+  for (const entry of [...state.pokedex].reverse()) {
+    const species = gen1Data[entry.speciesId];
+    if (!species) {
+      console.error(`도감 항목에 알 수 없는 speciesId: ${entry.speciesId}`, entry);
+      continue;
+    }
+    const isShiny = !!entry.isShiny;
+    result.push({
+      speciesId: entry.speciesId,
+      nameKo: species.nameKo,
+      sprite: isShiny ? species.spriteShiny : species.sprite,
+      isShiny,
+      tier: species.tier,
+      graduatedAt: entry.graduatedAt,
     });
+  }
+  return result;
 }
 
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
@@ -192,12 +198,17 @@ function chooseSpecies(speciesId) {
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
 
-// 보관함 목록을 종 정보와 합쳐서 반환.
+// 보관함 목록을 종 정보와 합쳐서 반환. 도감과 동일하게 손상 데이터는 건너뜀.
 function buildStoragePayload() {
-  return state.storedCompanions.map((c, index) => {
+  const result = [];
+  state.storedCompanions.forEach((c, index) => {
     const species = gen1Data[c.speciesId];
+    if (!species) {
+      console.error(`보관함 항목에 알 수 없는 speciesId: ${c.speciesId}`, c);
+      return;
+    }
     const isShiny = !!c.isShiny;
-    return {
+    result.push({
       index,
       speciesId: c.speciesId,
       nameKo: species.nameKo,
@@ -206,8 +217,9 @@ function buildStoragePayload() {
       tier: species.tier,
       stage: c.stage,
       storedAt: c.storedAt,
-    };
+    });
   });
+  return result;
 }
 
 /**
