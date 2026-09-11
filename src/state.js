@@ -14,17 +14,29 @@ function getStatePath(userDataDir) {
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggInventory: 0, storedCompanions: [] };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [] };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
     // 이 필드들 추가 전 저장 파일 호환
-    state.eggInventory ??= 0;
     state.storedCompanions ??= [];
+    state.eggBox ??= [];
+    // eggInventory(추상적 개수) → eggBox(등급 알 목록) 전환 전 저장분 마이그레이션.
+    // 등급 정보가 없던 시절 값이라 안전하게 커먼으로 채워 넣는다.
+    if (state.eggInventory > 0) {
+      for (let i = 0; i < state.eggInventory; i++) {
+        state.eggBox.push({
+          id: `migrated-${Date.now()}-${i}`,
+          grade: "common",
+          createdAt: new Date().toISOString(),
+        });
+      }
+      delete state.eggInventory;
+    }
     return state;
   } catch (err) {
     console.error("상태 파일 손상, 초기화:", err.message);
-    return { companion: null, pokedex: [], eggInventory: 0, storedCompanions: [] };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [] };
   }
 }
 

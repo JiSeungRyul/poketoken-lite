@@ -50,14 +50,27 @@
     border-bottom: 1px solid #2a2a3a;
   }
   .pokedex-row img { width: 32px; height: 32px; image-rendering: pixelated; margin: 0; }
+  .pokedex-row { cursor: pointer; flex-direction: column; align-items: stretch; }
+  .pokedex-row .row-main { display: flex; align-items: center; gap: 8px; }
   .pokedex-row .name { flex: 1; font-size: 13px; }
   .pokedex-row .dex-no { font-size: 10px; color: #666; width: 34px; }
   .pokedex-row .date { font-size: 10px; color: #888; }
   .pokedex-row .raise-btn { margin: 0; padding: 3px 8px; font-size: 11px; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
 
+  .evo-chain { display: none; gap: 10px; padding: 8px 4px 2px 42px; align-items: center; }
+  .evo-chain.expanded { display: flex; }
+  .evo-chain .evo-step { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .evo-chain img { width: 28px; height: 28px; margin: 0; }
+  .evo-chain .evo-name { font-size: 10px; color: #bbb; }
+  .evo-chain .evo-arrow { color: #666; font-size: 12px; }
+
+  .egg-row { display: flex; align-items: center; gap: 8px; padding: 8px 4px; border-bottom: 1px solid #2a2a3a; }
+  .egg-row .egg-icon { font-size: 22px; }
+  .egg-row .egg-grade { flex: 1; font-size: 13px; }
+
   #nextHint { color: #888; font-size: 11px; margin-top: 4px; }
-  #eggTicket { color: #ffd43b; font-size: 11px; margin-top: 2px; }
+  #eggBoxLink { color: #ffd43b; }
 </style>
 </head>
 <body>
@@ -77,10 +90,11 @@
       <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
       <p id="progress"></p>
       <p id="nextHint" hidden>다음 포켓몬: ???</p>
-      <p id="eggTicket"></p>
       <button id="pokedexLink" class="link-btn"></button>
       <br />
       <button id="storageLink" class="link-btn"></button>
+      <br />
+      <button id="eggBoxLink" class="link-btn"></button>
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
     </div>
@@ -99,6 +113,14 @@
         <h3 id="storageTitle">보관함</h3>
       </div>
       <div id="storageList" class="pokedex-list"></div>
+    </div>
+
+    <div id="eggbox-subview" hidden>
+      <div class="pokedex-header">
+        <button id="eggBoxBackBtn" class="link-btn">← 뒤로</button>
+        <h3 id="eggBoxTitle">알 보관함</h3>
+      </div>
+      <div id="eggBoxList" class="pokedex-list"></div>
     </div>
   </div>
 
@@ -121,14 +143,12 @@
     });
 
     const TIER_LABELS = { common: "COMMON", rare: "RARE", legendary: "LEGENDARY" };
-    let lastStatus = null; // 도감 뷰에서 "지금 알 상태인지 + 티켓 있는지" 판단용
 
     function formatDexNo(speciesId) {
       return "#" + String(speciesId).padStart(3, "0");
     }
 
     function render(s) {
-      lastStatus = s;
       document.getElementById("name").textContent = s.label + (s.isShiny ? " ✨" : "");
 
       const tierBadge = document.getElementById("tierBadge");
@@ -157,11 +177,9 @@
 
       document.getElementById("nextHint").hidden = !s.hasNextEvolution;
 
-      document.getElementById("eggTicket").textContent =
-        s.eggInventory > 0 ? `🎫 알 티켓 ${s.eggInventory}개 — 도감에서 바로 키우기 가능` : "";
-
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
       document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;
+      document.getElementById("eggBoxLink").textContent = `🥚 알 보관함 ${s.eggBoxCount}개 보기 →`;
     }
 
     window.api.getStatus().then(render);
@@ -195,38 +213,40 @@
         return;
       }
 
-      // 알 티켓만 있으면 키우기 가능 — 지금 뭔가 키우는 중이어도 보관함으로 자동 이동됨
-      const canRaise = lastStatus?.eggInventory > 0;
-
       pokedexList.innerHTML = entries
         .map(
-          (e) => `
-            <div class="pokedex-row">
-              <span class="dex-no">${formatDexNo(e.speciesId)}</span>
-              <img src="${e.sprite}" alt="${e.nameKo}" />
-              <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
-              <span class="date">${formatDate(e.graduatedAt)}</span>
-              ${canRaise ? `<button class="raise-btn" data-species-id="${e.speciesId}">키우기</button>` : ""}
+          (e, i) => `
+            <div class="pokedex-row" data-row-index="${i}">
+              <div class="row-main">
+                <span class="dex-no">${formatDexNo(e.speciesId)}</span>
+                <img src="${e.sprite}" alt="${e.nameKo}" />
+                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+                <span class="date">${formatDate(e.graduatedAt)}</span>
+              </div>
+              <div class="evo-chain" data-chain-index="${i}">
+                ${e.evolutionChain
+                  .map(
+                    (step, si) => `
+                      ${si > 0 ? '<span class="evo-arrow">→</span>' : ""}
+                      <div class="evo-step">
+                        <img src="${step.sprite}" alt="${step.nameKo}" />
+                        <span class="evo-name">${step.nameKo}</span>
+                      </div>`
+                  )
+                  .join("")}
+              </div>
             </div>`
         )
         .join("");
     }
 
+    // 도감 행을 클릭하면 그 종의 진화 라인(미진화→...→최종진화)을 나열해서 보여줌.
+    // 나중엔 여기를 눌렀을 때 상세 정보 팝업으로 바꿀 예정.
     pokedexList.addEventListener("click", (ev) => {
-      const btn = ev.target.closest(".raise-btn");
-      if (!btn) return;
-
-      const speciesId = Number(btn.dataset.speciesId);
-      btn.disabled = true;
-      window.api.chooseSpecies(speciesId).then((result) => {
-        if (!result.ok) {
-          btn.disabled = false;
-          return; // 티켓이 그새 없어진 경우 등 — 조용히 무시
-        }
-        render(result.status);
-        pokedexSubview.hidden = true;
-        companionSubview.hidden = false;
-      });
+      const row = ev.target.closest(".pokedex-row");
+      if (!row) return;
+      const chain = row.querySelector(".evo-chain");
+      chain.classList.toggle("expanded");
     });
 
     document.getElementById("pokedexLink").addEventListener("click", () => {
@@ -290,6 +310,59 @@
 
     document.getElementById("storageBackBtn").addEventListener("click", () => {
       storageSubview.hidden = true;
+      companionSubview.hidden = false;
+    });
+
+    // --- 알 보관함 보기 ---
+    const eggBoxSubview = document.getElementById("eggbox-subview");
+    const eggBoxList = document.getElementById("eggBoxList");
+    const GRADE_ICON = { common: "🥚", rare: "🐣", legendary: "🌟" };
+
+    function renderEggBox(eggs) {
+      document.getElementById("eggBoxTitle").textContent = `알 보관함 (${eggs.length}개)`;
+
+      if (eggs.length === 0) {
+        eggBoxList.innerHTML = `<div class="pokedex-empty">알이 없어요.<br />진화/졸업할 때마다 등급 알이 하나씩 쌓여요.</div>`;
+        return;
+      }
+
+      eggBoxList.innerHTML = eggs
+        .map(
+          (e) => `
+            <div class="egg-row">
+              <span class="egg-icon">${GRADE_ICON[e.grade] ?? "🥚"}</span>
+              <span class="egg-grade">${TIER_LABELS[e.grade] ?? e.grade} 알 <span class="tier-badge ${e.grade}" style="font-size:9px;padding:1px 6px;">${e.grade === "common" ? "이상" : e.grade + " 이상"}</span></span>
+              <button class="hatch-btn" data-egg-id="${e.id}">부화</button>
+            </div>`
+        )
+        .join("");
+    }
+
+    eggBoxList.addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".hatch-btn");
+      if (!btn) return;
+
+      const eggId = btn.dataset.eggId;
+      btn.disabled = true;
+      window.api.hatchEgg(eggId).then((result) => {
+        if (!result.ok) {
+          btn.disabled = false;
+          return;
+        }
+        render(result.status);
+        eggBoxSubview.hidden = true;
+        companionSubview.hidden = false;
+      });
+    });
+
+    document.getElementById("eggBoxLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      eggBoxSubview.hidden = false;
+      window.api.getEggBox().then(renderEggBox);
+    });
+
+    document.getElementById("eggBoxBackBtn").addEventListener("click", () => {
+      eggBoxSubview.hidden = true;
       companionSubview.hidden = false;
     });
   </script>

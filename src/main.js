@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { getTotalTokens } = require("./logParser");
-const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, SHINY_DENOMINATOR } = require("./growth");
+const { evaluate, newEgg, pickHatchSpecies, HATCH_THRESHOLD, stageThresholds, SHINY_DENOMINATOR } = require("./growth");
 const { loadState, saveState } = require("./state");
 
 const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5분, 추정 기본값
@@ -126,14 +126,24 @@ function tick() {
     state.companion = newEgg(totalTokens);
   }
 
+  // 진화/졸업으로 등급 알을 적립할 때 등급 기준으로 쓸, "진화하기 직전" 개체 자신의 종.
+  const preTransitionSpecies =
+    state.companion.state !== "egg" ? gen1Data[state.companion.speciesId] : null;
+
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
   const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds);
   state.companion = result.companion;
 
-  // 진화(중간 단계 포함)/졸업 할 때마다 알 티켓 1개 적립 — 도감에서 직접 종을
-  // 골라 키우는 기능(choose-species)의 재화. 알 자체의 자동 부화 루프와는 별개.
-  if (result.event === "evolve" || result.event === "graduate") {
-    state.eggInventory += 1;
+  // 진화(중간 단계 포함)/졸업 할 때마다 등급 알 1개를 보관함에 적립. 등급은 방금
+  // 진화하기 직전 개체 자신의 tier를 그대로 씀(체인 내에서 등급이 실제로 바뀌는
+  // 경우도 있지만 — 예: 두두 common→두트리오 legendary — "미진화체 등급 = 최종진화
+  // 등급"으로 단순화하기로 함).
+  if ((result.event === "evolve" || result.event === "graduate") && preTransitionSpecies) {
+    state.eggBox.push({
+      id: `egg-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      grade: preTransitionSpecies.tier,
+      createdAt: new Date().toISOString(),
+    });
   }
 
   // 로그용으로 "무엇이 졸업했는지"를 companion을 새 알로 덮어쓰기 전에 미리 남겨둠 —
@@ -153,7 +163,7 @@ function tick() {
   updateTrayIcon(totalTokens);
 
   if (result.event !== "none") {
-    console.log(`이벤트: ${result.event}`, graduatedCompanion ?? state.companion, `(알 티켓: ${state.eggInventory}개)`);
+    console.log(`이벤트: ${result.event}`, graduatedCompanion ?? state.companion, `(알 보관함: ${state.eggBox.length}개)`);
     // TODO: 알림(Notification) 붙이기
   }
 }
@@ -174,7 +184,7 @@ function buildStatusPayload(totalTokens) {
       needed: HATCH_THRESHOLD,
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
       pokedexCount: state.pokedex.length,
-      eggInventory: state.eggInventory,
+      eggBoxCount: state.eggBox.length,
       storedCount: state.storedCompanions.length,
     };
   }
@@ -196,9 +206,28 @@ function buildStatusPayload(totalTokens) {
     needed,
     hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
     pokedexCount: state.pokedex.length,
-    eggInventory: state.eggInventory,
+    eggBoxCount: state.eggBox.length,
     storedCount: state.storedCompanions.length,
   };
+}
+
+// speciesId(보통 도감의 최종형)의 기본형부터 시작해서 진화 라인 전체를 순서대로 나열.
+// evolvesTo[0] 고정 경로라 그 개체가 실제로 밟아온 단계와 동일하다(가지치기 진화는
+// 다른 분기가 있어도 안 보임 — growth.js와 동일한 단순화).
+function buildEvolutionChain(speciesId) {
+  const chain = [];
+  const baseId = gen1Data[speciesId]?.baseFormId ?? speciesId;
+  let current = gen1Data[baseId];
+  while (current) {
+    chain.push({
+      speciesId: current.id,
+      nameKo: current.nameKo,
+      sprite: current.sprite,
+      tier: current.tier,
+    });
+    current = current.evolvesTo[0] != null ? gen1Data[current.evolvesTo[0]] : null;
+  }
+  return chain;
 }
 
 // 도감(졸업한 포켓몬) 목록을 종 정보와 합쳐서 반환. 최근 졸업한 순.
@@ -220,6 +249,7 @@ function buildPokedexPayload() {
       isShiny,
       tier: species.tier,
       graduatedAt: entry.graduatedAt,
+      evolutionChain: buildEvolutionChain(entry.speciesId),
     });
   }
   return result;
@@ -239,39 +269,42 @@ function boxCurrentCompanionIfGrowing() {
   }
 }
 
+// 알 보관함 목록 반환(등급/생성순).
+function buildEggBoxPayload() {
+  return state.eggBox.map((egg) => ({ id: egg.id, grade: egg.grade, createdAt: egg.createdAt }));
+}
+
 /**
- * 도감에서 종을 직접 골라 키우기 시작. 알 티켓(eggInventory)을 1개 소모한다.
- * 지금 뭔가 성장 중이어도 가능 — 그 컴패니언은 버려지지 않고 보관함으로 들어가서
- * 나중에 다시 꺼내 키울 수 있다. 지금 알 상태였다면 그 알이 모아둔 부화 진행률은
- * 버리지 않고 새 컴패니언의 진화 진행률로 이어받는다.
- *
- * speciesId로 넘어오는 건 도감 항목(항상 최종진화형)의 id다. 그걸 그대로 넣으면
- * "미진화→1진화→2진화" 단계를 하나도 안 거치고 처음부터 최종형 이름으로 0%에서
- * 시작하는 이상한 상태가 되므로, 그 종의 baseFormId(기본형)부터 정상적으로 다시
- * 단계를 밟아 올라가게 한다.
+ * 알 보관함에서 알 하나를 골라 부화시킨다(티켓처럼 종을 직접 고르는 게 아니라,
+ * 그 알의 등급 이상 범위에서 capture_rate 가중치로 랜덤 부화 — 원본(PokeTokenBar)의
+ * "등급 보증 알" 방식과 동일). 지금 뭔가 성장 중이어도 가능 — 그 컴패니언은 버려지지
+ * 않고 보관함(storedCompanions)으로 들어가서 나중에 다시 꺼내 키울 수 있다. 지금 알
+ * 상태였다면 그 알이 모아둔 부화 진행률은 버리지 않고 새 컴패니언의 진화 진행률로
+ * 이어받는다.
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
-function chooseSpecies(speciesId) {
-  if (state.eggInventory <= 0) {
-    return { ok: false, reason: "no-ticket", status: buildStatusPayload(lastTotalTokens) };
-  }
-  if (!gen1Data[speciesId]) {
-    return { ok: false, reason: "unknown-species", status: buildStatusPayload(lastTotalTokens) };
+function hatchEgg(eggId) {
+  const eggIndex = state.eggBox.findIndex((e) => e.id === eggId);
+  if (eggIndex === -1) {
+    return { ok: false, reason: "egg-not-found", status: buildStatusPayload(lastTotalTokens) };
   }
 
-  const startSpeciesId = gen1Data[speciesId].baseFormId;
+  const egg = state.eggBox[eggIndex];
+  const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
+  const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, egg.grade);
+
   const wasEgg = state.companion?.state === "egg";
   const hatchedAtTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
 
   boxCurrentCompanionIfGrowing();
 
-  state.eggInventory -= 1;
+  state.eggBox.splice(eggIndex, 1);
   state.companion = {
     state: "growing",
-    speciesId: startSpeciesId,
+    speciesId: newSpecies.id,
     stage: 1,
     hatchedAtTotal,
-    isShiny: Math.random() < 1 / SHINY_DENOMINATOR, // 직접 골라도 이로치 여부는 똑같이 랜덤
+    isShiny: Math.random() < 1 / SHINY_DENOMINATOR,
   };
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
@@ -380,7 +413,8 @@ app.whenReady().then(() => {
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
-  ipcMain.handle("choose-species", (event, speciesId) => chooseSpecies(speciesId));
+  ipcMain.handle("get-egg-box", () => buildEggBoxPayload());
+  ipcMain.handle("hatch-egg", (event, eggId) => hatchEgg(eggId));
   ipcMain.handle("get-storage", () => buildStoragePayload());
   ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
   ipcMain.handle("refresh", () => {

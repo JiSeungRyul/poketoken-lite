@@ -9,7 +9,8 @@ contextBridge.exposeInMainWorld("api", {
   getStatus: () => ipcRenderer.invoke("get-status"),
   refresh: () => ipcRenderer.invoke("refresh"),
   getPokedex: () => ipcRenderer.invoke("get-pokedex"),
-  chooseSpecies: (speciesId) => ipcRenderer.invoke("choose-species", speciesId),
+  getEggBox: () => ipcRenderer.invoke("get-egg-box"),
+  hatchEgg: (eggId) => ipcRenderer.invoke("hatch-egg", eggId),
   getStorage: () => ipcRenderer.invoke("get-storage"),
   resumeStored: (index) => ipcRenderer.invoke("resume-stored", index),
 });

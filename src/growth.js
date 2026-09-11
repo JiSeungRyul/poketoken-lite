@@ -17,6 +17,9 @@ const TIER_MULTIPLIER = {
   legendary: 8,
 };
 
+// 등급 알(egg box)의 "이 등급 이상 보장" 판정에 쓰는 순위 — 높을수록 희귀.
+const TIER_RANK = { common: 0, rare: 1, legendary: 2 };
+
 // 이로치(shiny) 부화 확률 분모. 원본(PokeTokenBar)도 본가 1/4096 대신 1/64를 씀
 // ("데스크톱 앱 규모에선 평생 못 봄"이라 완화) — 우리도 그대로 따름.
 const SHINY_DENOMINATOR = 64;
@@ -113,9 +116,15 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds) {
  * ownedSpeciesIds가 주어지면, 이미 도감에 있는 종은 가중치를 절반으로 깎는다(완전 배제는
  * 아님) — 원본이 "새 종을 2배 더 잘 나오게 하되, 재부화·샤이니 사냥은 막지 않는다"는
  * 의도로 쓰는 방식을 그대로 따름.
+ *
+ * minTier가 주어지면 그 등급 미만인 후보는 아예 제외한다(등급 알 부화용 — "이 등급
+ * 이상 보장"). 생략하면 전체 68종 대상.
  */
-function pickHatchSpecies(gen1Data, ownedSpeciesIds) {
-  const starters = Object.values(gen1Data).filter((p) => p.stage === 1);
+function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier) {
+  const minRank = minTier ? TIER_RANK[minTier] ?? 0 : 0;
+  const starters = Object.values(gen1Data).filter(
+    (p) => p.stage === 1 && (TIER_RANK[p.tier] ?? 0) >= minRank
+  );
   const weights = starters.map((p) =>
     ownedSpeciesIds?.has(p.id) ? Math.max(1, p.captureRate / 2) : Math.max(1, p.captureRate)
   );
@@ -137,7 +146,9 @@ module.exports = {
   evaluate,
   stageThresholds,
   newEgg,
+  pickHatchSpecies,
   HATCH_THRESHOLD,
   TIER_MULTIPLIER,
+  TIER_RANK,
   SHINY_DENOMINATOR,
 };
