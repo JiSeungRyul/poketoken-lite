@@ -15,20 +15,23 @@
 const HATCH_THRESHOLD = 5_000_000; // 알 → 부화까지 필요한 토큰
 
 // 등급별 "졸업까지 총 필요 토큰" — 진화 단계 수와 무관하게 등급 하나당 고정값.
-// common/uncommon/rare/legendary 네 값은 레퍼런스의 PokemonBalance.graduationTotal
-// 그대로. mythical은 레퍼런스에 없는 등급(레퍼런스는 전설/환상을 합침) — 사용자 요청으로
-// 분리하면서 legendary보다 한 단계 더 희귀하게 두 배로 잡음(레퍼런스 값이 아니라 우리가
-// 정한 추정값 — 1세대엔 뮤 하나뿐이라 실제로는 "뮤 전용 최고 등급" 같은 의미가 됨).
+// common/uncommon/legendary 값은 레퍼런스의 PokemonBalance.graduationTotal 그대로
+// (레퍼런스에서 "rare"라 부르던 값을 여기선 "epic"으로 씀 — capture_rate<=45인데
+// is_legendary가 아닌 55마리를 예전엔 legendary로 잘못 분류했었어서, 그냥 "rare"라고
+// 부르면 언커먼 바로 위 정도로 안 특별해 보여 "레전더리 바로 아래" 느낌의 이름으로
+// 바꿔 달라는 사용자 요청). mythical은 레퍼런스에 없는 등급(레퍼런스는 전설/환상을
+// 합침) — 분리하면서 legendary보다 두 배로 잡음(레퍼런스 값 아니라 우리가 정한 추정값
+// — 1세대엔 뮤 하나뿐이라 실제로는 "뮤 전용 최고 등급" 같은 의미가 됨).
 const GRADUATION_TOTAL = {
   common: 750_000_000,
   uncommon: 1_875_000_000,
-  rare: 3_000_000_000,
+  epic: 3_000_000_000,
   legendary: 6_000_000_000,
   mythical: 12_000_000_000,
 };
 
 // 등급 알(egg box)의 "이 등급 이상 보장" 판정 + 정렬에 쓰는 순위 — 높을수록 희귀.
-const TIER_RANK = { common: 0, uncommon: 1, rare: 2, legendary: 3, mythical: 4 };
+const TIER_RANK = { common: 0, uncommon: 1, epic: 2, legendary: 3, mythical: 4 };
 
 // 이로치(shiny) 부화 확률 분모. 원본(PokeTokenBar)도 본가 1/4096 대신 1/64를 씀
 // ("데스크톱 앱 규모에선 평생 못 봄"이라 완화) — 우리도 그대로 따름.

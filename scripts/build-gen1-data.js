@@ -20,14 +20,20 @@ const POKEAPI = "https://pokeapi.co/api/v2";
 const GEN1_COUNT = 151;
 
 // 희귀도 티어 경계값 — 레퍼런스(PokeTokenBar) CompanionModel.swift의 Rarity.captureRateCeiling
-// 실측값 그대로 사용(rare<=45, uncommon<=120, common<=255). 전설/환상 등급은 capture_rate로
+// 실측값 그대로 사용(epic<=45, uncommon<=120, common<=255). 전설/환상 등급은 capture_rate로
 // 판정하면 안 됨 — 예: 망나뇽(149)은 capture_rate=45라 예전 방식으론 legendary로 잘못
 // 분류됐지만 실제로는 전설이 아님(is_legendary=false). PokéAPI의 is_legendary/is_mythical
 // 플래그로 직접 판정한다. 레퍼런스는 전설/환상을 합쳐서 같은 등급으로 취급하는데,
 // 우리는 사용자 요청으로 둘을 분리(mythical을 legendary보다 한 단계 더 위로) — 1세대
 // 기준 확인: 프리져/썬더/파이어/뮤츠 4마리는 legendary, 뮤 1마리만 mythical.
+//
+// 레퍼런스는 이 capture_rate<=45 구간을 그냥 "rare"라고 부르는데(원래 legendary
+// 판정 기준이랑 겹쳐서 예전엔 실수로 legendary 취급됐던 바로 그 구간 — 스타팅
+// 포켓몬 최종진화, 잠만보, 이브이 라인, 망나뇽 등 55마리), 사용자 요청으로 "rare"라는
+// 이름 대신 legendary 바로 아래 등급이라는 걸 드러내는 "epic"으로 이름을 바꿈
+// (커먼<언커먼<에픽<레전더리<미시컬 — 게임에서 흔한 등급 순서).
 const TIER_BOUNDS = {
-  rare: 45,
+  epic: 45,
   uncommon: 120,
   // 그 이상은 common
 };
@@ -35,7 +41,7 @@ const TIER_BOUNDS = {
 function classifyTier(captureRate, isLegendary, isMythical) {
   if (isMythical) return "mythical";
   if (isLegendary) return "legendary";
-  if (captureRate <= TIER_BOUNDS.rare) return "rare";
+  if (captureRate <= TIER_BOUNDS.epic) return "epic";
   if (captureRate <= TIER_BOUNDS.uncommon) return "uncommon";
   return "common";
 }
@@ -136,7 +142,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2), "utf-8");
 
   // Summary
-  const tierCounts = { common: 0, uncommon: 0, rare: 0, legendary: 0, mythical: 0 };
+  const tierCounts = { common: 0, uncommon: 0, epic: 0, legendary: 0, mythical: 0 };
   Object.values(result).forEach((p) => tierCounts[p.tier]++);
   console.log("Tier distribution:", tierCounts);
   console.log(`Saved to: ${outPath}`);
