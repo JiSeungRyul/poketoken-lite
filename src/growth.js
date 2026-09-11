@@ -47,7 +47,9 @@ function stageThresholds(species) {
 }
 
 /**
- * companion: { speciesId, hatchedAtTotal, stage, graduated, isShiny }
+ * companion: { speciesId, hatchedAtTotal, stage, graduated, isShiny } 또는
+ *   알 상태면 { state: 'egg', eggStartTotal, guaranteedGrade? }
+ *   (guaranteedGrade는 등급 알 보관함에서 품기 시작한 경우에만 있음 — 일반 알은 없음)
  * gen1Data: build-gen1-data.js가 만든 전체 데이터 맵
  * totalTokens: 현재까지 누적 토큰
  * ownedSpeciesIds: 이미 도감에 있는 speciesId의 Set — 부화 가중치 계산용(선택)
@@ -55,11 +57,12 @@ function stageThresholds(species) {
  * 반환: { event: 'none'|'hatch'|'evolve'|'graduate', ...업데이트된 companion }
  */
 function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds) {
-  // 알 상태 (아직 부화 전)
+  // 알 상태 (아직 부화 전) — 일반 알이든 등급 알이든 똑같이 HATCH_THRESHOLD를 채워야
+  // 부화한다. 등급 알은 "부화하면 뭐가 나올지 등급만 보장됨"이지 즉시 나오는 게 아님.
   if (!companion || companion.state === "egg") {
     const progressTokens = totalTokens - (companion?.eggStartTotal ?? 0);
     if (progressTokens >= HATCH_THRESHOLD) {
-      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds);
+      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, companion?.guaranteedGrade);
       // 이로치는 부화 시점에 확정되고 이후 진화해도 유지됨(아래 evolve/graduate 분기의
       // `...companion` 스프레드가 그대로 물려줌 — 여기서만 한 번 굴리면 됨).
       const isShiny = Math.random() < 1 / SHINY_DENOMINATOR;
@@ -138,8 +141,9 @@ function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier) {
   return starters[starters.length - 1]; // 부동소수 오차 대비 fallback
 }
 
-function newEgg(currentTotalTokens) {
-  return { state: "egg", eggStartTotal: currentTotalTokens };
+// guaranteedGrade를 주면 "등급 알"(부화 시 그 등급 이상 보장) — 안 주면 평범한 알.
+function newEgg(currentTotalTokens, guaranteedGrade) {
+  return { state: "egg", eggStartTotal: currentTotalTokens, guaranteedGrade };
 }
 
 module.exports = {

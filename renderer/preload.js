@@ -10,7 +10,7 @@ contextBridge.exposeInMainWorld("api", {
   refresh: () => ipcRenderer.invoke("refresh"),
   getPokedex: () => ipcRenderer.invoke("get-pokedex"),
   getEggBox: () => ipcRenderer.invoke("get-egg-box"),
-  hatchEgg: (eggId) => ipcRenderer.invoke("hatch-egg", eggId),
+  incubateEgg: (eggId) => ipcRenderer.invoke("hatch-egg", eggId), // IPC 채널명은 유지, 의미는 "품기 시작"
   getStorage: () => ipcRenderer.invoke("get-storage"),
   resumeStored: (index) => ipcRenderer.invoke("resume-stored", index),
 });

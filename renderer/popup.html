@@ -71,6 +71,14 @@
 
   #nextHint { color: #888; font-size: 11px; margin-top: 4px; }
   #eggBoxLink { color: #ffd43b; }
+
+  @keyframes evolve-flash {
+    0% { filter: brightness(1) saturate(1); transform: scale(1); }
+    40% { filter: brightness(3) saturate(0); transform: scale(1.25); }
+    100% { filter: brightness(1) saturate(1); transform: scale(1); }
+  }
+  #sprite.evolving { animation: evolve-flash 0.7s ease-in-out; }
+  #name.evolving { animation: evolve-flash 0.7s ease-in-out; }
 </style>
 </head>
 <body>
@@ -148,38 +156,84 @@
       return "#" + String(speciesId).padStart(3, "0");
     }
 
-    function render(s) {
-      document.getElementById("name").textContent = s.label + (s.isShiny ? " ✨" : "");
-
-      const tierBadge = document.getElementById("tierBadge");
-      if (s.tier) {
-        tierBadge.textContent = TIER_LABELS[s.tier] ?? s.tier.toUpperCase();
-        tierBadge.className = `tier-badge ${s.tier}`;
-        tierBadge.hidden = false;
-      } else {
-        tierBadge.hidden = true;
+    // 숫자를 스냅하지 않고 스르륵 세면서 올라가게(요청: "토큰 띠리리리하면서 올라가게").
+    let progressAnimId = null;
+    function animateProgressNumber(from, to, needed) {
+      if (progressAnimId) cancelAnimationFrame(progressAnimId);
+      if (from === to) {
+        setProgressText(to, needed);
+        return;
       }
-
-      const sprite = document.getElementById("sprite");
-      if (s.sprite) {
-        sprite.src = s.sprite;
-        sprite.hidden = false;
-      } else {
-        sprite.hidden = true;
+      const start = performance.now();
+      const duration = 500;
+      function step(now) {
+        const t = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // ease-out
+        setProgressText(Math.round(from + (to - from) * eased), needed);
+        if (t < 1) progressAnimId = requestAnimationFrame(step);
       }
+      progressAnimId = requestAnimationFrame(step);
+    }
 
-      const pct = s.needed ? Math.min(100, Math.round((s.progress / s.needed) * 100)) : 100;
+    function setProgressText(progress, needed) {
+      const pct = needed ? Math.min(100, Math.round((progress / needed) * 100)) : 100;
       document.getElementById("bar").style.width = pct + "%";
       document.getElementById("progress").textContent =
-        s.needed != null
-          ? `${s.progress.toLocaleString()} / ${s.needed.toLocaleString()} 토큰`
-          : `${s.progress.toLocaleString()} 토큰`;
+        needed != null ? `${progress.toLocaleString()} / ${needed.toLocaleString()} 토큰` : `${progress.toLocaleString()} 토큰`;
+    }
+
+    let lastRendered = null; // 진화/부화/졸업으로 종이 바뀌었는지 비교용
+
+    function render(s) {
+      const sprite = document.getElementById("sprite");
+      const nameEl = document.getElementById("name");
+
+      // 알 깨짐/진화/졸업으로 종 자체가 바뀐 경우 — 바로 전환하지 말고 잠깐 반짝이고 바뀜
+      const speciesChanged =
+        lastRendered && (lastRendered.state !== s.state || lastRendered.speciesId !== s.speciesId);
+
+      function applyContent() {
+        nameEl.textContent = s.label + (s.isShiny ? " ✨" : "");
+
+        const tierBadge = document.getElementById("tierBadge");
+        if (s.tier) {
+          tierBadge.textContent = TIER_LABELS[s.tier] ?? s.tier.toUpperCase();
+          tierBadge.className = `tier-badge ${s.tier}`;
+          tierBadge.hidden = false;
+        } else {
+          tierBadge.hidden = true;
+        }
+
+        if (s.sprite) {
+          sprite.src = s.sprite;
+          sprite.hidden = false;
+        } else {
+          sprite.hidden = true;
+        }
+      }
+
+      if (speciesChanged) {
+        sprite.classList.add("evolving");
+        nameEl.classList.add("evolving");
+        setTimeout(() => {
+          applyContent();
+          sprite.classList.remove("evolving");
+          nameEl.classList.remove("evolving");
+        }, 300); // 반짝이는 절반 지점에서 내용 교체 — 어두워졌다 밝아지는 사이에 바뀌어 보임
+      } else {
+        applyContent();
+      }
+
+      const fromProgress = lastRendered && !speciesChanged ? lastRendered.progress : s.progress;
+      animateProgressNumber(fromProgress, s.progress, s.needed);
 
       document.getElementById("nextHint").hidden = !s.hasNextEvolution;
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
       document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;
       document.getElementById("eggBoxLink").textContent = `🥚 알 보관함 ${s.eggBoxCount}개 보기 →`;
+
+      lastRendered = s;
     }
 
     window.api.getStatus().then(render);
@@ -194,6 +248,18 @@
         refreshBtn.textContent = "🔄 새로고침";
       });
     });
+
+    // 팝업이 열려있는 동안엔 수동으로 새로고침 안 눌러도 주기적으로 자동 갱신되게.
+    // 서브뷰(도감/보관함/알보관함) 보는 중엔 화면이 안 바뀌니 컴패니언 화면일 때만.
+    const AUTO_REFRESH_MS = 10000;
+    setInterval(() => {
+      if (!companionSubviewVisible()) return;
+      window.api.refresh().then(render);
+    }, AUTO_REFRESH_MS);
+
+    function companionSubviewVisible() {
+      return !document.getElementById("companion-subview").hidden;
+    }
 
     // --- 도감 보기 ---
     const companionSubview = document.getElementById("companion-subview");
@@ -317,6 +383,9 @@
     const eggBoxSubview = document.getElementById("eggbox-subview");
     const eggBoxList = document.getElementById("eggBoxList");
     const GRADE_ICON = { common: "🥚", rare: "🐣", legendary: "🌟" };
+    // "이 등급 알을 부화하면 뭐가 나오는지"를 명확한 말로 — "이상"만 덜렁 쓰면
+    // 뭐 기준으로 이상인지 안 보여서 헷갈림(사용자가 직접 물어봐서 확인된 문제).
+    const GRADE_HINT = { common: "전체 랜덤", rare: "레어 이상", legendary: "레전더리 확정" };
 
     function renderEggBox(eggs) {
       document.getElementById("eggBoxTitle").textContent = `알 보관함 (${eggs.length}개)`;
@@ -331,8 +400,8 @@
           (e) => `
             <div class="egg-row">
               <span class="egg-icon">${GRADE_ICON[e.grade] ?? "🥚"}</span>
-              <span class="egg-grade">${TIER_LABELS[e.grade] ?? e.grade} 알 <span class="tier-badge ${e.grade}" style="font-size:9px;padding:1px 6px;">${e.grade === "common" ? "이상" : e.grade + " 이상"}</span></span>
-              <button class="hatch-btn" data-egg-id="${e.id}">부화</button>
+              <span class="egg-grade">${TIER_LABELS[e.grade] ?? e.grade} 알 <span class="tier-badge ${e.grade}" style="font-size:9px;padding:1px 6px;">${GRADE_HINT[e.grade] ?? e.grade}</span></span>
+              <button class="hatch-btn" data-egg-id="${e.id}">품기 시작</button>
             </div>`
         )
         .join("");
@@ -344,7 +413,7 @@
 
       const eggId = btn.dataset.eggId;
       btn.disabled = true;
-      window.api.hatchEgg(eggId).then((result) => {
+      window.api.incubateEgg(eggId).then((result) => {
         if (!result.ok) {
           btn.disabled = false;
           return;

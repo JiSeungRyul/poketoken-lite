@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { getTotalTokens } = require("./logParser");
-const { evaluate, newEgg, pickHatchSpecies, HATCH_THRESHOLD, stageThresholds, SHINY_DENOMINATOR } = require("./growth");
+const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds } = require("./growth");
 const { loadState, saveState } = require("./state");
 
 const POLL_INTERVAL_MS = 5 * 60 * 1000; // 5분, 추정 기본값
@@ -174,10 +174,11 @@ function buildStatusPayload(totalTokens) {
 
   if (!companion || companion.state === "egg") {
     const progress = totalTokens - (companion?.eggStartTotal ?? 0);
+    const grade = companion?.guaranteedGrade ?? null;
     return {
       state: "egg",
       label: "🥚 알",
-      tier: null, // 부화 전엔 종이 아직 안 정해져서 등급도 없음
+      tier: grade, // 등급 알이면 이미 있는 등급 뱃지 UI로 표시됨, 일반 알이면 등급 없음(null)
       sprite: null,
       isShiny: false,
       progress,
@@ -275,37 +276,29 @@ function buildEggBoxPayload() {
 }
 
 /**
- * 알 보관함에서 알 하나를 골라 부화시킨다(티켓처럼 종을 직접 고르는 게 아니라,
- * 그 알의 등급 이상 범위에서 capture_rate 가중치로 랜덤 부화 — 원본(PokeTokenBar)의
- * "등급 보증 알" 방식과 동일). 지금 뭔가 성장 중이어도 가능 — 그 컴패니언은 버려지지
- * 않고 보관함(storedCompanions)으로 들어가서 나중에 다시 꺼내 키울 수 있다. 지금 알
- * 상태였다면 그 알이 모아둔 부화 진행률은 버리지 않고 새 컴패니언의 진화 진행률로
- * 이어받는다.
+ * 알 보관함에서 알 하나를 골라 "품기 시작"한다 — 즉시 포켓몬이 나오는 게 아니라,
+ * 일반 알과 똑같이 HATCH_THRESHOLD만큼 토큰을 다시 모아야 부화하고, 그 등급 이상
+ * 범위에서 capture_rate 가중치로 랜덤 종이 나온다(원본(PokeTokenBar)의 "등급 보증
+ * 알"과 동일 — 등급 알도 재인큐베이션이 필요함, 즉시 안 나옴). 지금 뭔가 성장
+ * 중이어도 가능 — 그 컴패니언은 버려지지 않고 보관함(storedCompanions)으로 들어가서
+ * 나중에 다시 꺼내 키울 수 있다. 지금 알 상태였다면 그 알이 모아둔 부화 진행률은
+ * 버리지 않고 새 등급 알의 진행률로 이어받는다.
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
-function hatchEgg(eggId) {
+function startIncubatingEgg(eggId) {
   const eggIndex = state.eggBox.findIndex((e) => e.id === eggId);
   if (eggIndex === -1) {
     return { ok: false, reason: "egg-not-found", status: buildStatusPayload(lastTotalTokens) };
   }
 
   const egg = state.eggBox[eggIndex];
-  const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
-  const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, egg.grade);
-
   const wasEgg = state.companion?.state === "egg";
-  const hatchedAtTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
+  const eggStartTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
 
   boxCurrentCompanionIfGrowing();
 
   state.eggBox.splice(eggIndex, 1);
-  state.companion = {
-    state: "growing",
-    speciesId: newSpecies.id,
-    stage: 1,
-    hatchedAtTotal,
-    isShiny: Math.random() < 1 / SHINY_DENOMINATOR,
-  };
+  state.companion = newEgg(eggStartTotal, egg.grade);
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
 
@@ -414,7 +407,7 @@ app.whenReady().then(() => {
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());
   ipcMain.handle("get-egg-box", () => buildEggBoxPayload());
-  ipcMain.handle("hatch-egg", (event, eggId) => hatchEgg(eggId));
+  ipcMain.handle("hatch-egg", (event, eggId) => startIncubatingEgg(eggId));
   ipcMain.handle("get-storage", () => buildStoragePayload());
   ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
   ipcMain.handle("refresh", () => {
