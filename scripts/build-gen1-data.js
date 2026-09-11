@@ -103,6 +103,10 @@ async function main() {
     const baseEntry = Object.entries(chainMap).find(([, v]) => v.stage === 1);
     const baseFormId = baseEntry ? Number(baseEntry[0]) : id;
 
+    // 5세대(블랙/화이트) 움직이는 픽셀 스프라이트(GIF) — 151마리 전부 있는 거 확인함.
+    // 혹시 없는 경우(null)엔 정적 스프라이트로 폴백.
+    const animated = pokemon.sprites.versions?.["generation-v"]?.["black-white"]?.animated;
+
     result[id] = {
       id,
       nameKo,
@@ -113,8 +117,8 @@ async function main() {
       evolvesTo: chainMap[id]?.evolvesTo ?? [],
       maxStage: Math.max(...Object.values(chainMap).map((v) => v.stage)),
       baseFormId,
-      sprite: pokemon.sprites.front_default,
-      spriteShiny: pokemon.sprites.front_shiny,
+      sprite: animated?.front_default || pokemon.sprites.front_default,
+      spriteShiny: animated?.front_shiny || pokemon.sprites.front_shiny,
     };
   }
 
