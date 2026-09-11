@@ -75,6 +75,7 @@ function fixCorruptedPokedexEntries() {
       state.storedCompanions.push({
         speciesId: resolvedId,
         stage: 1,
+        tier: species.tier,
         hatchedAtTotal: nowTotal,
         isShiny: !!entry.isShiny,
         storedAt: new Date().toISOString(),
@@ -82,7 +83,7 @@ function fixCorruptedPokedexEntries() {
       movedToStorage += 1;
     } else {
       if (resolvedId !== entry.speciesId) renamedInPlace += 1;
-      stillValid.push({ ...entry, speciesId: resolvedId });
+      stillValid.push({ ...entry, speciesId: resolvedId, tier: entry.tier ?? species.tier });
     }
   }
 
@@ -109,6 +110,7 @@ function fixCorruptedCompanion() {
       state: "growing",
       speciesId: resolvedId,
       stage: 1,
+      tier: gen1Data[resolvedId].tier,
       hatchedAtTotal: getTotalTokens(),
       isShiny: !!companion.isShiny,
     };
@@ -116,6 +118,49 @@ function fixCorruptedCompanion() {
     state.companion = null;
   }
   saveState(app.getPath("userData"), state);
+}
+
+/**
+ * 1회성 보정: tier를 부화 시점에 고정하는 기능(진화해도 등급 안 바뀌게 하는 것) 추가
+ * 이전에 저장된 데이터는 companion/도감 항목/보관함 항목에 tier 필드 자체가 없다.
+ * 손상 데이터는 아니라서 fixCorrupted*()로는 안 잡히므로, 현재 종의 tier로 채워넣는다
+ * (원래 부화 시점에 어떤 등급이었는지는 알 방법이 없어서 최선의 근사치).
+ */
+function migrateMissingTier() {
+  let changed = false;
+
+  if (state.companion && state.companion.state !== "egg" && state.companion.tier == null) {
+    const species = gen1Data[state.companion.speciesId];
+    if (species) {
+      state.companion.tier = species.tier;
+      changed = true;
+    }
+  }
+
+  for (const entry of state.pokedex) {
+    if (entry.tier == null) {
+      const species = gen1Data[entry.speciesId];
+      if (species) {
+        entry.tier = species.tier;
+        changed = true;
+      }
+    }
+  }
+
+  for (const c of state.storedCompanions) {
+    if (c.tier == null) {
+      const species = gen1Data[c.speciesId];
+      if (species) {
+        c.tier = species.tier;
+        changed = true;
+      }
+    }
+  }
+
+  if (changed) {
+    console.log("Migrated: backfilled missing tier fields from current species tier (best-effort approximation)");
+    saveState(app.getPath("userData"), state);
+  }
 }
 
 function tick() {
@@ -126,22 +171,21 @@ function tick() {
     state.companion = newEgg(totalTokens);
   }
 
-  // 진화/졸업으로 등급 알을 적립할 때 등급 기준으로 쓸, "진화하기 직전" 개체 자신의 종.
-  const preTransitionSpecies =
-    state.companion.state !== "egg" ? gen1Data[state.companion.speciesId] : null;
+  // 진화/졸업으로 등급 알을 적립할 때 등급 기준으로 쓸, "진화하기 직전" 개체의 고정된
+  // tier(부화 시점에 정해져서 진화해도 안 바뀌는 값 — gen1Data에서 현재 종의 tier를
+  // 다시 찾으면 안 됨, 체인 내에서 실제로 등급이 바뀌는 경우가 있어서 그게 버그였음).
+  const preTransitionTier = state.companion.state !== "egg" ? state.companion.tier : null;
 
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
   const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds);
   state.companion = result.companion;
 
-  // 진화(중간 단계 포함)/졸업 할 때마다 등급 알 1개를 보관함에 적립. 등급은 방금
-  // 진화하기 직전 개체 자신의 tier를 그대로 씀(체인 내에서 등급이 실제로 바뀌는
-  // 경우도 있지만 — 예: 두두 common→두트리오 legendary — "미진화체 등급 = 최종진화
-  // 등급"으로 단순화하기로 함).
-  if ((result.event === "evolve" || result.event === "graduate") && preTransitionSpecies) {
+  // 진화(중간 단계 포함)/졸업 할 때마다 등급 알 1개를 보관함에 적립. 등급은 그 개체의
+  // 고정된 tier 그대로 씀.
+  if ((result.event === "evolve" || result.event === "graduate") && preTransitionTier) {
     state.eggBox.push({
       id: `egg-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
-      grade: preTransitionSpecies.tier,
+      grade: preTransitionTier,
       createdAt: new Date().toISOString(),
     });
   }
@@ -153,6 +197,7 @@ function tick() {
   if (result.event === "graduate") {
     state.pokedex.push({
       speciesId: state.companion.speciesId,
+      tier: state.companion.tier,
       graduatedAt: new Date().toISOString(),
       isShiny: !!state.companion.isShiny,
     });
@@ -191,7 +236,7 @@ function buildStatusPayload(totalTokens) {
   }
 
   const species = gen1Data[companion.speciesId];
-  const thresholds = stageThresholds(species);
+  const thresholds = stageThresholds(companion.tier, species.maxStage);
   const needed = thresholds[companion.stage - 1] ?? null; // null이면 최종 진화(다음 tick에 졸업 처리)
   const progress = totalTokens - companion.hatchedAtTotal;
   const isShiny = !!companion.isShiny;
@@ -200,7 +245,7 @@ function buildStatusPayload(totalTokens) {
     state: companion.state,
     speciesId: companion.speciesId,
     label: species.nameKo,
-    tier: species.tier,
+    tier: companion.tier, // 고정된 등급(부화 시 정해짐) — 진화해도 안 바뀜
     sprite: isShiny ? species.spriteShiny : species.sprite,
     isShiny,
     progress,
@@ -256,7 +301,7 @@ function buildPokedexPayload() {
         nameKo: species.nameKo,
         sprite: species.sprite,
         spriteShiny: species.spriteShiny,
-        tier: species.tier,
+        tier: entry.tier ?? species.tier, // 고정 등급 우선, 예전 저장분(없음)은 현재 종 tier로 폴백
         count: 1,
         shinyCount: isShiny ? 1 : 0,
         latestGraduatedAt: entry.graduatedAt,
@@ -287,6 +332,7 @@ function boxCurrentCompanionIfGrowing() {
     state.storedCompanions.push({
       speciesId: state.companion.speciesId,
       stage: state.companion.stage,
+      tier: state.companion.tier,
       hatchedAtTotal: state.companion.hatchedAtTotal,
       isShiny: !!state.companion.isShiny,
       storedAt: new Date().toISOString(),
@@ -345,7 +391,7 @@ function buildStoragePayload() {
       nameKo: species.nameKo,
       sprite: isShiny ? species.spriteShiny : species.sprite,
       isShiny,
-      tier: species.tier,
+      tier: c.tier ?? species.tier, // 고정 등급 우선, 예전 저장분(없음)은 현재 종 tier로 폴백
       stage: c.stage,
       storedAt: c.storedAt,
     });
@@ -369,6 +415,7 @@ function resumeStoredCompanion(index) {
     state: "growing",
     speciesId: resumed.speciesId,
     stage: resumed.stage,
+    tier: resumed.tier ?? gen1Data[resumed.speciesId]?.tier, // 예전 저장분 호환 폴백
     hatchedAtTotal: resumed.hatchedAtTotal,
     isShiny: resumed.isShiny,
   };
@@ -427,6 +474,7 @@ app.whenReady().then(() => {
   state = loadState(app.getPath("userData"));
   fixCorruptedPokedexEntries();
   fixCorruptedCompanion();
+  migrateMissingTier();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());

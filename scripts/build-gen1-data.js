@@ -19,16 +19,21 @@ const path = require("path");
 const POKEAPI = "https://pokeapi.co/api/v2";
 const GEN1_COUNT = 151;
 
-// 희귀도 티어 경계값 — 추정/기본값, 튜닝 가능
+// 희귀도 티어 경계값 — 레퍼런스(PokeTokenBar) CompanionModel.swift의 Rarity.captureRateCeiling
+// 실측값 그대로 사용(rare<=45, uncommon<=120, common<=255). 전설 등급은 capture_rate로
+// 판정하면 안 됨 — 예: 망나뇽(149)은 capture_rate=45라 예전 방식으론 legendary로 잘못
+// 분류됐지만 실제로는 전설이 아님(is_legendary=false). PokéAPI의 is_legendary/is_mythical
+// 플래그로 직접 판정하고, 전설/환상은 레퍼런스처럼 합쳐서 같은 "legendary" 등급으로 취급.
 const TIER_BOUNDS = {
-  legendary: 45, // capture_rate <= 45
-  rare: 150,     // capture_rate <= 150
+  rare: 45,
+  uncommon: 120,
   // 그 이상은 common
 };
 
-function tierFromCaptureRate(rate) {
-  if (rate <= TIER_BOUNDS.legendary) return "legendary";
-  if (rate <= TIER_BOUNDS.rare) return "rare";
+function classifyTier(captureRate, isLegendary, isMythical) {
+  if (isLegendary || isMythical) return "legendary";
+  if (captureRate <= TIER_BOUNDS.rare) return "rare";
+  if (captureRate <= TIER_BOUNDS.uncommon) return "uncommon";
   return "common";
 }
 
@@ -112,7 +117,7 @@ async function main() {
       nameKo,
       nameEn: species.name,
       captureRate: species.capture_rate,
-      tier: tierFromCaptureRate(species.capture_rate),
+      tier: classifyTier(species.capture_rate, species.is_legendary, species.is_mythical),
       stage: chainMap[id]?.stage ?? 1,
       evolvesTo: chainMap[id]?.evolvesTo ?? [],
       maxStage: Math.max(...Object.values(chainMap).map((v) => v.stage)),
@@ -128,7 +133,7 @@ async function main() {
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2), "utf-8");
 
   // Summary
-  const tierCounts = { common: 0, rare: 0, legendary: 0 };
+  const tierCounts = { common: 0, uncommon: 0, rare: 0, legendary: 0 };
   Object.values(result).forEach((p) => tierCounts[p.tier]++);
   console.log("Tier distribution:", tierCounts);
   console.log(`Saved to: ${outPath}`);
