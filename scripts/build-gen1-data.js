@@ -74,7 +74,7 @@ function idFromUrl(url) {
 }
 
 async function main() {
-  console.log(`Gen1 데이터 빌드 시작 (1~${GEN1_COUNT}번)...`);
+  console.log(`Building gen1 data (1-${GEN1_COUNT})...`);
   const chainCache = new Map(); // evolution_chain url -> flattened map
   const result = {};
 
@@ -118,19 +118,19 @@ async function main() {
     };
   }
 
-  console.log("\n완료. data/gen1.json 저장 중...");
+  console.log("\nDone. Saving data/gen1.json...");
   const outPath = path.join(__dirname, "..", "data", "gen1.json");
   fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(result, null, 2), "utf-8");
 
-  // 요약 출력
+  // Summary
   const tierCounts = { common: 0, rare: 0, legendary: 0 };
   Object.values(result).forEach((p) => tierCounts[p.tier]++);
-  console.log("티어 분포:", tierCounts);
-  console.log(`저장 위치: ${outPath}`);
+  console.log("Tier distribution:", tierCounts);
+  console.log(`Saved to: ${outPath}`);
 }
 
 main().catch((err) => {
-  console.error("빌드 실패:", err);
+  console.error("Build failed:", err);
   process.exit(1);
 });

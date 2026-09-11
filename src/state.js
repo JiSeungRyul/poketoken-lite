@@ -35,7 +35,7 @@ function loadState(userDataDir) {
     }
     return state;
   } catch (err) {
-    console.error("상태 파일 손상, 초기화:", err.message);
+    console.error("State file corrupted, resetting:", err.message);
     return { companion: null, pokedex: [], eggBox: [], storedCompanions: [] };
   }
 }

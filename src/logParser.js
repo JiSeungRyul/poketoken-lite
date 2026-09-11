@@ -161,7 +161,7 @@ function getTotalTokens() {
       try {
         total += parseJsonlFile(file, seenMessageIds);
       } catch (err) {
-        console.error(`로그 파싱 실패: ${file}`, err.message);
+        console.error(`Failed to parse log: ${file}`, err.message);
       }
     }
   }

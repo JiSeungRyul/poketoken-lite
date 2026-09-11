@@ -18,7 +18,7 @@ function loadGen1Data() {
   const p = path.join(__dirname, "..", "data", "gen1.json");
   if (!fs.existsSync(p)) {
     console.error(
-      "data/gen1.json 이 없음. 먼저 `npm run build-data` 를 실행해서 PokéAPI 데이터를 받아야 함."
+      "data/gen1.json not found. Run `npm run build-data` first to fetch PokeAPI data."
     );
     app.quit();
     return;
@@ -66,7 +66,7 @@ function fixCorruptedPokedexEntries() {
   for (const entry of state.pokedex) {
     const resolvedId = resolveToGen1Id(entry.speciesId);
     if (resolvedId == null) {
-      console.error(`도감 항목의 speciesId를 복구할 수 없어 삭제함: ${entry.speciesId}`, entry);
+      console.error(`Pokedex entry has unrecoverable speciesId, dropping: ${entry.speciesId}`, entry);
       continue;
     }
 
@@ -89,7 +89,7 @@ function fixCorruptedPokedexEntries() {
   if (movedToStorage > 0 || renamedInPlace > 0) {
     state.pokedex = stillValid;
     console.log(
-      `도감 보정: ${movedToStorage}건 보관함으로 이동(처음부터 다시 키울 수 있음), ${renamedInPlace}건 speciesId만 보정`
+      `Pokedex fixup: ${movedToStorage} moved to storage (restart from stage 1), ${renamedInPlace} speciesId corrected in place`
     );
     saveState(app.getPath("userData"), state);
   }
@@ -103,7 +103,7 @@ function fixCorruptedCompanion() {
   if (!companion || companion.state === "egg" || gen1Data[companion.speciesId]) return;
 
   const resolvedId = resolveToGen1Id(companion.speciesId);
-  console.error(`현재 컴패니언의 speciesId가 손상됨: ${companion.speciesId} → ${resolvedId ?? "복구 불가, 새 알로 리셋"}`);
+  console.error(`Current companion's speciesId is corrupted: ${companion.speciesId} -> ${resolvedId ?? "unrecoverable, resetting to new egg"}`);
   if (resolvedId != null) {
     state.companion = {
       state: "growing",
@@ -163,7 +163,7 @@ function tick() {
   updateTrayIcon(totalTokens);
 
   if (result.event !== "none") {
-    console.log(`이벤트: ${result.event}`, graduatedCompanion ?? state.companion, `(알 보관함: ${state.eggBox.length}개)`);
+    console.log(`event: ${result.event}`, graduatedCompanion ?? state.companion, `(eggBox: ${state.eggBox.length})`);
     // TODO: 알림(Notification) 붙이기
   }
 }
@@ -241,7 +241,7 @@ function buildPokedexPayload() {
   for (const entry of state.pokedex) {
     const species = gen1Data[entry.speciesId];
     if (!species) {
-      console.error(`도감 항목에 알 수 없는 speciesId: ${entry.speciesId}`, entry);
+      console.error(`Pokedex entry has unknown speciesId: ${entry.speciesId}`, entry);
       continue;
     }
     const isShiny = !!entry.isShiny;
@@ -335,7 +335,7 @@ function buildStoragePayload() {
   state.storedCompanions.forEach((c, index) => {
     const species = gen1Data[c.speciesId];
     if (!species) {
-      console.error(`보관함 항목에 알 수 없는 speciesId: ${c.speciesId}`, c);
+      console.error(`Storage entry has unknown speciesId: ${c.speciesId}`, c);
       return;
     }
     const isShiny = !!c.isShiny;
