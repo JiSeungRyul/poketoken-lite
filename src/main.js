@@ -409,8 +409,8 @@ function togglePopup() {
     return;
   }
   popup = new BrowserWindow({
-    width: 320,
-    height: 420,
+    width: 380,
+    height: 560,
     show: true,
     frame: true,
     webPreferences: {
