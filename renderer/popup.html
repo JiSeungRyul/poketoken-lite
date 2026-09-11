@@ -32,6 +32,7 @@
   .tier-badge.uncommon { background: #2f9e44; }
   .tier-badge.rare { background: #4c6ef5; }
   .tier-badge.legendary { background: #f59f00; }
+  .tier-badge.mythical { background: #e64980; }
 
   .link-btn {
     margin-top: 6px; background: none; padding: 0; font-size: 13px;
@@ -152,7 +153,7 @@
       });
     });
 
-    const TIER_LABELS = { common: "COMMON", uncommon: "UNCOMMON", rare: "RARE", legendary: "LEGENDARY" };
+    const TIER_LABELS = { common: "COMMON", uncommon: "UNCOMMON", rare: "RARE", legendary: "LEGENDARY", mythical: "MYTHICAL" };
 
     function formatDexNo(speciesId) {
       return "#" + String(speciesId).padStart(3, "0");
@@ -390,10 +391,13 @@
     // --- 알 보관함 보기 ---
     const eggBoxSubview = document.getElementById("eggbox-subview");
     const eggBoxList = document.getElementById("eggBoxList");
-    const GRADE_ICON = { common: "🥚", uncommon: "🐤", rare: "🐣", legendary: "🌟" };
+    const GRADE_ICON = { common: "🥚", uncommon: "🐤", rare: "🐣", legendary: "🌟", mythical: "💠" };
     // "이 등급 알을 부화하면 뭐가 나오는지"를 명확한 말로 — "이상"만 덜렁 쓰면
     // 뭐 기준으로 이상인지 안 보여서 헷갈림(사용자가 직접 물어봐서 확인된 문제).
-    const GRADE_HINT = { common: "전체 랜덤", uncommon: "언커먼 이상", rare: "레어 이상", legendary: "레전더리 확정" };
+    const GRADE_HINT = {
+      common: "전체 랜덤", uncommon: "언커먼 이상", rare: "레어 이상",
+      legendary: "레전더리 이상", mythical: "뮤 확정",
+    };
 
     function renderEggBox(eggs) {
       document.getElementById("eggBoxTitle").textContent = `알 보관함 (${eggs.length}개)`;
