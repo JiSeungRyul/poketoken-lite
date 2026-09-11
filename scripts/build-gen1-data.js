@@ -97,6 +97,12 @@ async function main() {
       species.names.find((n) => n.language.name === "en")?.name ||
       species.name;
 
+    // 이 체인에서 stage===1인 멤버의 id — "도감에서 이 종(보통 최종형)을 다시 키울 때
+    // 어느 기본형부터 시작해야 하는지" 판단에 씀 (안 그러면 최종형 이름으로 0%부터
+    // 시작하는 이상한 상태가 됨). 못 찾으면 자기 자신(이미 기본형이거나 단일 형태).
+    const baseEntry = Object.entries(chainMap).find(([, v]) => v.stage === 1);
+    const baseFormId = baseEntry ? Number(baseEntry[0]) : id;
+
     result[id] = {
       id,
       nameKo,
@@ -106,6 +112,7 @@ async function main() {
       stage: chainMap[id]?.stage ?? 1,
       evolvesTo: chainMap[id]?.evolvesTo ?? [],
       maxStage: Math.max(...Object.values(chainMap).map((v) => v.stage)),
+      baseFormId,
       sprite: pokemon.sprites.front_default,
       spriteShiny: pokemon.sprites.front_shiny,
     };

@@ -136,6 +136,10 @@ function tick() {
     state.eggInventory += 1;
   }
 
+  // 로그용으로 "무엇이 졸업했는지"를 companion을 새 알로 덮어쓰기 전에 미리 남겨둠 —
+  // 안 그러면 아래 console.log에 졸업한 애 대신 그 자리의 새 알 정보가 찍힘.
+  const graduatedCompanion = result.event === "graduate" ? state.companion : null;
+
   if (result.event === "graduate") {
     state.pokedex.push({
       speciesId: state.companion.speciesId,
@@ -149,7 +153,7 @@ function tick() {
   updateTrayIcon(totalTokens);
 
   if (result.event !== "none") {
-    console.log(`이벤트: ${result.event}`, state.companion);
+    console.log(`이벤트: ${result.event}`, graduatedCompanion ?? state.companion, `(알 티켓: ${state.eggInventory}개)`);
     // TODO: 알림(Notification) 붙이기
   }
 }
@@ -240,6 +244,11 @@ function boxCurrentCompanionIfGrowing() {
  * 지금 뭔가 성장 중이어도 가능 — 그 컴패니언은 버려지지 않고 보관함으로 들어가서
  * 나중에 다시 꺼내 키울 수 있다. 지금 알 상태였다면 그 알이 모아둔 부화 진행률은
  * 버리지 않고 새 컴패니언의 진화 진행률로 이어받는다.
+ *
+ * speciesId로 넘어오는 건 도감 항목(항상 최종진화형)의 id다. 그걸 그대로 넣으면
+ * "미진화→1진화→2진화" 단계를 하나도 안 거치고 처음부터 최종형 이름으로 0%에서
+ * 시작하는 이상한 상태가 되므로, 그 종의 baseFormId(기본형)부터 정상적으로 다시
+ * 단계를 밟아 올라가게 한다.
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
 function chooseSpecies(speciesId) {
@@ -250,6 +259,7 @@ function chooseSpecies(speciesId) {
     return { ok: false, reason: "unknown-species", status: buildStatusPayload(lastTotalTokens) };
   }
 
+  const startSpeciesId = gen1Data[speciesId].baseFormId;
   const wasEgg = state.companion?.state === "egg";
   const hatchedAtTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
 
@@ -258,7 +268,7 @@ function chooseSpecies(speciesId) {
   state.eggInventory -= 1;
   state.companion = {
     state: "growing",
-    speciesId,
+    speciesId: startSpeciesId,
     stage: 1,
     hatchedAtTotal,
     isShiny: Math.random() < 1 / SHINY_DENOMINATOR, // 직접 골라도 이로치 여부는 똑같이 랜덤
