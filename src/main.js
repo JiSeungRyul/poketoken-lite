@@ -231,29 +231,53 @@ function buildEvolutionChain(speciesId) {
   return chain;
 }
 
-// 도감(졸업한 포켓몬) 목록을 종 정보와 합쳐서 반환. 최근 졸업한 순.
+// 도감(졸업한 포켓몬) 목록을 종별로 묶어서 반환 — 같은 종을 여러 번 졸업시켜도
+// 줄이 따로 안 쌓이고 "N회 부화"로 합쳐짐. 최근 졸업한 순.
 // gen1Data에 없는 speciesId(원인 불명의 손상 데이터)가 섞여 있어도 전체가
 // 죽지 않게 그 항목만 건너뛰고 콘솔에 남긴다.
 function buildPokedexPayload() {
-  const result = [];
-  for (const entry of [...state.pokedex].reverse()) {
+  const bySpecies = new Map(); // speciesId -> 누적 정보
+
+  for (const entry of state.pokedex) {
     const species = gen1Data[entry.speciesId];
     if (!species) {
       console.error(`도감 항목에 알 수 없는 speciesId: ${entry.speciesId}`, entry);
       continue;
     }
     const isShiny = !!entry.isShiny;
-    result.push({
-      speciesId: entry.speciesId,
-      nameKo: species.nameKo,
-      sprite: isShiny ? species.spriteShiny : species.sprite,
-      isShiny,
-      tier: species.tier,
-      graduatedAt: entry.graduatedAt,
-      evolutionChain: buildEvolutionChain(entry.speciesId),
-    });
+    const existing = bySpecies.get(entry.speciesId);
+    if (existing) {
+      existing.count += 1;
+      if (isShiny) existing.shinyCount += 1;
+      if (entry.graduatedAt > existing.latestGraduatedAt) existing.latestGraduatedAt = entry.graduatedAt;
+    } else {
+      bySpecies.set(entry.speciesId, {
+        speciesId: entry.speciesId,
+        nameKo: species.nameKo,
+        sprite: species.sprite,
+        spriteShiny: species.spriteShiny,
+        tier: species.tier,
+        count: 1,
+        shinyCount: isShiny ? 1 : 0,
+        latestGraduatedAt: entry.graduatedAt,
+        evolutionChain: buildEvolutionChain(entry.speciesId),
+      });
+    }
   }
-  return result;
+
+  return [...bySpecies.values()]
+    .sort((a, b) => (a.latestGraduatedAt < b.latestGraduatedAt ? 1 : -1)) // 최근 졸업한 종이 위로
+    .map((v) => ({
+      speciesId: v.speciesId,
+      nameKo: v.nameKo,
+      sprite: v.shinyCount > 0 ? v.spriteShiny : v.sprite,
+      isShiny: v.shinyCount > 0,
+      tier: v.tier,
+      graduatedAt: v.latestGraduatedAt,
+      count: v.count,
+      shinyCount: v.shinyCount,
+      evolutionChain: v.evolutionChain,
+    }));
 }
 
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직

@@ -55,6 +55,7 @@
   .pokedex-row .name { flex: 1; font-size: 13px; }
   .pokedex-row .dex-no { font-size: 10px; color: #666; width: 34px; }
   .pokedex-row .date { font-size: 10px; color: #888; }
+  .dex-count { font-size: 10px; color: #74c0fc; }
   .pokedex-row .raise-btn { margin: 0; padding: 3px 8px; font-size: 11px; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
 
@@ -286,7 +287,7 @@
               <div class="row-main">
                 <span class="dex-no">${formatDexNo(e.speciesId)}</span>
                 <img src="${e.sprite}" alt="${e.nameKo}" />
-                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span>${e.count > 1 ? ` <span class="dex-count">${e.count}회 부화${e.shinyCount > 0 ? ` (✨${e.shinyCount})` : ""}</span>` : ""}</span>
                 <span class="date">${formatDate(e.graduatedAt)}</span>
               </div>
               <div class="evo-chain" data-chain-index="${i}">
