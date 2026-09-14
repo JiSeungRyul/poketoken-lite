@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build-data": "node scripts/build-gen1-data.js",
+    "build-icon": "electron scripts/build-icon.js",
     "dist": "electron-builder --win"
   },
   "devDependencies": {
@@ -16,7 +17,8 @@
     "appId": "com.kxoxxy.poketoken-lite",
     "productName": "PokeTokenLite",
     "win": {
-      "target": "portable"
+      "target": "portable",
+      "icon": "assets/icon.ico"
     },
     "files": [
       "src/**/*",
