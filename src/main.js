@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const { getTotalTokens } = require("./logParser");
-const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds } = require("./growth");
+const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, pickWeeklyTicketGrade } = require("./growth");
 const { loadState, saveState } = require("./state");
 
 const POLL_INTERVAL_MS = 2 * 60 * 1000; // 2분 (원본 PokeTokenBar 기본값과 동일)
@@ -163,6 +163,42 @@ function migrateMissingTier() {
   }
 }
 
+// now 시점 기준으로 "이미 지난, 가장 최근 월요일 오전 10시" 시각을 반환(로컬 시간대 기준).
+// 예: 지금이 이번 주 월요일 09시면 지난주 월요일 10시가 반환되고(이번 주 건 아직 안
+// 지났으니까), 이번 주 월요일 11시면 이번 주 월요일 10시가 그대로 반환됨.
+function mostRecentMondayTenAM(now) {
+  const d = new Date(now);
+  d.setHours(10, 0, 0, 0);
+  const day = d.getDay(); // 0=일 ~ 6=토
+  const diffFromMonday = (day + 6) % 7; // 월요일이면 0
+  d.setDate(d.getDate() - diffFromMonday);
+  if (d.getTime() > now.getTime()) {
+    d.setDate(d.getDate() - 7); // 이번 주 월요일 10시가 아직 안 지났으면 지난주로
+  }
+  return d;
+}
+
+/**
+ * 주간 무료 알 티켓 — 가장 최근 "월요일 10시" 경계를 이미 지급했는지 확인하고, 안
+ * 지급했으면(마지막 지급 시각보다 새 경계가 더 나중이면) 알 보관함에 하나 적립.
+ * 앱을 그 시각 전에 켜놨다가 그 시각이 지나도록 계속 켜두는 경우든, 꺼놨다가 그
+ * 시각이 지난 뒤에 여는 경우든 tick()이 돌 때마다 이 함수가 체크하므로 둘 다 커버됨.
+ */
+function grantWeeklyTicketIfDue(now) {
+  const boundary = mostRecentMondayTenAM(now);
+  const lastGranted = state.lastWeeklyTicketAt ? new Date(state.lastWeeklyTicketAt) : null;
+  if (lastGranted && boundary.getTime() <= lastGranted.getTime()) return;
+
+  const grade = pickWeeklyTicketGrade();
+  state.eggBox.push({
+    id: `egg-weekly-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    grade,
+    createdAt: new Date().toISOString(),
+  });
+  state.lastWeeklyTicketAt = boundary.toISOString();
+  console.log(`Weekly egg ticket granted: ${grade} (boundary: ${boundary.toISOString()})`);
+}
+
 function tick() {
   const totalTokens = getTotalTokens();
   lastTotalTokens = totalTokens;
@@ -208,6 +244,8 @@ function tick() {
     });
     state.companion = newEgg(totalTokens); // 새 알 시작
   }
+
+  grantWeeklyTicketIfDue(new Date());
 
   saveState(app.getPath("userData"), state);
   updateTrayIcon(totalTokens);

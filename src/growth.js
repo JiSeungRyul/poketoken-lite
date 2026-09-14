@@ -37,6 +37,23 @@ const TIER_RANK = { common: 0, uncommon: 1, epic: 2, legendary: 3, mythical: 4 }
 // ("데스크톱 앱 규모에선 평생 못 봄"이라 완화) — 우리도 그대로 따름.
 const SHINY_DENOMINATOR = 64;
 
+// 매주 월요일 10시 지급되는 무료 알 티켓의 등급 가중치 — 높은 등급일수록 덜 나오게
+// 직접 정한 값(부화 풀의 capture_rate 가중치를 그대로 쓰면 단일형 종이 많은 epic이
+// uncommon보다 오히려 더 잘 나오는 역전 현상이 있어서 — 라프라스 사례로 실제 확인함 —
+// 여기선 등급 자체에 단조 감소하는 값을 직접 매겼다).
+const WEEKLY_TICKET_GRADE_WEIGHTS = { common: 55, uncommon: 25, epic: 12, legendary: 6, mythical: 2 };
+
+function pickWeeklyTicketGrade() {
+  const entries = Object.entries(WEEKLY_TICKET_GRADE_WEIGHTS);
+  const totalWeight = entries.reduce((sum, [, w]) => sum + w, 0);
+  let roll = Math.random() * totalWeight;
+  for (const [grade, w] of entries) {
+    roll -= w;
+    if (roll <= 0) return grade;
+  }
+  return entries[entries.length - 1][0]; // 부동소수 오차 대비 fallback
+}
+
 /**
  * tier(그 개체의 진화 라인 전체에 고정된 등급) + maxStage(진화 체인 총 단계 수)로
  * 진화 단계별 누적 임계치 배열을 계산. 예: maxStage=3(3단 진화)면 [1→2단, 2→3단]
@@ -189,8 +206,10 @@ module.exports = {
   stageThresholds,
   newEgg,
   pickHatchSpecies,
+  pickWeeklyTicketGrade,
   HATCH_THRESHOLD,
   GRADUATION_TOTAL,
   TIER_RANK,
   SHINY_DENOMINATOR,
+  WEEKLY_TICKET_GRADE_WEIGHTS,
 };
