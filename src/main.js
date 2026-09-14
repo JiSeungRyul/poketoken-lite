@@ -85,6 +85,7 @@ function fixCorruptedPokedexEntries() {
         stage: 1,
         tier: species.tier,
         hatchedAtTotal: nowTotal,
+        frozenProgress: 0, // 방금 1단계로 리셋된 것이라 진행률 0부터 시작
         isShiny: !!entry.isShiny,
         storedAt: new Date().toISOString(),
       });
@@ -451,7 +452,13 @@ function boxCurrentCompanionIfGrowing() {
       speciesId: state.companion.speciesId,
       stage: state.companion.stage,
       tier: state.companion.tier,
-      hatchedAtTotal: state.companion.hatchedAtTotal,
+      // hatchedAtTotal을 그대로 들고 있으면 안 됨 — 보관 중에도 totalTokens는
+      // 전역으로 계속 늘어나서(다른 애 키우는 동안 벌어들인 토큰까지 포함),
+      // 나중에 꺼낼 때 progress = totalTokens - hatchedAtTotal 계산이 보관
+      // 기간 동안 쌓인 토큰까지 한꺼번에 반영해버리는 버그가 있었음(실제 확인함).
+      // 그래서 "보관 시점까지의 진행률"을 고정값으로 따로 저장해두고, 꺼낼 때
+      // 그 시점 기준으로 hatchedAtTotal을 다시 계산한다.
+      frozenProgress: lastTotalTokens - state.companion.hatchedAtTotal,
       isShiny: !!state.companion.isShiny,
       storedAt: new Date().toISOString(),
     });
@@ -530,12 +537,16 @@ function resumeStoredCompanion(index) {
   boxCurrentCompanionIfGrowing();
 
   const [resumed] = state.storedCompanions.splice(index, 1);
+  // 보관 시점에 고정해둔 진행률(frozenProgress)을 지금 시점 기준으로 되살림 —
+  // 옛 저장분(frozenProgress 없음)은 0으로 취급(보관 중 쌓인 걸 공짜로 얹어주면
+  // 안 되니, 모르면 0부터).
+  const frozenProgress = resumed.frozenProgress ?? 0;
   state.companion = {
     state: "growing",
     speciesId: resumed.speciesId,
     stage: resumed.stage,
     tier: resumed.tier ?? gen1Data[resumed.speciesId]?.tier, // 예전 저장분 호환 폴백
-    hatchedAtTotal: resumed.hatchedAtTotal,
+    hatchedAtTotal: lastTotalTokens - frozenProgress,
     isShiny: resumed.isShiny,
   };
   saveState(app.getPath("userData"), state);
