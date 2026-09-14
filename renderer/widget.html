@@ -9,19 +9,21 @@
     width: 108px; height: 134px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     font-family: sans-serif; user-select: none;
+    -webkit-user-drag: none;
   }
   #sprite {
     width: 80px; height: 80px; image-rendering: pixelated; cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 0 3px var(--tier-color, transparent);
     background: rgba(0, 0, 0, 0.15);
+    -webkit-user-drag: none; /* 이미지 기본 드래그(브라우저 밖으로 끌어다 놓으면 파일 생성되는 그거) 끄기 */
   }
   .bar-bg { width: 90px; height: 6px; background: rgba(0, 0, 0, 0.4); border-radius: 4px; overflow: hidden; margin-top: 6px; }
   .bar-fill { height: 100%; background: #4caf50; width: 0%; transition: width .3s; }
 </style>
 </head>
 <body>
-  <img id="sprite" src="" alt="" title="" />
+  <img id="sprite" src="" alt="" title="" draggable="false" />
   <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
 
   <script>
@@ -51,29 +53,42 @@
     window.api.onStatusUpdate(render); // 부화/진화/졸업/다시 키우기 등으로 바뀌는 즉시 반영
 
     // 드래그를 직접 구현(−webkit-app-region: drag는 Windows에서 더블클릭이랑
-    // 같이 쓰면 더블클릭이 씹히는 문제가 있어서 — 실제로 겪음). mousedown 시점
-    // 창 위치를 받아두고, mousemove로 얼마나 움직였는지 계산해서 창을 옮긴다.
-    // 실제로 움직인 적이 있으면(didDrag) 그 클릭/더블클릭은 무시해서 드래그
-    // 끝에 팝업이 실수로 열리지 않게 한다.
+    // 같이 쓰면 더블클릭이 씹히는 문제가 있어서 — 실제로 겪음). Pointer Events +
+    // setPointerCapture를 씀 — 일반 mouse 이벤트로 하면 창이 워낙 작아서(108x134)
+    // 빠르게 드래그할 때 커서가 창 밖으로 나가버려 mousemove/mouseup을 못 받고
+    // (실제로 겪음: 이미지 기본 드래그앤드롭이 대신 발동해서 바탕화면에 이미지가
+    // 생성되거나, mouseup을 못 받아 놓아도 계속 따라오는 문제가 있었음) —
+    // pointer capture는 커서가 창 밖으로 나가도 놓을 때까지 이벤트를 계속 이
+    // 요소로 보내줘서 그 문제가 없음.
+    const root = document.documentElement;
     let dragOrigin = null;
     let didDrag = false;
 
-    document.addEventListener("mousedown", async (e) => {
+    root.addEventListener("pointerdown", async (e) => {
       if (e.button !== 0) return;
       didDrag = false;
+      root.setPointerCapture(e.pointerId);
       const [winX, winY] = await window.api.getWidgetPosition();
-      dragOrigin = { mouseX: e.screenX, mouseY: e.screenY, winX, winY };
+      dragOrigin = { pointerId: e.pointerId, mouseX: e.screenX, mouseY: e.screenY, winX, winY };
     });
-    document.addEventListener("mousemove", (e) => {
-      if (!dragOrigin) return;
+    root.addEventListener("pointermove", (e) => {
+      if (!dragOrigin || e.pointerId !== dragOrigin.pointerId) return;
       const dx = e.screenX - dragOrigin.mouseX;
       const dy = e.screenY - dragOrigin.mouseY;
       if (Math.abs(dx) > 3 || Math.abs(dy) > 3) didDrag = true;
       if (didDrag) window.api.moveWidgetTo(dragOrigin.winX + dx, dragOrigin.winY + dy);
     });
-    document.addEventListener("mouseup", () => {
+    function endDrag(e) {
+      if (dragOrigin && e.pointerId === dragOrigin.pointerId && root.hasPointerCapture(e.pointerId)) {
+        root.releasePointerCapture(e.pointerId);
+      }
       dragOrigin = null;
-    });
+    }
+    root.addEventListener("pointerup", endDrag);
+    root.addEventListener("pointercancel", endDrag);
+
+    // 혹시 모를 이미지 기본 드래그(브라우저 밖으로 끌면 파일 생성되는 그거) 안전망.
+    sprite.addEventListener("dragstart", (e) => e.preventDefault());
 
     // 더블클릭하면 메인 팝업 열고 위젯은 닫힘(둘 다 떠있지 않게).
     sprite.addEventListener("dblclick", () => {
