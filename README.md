@@ -100,7 +100,6 @@ renderer/
   지급 시. 코드에 훅은 이미 있음(`src/main.js`의 `// TODO: 알림(Notification)
   붙이기` 두 군데 — tick()의 이벤트 로그 지점, `grantWeeklyTicketIfDue()`),
   Electron `Notification` API로 연결만 하면 됨 — 난이도 낮음
-- 트레이 아이콘에 스프라이트 표시 (지금은 고정 placeholder)
 - Codex/Gemini 탭 실제 구현 (지금은 팝업에 탭만 있고 "다음 라운드 예정" 플레이스홀더)
 - **설정 UI** — 지금 하드코딩된 값들을 사용자가 직접 고를 수 있게:
   - 새로고침 주기 (`POLL_INTERVAL_MS`, 지금 2분 고정)
