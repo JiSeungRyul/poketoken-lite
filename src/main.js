@@ -197,6 +197,7 @@ function grantWeeklyTicketIfDue(now) {
   });
   state.lastWeeklyTicketAt = boundary.toISOString();
   console.log(`Weekly egg ticket granted: ${grade} (boundary: ${boundary.toISOString()})`);
+  // TODO: 알림(Notification) 붙이기 — 부화/진화/졸업이랑 같이 처리 (README 백로그 참고)
 }
 
 function tick() {
