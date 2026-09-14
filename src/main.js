@@ -177,8 +177,12 @@ function tick() {
   const preTransitionTier = state.companion.state !== "egg" ? state.companion.tier : null;
 
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
-  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds);
+  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds, !state.firstHatchDone);
   state.companion = result.companion;
+
+  if (result.event === "hatch") {
+    state.firstHatchDone = true; // 딱 첫 부화만 common/uncommon 제한 — 이후론 다시 전체 랜덤
+  }
 
   // 진화(중간 단계 포함)/졸업 할 때마다 등급 알 1개를 보관함에 적립. 등급은 그 개체의
   // 고정된 tier 그대로 씀.

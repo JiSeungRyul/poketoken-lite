@@ -14,7 +14,7 @@ function getStatePath(userDataDir) {
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [] };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
@@ -33,10 +33,21 @@ function loadState(userDataDir) {
       }
       delete state.eggInventory;
     }
+    // firstHatchDone(첫 부화는 common/uncommon만 뽑히게 하는 기능) 추가 전 저장 파일 호환.
+    // 이미 도감/보관함에 뭔가 있거나 지금 알이 아닌 개체를 키우는 중이면 첫 부화는 이미
+    // 지나간 것 — true로 채워 지금 키우는 중인 개체를 소급으로 안 건드린다. 반대로 아직
+    // 아무것도 없이 알 상태 그대로라면(이 기능 나오기 전에 막 시작한 경우) 대상에 포함.
+    if (state.firstHatchDone === undefined) {
+      const stillOnFirstEgg =
+        (state.pokedex?.length ?? 0) === 0 &&
+        (state.storedCompanions?.length ?? 0) === 0 &&
+        (!state.companion || state.companion.state === "egg");
+      state.firstHatchDone = !stillOnFirstEgg;
+    }
     return state;
   } catch (err) {
     console.error("State file corrupted, resetting:", err.message);
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [] };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false };
   }
 }
 
