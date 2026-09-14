@@ -552,6 +552,7 @@ app.whenReady().then(() => {
     return buildStatusPayload(lastTotalTokens);
   });
   tick();
+  togglePopup(); // exe 실행 직후 트레이 아이콘까지 찾아가서 눌러야 하는 게 아니라 바로 팝업이 뜨게
   setInterval(tick, POLL_INTERVAL_MS);
 });
 
