@@ -13,4 +13,5 @@ contextBridge.exposeInMainWorld("api", {
   incubateEgg: (eggId) => ipcRenderer.invoke("hatch-egg", eggId), // IPC 채널명은 유지, 의미는 "품기 시작"
   getStorage: () => ipcRenderer.invoke("get-storage"),
   resumeStored: (index) => ipcRenderer.invoke("resume-stored", index),
+  boxAndNewEgg: () => ipcRenderer.invoke("box-and-new-egg"),
 });

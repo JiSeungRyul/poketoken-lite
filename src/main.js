@@ -528,6 +528,25 @@ function resumeStoredCompanion(index) {
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
 
+/**
+ * 지금 성장 중인 애를 보관함으로 옮기고 그 자리에 새 알을 시작한다(진화 없는
+ * 단일형 종을 뽑으면 졸업할 때까지 알 보관함에 알이 하나도 안 쌓여서 다른 애를
+ * 시작할 방법이 아예 없었던 문제 — 사용자 요청으로 추가). 알 상태일 땐 보관할
+ * 대상이 없으니 아무 일도 안 함.
+ */
+function boxAndStartNewEgg() {
+  if (!state.companion || state.companion.state === "egg") {
+    return { ok: false, reason: "not-growing", status: buildStatusPayload(lastTotalTokens) };
+  }
+
+  boxCurrentCompanionIfGrowing();
+  state.companion = newEgg(lastTotalTokens);
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+
+  return { ok: true, status: buildStatusPayload(lastTotalTokens) };
+}
+
 function updateTrayIcon(totalTokens) {
   const label =
     state.companion?.state === "egg"
@@ -585,6 +604,7 @@ app.whenReady().then(() => {
   ipcMain.handle("hatch-egg", (event, eggId) => startIncubatingEgg(eggId));
   ipcMain.handle("get-storage", () => buildStoragePayload());
   ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
+  ipcMain.handle("box-and-new-egg", () => boxAndStartNewEgg());
   ipcMain.handle("refresh", () => {
     tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
     return buildStatusPayload(lastTotalTokens);

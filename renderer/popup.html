@@ -113,6 +113,7 @@
       <button id="eggBoxLink" class="link-btn"></button>
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
+      <button id="boxAndNewEggBtn" hidden>📦 보관하고 새 알 시작</button>
     </div>
 
     <div id="pokedex-subview" hidden>
@@ -242,6 +243,8 @@
       animateProgressNumber(fromProgress, s.progress, s.needed);
 
       document.getElementById("nextHint").hidden = !s.hasNextEvolution;
+      // 알 상태일 땐 보관할 대상이 없으니 숨김 — 성장 중일 때만 노출.
+      document.getElementById("boxAndNewEggBtn").hidden = s.state === "egg";
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
       document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;
@@ -260,6 +263,18 @@
         render(s);
         refreshBtn.disabled = false;
         refreshBtn.textContent = "🔄 새로고침";
+      });
+    });
+
+    const boxAndNewEggBtn = document.getElementById("boxAndNewEggBtn");
+    boxAndNewEggBtn.addEventListener("click", () => {
+      boxAndNewEggBtn.disabled = true;
+      window.api.boxAndNewEgg().then((result) => {
+        boxAndNewEggBtn.disabled = false;
+        if (result.ok) {
+          lastRendered = null; // 종이 바뀌었으니 반짝임 없이 바로 새 알로 전환
+          render(result.status);
+        }
       });
     });
 
