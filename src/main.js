@@ -8,6 +8,12 @@ const { loadState, saveState } = require("./state");
 
 const POLL_INTERVAL_MS = 2 * 60 * 1000; // 2분 (원본 PokeTokenBar 기본값과 동일)
 
+// 알 상태일 때 보여줄 정적 스프라이트. PokéAPI엔 종별 데이터만 있어서 gen1.json엔
+// 없고, PokeAPI/sprites 저장소에 있는 공용 알 이미지를 그대로 씀(움직이는 GIF는
+// 없음 — 실제 게임도 알 자체는 프레임 애니메이션이 아니라 "흔들림" 연출이라, 흔들리는
+// 정도는 popup.html에서 진행률(%) 기준으로 CSS 애니메이션으로 직접 구현함).
+const EGG_SPRITE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/egg.png";
+
 let tray = null;
 let popup = null;
 let gen1Data = null;
@@ -268,7 +274,7 @@ function buildStatusPayload(totalTokens) {
       state: "egg",
       label: "🥚 알",
       tier: grade, // 등급 알이면 이미 있는 등급 뱃지 UI로 표시됨, 일반 알이면 등급 없음(null)
-      sprite: null,
+      sprite: EGG_SPRITE_URL,
       isShiny: false,
       progress,
       needed: HATCH_THRESHOLD,
