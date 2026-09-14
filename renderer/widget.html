@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>PokeTokenLite Widget</title>
+<style>
+  html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
+  body {
+    -webkit-app-region: drag; /* 배경 드래그하면 창이 움직임 */
+    width: 90px; height: 110px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-family: sans-serif; user-select: none;
+  }
+  #sprite {
+    -webkit-app-region: no-drag; /* 스프라이트 자체는 클릭 가능하게(드래그 영역에서 제외) */
+    width: 64px; height: 64px; image-rendering: pixelated; cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px var(--tier-color, transparent);
+    background: rgba(0, 0, 0, 0.15);
+  }
+  .bar-bg { width: 74px; height: 6px; background: rgba(0, 0, 0, 0.4); border-radius: 4px; overflow: hidden; margin-top: 6px; }
+  .bar-fill { height: 100%; background: #4caf50; width: 0%; transition: width .3s; }
+</style>
+</head>
+<body>
+  <img id="sprite" src="" alt="" title="" />
+  <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
+
+  <script>
+    const TIER_COLORS = { common: "#6c757d", uncommon: "#2f9e44", epic: "#4c6ef5", legendary: "#f59f00", mythical: "#e64980" };
+    const sprite = document.getElementById("sprite");
+    const bar = document.getElementById("bar");
+
+    function render(s) {
+      if (s.sprite) sprite.src = s.sprite;
+      sprite.style.setProperty("--tier-color", s.tier && TIER_COLORS[s.tier] ? TIER_COLORS[s.tier] : "transparent");
+
+      const needed = s.needed;
+      const pct = needed ? Math.min(100, Math.round((s.progress / needed) * 100)) : 100;
+      bar.style.width = pct + "%";
+
+      sprite.title =
+        s.state === "egg"
+          ? `🥚 알 · ${s.progress.toLocaleString()} / ${needed.toLocaleString()} 토큰 (${pct}%)`
+          : `${s.label}${s.isShiny ? " ✨" : ""} · ${s.progress.toLocaleString()}${needed != null ? " / " + needed.toLocaleString() : ""} 토큰 (${pct}%)`;
+    }
+
+    function poll() {
+      window.api.getStatus().then(render);
+    }
+    poll();
+    setInterval(poll, 20_000); // 팝업보다 짧게 — 위젯은 "지금 뭘 키우는지 한눈에"가 목적
+
+    sprite.addEventListener("click", () => window.api.openPopup());
+    document.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      window.api.widgetContextMenu();
+    });
+  </script>
+</body>
+</html>

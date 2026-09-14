@@ -11,10 +11,14 @@ function getStatePath(userDataDir) {
   return path.join(userDataDir, "state.json");
 }
 
+// 항상 떠있는 위젯 설정 기본값 — enabled/opacity/위치(x,y, null=기본 위치) 전부
+// 여기 하나로 관리. x/y는 화면 해상도 기준값이라 저장 안 해둔(null) 상태가 기본.
+const DEFAULT_WIDGET = { enabled: false, opacity: 0.85, x: null, y: null };
+
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
@@ -44,10 +48,13 @@ function loadState(userDataDir) {
         (!state.companion || state.companion.state === "egg");
       state.firstHatchDone = !stillOnFirstEgg;
     }
+    // widget(항상 떠있는 위젯 설정) 추가 전 저장 파일 호환 — 기본값 위에 기존 저장분을
+    // 덮어써서 일부 필드만 있던 경우도 나머지는 기본값으로 채운다.
+    state.widget = { ...DEFAULT_WIDGET, ...(state.widget || {}) };
     return state;
   } catch (err) {
     console.error("State file corrupted, resetting:", err.message);
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
   }
 }
 

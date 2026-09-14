@@ -1,4 +1,4 @@
-const { app, Tray, Menu, BrowserWindow, nativeImage, ipcMain } = require("electron");
+const { app, Tray, Menu, BrowserWindow, nativeImage, ipcMain, screen } = require("electron");
 const path = require("path");
 const fs = require("fs");
 
@@ -16,6 +16,7 @@ const EGG_SPRITE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master
 
 let tray = null;
 let popup = null;
+let widgetWindow = null;
 let gen1Data = null;
 let state = null;
 let lastTotalTokens = 0; // tick()에서 갱신, 팝업이 열릴 때마다 로그 전체를 재파싱하지 않기 위한 캐시
@@ -563,6 +564,96 @@ function updateTrayIcon(totalTokens) {
   // TODO: 실제 스프라이트로 트레이 아이콘 이미지 교체
 }
 
+const WIDGET_SIZE = { width: 90, height: 110 };
+
+/**
+ * 항상 떠있는(always-on-top) 작은 위젯 창 — 지금 키우는 애를 팝업 안 열어도 한눈에
+ * 보이게. 투명 배경 + 테두리 없음(frame:false, transparent:true)이라 사각형 창처럼
+ * 안 보이고 스프라이트만 둥둥 떠있는 것처럼 보임. 위치/투명도는 state.widget에
+ * 저장해서 껐다 켜도 유지됨.
+ */
+function createOrShowWidget() {
+  if (widgetWindow) {
+    widgetWindow.show();
+    return;
+  }
+
+  const workArea = screen.getPrimaryDisplay().workArea;
+  const posX = state.widget.x ?? workArea.x + workArea.width - WIDGET_SIZE.width - 24;
+  const posY = state.widget.y ?? workArea.y + workArea.height - WIDGET_SIZE.height - 24;
+
+  widgetWindow = new BrowserWindow({
+    width: WIDGET_SIZE.width,
+    height: WIDGET_SIZE.height,
+    x: posX,
+    y: posY,
+    frame: false,
+    transparent: true,
+    alwaysOnTop: true,
+    skipTaskbar: true,
+    resizable: false,
+    opacity: state.widget.opacity,
+    webPreferences: {
+      contextIsolation: true,
+      preload: path.join(__dirname, "..", "renderer", "preload.js"),
+    },
+  });
+  widgetWindow.setAlwaysOnTop(true, "floating");
+
+  widgetWindow.loadFile(path.join(__dirname, "..", "renderer", "widget.html"));
+
+  // 드래그로 옮긴 위치를 저장 — 다음에 켤 때 같은 자리에 뜨게. "moved"는 macOS 전용
+  // 이벤트라 Windows/Linux에선 안 터짐 — 크로스플랫폼인 "move"를 쓰고, 드래그 중
+  // 연속으로 발생하니 디바운스해서 저장 빈도를 줄임.
+  let moveSaveTimer = null;
+  widgetWindow.on("move", () => {
+    clearTimeout(moveSaveTimer);
+    moveSaveTimer = setTimeout(() => {
+      if (!widgetWindow) return;
+      const [x, y] = widgetWindow.getPosition();
+      state.widget.x = x;
+      state.widget.y = y;
+      saveState(app.getPath("userData"), state);
+    }, 300);
+  });
+  widgetWindow.on("closed", () => {
+    widgetWindow = null;
+  });
+}
+
+function hideWidget() {
+  if (widgetWindow) {
+    widgetWindow.close(); // closed 핸들러가 widgetWindow = null 처리
+  }
+}
+
+function setWidgetEnabled(enabled) {
+  state.widget.enabled = enabled;
+  saveState(app.getPath("userData"), state);
+  if (enabled) createOrShowWidget();
+  else hideWidget();
+}
+
+function setWidgetOpacity(value) {
+  state.widget.opacity = value;
+  if (widgetWindow) widgetWindow.setOpacity(value);
+  saveState(app.getPath("userData"), state);
+}
+
+// 위젯 우클릭 시 뜨는 투명도 조절 + 숨기기 메뉴.
+function showWidgetContextMenu() {
+  if (!widgetWindow) return;
+  const menu = Menu.buildFromTemplate([
+    { label: "투명도 25%", click: () => setWidgetOpacity(0.25) },
+    { label: "투명도 50%", click: () => setWidgetOpacity(0.5) },
+    { label: "투명도 75%", click: () => setWidgetOpacity(0.75) },
+    { label: "투명도 100%", click: () => setWidgetOpacity(1.0) },
+    { type: "separator" },
+    { label: "위젯 숨기기", click: () => setWidgetEnabled(false) },
+  ]);
+  menu.popup({ window: widgetWindow });
+}
+
 function createTray() {
   const iconPath = path.join(__dirname, "..", "assets", "tray-icon.png");
   const image = fs.existsSync(iconPath)
@@ -572,6 +663,12 @@ function createTray() {
   tray = new Tray(image);
   const menu = Menu.buildFromTemplate([
     { label: "지금 새로고침", click: tick },
+    {
+      label: "항상 떠있는 위젯",
+      type: "checkbox",
+      checked: state.widget.enabled,
+      click: (menuItem) => setWidgetEnabled(menuItem.checked),
+    },
     { label: "종료", click: () => app.quit() },
   ]);
   tray.setContextMenu(menu);
@@ -612,12 +709,15 @@ app.whenReady().then(() => {
   ipcMain.handle("get-storage", () => buildStoragePayload());
   ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
   ipcMain.handle("box-and-new-egg", () => boxAndStartNewEgg());
+  ipcMain.handle("open-popup", () => togglePopup());
+  ipcMain.handle("widget-context-menu", () => showWidgetContextMenu());
   ipcMain.handle("refresh", () => {
     tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
     return buildStatusPayload(lastTotalTokens);
   });
   tick();
   togglePopup(); // exe 실행 직후 트레이 아이콘까지 찾아가서 눌러야 하는 게 아니라 바로 팝업이 뜨게
+  if (state.widget.enabled) createOrShowWidget(); // 지난 세션에 위젯을 켜놨었으면 그대로 복원
   setInterval(tick, POLL_INTERVAL_MS);
 });
 
