@@ -6,19 +6,18 @@
 <style>
   html, body { margin: 0; padding: 0; background: transparent; overflow: hidden; }
   body {
-    -webkit-app-region: drag; /* 배경 드래그하면 창이 움직임 */
-    width: 90px; height: 110px;
+    -webkit-app-region: drag; /* 배경은 물론 스프라이트 위에서도 드래그하면 창이 움직임 */
+    width: 108px; height: 134px;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     font-family: sans-serif; user-select: none;
   }
   #sprite {
-    -webkit-app-region: no-drag; /* 스프라이트 자체는 클릭 가능하게(드래그 영역에서 제외) */
-    width: 64px; height: 64px; image-rendering: pixelated; cursor: pointer;
+    width: 80px; height: 80px; image-rendering: pixelated; cursor: pointer;
     border-radius: 50%;
     box-shadow: 0 0 0 3px var(--tier-color, transparent);
     background: rgba(0, 0, 0, 0.15);
   }
-  .bar-bg { width: 74px; height: 6px; background: rgba(0, 0, 0, 0.4); border-radius: 4px; overflow: hidden; margin-top: 6px; }
+  .bar-bg { width: 90px; height: 6px; background: rgba(0, 0, 0, 0.4); border-radius: 4px; overflow: hidden; margin-top: 6px; }
   .bar-fill { height: 100%; background: #4caf50; width: 0%; transition: width .3s; }
 </style>
 </head>
@@ -49,9 +48,13 @@
       window.api.getStatus().then(render);
     }
     poll();
-    setInterval(poll, 20_000); // 팝업보다 짧게 — 위젯은 "지금 뭘 키우는지 한눈에"가 목적
+    setInterval(poll, 20_000); // 아래 onStatusUpdate가 즉시 갱신을 대부분 커버하니 이건 안전망 정도
+    window.api.onStatusUpdate(render); // 부화/진화/졸업/다시 키우기 등으로 바뀌는 즉시 반영
 
-    sprite.addEventListener("click", () => window.api.openPopup());
+    // 더블클릭하면 메인 팝업 열고 위젯은 닫힘(둘 다 떠있지 않게). 드래그(마우스 이동
+    // 있는 클릭)는 -webkit-app-region: drag가 처리하고, 움직임 없는 순수 클릭/더블클릭은
+    // 그대로 통과되니 body 전체가 드래그 영역이어도 문제없음.
+    sprite.addEventListener("dblclick", () => window.api.openPopup());
     document.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       window.api.widgetContextMenu();

@@ -17,6 +17,7 @@ const EGG_SPRITE_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master
 let tray = null;
 let popup = null;
 let widgetWindow = null;
+let widgetMenuItem = null; // 트레이 체크박스 참조 — 코드에서 위젯을 껐다 켰다 할 때 체크 표시도 같이 맞추려고
 let gen1Data = null;
 let state = null;
 let lastTotalTokens = 0; // tick()에서 갱신, 팝업이 열릴 때마다 로그 전체를 재파싱하지 않기 위한 캐시
@@ -257,6 +258,7 @@ function tick() {
 
   saveState(app.getPath("userData"), state);
   updateTrayIcon(totalTokens);
+  pushWidgetStatus();
 
   if (result.event !== "none") {
     console.log(`event: ${result.event}`, graduatedCompanion ?? state.companion, `(eggBox: ${state.eggBox.length})`);
@@ -482,6 +484,7 @@ function startIncubatingEgg(eggId) {
   state.companion = newEgg(eggStartTotal, egg.grade);
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
 
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
@@ -532,6 +535,7 @@ function resumeStoredCompanion(index) {
   };
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
 
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
@@ -551,6 +555,7 @@ function boxAndStartNewEgg() {
   state.companion = newEgg(lastTotalTokens);
   saveState(app.getPath("userData"), state);
   updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
 
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
@@ -564,7 +569,7 @@ function updateTrayIcon(totalTokens) {
   // TODO: 실제 스프라이트로 트레이 아이콘 이미지 교체
 }
 
-const WIDGET_SIZE = { width: 90, height: 110 };
+const WIDGET_SIZE = { width: 108, height: 134 }; // 스프라이트 원을 키워달라는 요청으로 확대
 
 /**
  * 항상 떠있는(always-on-top) 작은 위젯 창 — 지금 키우는 애를 팝업 안 열어도 한눈에
@@ -627,11 +632,20 @@ function hideWidget() {
   }
 }
 
+// 팝업과 위젯은 항상 둘 중 하나만 떠있게(동시에 안 뜨게) — 위젯 켤 땐 팝업을 닫는다.
 function setWidgetEnabled(enabled) {
   state.widget.enabled = enabled;
+  if (widgetMenuItem) widgetMenuItem.checked = enabled; // 코드로 껐을 때도 트레이 체크박스가 맞게 보이게
   saveState(app.getPath("userData"), state);
-  if (enabled) createOrShowWidget();
-  else hideWidget();
+  if (enabled) {
+    if (popup) {
+      popup.close();
+      popup = null;
+    }
+    createOrShowWidget();
+  } else {
+    hideWidget();
+  }
 }
 
 function setWidgetOpacity(value) {
@@ -654,6 +668,15 @@ function showWidgetContextMenu() {
   menu.popup({ window: widgetWindow });
 }
 
+// 위젯이 떠있으면 지금 상태를 즉시 밀어넣는다(포켓몬이 바뀌었는데 위젯은 다음
+// 폴링 때까지 안 바뀌는 것처럼 보이는 문제 — 부화/진화/졸업/다시 키우기/보관 등
+// companion이 바뀌는 지점마다 호출). 위젯이 안 떠있으면 그냥 아무 일도 안 함.
+function pushWidgetStatus() {
+  if (widgetWindow && !widgetWindow.isDestroyed()) {
+    widgetWindow.webContents.send("status-update", buildStatusPayload(lastTotalTokens));
+  }
+}
+
 function createTray() {
   const iconPath = path.join(__dirname, "..", "assets", "tray-icon.png");
   const image = fs.existsSync(iconPath)
@@ -671,6 +694,7 @@ function createTray() {
     },
     { label: "종료", click: () => app.quit() },
   ]);
+  widgetMenuItem = menu.items[1];
   tray.setContextMenu(menu);
   tray.on("click", togglePopup);
 }
@@ -681,9 +705,11 @@ function togglePopup() {
     popup = null;
     return;
   }
+  // 팝업과 위젯은 항상 둘 중 하나만 떠있게 — 팝업 열 때 위젯은 닫음.
+  if (state.widget.enabled) setWidgetEnabled(false);
   popup = new BrowserWindow({
     width: 380,
-    height: 560,
+    height: 600,
     show: true,
     frame: true,
     webPreferences: {
@@ -716,8 +742,10 @@ app.whenReady().then(() => {
     return buildStatusPayload(lastTotalTokens);
   });
   tick();
-  togglePopup(); // exe 실행 직후 트레이 아이콘까지 찾아가서 눌러야 하는 게 아니라 바로 팝업이 뜨게
-  if (state.widget.enabled) createOrShowWidget(); // 지난 세션에 위젯을 켜놨었으면 그대로 복원
+  // 지난 세션에 위젯을 켜놨었으면 그대로 위젯으로 복원(팝업은 안 띄움 — 둘 다 뜨면
+  // 위젯을 쓰는 의미가 없음), 아니었으면 기존처럼 exe 실행 직후 팝업이 바로 뜨게.
+  if (state.widget.enabled) createOrShowWidget();
+  else togglePopup();
   setInterval(tick, POLL_INTERVAL_MS);
 });
 

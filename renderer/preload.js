@@ -16,4 +16,5 @@ contextBridge.exposeInMainWorld("api", {
   boxAndNewEgg: () => ipcRenderer.invoke("box-and-new-egg"),
   openPopup: () => ipcRenderer.invoke("open-popup"),
   widgetContextMenu: () => ipcRenderer.invoke("widget-context-menu"),
+  onStatusUpdate: (callback) => ipcRenderer.on("status-update", (event, status) => callback(status)),
 });
