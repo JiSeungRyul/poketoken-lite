@@ -121,6 +121,18 @@
   }
   #sprite.recalling { animation: pokeball-recall-sprite 0.9s ease-in-out; transform-origin: center bottom; }
   #pokeball.recalling { animation: pokeball-recall-ball 0.9s ease-in-out; }
+
+  /* 스프라이트 클릭하면 살짝 통통 튀는 반응 — 장식용 인터랙션, 게임 로직과 무관 */
+  #sprite { cursor: pointer; }
+  @keyframes poke-bounce {
+    0% { transform: scale(1) translateY(0); }
+    20% { transform: scale(1.08, 0.9) translateY(0); }
+    45% { transform: scale(0.94, 1.1) translateY(-16px); }
+    65% { transform: scale(1.04, 0.97) translateY(0); }
+    82% { transform: scale(0.98, 1.02) translateY(-4px); }
+    100% { transform: scale(1) translateY(0); }
+  }
+  #sprite.poked { animation: poke-bounce 0.5s ease-in-out; }
 </style>
 </head>
 <body>
@@ -310,6 +322,17 @@
 
       lastRendered = s;
     }
+
+    // 스프라이트 클릭하면 통통 튀는 반응(장식용, 게임 상태엔 영향 없음). 진화/다시
+    // 키우기 연출 도중엔 같은 요소에서 애니메이션이 겹치지 않게 무시.
+    document.getElementById("sprite").addEventListener("click", () => {
+      const spriteEl = document.getElementById("sprite");
+      if (spriteEl.classList.contains("evolving") || spriteEl.classList.contains("recalling")) return;
+      spriteEl.classList.remove("poked");
+      void spriteEl.offsetWidth; // 강제 리플로우 — 연타해도 애니메이션이 처음부터 다시 재생되게
+      spriteEl.classList.add("poked");
+      setTimeout(() => spriteEl.classList.remove("poked"), 500);
+    });
 
     window.api.getStatus().then(render);
 
