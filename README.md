@@ -94,8 +94,8 @@ renderer/
   실루엣/이미지 비공개 처리하는 것 추가
 - 도감 항목 클릭 시 지금은 진화 라인만 펼쳐 보여줌 — 나중엔 클릭하면 팝업으로
   포켓몬 상세 정보(타입/설명 등) 보여주기
-- 알 구매/퀘스트/보상 시스템 (상점) — 지금은 진화할 때마다 등급 알 1개
-  알 보관함에 적립되는 것만 있음
+- 알 구매/퀘스트/보상 시스템 (상점) — 지금은 진화/졸업할 때마다 등급 알 1개,
+  매주 월요일 10시마다 무료 알 티켓 1개가 알 보관함에 적립되는 것만 있음
 - Windows 알림 (부화/진화/졸업 시)
 - 트레이 아이콘에 스프라이트 표시 (지금은 고정 placeholder)
 - Codex/Gemini 탭 실제 구현 (지금은 팝업에 탭만 있고 "다음 라운드 예정" 플레이스홀더)
@@ -105,19 +105,27 @@ renderer/
 - **Electron → 네이티브 전환 검토** — Tauri(Rust, popup.html 거의 그대로 재사용
   가능·OS 내장 웹뷰라 크로미움 번들 없음)가 WPF/WinUI 3보다 현실적. 지금
   Electron 구조의 문제(WSL에 `libnss3` 없어서 실행조차 안 됐던 것 등)가
-  크로미움 번들 때문 — 급한 건 아님, 당장 안 할 예정.
+  크로미움 번들 때문 — 급한 건 아님, 당장 안 할 예정. **네이티브 전환 시
+  같이 넣을 것(사용자 요청)**: 팝업이 아니라 항상 화면에 떠있는 미니
+  위젯(레퍼런스의 "플로팅 펫"과 유사) — 투명도(opacity) 조절 가능, 항상
+  위(always on top) 고정.
 
 ## 튜닝 포인트
 
-`src/growth.js` — 값들은 레퍼런스(PokeTokenBar) 실측 기반으로 맞춘 것도 있고
-(`GRADUATION_TOTAL`의 common/uncommon/legendary, `HATCH_THRESHOLD`),
-우리가 직접 정한 추정값도 있음(`GRADUATION_TOTAL.mythical`은 legendary의
-2배로 임의 추정 — 레퍼런스엔 mythical 등급 자체가 없음, 전설/환상 안 나눠서
-같이 취급함):
-- `HATCH_THRESHOLD` (알 → 부화까지 필요 토큰, 500만)
-- `GRADUATION_TOTAL` (등급별 졸업까지 총 토큰 — common 7.5억/uncommon 18.75억/
-  epic 30억/legendary 60억/mythical 120억)
+`src/growth.js`:
+- `HATCH_THRESHOLD` (알 → 부화까지 필요 토큰, 500만 — 안 건드림)
+- `GRADUATION_TOTAL` (등급별 졸업까지 총 토큰) — 원래 레퍼런스(PokeTokenBar)
+  실측값(레퍼런스 "실측 평균 하루 2.53억 토큰" 기준)을 그대로 썼었는데, 그건
+  이 프로젝트 사용자보다 훨씬 헤비한 사용 패턴 기준이라 **실제 로그로 다시
+  맞춤**: 평일 활동일 평균 약 8,150만 토큰/일(2026-09-08~09-14 실측) 기준으로
+  "에픽이 평일 5일(1주일) 안에 졸업"하도록 역산해서 4억으로 잡고, 나머지
+  등급은 원래 비율(common:uncommon:epic:legendary:mythical = 0.25:0.625:1:2:4)
+  그대로 유지한 채 축소(2/15배) — **common 1억 / uncommon 2.5억 / epic 4억 /
+  legendary 8억 / mythical 16억**. 사용 패턴이 확 달라지면 이 비율 기준으로
+  다시 스케일하면 됨.
 - `TIER_RANK` (등급 알의 "이 등급 이상 보장" 판정용 순위)
+- `WEEKLY_TICKET_GRADE_WEIGHTS` (매주 월요일 10시 무료 알 티켓의 등급 가중치 —
+  직접 정한 값, common 55 > uncommon 25 > epic 12 > legendary 6 > mythical 2)
 
 `scripts/build-gen1-data.js`의 `TIER_BOUNDS` — capture_rate 기준 희귀도
 경계값(epic≤45, uncommon≤120, 그 이상 common). 전설/환상은 capture_rate가
