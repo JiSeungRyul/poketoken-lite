@@ -67,6 +67,11 @@
   .evo-chain img { width: 28px; height: 28px; margin: 0; }
   .evo-chain .evo-name { font-size: 10px; color: #bbb; }
   .evo-chain .evo-arrow { color: #666; font-size: 12px; }
+  .evo-chain .evo-unknown-img {
+    width: 28px; height: 28px; border-radius: 4px; background: #333;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; color: #888;
+  }
 
   .egg-row { display: flex; align-items: center; gap: 8px; padding: 8px 4px; border-bottom: 1px solid #2a2a3a; }
   .egg-row .egg-icon { font-size: 22px; }
@@ -276,6 +281,7 @@
     const pokedexList = document.getElementById("pokedexList");
 
     function formatDate(iso) {
+      if (!iso) return "";
       const d = new Date(iso);
       return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
     }
@@ -284,7 +290,7 @@
       document.getElementById("pokedexTitle").textContent = `도감 (${entries.length}/151)`;
 
       if (entries.length === 0) {
-        pokedexList.innerHTML = `<div class="pokedex-empty">아직 졸업한 포켓몬이 없어요.<br />계속 키워보세요!</div>`;
+        pokedexList.innerHTML = `<div class="pokedex-empty">아직 발견한 포켓몬이 없어요.<br />계속 키워보세요!</div>`;
         return;
       }
 
@@ -295,7 +301,7 @@
               <div class="row-main">
                 <span class="dex-no">${formatDexNo(e.speciesId)}</span>
                 <img src="${e.sprite}" alt="${e.nameKo}" />
-                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span>${e.count > 1 ? ` <span class="dex-count">${e.count}회 부화${e.shinyCount > 0 ? ` (✨${e.shinyCount})` : ""}</span>` : ""}</span>
+                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span>${e.count > 1 ? ` <span class="dex-count">${e.count}회 부화${e.shinyCount > 0 ? ` (✨${e.shinyCount})` : ""}</span>` : e.count === 0 ? ` <span class="dex-count">육성 중</span>` : ""}</span>
                 <span class="date">${formatDate(e.graduatedAt)}</span>
               </div>
               <div class="evo-chain" data-chain-index="${i}">
@@ -304,8 +310,12 @@
                     (step, si) => `
                       ${si > 0 ? '<span class="evo-arrow">→</span>' : ""}
                       <div class="evo-step">
-                        <img src="${step.sprite}" alt="${step.nameKo}" />
-                        <span class="evo-name">${step.nameKo}</span>
+                        ${
+                          step.discovered
+                            ? `<img src="${step.sprite}" alt="${step.nameKo}" />`
+                            : `<div class="evo-unknown-img">?</div>`
+                        }
+                        <span class="evo-name">${step.discovered ? step.nameKo : "?????"}</span>
                       </div>`
                   )
                   .join("")}

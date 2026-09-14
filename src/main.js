@@ -196,7 +196,8 @@ function tick() {
 
   if (result.event === "graduate") {
     state.pokedex.push({
-      speciesId: state.companion.speciesId,
+      speciesId: state.companion.speciesId, // 최종형 id(그 라인의 졸업 횟수 집계 키)
+      chainOrder: reachedChainIds(state.companion.speciesId), // 기본형~최종형 전체(도감엔 라인 통째로 등록)
       tier: state.companion.tier,
       graduatedAt: new Date().toISOString(),
       isShiny: !!state.companion.isShiny,
@@ -229,7 +230,7 @@ function buildStatusPayload(totalTokens) {
       progress,
       needed: HATCH_THRESHOLD,
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
-      pokedexCount: state.pokedex.length,
+      pokedexCount: buildDexAggregate().size,
       eggBoxCount: state.eggBox.length,
       storedCount: state.storedCompanions.length,
     };
@@ -251,78 +252,138 @@ function buildStatusPayload(totalTokens) {
     progress,
     needed,
     hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
-    pokedexCount: state.pokedex.length,
+    pokedexCount: buildDexAggregate().size,
     eggBoxCount: state.eggBox.length,
     storedCount: state.storedCompanions.length,
   };
 }
 
-// speciesId(보통 도감의 최종형)의 기본형부터 시작해서 진화 라인 전체를 순서대로 나열.
-// evolvesTo[0] 고정 경로라 그 개체가 실제로 밟아온 단계와 동일하다(가지치기 진화는
-// 다른 분기가 있어도 안 보임 — growth.js와 동일한 단순화).
-function buildEvolutionChain(speciesId) {
+// speciesId의 기본형부터 시작해서 그 speciesId에 도달하면 멈추는 체인 id 목록.
+// 졸업 시점엔 speciesId가 이미 그 라인의 1세대 기준 최종형이라(gen1Data 빌드 시점에
+// 후속 세대 진화형은 이미 걸러져 있음 — build-gen1-data.js의 flattenChain), 이 함수
+// 하나로 "졸업 시 라인 전체 기록"과 "지금 성장 중인 개체가 도달한 단계까지"를 둘 다
+// 커버한다(레퍼런스 PokeTokenBar가 pathIDs 전체/prefix(stageIndex+1)로 나눠 쓰는 것을
+// 우리는 stage가 항상 기본형부터 순차 진행이라 하나로 합친 것).
+function reachedChainIds(speciesId) {
+  const ids = [];
+  const baseId = gen1Data[speciesId]?.baseFormId ?? speciesId;
+  let current = gen1Data[baseId];
+  while (current) {
+    ids.push(current.id);
+    if (current.id === speciesId) break;
+    current = current.evolvesTo[0] != null ? gen1Data[current.evolvesTo[0]] : null;
+  }
+  return ids;
+}
+
+// speciesId(도감 행의 최종형 또는 발견된 중간형)의 기본형부터 진짜 끝까지 전체 진화
+// 라인을 순서대로 나열 — reachedChainIds와 달리 speciesId에서 멈추지 않고 끝까지 감.
+// discoveredIds에 없는 단계(아직 발견 못 한 다음 진화형)는 이름/스프라이트 없이
+// discovered:false만 반환해서 팝업에서 ??로 가리게 한다(코일만 발견하고 레어코일은
+// 아직인데 펼쳐보기 하면 레어코일 정보가 그대로 스포일러로 새는 걸 막기 위함).
+function buildEvolutionChain(speciesId, discoveredIds, lineTier) {
   const chain = [];
   const baseId = gen1Data[speciesId]?.baseFormId ?? speciesId;
   let current = gen1Data[baseId];
   while (current) {
-    chain.push({
-      speciesId: current.id,
-      nameKo: current.nameKo,
-      sprite: current.sprite,
-      tier: current.tier,
-    });
+    chain.push(
+      discoveredIds.has(current.id)
+        ? { speciesId: current.id, nameKo: current.nameKo, sprite: current.sprite, tier: lineTier, discovered: true }
+        : { speciesId: current.id, discovered: false }
+    );
     current = current.evolvesTo[0] != null ? gen1Data[current.evolvesTo[0]] : null;
   }
   return chain;
 }
 
-// 도감(졸업한 포켓몬) 목록을 종별로 묶어서 반환 — 같은 종을 여러 번 졸업시켜도
-// 줄이 따로 안 쌓이고 "N회 부화"로 합쳐짐. 최근 졸업한 순.
-// gen1Data에 없는 speciesId(원인 불명의 손상 데이터)가 섞여 있어도 전체가
-// 죽지 않게 그 항목만 건너뛰고 콘솔에 남긴다.
-function buildPokedexPayload() {
-  const bySpecies = new Map(); // speciesId -> 누적 정보
+/**
+ * 발견한 종 전체(졸업한 라인들의 chainOrder ∪ 지금 성장 중인 개체의 도달분 ∪ 보관함
+ * 개체들의 도달분) + 종별 졸업 통계를 한 번에 계산. 레퍼런스(PokeTokenBar)의
+ * `dexSpecies`(state.dex의 chainOrder ∪ active.pathIDs.prefix(stageIndex+1))와
+ * 동일한 방식 — 우리는 "놓아주기"가 없는 대신 storedCompanions가 그 역할(진행 상황을
+ * 잃지 않고 보존)을 하므로 그것도 합친다.
+ *
+ * tier는 반드시 그 라인의 고정값을 체인 전체에 전파한다 — 종 개별 gen1Data.tier를
+ * 쓰면 "미진화체는 common인데 최종형만 legendary로 보임" 버그가 도감 표시에서
+ * 재발한다(예전에 growth.js에서 고쳤던 것과 같은 이유 — tier는 항상 부화 시점에
+ * 라인 단위로 고정된 값).
+ */
+function buildDexAggregate() {
+  const bySpecies = new Map(); // speciesId -> { tier, count, shinyCount, latestGraduatedAt, liveShiny }
+  const ensure = (id) => {
+    let e = bySpecies.get(id);
+    if (!e) {
+      e = { tier: null, count: 0, shinyCount: 0, latestGraduatedAt: null, liveShiny: false };
+      bySpecies.set(id, e);
+    }
+    return e;
+  };
 
   for (const entry of state.pokedex) {
-    const species = gen1Data[entry.speciesId];
-    if (!species) {
-      console.error(`Pokedex entry has unknown speciesId: ${entry.speciesId}`, entry);
-      continue;
-    }
-    const isShiny = !!entry.isShiny;
-    const existing = bySpecies.get(entry.speciesId);
-    if (existing) {
-      existing.count += 1;
-      if (isShiny) existing.shinyCount += 1;
-      if (entry.graduatedAt > existing.latestGraduatedAt) existing.latestGraduatedAt = entry.graduatedAt;
-    } else {
-      bySpecies.set(entry.speciesId, {
-        speciesId: entry.speciesId,
-        nameKo: species.nameKo,
-        sprite: species.sprite,
-        spriteShiny: species.spriteShiny,
-        tier: entry.tier ?? species.tier, // 고정 등급 우선, 예전 저장분(없음)은 현재 종 tier로 폴백
-        count: 1,
-        shinyCount: isShiny ? 1 : 0,
-        latestGraduatedAt: entry.graduatedAt,
-        evolutionChain: buildEvolutionChain(entry.speciesId),
-      });
+    const chain = entry.chainOrder ?? reachedChainIds(entry.speciesId); // 옛 저장분(chainOrder 없음) 폴백
+    for (const id of chain) {
+      const e = ensure(id);
+      e.tier = entry.tier;
+      if (id === entry.speciesId) {
+        // 그 라인의 최종형 자신에 대해서만 "졸업 횟수"로 집계(중간형은 항상 count: 0)
+        e.count += 1;
+        if (entry.isShiny) e.shinyCount += 1;
+        if (!e.latestGraduatedAt || entry.graduatedAt > e.latestGraduatedAt) e.latestGraduatedAt = entry.graduatedAt;
+      }
     }
   }
 
-  return [...bySpecies.values()]
-    .sort((a, b) => (a.latestGraduatedAt < b.latestGraduatedAt ? 1 : -1)) // 최근 졸업한 종이 위로
-    .map((v) => ({
-      speciesId: v.speciesId,
-      nameKo: v.nameKo,
-      sprite: v.shinyCount > 0 ? v.spriteShiny : v.sprite,
-      isShiny: v.shinyCount > 0,
-      tier: v.tier,
-      graduatedAt: v.latestGraduatedAt,
-      count: v.count,
-      shinyCount: v.shinyCount,
-      evolutionChain: v.evolutionChain,
-    }));
+  const applyLive = (speciesId, tier, isShiny) => {
+    for (const id of reachedChainIds(speciesId)) {
+      const e = ensure(id);
+      e.tier = tier;
+      if (isShiny) e.liveShiny = true;
+    }
+  };
+  if (state.companion && state.companion.state !== "egg") {
+    applyLive(state.companion.speciesId, state.companion.tier, !!state.companion.isShiny);
+  }
+  for (const c of state.storedCompanions) {
+    applyLive(c.speciesId, c.tier ?? gen1Data[c.speciesId]?.tier, !!c.isShiny);
+  }
+
+  return bySpecies;
+}
+
+// 도감 목록 — 발견한 종(buildDexAggregate 기준)만, 졸업한 것부터 최근 졸업순으로,
+// 아직 졸업 전(발견만 한) 것들은 그 뒤에 도감번호순으로. gen1Data에 없는 speciesId
+// (원인 불명의 손상 데이터)가 섞여 있어도 전체가 죽지 않게 그 항목만 건너뛴다.
+function buildPokedexPayload() {
+  const bySpecies = buildDexAggregate();
+  const discoveredIds = new Set(bySpecies.keys());
+
+  const rows = [];
+  for (const [id, agg] of bySpecies) {
+    const species = gen1Data[id];
+    if (!species) {
+      console.error(`Pokedex entry has unknown speciesId: ${id}`);
+      continue;
+    }
+    const isShiny = agg.shinyCount > 0 || agg.liveShiny;
+    rows.push({
+      speciesId: id,
+      nameKo: species.nameKo,
+      sprite: isShiny ? species.spriteShiny : species.sprite,
+      isShiny,
+      tier: agg.tier ?? species.tier,
+      count: agg.count,
+      shinyCount: agg.shinyCount,
+      graduatedAt: agg.latestGraduatedAt, // null이면 발견은 했지만 아직 졸업 전
+      evolutionChain: buildEvolutionChain(id, discoveredIds, agg.tier ?? species.tier),
+    });
+  }
+
+  return rows.sort((a, b) => {
+    if (a.graduatedAt && b.graduatedAt) return a.graduatedAt < b.graduatedAt ? 1 : -1;
+    if (a.graduatedAt) return -1;
+    if (b.graduatedAt) return 1;
+    return a.speciesId - b.speciesId; // 둘 다 졸업 전이면 도감번호순
+  });
 }
 
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
