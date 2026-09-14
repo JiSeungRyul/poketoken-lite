@@ -315,7 +315,7 @@
 
       document.getElementById("nextHint").hidden = !s.hasNextEvolution;
       // 알 상태일 땐 보관할 대상이 없으니 숨김 — 성장 중일 때만 노출.
-      document.getElementById("boxAndNewEggBtn").hidden = s.state === "egg";
+      document.getElementById("boxAndNewEggBtn").hidden = s.state !== "growing";
 
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/151 보기 →`;
       document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;

@@ -213,6 +213,15 @@ function tick() {
   const totalTokens = getTotalTokens();
   lastTotalTokens = totalTokens;
 
+  // 지난 tick에서 막 졸업한 채로(state:"graduated") 남아있었다면 이번 tick에 새
+  // 알로 넘긴다 — 졸업 이벤트 자체가 발생한 바로 그 tick에 곧장 새 알로 덮어써
+  // 버리면, 팝업/위젯이 최종형을 볼 틈도 없이 알로 바뀌어버리는 문제가 있었음
+  // (실제로 겪음: 나옹→페르시안처럼 "진화=바로 졸업"인 2단 라인에서 체감됨).
+  // 한 틱 늦게 리셋해서 그 사이 최소 한 번은 최종형이 화면에 보이게 함.
+  if (state.companion?.state === "graduated") {
+    state.companion = newEgg(totalTokens);
+  }
+
   if (!state.companion) {
     state.companion = newEgg(totalTokens);
   }
@@ -252,7 +261,8 @@ function tick() {
       graduatedAt: new Date().toISOString(),
       isShiny: !!state.companion.isShiny,
     });
-    state.companion = newEgg(totalTokens); // 새 알 시작
+    // state.companion은 그대로 둔다 — evaluate()가 이미 state:"graduated"로
+    // 갱신해둔 채라 최종형이 화면에 그대로 남고, 다음 tick 맨 위에서 새 알로 넘어감.
   }
 
   grantWeeklyTicketIfDue(new Date());
@@ -447,7 +457,10 @@ function buildPokedexPayload() {
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
 // 특정 개체가 안 정해진 상태라 보관 없이 그냥 교체됨(부화 진행률은 호출부에서 별도 처리).
 function boxCurrentCompanionIfGrowing() {
-  if (state.companion && state.companion.state !== "egg") {
+  // "graduated"(막 졸업해서 다음 tick에 새 알로 넘어가길 기다리는 중)는 제외 —
+  // 이미 도감에 영구 등록됐으니 보관함에 또 넣을 필요가 없고, 넣어봤자 더 이상
+  // 진행이 안 되는 죽은 개체만 하나 생김.
+  if (state.companion && state.companion.state === "growing") {
     state.storedCompanions.push({
       speciesId: state.companion.speciesId,
       stage: state.companion.stage,
@@ -563,7 +576,7 @@ function resumeStoredCompanion(index) {
  * 대상이 없으니 아무 일도 안 함.
  */
 function boxAndStartNewEgg() {
-  if (!state.companion || state.companion.state === "egg") {
+  if (!state.companion || state.companion.state !== "growing") {
     return { ok: false, reason: "not-growing", status: buildStatusPayload(lastTotalTokens) };
   }
 
