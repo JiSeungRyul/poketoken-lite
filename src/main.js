@@ -654,10 +654,20 @@ function setWidgetOpacity(value) {
   saveState(app.getPath("userData"), state);
 }
 
-// 위젯 우클릭 시 뜨는 투명도 조절 + 숨기기 메뉴.
+// 팝업이 이미 떠있으면 그대로 두고, 없으면 새로 연다(토글이 아니라 "확실히 열기").
+// 위젯 쪽에서 "전체 창 보기"를 누를 때 씀 — 더블클릭은 드래그 영역이랑 겹쳐서
+// Windows에서 안 먹는 경우가 있어(app-region:drag 위에서 dblclick이 씹히는
+// 문제), 우클릭 메뉴가 확실하게 동작하는 대안임.
+function ensurePopupOpen() {
+  if (!popup) togglePopup(); // togglePopup 내부에서 위젯도 알아서 꺼짐
+}
+
+// 위젯 우클릭 시 뜨는 메뉴 — 전체 창 전환 + 투명도 조절 + 숨기기.
 function showWidgetContextMenu() {
   if (!widgetWindow) return;
   const menu = Menu.buildFromTemplate([
+    { label: "전체 창 보기", click: () => ensurePopupOpen() },
+    { type: "separator" },
     { label: "투명도 25%", click: () => setWidgetOpacity(0.25) },
     { label: "투명도 50%", click: () => setWidgetOpacity(0.5) },
     { label: "투명도 75%", click: () => setWidgetOpacity(0.75) },
@@ -737,6 +747,11 @@ app.whenReady().then(() => {
   ipcMain.handle("box-and-new-egg", () => boxAndStartNewEgg());
   ipcMain.handle("open-popup", () => togglePopup());
   ipcMain.handle("widget-context-menu", () => showWidgetContextMenu());
+  ipcMain.handle("enable-widget", () => setWidgetEnabled(true));
+  ipcMain.handle("get-widget-position", () => (widgetWindow ? widgetWindow.getPosition() : [0, 0]));
+  ipcMain.handle("move-widget-to", (event, x, y) => {
+    if (widgetWindow) widgetWindow.setPosition(Math.round(x), Math.round(y));
+  });
   ipcMain.handle("refresh", () => {
     tick(); // 로그 재스캔 + 상태 저장까지 즉시 수행
     return buildStatusPayload(lastTotalTokens);

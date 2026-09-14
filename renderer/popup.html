@@ -163,6 +163,7 @@
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
       <button id="boxAndNewEggBtn" hidden>📦 보관하고 새 알 시작</button>
+      <button id="widgetBtn">🔘 위젯으로 보기</button>
     </div>
 
     <div id="pokedex-subview" hidden>
@@ -357,6 +358,12 @@
           render(result.status);
         }
       });
+    });
+
+    // 위젯으로 전환 — 이 버튼을 누르면 지금 창(팝업) 자체가 닫히니 응답을 기다리지
+    // 않고 그냥 호출만 함(닫히는 창에서 IPC 응답을 기다리면 안 옴).
+    document.getElementById("widgetBtn").addEventListener("click", () => {
+      window.api.enableWidget();
     });
 
     // 팝업이 열려있는 동안엔 수동으로 새로고침 안 눌러도 주기적으로 자동 갱신되게.
