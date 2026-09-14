@@ -90,11 +90,8 @@
     // 혹시 모를 이미지 기본 드래그(브라우저 밖으로 끌면 파일 생성되는 그거) 안전망.
     sprite.addEventListener("dragstart", (e) => e.preventDefault());
 
-    // 더블클릭하면 메인 팝업 열고 위젯은 닫힘(둘 다 떠있지 않게).
-    sprite.addEventListener("dblclick", () => {
-      if (didDrag) return; // 방금 드래그였으면 클릭으로 취급 안 함
-      window.api.openPopup();
-    });
+    // 전체 창은 더블클릭이 아니라 우클릭 메뉴("전체 창 보기")로만 연다 — 더블클릭은
+    // Windows에서 이 작은 창 위에서 잘 안 먹는 경우가 있어(실제로 겪음) 아예 안 씀.
     document.addEventListener("contextmenu", (e) => {
       e.preventDefault();
       window.api.widgetContextMenu();

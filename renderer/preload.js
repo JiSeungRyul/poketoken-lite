@@ -14,7 +14,6 @@ contextBridge.exposeInMainWorld("api", {
   getStorage: () => ipcRenderer.invoke("get-storage"),
   resumeStored: (index) => ipcRenderer.invoke("resume-stored", index),
   boxAndNewEgg: () => ipcRenderer.invoke("box-and-new-egg"),
-  openPopup: () => ipcRenderer.invoke("open-popup"),
   widgetContextMenu: () => ipcRenderer.invoke("widget-context-menu"),
   enableWidget: () => ipcRenderer.invoke("enable-widget"),
   getWidgetPosition: () => ipcRenderer.invoke("get-widget-position"),

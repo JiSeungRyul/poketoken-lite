@@ -671,9 +671,8 @@ function setWidgetOpacity(value) {
 }
 
 // 팝업이 이미 떠있으면 그대로 두고, 없으면 새로 연다(토글이 아니라 "확실히 열기").
-// 위젯 쪽에서 "전체 창 보기"를 누를 때 씀 — 더블클릭은 드래그 영역이랑 겹쳐서
-// Windows에서 안 먹는 경우가 있어(app-region:drag 위에서 dblclick이 씹히는
-// 문제), 우클릭 메뉴가 확실하게 동작하는 대안임.
+// 위젯에서 전체 창을 여는 유일한 경로 — 더블클릭은 Windows에서 이 작은 창
+// 위에서 잘 안 먹는 경우가 있어(실제로 겪음) 아예 안 쓰고 우클릭 메뉴로만 제공.
 function ensurePopupOpen() {
   if (!popup) togglePopup(); // togglePopup 내부에서 위젯도 알아서 꺼짐
 }
@@ -761,7 +760,6 @@ app.whenReady().then(() => {
   ipcMain.handle("get-storage", () => buildStoragePayload());
   ipcMain.handle("resume-stored", (event, index) => resumeStoredCompanion(index));
   ipcMain.handle("box-and-new-egg", () => boxAndStartNewEgg());
-  ipcMain.handle("open-popup", () => togglePopup());
   ipcMain.handle("widget-context-menu", () => showWidgetContextMenu());
   ipcMain.handle("enable-widget", () => setWidgetEnabled(true));
   ipcMain.handle("get-widget-position", () => (widgetWindow ? widgetWindow.getPosition() : [0, 0]));
