@@ -303,7 +303,12 @@ function buildStatusPayload(totalTokens) {
     isShiny,
     progress,
     needed,
-    hasNextEvolution: needed != null, // true면 다음 진화가 남아있음 (팝업에서 "다음 포켓몬: ???" 힌트)
+    // "다음 포켓몬: ???" 힌트는 이 종이 실제로 다음에 진화할 데가 있을 때만(evolvesTo
+    // 비어있지 않을 때만) 보여야 함 — needed != null만 보면 안 됨. stageThresholds()가
+    // 단일형 종(maxStage=1, 진화 자체가 없는 라프라스 같은 경우)도 졸업 판정용으로
+    // 임계치를 최소 1개는 반환하게 돼있어서(그래야 졸업 자체가 되니까), needed가 항상
+    // null이 아니게 나와 진화가 없는 종한테도 힌트가 잘못 뜨는 버그가 있었음(실제 확인됨).
+    hasNextEvolution: needed != null && species.evolvesTo.length > 0,
     pokedexCount: buildDexAggregate().size,
     eggBoxCount: state.eggBox.length,
     storedCount: state.storedCompanions.length,
