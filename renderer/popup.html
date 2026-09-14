@@ -98,6 +98,29 @@
   #sprite.egg-shake-25 { animation: egg-shake 1.1s ease-in-out infinite; --egg-shake-angle: 3deg; }
   #sprite.egg-shake-50 { animation: egg-shake 0.75s ease-in-out infinite; --egg-shake-angle: 5deg; }
   #sprite.egg-shake-75 { animation: egg-shake 0.45s ease-in-out infinite; --egg-shake-angle: 8deg; }
+
+  /* "다시 키우기"(보관함에서 교체) 전용 전환 — 흰 빛 + 몬스터볼로 들어갔다 나오는 연출.
+     evolve-flash(진화/부화/졸업용)랑 트리거 구분해서 따로 둠 — 교체는 진화가 아니니까. */
+  .sprite-wrap { position: relative; display: inline-block; }
+  #pokeball {
+    position: absolute; left: 50%; bottom: 6px; width: 28px; height: 28px;
+    transform: translateX(-50%) scale(0.5); opacity: 0; pointer-events: none;
+  }
+  @keyframes pokeball-recall-sprite {
+    0% { transform: scale(1); filter: brightness(1) saturate(1); opacity: 1; }
+    35% { transform: scale(0.15); filter: brightness(3) saturate(0); opacity: 1; }
+    50%, 65% { transform: scale(0); filter: brightness(3) saturate(0); opacity: 0; }
+    80% { transform: scale(0.15); filter: brightness(3) saturate(0); opacity: 1; }
+    100% { transform: scale(1); filter: brightness(1) saturate(1); opacity: 1; }
+  }
+  @keyframes pokeball-recall-ball {
+    0%, 30% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    65% { transform: translateX(-50%) scale(1); opacity: 1; }
+    85%, 100% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+  }
+  #sprite.recalling { animation: pokeball-recall-sprite 0.9s ease-in-out; transform-origin: center bottom; }
+  #pokeball.recalling { animation: pokeball-recall-ball 0.9s ease-in-out; }
 </style>
 </head>
 <body>
@@ -113,7 +136,10 @@
         <h3 id="name">불러오는 중...</h3>
         <span id="tierBadge" class="tier-badge" hidden></span>
       </div>
-      <img id="sprite" src="" alt="" />
+      <div class="sprite-wrap">
+        <img id="sprite" src="" alt="" />
+        <img id="pokeball" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png" alt="" />
+      </div>
       <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
       <p id="progress"></p>
       <p id="nextHint" hidden>다음 포켓몬: ???</p>
@@ -204,11 +230,14 @@
 
     let lastRendered = null; // 진화/부화/졸업으로 종이 바뀌었는지 비교용
 
-    function render(s) {
+    // transition: "evolve"(기본, 부화/진화/졸업 — 흰 빛만) | "recall"(보관함 "다시
+    // 키우기" — 흰 빛 + 몬스터볼로 들어갔다 나옴). 교체는 진화가 아니라서 연출을 구분함.
+    function render(s, transition) {
       const sprite = document.getElementById("sprite");
+      const pokeball = document.getElementById("pokeball");
       const nameEl = document.getElementById("name");
 
-      // 알 깨짐/진화/졸업으로 종 자체가 바뀐 경우 — 바로 전환하지 말고 잠깐 반짝이고 바뀜
+      // 알 깨짐/진화/졸업/교체로 종 자체가 바뀐 경우 — 바로 전환하지 말고 잠깐 연출 후 바뀜
       const speciesChanged =
         lastRendered && (lastRendered.state !== s.state || lastRendered.speciesId !== s.speciesId);
 
@@ -233,19 +262,28 @@
       }
 
       if (speciesChanged) {
-        sprite.classList.add("evolving");
-        nameEl.classList.add("evolving");
-        // CSS 애니메이션 자체는 0.7초(evolve-flash)짜리인데, 예전엔 0.3초 만에 클래스를
-        // 지워서 애니메이션이 중간에 뚝 끊기며 사실상 즉시 전환처럼 보였음(사용자가 직접
-        // 확인). 내용 교체는 반짝임이 가장 밝은 지점(0.3초)에서 하되, 클래스는 애니메이션이
-        // 끝나는 0.7초까지 유지해야 끊기지 않고 끝까지 재생됨.
+        const cls = transition === "recall" ? "recalling" : "evolving";
+        const duration = transition === "recall" ? 900 : 700;
+        const midpoint = transition === "recall" ? 450 : 300; // 애니메이션에서 화면이 완전히 가려지는 지점
+        // 이전 전환이 아직 안 끝난 채로 새 전환이 시작되는 경우(연타 등) 클래스가 겹쳐
+        // 쌓이지 않게 먼저 다 지우고 시작.
+        sprite.classList.remove("evolving", "recalling");
+        pokeball.classList.remove("recalling");
+        sprite.classList.add(cls);
+        nameEl.classList.add("evolving"); // 이름은 두 경우 다 그냥 반짝이기만
+        if (transition === "recall") pokeball.classList.add("recalling");
+        // CSS 애니메이션 자체가 duration짜리인데, 중간에 클래스를 지우면 애니메이션이
+        // 뚝 끊기며 사실상 즉시 전환처럼 보임(evolve-flash에서 실제로 겪었던 버그) —
+        // 내용 교체는 화면이 완전히 가려지는 중간 지점에서 하되, 클래스는 애니메이션이
+        // 끝날 때까지 유지해야 끊기지 않고 끝까지 재생됨.
         setTimeout(() => {
           applyContent();
-        }, 300);
+        }, midpoint);
         setTimeout(() => {
-          sprite.classList.remove("evolving");
+          sprite.classList.remove(cls);
           nameEl.classList.remove("evolving");
-        }, 700);
+          pokeball.classList.remove("recalling");
+        }, duration);
       } else {
         applyContent();
       }
@@ -416,7 +454,7 @@
           btn.disabled = false;
           return;
         }
-        render(result.status);
+        render(result.status, "recall");
         storageSubview.hidden = true;
         companionSubview.hidden = false;
       });
