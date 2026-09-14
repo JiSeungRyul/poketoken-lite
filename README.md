@@ -111,6 +111,14 @@ renderer/
   크로미움 번들 때문 — 급한 건 아님, 당장 안 할 예정.
   (참고: 항상 떠있는 위젯은 네이티브 전환 기다릴 필요 없이 Electron에서
   바로 구현 완료 — `renderer/widget.html`, 트레이 메뉴에서 on/off)
+- **macOS 빌드 지원** — 지금 `package.json`의 `electron-builder` 설정엔
+  `build.win`만 있고 `build.mac`이 없어서 `npm run dist`가 Windows exe만
+  뽑음. 코드 자체는 Windows 종속적인 부분이 거의 없어서(WSL 로그 스캔만
+  `win32`일 때만 타는 분기라 맥에선 그냥 안 걸림) 설정 추가 자체는 금방
+  끝나지만, 트레이 아이콘 모양(다크모드 자동 틴트용 템플릿 이미지 필요할
+  수 있음)·Dock 아이콘 노출 여부·코드사이닝 안 된 앱의 Gatekeeper 경고
+  같은 건 실제 맥에서 띄워봐야 확인 가능 — 이 개발 환경엔 맥이 없어서
+  검증은 사용자가 실제 맥에서 직접 해야 함.
 
 ## 튜닝 포인트
 
