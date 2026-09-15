@@ -377,11 +377,11 @@ function buildEvolutionChain(speciesId, discoveredIds, lineTier) {
  * 라인 단위로 고정된 값).
  */
 function buildDexAggregate() {
-  const bySpecies = new Map(); // speciesId -> { tier, count, shinyCount, latestGraduatedAt, liveShiny }
+  const bySpecies = new Map(); // speciesId -> { tier, count, shinyCount, latestGraduatedAt, liveShiny, isLive }
   const ensure = (id) => {
     let e = bySpecies.get(id);
     if (!e) {
-      e = { tier: null, count: 0, shinyCount: 0, latestGraduatedAt: null, liveShiny: false };
+      e = { tier: null, count: 0, shinyCount: 0, latestGraduatedAt: null, liveShiny: false, isLive: false };
       bySpecies.set(id, e);
     }
     return e;
@@ -398,6 +398,11 @@ function buildDexAggregate() {
         if (entry.isShiny) e.shinyCount += 1;
         if (!e.latestGraduatedAt || entry.graduatedAt > e.latestGraduatedAt) e.latestGraduatedAt = entry.graduatedAt;
       }
+      // 주의: 여기서 isLive는 안 건드림 — 졸업 기록만으로 들어온 중간형(예: 나옹→
+      // 페르시온 졸업 시 같이 딸려 들어오는 나옹)은 실제로 지금 키우는 개체가
+      // 없는데도 "육성 중"으로 잘못 표시되던 버그가 있었음(사용자가 실제로 확인함:
+      // 컴패니언도 보관함도 아닌데 도감엔 "나옹 육성 중"이라고 나옴). isLive는
+      // 아래 applyLive(지금 살아있는 개체)에서만 true가 되게 분리함.
     }
   }
 
@@ -405,10 +410,11 @@ function buildDexAggregate() {
     for (const id of reachedChainIds(speciesId)) {
       const e = ensure(id);
       e.tier = tier;
+      e.isLive = true; // 지금 실제로 키우는 중이거나 보관함에 있는 개체가 도달한 단계
       if (isShiny) e.liveShiny = true;
     }
   };
-  if (state.companion && state.companion.state !== "egg") {
+  if (state.companion && state.companion.state === "growing") {
     applyLive(state.companion.speciesId, state.companion.tier, !!state.companion.isShiny);
   }
   for (const c of state.storedCompanions) {
@@ -440,6 +446,7 @@ function buildPokedexPayload() {
       isShiny,
       tier: agg.tier ?? species.tier,
       count: agg.count,
+      isLive: agg.isLive, // 지금 실제로 키우는 중/보관 중인 개체가 있어야만 true("육성 중" 표시용)
       shinyCount: agg.shinyCount,
       graduatedAt: agg.latestGraduatedAt, // null이면 발견은 했지만 아직 졸업 전
       evolutionChain: buildEvolutionChain(id, discoveredIds, agg.tier ?? species.tier),
