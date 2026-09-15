@@ -15,20 +15,19 @@
 const HATCH_THRESHOLD = 5_000_000; // 알 → 부화까지 필요한 토큰
 
 // 등급별 "졸업까지 총 필요 토큰" — 진화 단계 수와 무관하게 등급 하나당 고정값.
-// 원래는 레퍼런스(PokeTokenBar) PokemonBalance.graduationTotal 실측값(레퍼런스
-// "실측 평균 하루 2.53억 토큰" 기준)을 그대로 썼는데, 그건 우리보다 훨씬 헤비한
-// 사용 패턴 기준이라 실제 이 프로젝트 사용자 로그로 다시 맞췄다: 실측 평일 활동일
-// 평균 약 8,150만 토큰/일(2026-09-08~09-14, 5일) 기준으로 "에픽이 대략 평일 5일
-// (1주일) 안에 졸업"하도록 역산 → 4억. 나머지 등급은 원래 레퍼런스 값들의 비율
-// (common:uncommon:epic:legendary:mythical = 0.25:0.625:1:2:4)을 그대로 유지한 채
-// 축소했다(2/15배). mythical은 여전히 레퍼런스에 없는 우리 자체 등급(전설/환상을
-// 분리하면서 legendary의 2배로 잡은 것 — 1세대엔 뮤 전용).
+// 레퍼런스(PokeTokenBar) PokemonBalance.graduationTotal 실측값(common 7.5억/
+// uncommon 18.75억/epic(레퍼런스는 "rare") 30억/legendary 60억)의 정확히 1/5로
+// 축소해서 씀 — 처음엔 실측 사용 패턴 기준으로 1/7.5(에픽 4억, "평일 1주일"
+// 목표)까지 낮췄었는데, 너무 빠르다는 사용자 피드백으로 1/5(에픽 6억)로 다시
+// 올림. 등급 간 비율(common:uncommon:epic:legendary:mythical = 0.25:0.625:1:2:4)은
+// 그대로 유지. mythical은 레퍼런스에 없는 우리 자체 등급(전설/환상을 분리하면서
+// legendary의 2배로 잡은 것 — 1세대엔 뮤 전용).
 const GRADUATION_TOTAL = {
-  common: 100_000_000,
-  uncommon: 250_000_000,
-  epic: 400_000_000,
-  legendary: 800_000_000,
-  mythical: 1_600_000_000,
+  common: 150_000_000,
+  uncommon: 375_000_000,
+  epic: 600_000_000,
+  legendary: 1_200_000_000,
+  mythical: 2_400_000_000,
 };
 
 // 등급 알(egg box)의 "이 등급 이상 보장" 판정 + 정렬에 쓰는 순위 — 높을수록 희귀.
