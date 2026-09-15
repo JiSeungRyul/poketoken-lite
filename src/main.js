@@ -2,7 +2,7 @@ const { app, Tray, Menu, BrowserWindow, nativeImage, ipcMain, screen } = require
 const path = require("path");
 const fs = require("fs");
 
-const { getTotalTokens } = require("./logParser");
+const { getTotalTokens, getTotalTokensAsOf } = require("./logParser");
 const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, pickWeeklyTicketGrade } = require("./growth");
 const { loadState, saveState } = require("./state");
 
@@ -168,6 +168,29 @@ function migrateMissingTier() {
 
   if (changed) {
     console.log("Migrated: backfilled missing tier fields from current species tier (best-effort approximation)");
+    saveState(app.getPath("userData"), state);
+  }
+}
+
+/**
+ * 1회성 보정: frozenProgress(보관 시점에 고정해둔 진행률) 필드 추가 전에 이미
+ * 보관함에 들어가 있던 항목은 이 필드가 아예 없다. resumeStoredCompanion()은
+ * 없으면 0으로 취급하는데, 그러면 실제로 쌓여있던 진행률이 통째로 날아가 보임
+ * (사용자가 실제로 겪음 — 라프라스가 다시 키우니 0토큰으로 보임). storedAt
+ * 시각까지의 누적 총량을 실제 로그에서 다시 계산해서(getTotalTokensAsOf) 복구한다
+ * — storedAt이 없는 아주 오래된 저장분만 최후 수단으로 0 처리.
+ */
+function backfillMissingFrozenProgress() {
+  let changed = false;
+  for (const c of state.storedCompanions) {
+    if (c.frozenProgress === undefined) {
+      const totalAtStore = c.storedAt ? getTotalTokensAsOf(c.storedAt) : 0;
+      c.frozenProgress = Math.max(0, totalAtStore - c.hatchedAtTotal);
+      changed = true;
+    }
+  }
+  if (changed) {
+    console.log("Migrated: reconstructed frozenProgress for stored companions from historical log timestamps");
     saveState(app.getPath("userData"), state);
   }
 }
@@ -772,6 +795,7 @@ app.whenReady().then(() => {
   fixCorruptedPokedexEntries();
   fixCorruptedCompanion();
   migrateMissingTier();
+  backfillMissingFrozenProgress();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => buildPokedexPayload());

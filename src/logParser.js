@@ -119,7 +119,9 @@ function extractUsage(entry) {
   };
 }
 
-function parseJsonlFile(filePath, seenMessageIds) {
+// cutoffIso가 주어지면 그 시각(entry.timestamp) 이후 항목은 집계에서 빼고 셈 —
+// "그 시점까지 누적 총량"을 과거 시점 기준으로 재구성할 때 씀(보관함 진행률 복구용).
+function parseJsonlFile(filePath, seenMessageIds, cutoffIso) {
   let fileTotal = 0;
   const raw = fs.readFileSync(filePath, "utf-8");
   const lines = raw.split("\n").filter(Boolean);
@@ -134,6 +136,8 @@ function parseJsonlFile(filePath, seenMessageIds) {
 
     const usage = extractUsage(entry);
     if (!usage) continue;
+    // ISO 8601 문자열은 자릿수가 고정이라 문자열 비교로도 시간 순서 비교가 맞음.
+    if (cutoffIso && (!usage.timestamp || usage.timestamp > cutoffIso)) continue;
 
     // 메시지 id로 중복 제거 (같은 메시지가 여러 로그에 재등장하는 경우 대비)
     if (usage.messageId) {
@@ -147,11 +151,7 @@ function parseJsonlFile(filePath, seenMessageIds) {
   return fileTotal;
 }
 
-/**
- * 전체 누적 토큰 계산.
- * 1차 MVP는 "전체 누적" 기준으로 성장시킴 (원본처럼 5시간/주간 블록 구분은 안 함).
- */
-function getTotalTokens() {
+function computeTotalTokens(cutoffIso) {
   const seenMessageIds = new Set();
   let total = 0;
 
@@ -159,7 +159,7 @@ function getTotalTokens() {
     const files = findJsonlFiles(dir);
     for (const file of files) {
       try {
-        total += parseJsonlFile(file, seenMessageIds);
+        total += parseJsonlFile(file, seenMessageIds, cutoffIso);
       } catch (err) {
         console.error(`Failed to parse log: ${file}`, err.message);
       }
@@ -168,8 +168,24 @@ function getTotalTokens() {
   return total;
 }
 
+/**
+ * 전체 누적 토큰 계산.
+ * 1차 MVP는 "전체 누적" 기준으로 성장시킴 (원본처럼 5시간/주간 블록 구분은 안 함).
+ */
+function getTotalTokens() {
+  return computeTotalTokens(null);
+}
+
+// cutoffIso(ISO 8601) 시점까지 누적됐던 총 토큰을 과거 로그에서 재구성.
+// 보관함에 넣을 당시의 "그 순간의 누적치"를 나중에라도 다시 계산할 수 있게(예:
+// frozenProgress 필드 자체가 없던 옛 저장분을 0으로 날리지 않고 복구하는 용도).
+function getTotalTokensAsOf(cutoffIso) {
+  return computeTotalTokens(cutoffIso);
+}
+
 module.exports = {
   getTotalTokens,
+  getTotalTokensAsOf,
   getClaudeProjectsDir,
   getClaudeProjectsDirs,
   findJsonlFiles,
