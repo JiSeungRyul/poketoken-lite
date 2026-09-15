@@ -1,6 +1,7 @@
 {
   "1": {
     "id": 1,
+    "generation": 1,
     "nameKo": "이상해씨",
     "nameEn": "bulbasaur",
     "captureRate": 45,
@@ -16,6 +17,7 @@
   },
   "2": {
     "id": 2,
+    "generation": 1,
     "nameKo": "이상해풀",
     "nameEn": "ivysaur",
     "captureRate": 45,
@@ -31,6 +33,7 @@
   },
   "3": {
     "id": 3,
+    "generation": 1,
     "nameKo": "이상해꽃",
     "nameEn": "venusaur",
     "captureRate": 45,
@@ -44,6 +47,7 @@
   },
   "4": {
     "id": 4,
+    "generation": 1,
     "nameKo": "파이리",
     "nameEn": "charmander",
     "captureRate": 45,
@@ -59,6 +63,7 @@
   },
   "5": {
     "id": 5,
+    "generation": 1,
     "nameKo": "리자드",
     "nameEn": "charmeleon",
     "captureRate": 45,
@@ -74,6 +79,7 @@
   },
   "6": {
     "id": 6,
+    "generation": 1,
     "nameKo": "리자몽",
     "nameEn": "charizard",
     "captureRate": 45,
@@ -87,6 +93,7 @@
   },
   "7": {
     "id": 7,
+    "generation": 1,
     "nameKo": "꼬부기",
     "nameEn": "squirtle",
     "captureRate": 45,
@@ -102,6 +109,7 @@
   },
   "8": {
     "id": 8,
+    "generation": 1,
     "nameKo": "어니부기",
     "nameEn": "wartortle",
     "captureRate": 45,
@@ -117,6 +125,7 @@
   },
   "9": {
     "id": 9,
+    "generation": 1,
     "nameKo": "거북왕",
     "nameEn": "blastoise",
     "captureRate": 45,
@@ -130,6 +139,7 @@
   },
   "10": {
     "id": 10,
+    "generation": 1,
     "nameKo": "캐터피",
     "nameEn": "caterpie",
     "captureRate": 255,
@@ -145,6 +155,7 @@
   },
   "11": {
     "id": 11,
+    "generation": 1,
     "nameKo": "단데기",
     "nameEn": "metapod",
     "captureRate": 120,
@@ -160,6 +171,7 @@
   },
   "12": {
     "id": 12,
+    "generation": 1,
     "nameKo": "버터플",
     "nameEn": "butterfree",
     "captureRate": 45,
@@ -173,6 +185,7 @@
   },
   "13": {
     "id": 13,
+    "generation": 1,
     "nameKo": "뿔충이",
     "nameEn": "weedle",
     "captureRate": 255,
@@ -188,6 +201,7 @@
   },
   "14": {
     "id": 14,
+    "generation": 1,
     "nameKo": "딱충이",
     "nameEn": "kakuna",
     "captureRate": 120,
@@ -203,6 +217,7 @@
   },
   "15": {
     "id": 15,
+    "generation": 1,
     "nameKo": "독침붕",
     "nameEn": "beedrill",
     "captureRate": 45,
@@ -216,6 +231,7 @@
   },
   "16": {
     "id": 16,
+    "generation": 1,
     "nameKo": "구구",
     "nameEn": "pidgey",
     "captureRate": 255,
@@ -231,6 +247,7 @@
   },
   "17": {
     "id": 17,
+    "generation": 1,
     "nameKo": "피죤",
     "nameEn": "pidgeotto",
     "captureRate": 120,
@@ -246,6 +263,7 @@
   },
   "18": {
     "id": 18,
+    "generation": 1,
     "nameKo": "피죤투",
     "nameEn": "pidgeot",
     "captureRate": 45,
@@ -259,6 +277,7 @@
   },
   "19": {
     "id": 19,
+    "generation": 1,
     "nameKo": "꼬렛",
     "nameEn": "rattata",
     "captureRate": 255,
@@ -274,6 +293,7 @@
   },
   "20": {
     "id": 20,
+    "generation": 1,
     "nameKo": "레트라",
     "nameEn": "raticate",
     "captureRate": 127,
@@ -287,6 +307,7 @@
   },
   "21": {
     "id": 21,
+    "generation": 1,
     "nameKo": "깨비참",
     "nameEn": "spearow",
     "captureRate": 255,
@@ -302,6 +323,7 @@
   },
   "22": {
     "id": 22,
+    "generation": 1,
     "nameKo": "깨비드릴조",
     "nameEn": "fearow",
     "captureRate": 90,
@@ -315,6 +337,7 @@
   },
   "23": {
     "id": 23,
+    "generation": 1,
     "nameKo": "아보",
     "nameEn": "ekans",
     "captureRate": 255,
@@ -330,6 +353,7 @@
   },
   "24": {
     "id": 24,
+    "generation": 1,
     "nameKo": "아보크",
     "nameEn": "arbok",
     "captureRate": 90,
@@ -343,6 +367,7 @@
   },
   "25": {
     "id": 25,
+    "generation": 1,
     "nameKo": "피카츄",
     "nameEn": "pikachu",
     "captureRate": 190,
@@ -358,6 +383,7 @@
   },
   "26": {
     "id": 26,
+    "generation": 1,
     "nameKo": "라이츄",
     "nameEn": "raichu",
     "captureRate": 75,
@@ -371,6 +397,7 @@
   },
   "27": {
     "id": 27,
+    "generation": 1,
     "nameKo": "모래두지",
     "nameEn": "sandshrew",
     "captureRate": 255,
@@ -386,6 +413,7 @@
   },
   "28": {
     "id": 28,
+    "generation": 1,
     "nameKo": "고지",
     "nameEn": "sandslash",
     "captureRate": 90,
@@ -399,6 +427,7 @@
   },
   "29": {
     "id": 29,
+    "generation": 1,
     "nameKo": "니드런♀",
     "nameEn": "nidoran-f",
     "captureRate": 235,
@@ -414,6 +443,7 @@
   },
   "30": {
     "id": 30,
+    "generation": 1,
     "nameKo": "니드리나",
     "nameEn": "nidorina",
     "captureRate": 120,
@@ -429,6 +459,7 @@
   },
   "31": {
     "id": 31,
+    "generation": 1,
     "nameKo": "니드퀸",
     "nameEn": "nidoqueen",
     "captureRate": 45,
@@ -442,6 +473,7 @@
   },
   "32": {
     "id": 32,
+    "generation": 1,
     "nameKo": "니드런♂",
     "nameEn": "nidoran-m",
     "captureRate": 235,
@@ -457,6 +489,7 @@
   },
   "33": {
     "id": 33,
+    "generation": 1,
     "nameKo": "니드리노",
     "nameEn": "nidorino",
     "captureRate": 120,
@@ -472,6 +505,7 @@
   },
   "34": {
     "id": 34,
+    "generation": 1,
     "nameKo": "니드킹",
     "nameEn": "nidoking",
     "captureRate": 45,
@@ -485,6 +519,7 @@
   },
   "35": {
     "id": 35,
+    "generation": 1,
     "nameKo": "삐삐",
     "nameEn": "clefairy",
     "captureRate": 150,
@@ -500,6 +535,7 @@
   },
   "36": {
     "id": 36,
+    "generation": 1,
     "nameKo": "픽시",
     "nameEn": "clefable",
     "captureRate": 25,
@@ -513,6 +549,7 @@
   },
   "37": {
     "id": 37,
+    "generation": 1,
     "nameKo": "식스테일",
     "nameEn": "vulpix",
     "captureRate": 190,
@@ -528,6 +565,7 @@
   },
   "38": {
     "id": 38,
+    "generation": 1,
     "nameKo": "나인테일",
     "nameEn": "ninetales",
     "captureRate": 75,
@@ -541,6 +579,7 @@
   },
   "39": {
     "id": 39,
+    "generation": 1,
     "nameKo": "푸린",
     "nameEn": "jigglypuff",
     "captureRate": 170,
@@ -556,6 +595,7 @@
   },
   "40": {
     "id": 40,
+    "generation": 1,
     "nameKo": "푸크린",
     "nameEn": "wigglytuff",
     "captureRate": 50,
@@ -569,6 +609,7 @@
   },
   "41": {
     "id": 41,
+    "generation": 1,
     "nameKo": "주뱃",
     "nameEn": "zubat",
     "captureRate": 255,
@@ -584,6 +625,7 @@
   },
   "42": {
     "id": 42,
+    "generation": 1,
     "nameKo": "골뱃",
     "nameEn": "golbat",
     "captureRate": 90,
@@ -597,6 +639,7 @@
   },
   "43": {
     "id": 43,
+    "generation": 1,
     "nameKo": "뚜벅쵸",
     "nameEn": "oddish",
     "captureRate": 255,
@@ -612,6 +655,7 @@
   },
   "44": {
     "id": 44,
+    "generation": 1,
     "nameKo": "냄새꼬",
     "nameEn": "gloom",
     "captureRate": 120,
@@ -627,6 +671,7 @@
   },
   "45": {
     "id": 45,
+    "generation": 1,
     "nameKo": "라플레시아",
     "nameEn": "vileplume",
     "captureRate": 45,
@@ -640,6 +685,7 @@
   },
   "46": {
     "id": 46,
+    "generation": 1,
     "nameKo": "파라스",
     "nameEn": "paras",
     "captureRate": 190,
@@ -655,6 +701,7 @@
   },
   "47": {
     "id": 47,
+    "generation": 1,
     "nameKo": "파라섹트",
     "nameEn": "parasect",
     "captureRate": 75,
@@ -668,6 +715,7 @@
   },
   "48": {
     "id": 48,
+    "generation": 1,
     "nameKo": "콘팡",
     "nameEn": "venonat",
     "captureRate": 190,
@@ -683,6 +731,7 @@
   },
   "49": {
     "id": 49,
+    "generation": 1,
     "nameKo": "도나리",
     "nameEn": "venomoth",
     "captureRate": 75,
@@ -696,6 +745,7 @@
   },
   "50": {
     "id": 50,
+    "generation": 1,
     "nameKo": "디그다",
     "nameEn": "diglett",
     "captureRate": 255,
@@ -711,6 +761,7 @@
   },
   "51": {
     "id": 51,
+    "generation": 1,
     "nameKo": "닥트리오",
     "nameEn": "dugtrio",
     "captureRate": 50,
@@ -724,6 +775,7 @@
   },
   "52": {
     "id": 52,
+    "generation": 1,
     "nameKo": "나옹",
     "nameEn": "meowth",
     "captureRate": 255,
@@ -739,6 +791,7 @@
   },
   "53": {
     "id": 53,
+    "generation": 1,
     "nameKo": "페르시온",
     "nameEn": "persian",
     "captureRate": 90,
@@ -752,6 +805,7 @@
   },
   "54": {
     "id": 54,
+    "generation": 1,
     "nameKo": "고라파덕",
     "nameEn": "psyduck",
     "captureRate": 190,
@@ -767,6 +821,7 @@
   },
   "55": {
     "id": 55,
+    "generation": 1,
     "nameKo": "골덕",
     "nameEn": "golduck",
     "captureRate": 75,
@@ -780,6 +835,7 @@
   },
   "56": {
     "id": 56,
+    "generation": 1,
     "nameKo": "망키",
     "nameEn": "mankey",
     "captureRate": 190,
@@ -795,6 +851,7 @@
   },
   "57": {
     "id": 57,
+    "generation": 1,
     "nameKo": "성원숭",
     "nameEn": "primeape",
     "captureRate": 75,
@@ -808,6 +865,7 @@
   },
   "58": {
     "id": 58,
+    "generation": 1,
     "nameKo": "가디",
     "nameEn": "growlithe",
     "captureRate": 190,
@@ -823,6 +881,7 @@
   },
   "59": {
     "id": 59,
+    "generation": 1,
     "nameKo": "윈디",
     "nameEn": "arcanine",
     "captureRate": 75,
@@ -836,6 +895,7 @@
   },
   "60": {
     "id": 60,
+    "generation": 1,
     "nameKo": "발챙이",
     "nameEn": "poliwag",
     "captureRate": 255,
@@ -851,6 +911,7 @@
   },
   "61": {
     "id": 61,
+    "generation": 1,
     "nameKo": "슈륙챙이",
     "nameEn": "poliwhirl",
     "captureRate": 120,
@@ -866,6 +927,7 @@
   },
   "62": {
     "id": 62,
+    "generation": 1,
     "nameKo": "강챙이",
     "nameEn": "poliwrath",
     "captureRate": 45,
@@ -879,6 +941,7 @@
   },
   "63": {
     "id": 63,
+    "generation": 1,
     "nameKo": "캐이시",
     "nameEn": "abra",
     "captureRate": 200,
@@ -894,6 +957,7 @@
   },
   "64": {
     "id": 64,
+    "generation": 1,
     "nameKo": "윤겔라",
     "nameEn": "kadabra",
     "captureRate": 100,
@@ -909,6 +973,7 @@
   },
   "65": {
     "id": 65,
+    "generation": 1,
     "nameKo": "후딘",
     "nameEn": "alakazam",
     "captureRate": 50,
@@ -922,6 +987,7 @@
   },
   "66": {
     "id": 66,
+    "generation": 1,
     "nameKo": "알통몬",
     "nameEn": "machop",
     "captureRate": 180,
@@ -937,6 +1003,7 @@
   },
   "67": {
     "id": 67,
+    "generation": 1,
     "nameKo": "근육몬",
     "nameEn": "machoke",
     "captureRate": 90,
@@ -952,6 +1019,7 @@
   },
   "68": {
     "id": 68,
+    "generation": 1,
     "nameKo": "괴력몬",
     "nameEn": "machamp",
     "captureRate": 45,
@@ -965,6 +1033,7 @@
   },
   "69": {
     "id": 69,
+    "generation": 1,
     "nameKo": "모다피",
     "nameEn": "bellsprout",
     "captureRate": 255,
@@ -980,6 +1049,7 @@
   },
   "70": {
     "id": 70,
+    "generation": 1,
     "nameKo": "우츠동",
     "nameEn": "weepinbell",
     "captureRate": 120,
@@ -995,6 +1065,7 @@
   },
   "71": {
     "id": 71,
+    "generation": 1,
     "nameKo": "우츠보트",
     "nameEn": "victreebel",
     "captureRate": 45,
@@ -1008,6 +1079,7 @@
   },
   "72": {
     "id": 72,
+    "generation": 1,
     "nameKo": "왕눈해",
     "nameEn": "tentacool",
     "captureRate": 190,
@@ -1023,6 +1095,7 @@
   },
   "73": {
     "id": 73,
+    "generation": 1,
     "nameKo": "독파리",
     "nameEn": "tentacruel",
     "captureRate": 60,
@@ -1036,6 +1109,7 @@
   },
   "74": {
     "id": 74,
+    "generation": 1,
     "nameKo": "꼬마돌",
     "nameEn": "geodude",
     "captureRate": 255,
@@ -1051,6 +1125,7 @@
   },
   "75": {
     "id": 75,
+    "generation": 1,
     "nameKo": "데구리",
     "nameEn": "graveler",
     "captureRate": 120,
@@ -1066,6 +1141,7 @@
   },
   "76": {
     "id": 76,
+    "generation": 1,
     "nameKo": "딱구리",
     "nameEn": "golem",
     "captureRate": 45,
@@ -1079,6 +1155,7 @@
   },
   "77": {
     "id": 77,
+    "generation": 1,
     "nameKo": "포니타",
     "nameEn": "ponyta",
     "captureRate": 190,
@@ -1094,6 +1171,7 @@
   },
   "78": {
     "id": 78,
+    "generation": 1,
     "nameKo": "날쌩마",
     "nameEn": "rapidash",
     "captureRate": 60,
@@ -1107,6 +1185,7 @@
   },
   "79": {
     "id": 79,
+    "generation": 1,
     "nameKo": "야돈",
     "nameEn": "slowpoke",
     "captureRate": 190,
@@ -1122,6 +1201,7 @@
   },
   "80": {
     "id": 80,
+    "generation": 1,
     "nameKo": "야도란",
     "nameEn": "slowbro",
     "captureRate": 75,
@@ -1135,6 +1215,7 @@
   },
   "81": {
     "id": 81,
+    "generation": 1,
     "nameKo": "코일",
     "nameEn": "magnemite",
     "captureRate": 190,
@@ -1150,6 +1231,7 @@
   },
   "82": {
     "id": 82,
+    "generation": 1,
     "nameKo": "레어코일",
     "nameEn": "magneton",
     "captureRate": 60,
@@ -1163,6 +1245,7 @@
   },
   "83": {
     "id": 83,
+    "generation": 1,
     "nameKo": "파오리",
     "nameEn": "farfetchd",
     "captureRate": 45,
@@ -1176,6 +1259,7 @@
   },
   "84": {
     "id": 84,
+    "generation": 1,
     "nameKo": "두두",
     "nameEn": "doduo",
     "captureRate": 190,
@@ -1191,6 +1275,7 @@
   },
   "85": {
     "id": 85,
+    "generation": 1,
     "nameKo": "두트리오",
     "nameEn": "dodrio",
     "captureRate": 45,
@@ -1204,6 +1289,7 @@
   },
   "86": {
     "id": 86,
+    "generation": 1,
     "nameKo": "쥬쥬",
     "nameEn": "seel",
     "captureRate": 190,
@@ -1219,6 +1305,7 @@
   },
   "87": {
     "id": 87,
+    "generation": 1,
     "nameKo": "쥬레곤",
     "nameEn": "dewgong",
     "captureRate": 75,
@@ -1232,6 +1319,7 @@
   },
   "88": {
     "id": 88,
+    "generation": 1,
     "nameKo": "질퍽이",
     "nameEn": "grimer",
     "captureRate": 190,
@@ -1247,6 +1335,7 @@
   },
   "89": {
     "id": 89,
+    "generation": 1,
     "nameKo": "질뻐기",
     "nameEn": "muk",
     "captureRate": 75,
@@ -1260,6 +1349,7 @@
   },
   "90": {
     "id": 90,
+    "generation": 1,
     "nameKo": "셀러",
     "nameEn": "shellder",
     "captureRate": 190,
@@ -1275,6 +1365,7 @@
   },
   "91": {
     "id": 91,
+    "generation": 1,
     "nameKo": "파르셀",
     "nameEn": "cloyster",
     "captureRate": 60,
@@ -1288,6 +1379,7 @@
   },
   "92": {
     "id": 92,
+    "generation": 1,
     "nameKo": "고오스",
     "nameEn": "gastly",
     "captureRate": 190,
@@ -1303,6 +1395,7 @@
   },
   "93": {
     "id": 93,
+    "generation": 1,
     "nameKo": "고우스트",
     "nameEn": "haunter",
     "captureRate": 90,
@@ -1318,6 +1411,7 @@
   },
   "94": {
     "id": 94,
+    "generation": 1,
     "nameKo": "팬텀",
     "nameEn": "gengar",
     "captureRate": 45,
@@ -1331,6 +1425,7 @@
   },
   "95": {
     "id": 95,
+    "generation": 1,
     "nameKo": "롱스톤",
     "nameEn": "onix",
     "captureRate": 45,
@@ -1344,6 +1439,7 @@
   },
   "96": {
     "id": 96,
+    "generation": 1,
     "nameKo": "슬리프",
     "nameEn": "drowzee",
     "captureRate": 190,
@@ -1359,6 +1455,7 @@
   },
   "97": {
     "id": 97,
+    "generation": 1,
     "nameKo": "슬리퍼",
     "nameEn": "hypno",
     "captureRate": 75,
@@ -1372,6 +1469,7 @@
   },
   "98": {
     "id": 98,
+    "generation": 1,
     "nameKo": "크랩",
     "nameEn": "krabby",
     "captureRate": 225,
@@ -1387,6 +1485,7 @@
   },
   "99": {
     "id": 99,
+    "generation": 1,
     "nameKo": "킹크랩",
     "nameEn": "kingler",
     "captureRate": 60,
@@ -1400,6 +1499,7 @@
   },
   "100": {
     "id": 100,
+    "generation": 1,
     "nameKo": "찌리리공",
     "nameEn": "voltorb",
     "captureRate": 190,
@@ -1415,6 +1515,7 @@
   },
   "101": {
     "id": 101,
+    "generation": 1,
     "nameKo": "붐볼",
     "nameEn": "electrode",
     "captureRate": 60,
@@ -1428,6 +1529,7 @@
   },
   "102": {
     "id": 102,
+    "generation": 1,
     "nameKo": "아라리",
     "nameEn": "exeggcute",
     "captureRate": 90,
@@ -1443,6 +1545,7 @@
   },
   "103": {
     "id": 103,
+    "generation": 1,
     "nameKo": "나시",
     "nameEn": "exeggutor",
     "captureRate": 45,
@@ -1456,6 +1559,7 @@
   },
   "104": {
     "id": 104,
+    "generation": 1,
     "nameKo": "탕구리",
     "nameEn": "cubone",
     "captureRate": 190,
@@ -1471,6 +1575,7 @@
   },
   "105": {
     "id": 105,
+    "generation": 1,
     "nameKo": "텅구리",
     "nameEn": "marowak",
     "captureRate": 75,
@@ -1484,6 +1589,7 @@
   },
   "106": {
     "id": 106,
+    "generation": 1,
     "nameKo": "시라소몬",
     "nameEn": "hitmonlee",
     "captureRate": 45,
@@ -1497,6 +1603,7 @@
   },
   "107": {
     "id": 107,
+    "generation": 1,
     "nameKo": "홍수몬",
     "nameEn": "hitmonchan",
     "captureRate": 45,
@@ -1504,12 +1611,13 @@
     "stage": 1,
     "evolvesTo": [],
     "maxStage": 1,
-    "baseFormId": 106,
+    "baseFormId": 107,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/107.gif",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/107.gif"
   },
   "108": {
     "id": 108,
+    "generation": 1,
     "nameKo": "내루미",
     "nameEn": "lickitung",
     "captureRate": 45,
@@ -1523,6 +1631,7 @@
   },
   "109": {
     "id": 109,
+    "generation": 1,
     "nameKo": "또가스",
     "nameEn": "koffing",
     "captureRate": 190,
@@ -1538,6 +1647,7 @@
   },
   "110": {
     "id": 110,
+    "generation": 1,
     "nameKo": "또도가스",
     "nameEn": "weezing",
     "captureRate": 60,
@@ -1551,6 +1661,7 @@
   },
   "111": {
     "id": 111,
+    "generation": 1,
     "nameKo": "뿔카노",
     "nameEn": "rhyhorn",
     "captureRate": 120,
@@ -1566,6 +1677,7 @@
   },
   "112": {
     "id": 112,
+    "generation": 1,
     "nameKo": "코뿌리",
     "nameEn": "rhydon",
     "captureRate": 60,
@@ -1579,6 +1691,7 @@
   },
   "113": {
     "id": 113,
+    "generation": 1,
     "nameKo": "럭키",
     "nameEn": "chansey",
     "captureRate": 30,
@@ -1592,6 +1705,7 @@
   },
   "114": {
     "id": 114,
+    "generation": 1,
     "nameKo": "덩쿠리",
     "nameEn": "tangela",
     "captureRate": 45,
@@ -1605,6 +1719,7 @@
   },
   "115": {
     "id": 115,
+    "generation": 1,
     "nameKo": "캥카",
     "nameEn": "kangaskhan",
     "captureRate": 45,
@@ -1618,6 +1733,7 @@
   },
   "116": {
     "id": 116,
+    "generation": 1,
     "nameKo": "쏘드라",
     "nameEn": "horsea",
     "captureRate": 225,
@@ -1633,6 +1749,7 @@
   },
   "117": {
     "id": 117,
+    "generation": 1,
     "nameKo": "시드라",
     "nameEn": "seadra",
     "captureRate": 75,
@@ -1646,6 +1763,7 @@
   },
   "118": {
     "id": 118,
+    "generation": 1,
     "nameKo": "콘치",
     "nameEn": "goldeen",
     "captureRate": 225,
@@ -1661,6 +1779,7 @@
   },
   "119": {
     "id": 119,
+    "generation": 1,
     "nameKo": "왕콘치",
     "nameEn": "seaking",
     "captureRate": 60,
@@ -1674,6 +1793,7 @@
   },
   "120": {
     "id": 120,
+    "generation": 1,
     "nameKo": "별가사리",
     "nameEn": "staryu",
     "captureRate": 225,
@@ -1689,6 +1809,7 @@
   },
   "121": {
     "id": 121,
+    "generation": 1,
     "nameKo": "아쿠스타",
     "nameEn": "starmie",
     "captureRate": 60,
@@ -1702,6 +1823,7 @@
   },
   "122": {
     "id": 122,
+    "generation": 1,
     "nameKo": "마임맨",
     "nameEn": "mr-mime",
     "captureRate": 45,
@@ -1715,6 +1837,7 @@
   },
   "123": {
     "id": 123,
+    "generation": 1,
     "nameKo": "스라크",
     "nameEn": "scyther",
     "captureRate": 45,
@@ -1728,6 +1851,7 @@
   },
   "124": {
     "id": 124,
+    "generation": 1,
     "nameKo": "루주라",
     "nameEn": "jynx",
     "captureRate": 45,
@@ -1741,6 +1865,7 @@
   },
   "125": {
     "id": 125,
+    "generation": 1,
     "nameKo": "에레브",
     "nameEn": "electabuzz",
     "captureRate": 45,
@@ -1754,6 +1879,7 @@
   },
   "126": {
     "id": 126,
+    "generation": 1,
     "nameKo": "마그마",
     "nameEn": "magmar",
     "captureRate": 45,
@@ -1767,6 +1893,7 @@
   },
   "127": {
     "id": 127,
+    "generation": 1,
     "nameKo": "쁘사이저",
     "nameEn": "pinsir",
     "captureRate": 45,
@@ -1780,6 +1907,7 @@
   },
   "128": {
     "id": 128,
+    "generation": 1,
     "nameKo": "켄타로스",
     "nameEn": "tauros",
     "captureRate": 45,
@@ -1793,6 +1921,7 @@
   },
   "129": {
     "id": 129,
+    "generation": 1,
     "nameKo": "잉어킹",
     "nameEn": "magikarp",
     "captureRate": 255,
@@ -1808,6 +1937,7 @@
   },
   "130": {
     "id": 130,
+    "generation": 1,
     "nameKo": "갸라도스",
     "nameEn": "gyarados",
     "captureRate": 45,
@@ -1821,6 +1951,7 @@
   },
   "131": {
     "id": 131,
+    "generation": 1,
     "nameKo": "라프라스",
     "nameEn": "lapras",
     "captureRate": 45,
@@ -1834,6 +1965,7 @@
   },
   "132": {
     "id": 132,
+    "generation": 1,
     "nameKo": "메타몽",
     "nameEn": "ditto",
     "captureRate": 35,
@@ -1847,6 +1979,7 @@
   },
   "133": {
     "id": 133,
+    "generation": 1,
     "nameKo": "이브이",
     "nameEn": "eevee",
     "captureRate": 45,
@@ -1864,6 +1997,7 @@
   },
   "134": {
     "id": 134,
+    "generation": 1,
     "nameKo": "샤미드",
     "nameEn": "vaporeon",
     "captureRate": 45,
@@ -1877,6 +2011,7 @@
   },
   "135": {
     "id": 135,
+    "generation": 1,
     "nameKo": "쥬피썬더",
     "nameEn": "jolteon",
     "captureRate": 45,
@@ -1890,6 +2025,7 @@
   },
   "136": {
     "id": 136,
+    "generation": 1,
     "nameKo": "부스터",
     "nameEn": "flareon",
     "captureRate": 45,
@@ -1903,6 +2039,7 @@
   },
   "137": {
     "id": 137,
+    "generation": 1,
     "nameKo": "폴리곤",
     "nameEn": "porygon",
     "captureRate": 45,
@@ -1916,6 +2053,7 @@
   },
   "138": {
     "id": 138,
+    "generation": 1,
     "nameKo": "암나이트",
     "nameEn": "omanyte",
     "captureRate": 45,
@@ -1931,6 +2069,7 @@
   },
   "139": {
     "id": 139,
+    "generation": 1,
     "nameKo": "암스타",
     "nameEn": "omastar",
     "captureRate": 45,
@@ -1944,6 +2083,7 @@
   },
   "140": {
     "id": 140,
+    "generation": 1,
     "nameKo": "투구",
     "nameEn": "kabuto",
     "captureRate": 45,
@@ -1959,6 +2099,7 @@
   },
   "141": {
     "id": 141,
+    "generation": 1,
     "nameKo": "투구푸스",
     "nameEn": "kabutops",
     "captureRate": 45,
@@ -1972,6 +2113,7 @@
   },
   "142": {
     "id": 142,
+    "generation": 1,
     "nameKo": "프테라",
     "nameEn": "aerodactyl",
     "captureRate": 45,
@@ -1985,6 +2127,7 @@
   },
   "143": {
     "id": 143,
+    "generation": 1,
     "nameKo": "잠만보",
     "nameEn": "snorlax",
     "captureRate": 25,
@@ -1998,6 +2141,7 @@
   },
   "144": {
     "id": 144,
+    "generation": 1,
     "nameKo": "프리져",
     "nameEn": "articuno",
     "captureRate": 3,
@@ -2011,6 +2155,7 @@
   },
   "145": {
     "id": 145,
+    "generation": 1,
     "nameKo": "썬더",
     "nameEn": "zapdos",
     "captureRate": 3,
@@ -2024,6 +2169,7 @@
   },
   "146": {
     "id": 146,
+    "generation": 1,
     "nameKo": "파이어",
     "nameEn": "moltres",
     "captureRate": 3,
@@ -2037,6 +2183,7 @@
   },
   "147": {
     "id": 147,
+    "generation": 1,
     "nameKo": "미뇽",
     "nameEn": "dratini",
     "captureRate": 45,
@@ -2052,6 +2199,7 @@
   },
   "148": {
     "id": 148,
+    "generation": 1,
     "nameKo": "신뇽",
     "nameEn": "dragonair",
     "captureRate": 45,
@@ -2067,6 +2215,7 @@
   },
   "149": {
     "id": 149,
+    "generation": 1,
     "nameKo": "망나뇽",
     "nameEn": "dragonite",
     "captureRate": 45,
@@ -2080,6 +2229,7 @@
   },
   "150": {
     "id": 150,
+    "generation": 1,
     "nameKo": "뮤츠",
     "nameEn": "mewtwo",
     "captureRate": 3,
@@ -2093,6 +2243,7 @@
   },
   "151": {
     "id": 151,
+    "generation": 1,
     "nameKo": "뮤",
     "nameEn": "mew",
     "captureRate": 45,
@@ -2103,5 +2254,1467 @@
     "baseFormId": 151,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/151.gif",
     "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/151.gif"
+  },
+  "152": {
+    "id": 152,
+    "generation": 2,
+    "nameKo": "치코리타",
+    "nameEn": "chikorita",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      153
+    ],
+    "maxStage": 3,
+    "baseFormId": 152,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/152.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/152.gif"
+  },
+  "153": {
+    "id": 153,
+    "generation": 2,
+    "nameKo": "베이리프",
+    "nameEn": "bayleef",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      154
+    ],
+    "maxStage": 3,
+    "baseFormId": 152,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/153.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/153.gif"
+  },
+  "154": {
+    "id": 154,
+    "generation": 2,
+    "nameKo": "메가니움",
+    "nameEn": "meganium",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 152,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/154.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/154.gif"
+  },
+  "155": {
+    "id": 155,
+    "generation": 2,
+    "nameKo": "브케인",
+    "nameEn": "cyndaquil",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      156
+    ],
+    "maxStage": 3,
+    "baseFormId": 155,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/155.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/155.gif"
+  },
+  "156": {
+    "id": 156,
+    "generation": 2,
+    "nameKo": "마그케인",
+    "nameEn": "quilava",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      157
+    ],
+    "maxStage": 3,
+    "baseFormId": 155,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/156.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/156.gif"
+  },
+  "157": {
+    "id": 157,
+    "generation": 2,
+    "nameKo": "블레이범",
+    "nameEn": "typhlosion",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 155,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/157.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/157.gif"
+  },
+  "158": {
+    "id": 158,
+    "generation": 2,
+    "nameKo": "리아코",
+    "nameEn": "totodile",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      159
+    ],
+    "maxStage": 3,
+    "baseFormId": 158,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/158.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/158.gif"
+  },
+  "159": {
+    "id": 159,
+    "generation": 2,
+    "nameKo": "엘리게이",
+    "nameEn": "croconaw",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      160
+    ],
+    "maxStage": 3,
+    "baseFormId": 158,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/159.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/159.gif"
+  },
+  "160": {
+    "id": 160,
+    "generation": 2,
+    "nameKo": "장크로다일",
+    "nameEn": "feraligatr",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 158,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/160.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/160.gif"
+  },
+  "161": {
+    "id": 161,
+    "generation": 2,
+    "nameKo": "꼬리선",
+    "nameEn": "sentret",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      162
+    ],
+    "maxStage": 2,
+    "baseFormId": 161,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/161.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/161.gif"
+  },
+  "162": {
+    "id": 162,
+    "generation": 2,
+    "nameKo": "다꼬리",
+    "nameEn": "furret",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 161,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/162.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/162.gif"
+  },
+  "163": {
+    "id": 163,
+    "generation": 2,
+    "nameKo": "부우부",
+    "nameEn": "hoothoot",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      164
+    ],
+    "maxStage": 2,
+    "baseFormId": 163,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/163.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/163.gif"
+  },
+  "164": {
+    "id": 164,
+    "generation": 2,
+    "nameKo": "야부엉",
+    "nameEn": "noctowl",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 163,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/164.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/164.gif"
+  },
+  "165": {
+    "id": 165,
+    "generation": 2,
+    "nameKo": "레디바",
+    "nameEn": "ledyba",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      166
+    ],
+    "maxStage": 2,
+    "baseFormId": 165,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/165.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/165.gif"
+  },
+  "166": {
+    "id": 166,
+    "generation": 2,
+    "nameKo": "레디안",
+    "nameEn": "ledian",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 165,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/166.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/166.gif"
+  },
+  "167": {
+    "id": 167,
+    "generation": 2,
+    "nameKo": "페이검",
+    "nameEn": "spinarak",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      168
+    ],
+    "maxStage": 2,
+    "baseFormId": 167,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/167.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/167.gif"
+  },
+  "168": {
+    "id": 168,
+    "generation": 2,
+    "nameKo": "아리아도스",
+    "nameEn": "ariados",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 167,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/168.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/168.gif"
+  },
+  "169": {
+    "id": 169,
+    "generation": 2,
+    "nameKo": "크로뱃",
+    "nameEn": "crobat",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 169,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/169.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/169.gif"
+  },
+  "170": {
+    "id": 170,
+    "generation": 2,
+    "nameKo": "초라기",
+    "nameEn": "chinchou",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      171
+    ],
+    "maxStage": 2,
+    "baseFormId": 170,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/170.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/170.gif"
+  },
+  "171": {
+    "id": 171,
+    "generation": 2,
+    "nameKo": "랜턴",
+    "nameEn": "lanturn",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 170,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/171.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/171.gif"
+  },
+  "172": {
+    "id": 172,
+    "generation": 2,
+    "nameKo": "피츄",
+    "nameEn": "pichu",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 172,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/172.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/172.gif"
+  },
+  "173": {
+    "id": 173,
+    "generation": 2,
+    "nameKo": "삐",
+    "nameEn": "cleffa",
+    "captureRate": 150,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 173,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/173.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/173.gif"
+  },
+  "174": {
+    "id": 174,
+    "generation": 2,
+    "nameKo": "푸푸린",
+    "nameEn": "igglybuff",
+    "captureRate": 170,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 174,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/174.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/174.gif"
+  },
+  "175": {
+    "id": 175,
+    "generation": 2,
+    "nameKo": "토게피",
+    "nameEn": "togepi",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      176
+    ],
+    "maxStage": 2,
+    "baseFormId": 175,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/175.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/175.gif"
+  },
+  "176": {
+    "id": 176,
+    "generation": 2,
+    "nameKo": "토게틱",
+    "nameEn": "togetic",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 175,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/176.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/176.gif"
+  },
+  "177": {
+    "id": 177,
+    "generation": 2,
+    "nameKo": "네이티",
+    "nameEn": "natu",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      178
+    ],
+    "maxStage": 2,
+    "baseFormId": 177,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/177.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/177.gif"
+  },
+  "178": {
+    "id": 178,
+    "generation": 2,
+    "nameKo": "네이티오",
+    "nameEn": "xatu",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 177,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/178.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/178.gif"
+  },
+  "179": {
+    "id": 179,
+    "generation": 2,
+    "nameKo": "메리프",
+    "nameEn": "mareep",
+    "captureRate": 235,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      180
+    ],
+    "maxStage": 3,
+    "baseFormId": 179,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/179.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/179.gif"
+  },
+  "180": {
+    "id": 180,
+    "generation": 2,
+    "nameKo": "보송송",
+    "nameEn": "flaaffy",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      181
+    ],
+    "maxStage": 3,
+    "baseFormId": 179,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/180.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/180.gif"
+  },
+  "181": {
+    "id": 181,
+    "generation": 2,
+    "nameKo": "전룡",
+    "nameEn": "ampharos",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 179,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/181.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/181.gif"
+  },
+  "182": {
+    "id": 182,
+    "generation": 2,
+    "nameKo": "아르코",
+    "nameEn": "bellossom",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 182,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/182.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/182.gif"
+  },
+  "183": {
+    "id": 183,
+    "generation": 2,
+    "nameKo": "마릴",
+    "nameEn": "marill",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      184
+    ],
+    "maxStage": 2,
+    "baseFormId": 183,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/183.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/183.gif"
+  },
+  "184": {
+    "id": 184,
+    "generation": 2,
+    "nameKo": "마릴리",
+    "nameEn": "azumarill",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 183,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/184.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/184.gif"
+  },
+  "185": {
+    "id": 185,
+    "generation": 2,
+    "nameKo": "꼬지모",
+    "nameEn": "sudowoodo",
+    "captureRate": 65,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 185,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/185.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/185.gif"
+  },
+  "186": {
+    "id": 186,
+    "generation": 2,
+    "nameKo": "왕구리",
+    "nameEn": "politoed",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 186,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/186.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/186.gif"
+  },
+  "187": {
+    "id": 187,
+    "generation": 2,
+    "nameKo": "통통코",
+    "nameEn": "hoppip",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      188
+    ],
+    "maxStage": 3,
+    "baseFormId": 187,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/187.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/187.gif"
+  },
+  "188": {
+    "id": 188,
+    "generation": 2,
+    "nameKo": "두코",
+    "nameEn": "skiploom",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      189
+    ],
+    "maxStage": 3,
+    "baseFormId": 187,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/188.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/188.gif"
+  },
+  "189": {
+    "id": 189,
+    "generation": 2,
+    "nameKo": "솜솜코",
+    "nameEn": "jumpluff",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 187,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/189.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/189.gif"
+  },
+  "190": {
+    "id": 190,
+    "generation": 2,
+    "nameKo": "에이팜",
+    "nameEn": "aipom",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 190,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/190.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/190.gif"
+  },
+  "191": {
+    "id": 191,
+    "generation": 2,
+    "nameKo": "해너츠",
+    "nameEn": "sunkern",
+    "captureRate": 235,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      192
+    ],
+    "maxStage": 2,
+    "baseFormId": 191,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/191.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/191.gif"
+  },
+  "192": {
+    "id": 192,
+    "generation": 2,
+    "nameKo": "해루미",
+    "nameEn": "sunflora",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 191,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/192.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/192.gif"
+  },
+  "193": {
+    "id": 193,
+    "generation": 2,
+    "nameKo": "왕자리",
+    "nameEn": "yanma",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 193,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/193.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/193.gif"
+  },
+  "194": {
+    "id": 194,
+    "generation": 2,
+    "nameKo": "우파",
+    "nameEn": "wooper",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      195
+    ],
+    "maxStage": 2,
+    "baseFormId": 194,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/194.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/194.gif"
+  },
+  "195": {
+    "id": 195,
+    "generation": 2,
+    "nameKo": "누오",
+    "nameEn": "quagsire",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 194,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/195.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/195.gif"
+  },
+  "196": {
+    "id": 196,
+    "generation": 2,
+    "nameKo": "에브이",
+    "nameEn": "espeon",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 196,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/196.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/196.gif"
+  },
+  "197": {
+    "id": 197,
+    "generation": 2,
+    "nameKo": "블래키",
+    "nameEn": "umbreon",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 197,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/197.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/197.gif"
+  },
+  "198": {
+    "id": 198,
+    "generation": 2,
+    "nameKo": "니로우",
+    "nameEn": "murkrow",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 198,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/198.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/198.gif"
+  },
+  "199": {
+    "id": 199,
+    "generation": 2,
+    "nameKo": "야도킹",
+    "nameEn": "slowking",
+    "captureRate": 70,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 199,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/199.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/199.gif"
+  },
+  "200": {
+    "id": 200,
+    "generation": 2,
+    "nameKo": "무우마",
+    "nameEn": "misdreavus",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 200,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/200.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/200.gif"
+  },
+  "201": {
+    "id": 201,
+    "generation": 2,
+    "nameKo": "안농",
+    "nameEn": "unown",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 201,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/201.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/201.gif"
+  },
+  "202": {
+    "id": 202,
+    "generation": 2,
+    "nameKo": "마자용",
+    "nameEn": "wobbuffet",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 202,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/202.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/202.gif"
+  },
+  "203": {
+    "id": 203,
+    "generation": 2,
+    "nameKo": "키링키",
+    "nameEn": "girafarig",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 203,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/203.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/203.gif"
+  },
+  "204": {
+    "id": 204,
+    "generation": 2,
+    "nameKo": "피콘",
+    "nameEn": "pineco",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      205
+    ],
+    "maxStage": 2,
+    "baseFormId": 204,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/204.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/204.gif"
+  },
+  "205": {
+    "id": 205,
+    "generation": 2,
+    "nameKo": "쏘콘",
+    "nameEn": "forretress",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 204,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/205.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/205.gif"
+  },
+  "206": {
+    "id": 206,
+    "generation": 2,
+    "nameKo": "노고치",
+    "nameEn": "dunsparce",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 206,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/206.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/206.gif"
+  },
+  "207": {
+    "id": 207,
+    "generation": 2,
+    "nameKo": "글라이거",
+    "nameEn": "gligar",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 207,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/207.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/207.gif"
+  },
+  "208": {
+    "id": 208,
+    "generation": 2,
+    "nameKo": "강철톤",
+    "nameEn": "steelix",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 208,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/208.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/208.gif"
+  },
+  "209": {
+    "id": 209,
+    "generation": 2,
+    "nameKo": "블루",
+    "nameEn": "snubbull",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      210
+    ],
+    "maxStage": 2,
+    "baseFormId": 209,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/209.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/209.gif"
+  },
+  "210": {
+    "id": 210,
+    "generation": 2,
+    "nameKo": "그랑블루",
+    "nameEn": "granbull",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 209,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/210.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/210.gif"
+  },
+  "211": {
+    "id": 211,
+    "generation": 2,
+    "nameKo": "침바루",
+    "nameEn": "qwilfish",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 211,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/211.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/211.gif"
+  },
+  "212": {
+    "id": 212,
+    "generation": 2,
+    "nameKo": "핫삼",
+    "nameEn": "scizor",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 212,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/212.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/212.gif"
+  },
+  "213": {
+    "id": 213,
+    "generation": 2,
+    "nameKo": "단단지",
+    "nameEn": "shuckle",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 213,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/213.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/213.gif"
+  },
+  "214": {
+    "id": 214,
+    "generation": 2,
+    "nameKo": "헤라크로스",
+    "nameEn": "heracross",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 214,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/214.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/214.gif"
+  },
+  "215": {
+    "id": 215,
+    "generation": 2,
+    "nameKo": "포푸니",
+    "nameEn": "sneasel",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 215,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/215.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/215.gif"
+  },
+  "216": {
+    "id": 216,
+    "generation": 2,
+    "nameKo": "깜지곰",
+    "nameEn": "teddiursa",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      217
+    ],
+    "maxStage": 2,
+    "baseFormId": 216,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/216.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/216.gif"
+  },
+  "217": {
+    "id": 217,
+    "generation": 2,
+    "nameKo": "링곰",
+    "nameEn": "ursaring",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 216,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/217.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/217.gif"
+  },
+  "218": {
+    "id": 218,
+    "generation": 2,
+    "nameKo": "마그마그",
+    "nameEn": "slugma",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      219
+    ],
+    "maxStage": 2,
+    "baseFormId": 218,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/218.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/218.gif"
+  },
+  "219": {
+    "id": 219,
+    "generation": 2,
+    "nameKo": "마그카르고",
+    "nameEn": "magcargo",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 218,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/219.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/219.gif"
+  },
+  "220": {
+    "id": 220,
+    "generation": 2,
+    "nameKo": "꾸꾸리",
+    "nameEn": "swinub",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      221
+    ],
+    "maxStage": 2,
+    "baseFormId": 220,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/220.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/220.gif"
+  },
+  "221": {
+    "id": 221,
+    "generation": 2,
+    "nameKo": "메꾸리",
+    "nameEn": "piloswine",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 220,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/221.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/221.gif"
+  },
+  "222": {
+    "id": 222,
+    "generation": 2,
+    "nameKo": "코산호",
+    "nameEn": "corsola",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 222,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/222.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/222.gif"
+  },
+  "223": {
+    "id": 223,
+    "generation": 2,
+    "nameKo": "총어",
+    "nameEn": "remoraid",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      224
+    ],
+    "maxStage": 2,
+    "baseFormId": 223,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/223.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/223.gif"
+  },
+  "224": {
+    "id": 224,
+    "generation": 2,
+    "nameKo": "대포무노",
+    "nameEn": "octillery",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 223,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/224.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/224.gif"
+  },
+  "225": {
+    "id": 225,
+    "generation": 2,
+    "nameKo": "딜리버드",
+    "nameEn": "delibird",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 225,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/225.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/225.gif"
+  },
+  "226": {
+    "id": 226,
+    "generation": 2,
+    "nameKo": "만타인",
+    "nameEn": "mantine",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 226,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/226.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/226.gif"
+  },
+  "227": {
+    "id": 227,
+    "generation": 2,
+    "nameKo": "무장조",
+    "nameEn": "skarmory",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 227,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/227.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/227.gif"
+  },
+  "228": {
+    "id": 228,
+    "generation": 2,
+    "nameKo": "델빌",
+    "nameEn": "houndour",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      229
+    ],
+    "maxStage": 2,
+    "baseFormId": 228,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/228.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/228.gif"
+  },
+  "229": {
+    "id": 229,
+    "generation": 2,
+    "nameKo": "헬가",
+    "nameEn": "houndoom",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 228,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/229.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/229.gif"
+  },
+  "230": {
+    "id": 230,
+    "generation": 2,
+    "nameKo": "킹드라",
+    "nameEn": "kingdra",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 230,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/230.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/230.gif"
+  },
+  "231": {
+    "id": 231,
+    "generation": 2,
+    "nameKo": "코코리",
+    "nameEn": "phanpy",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      232
+    ],
+    "maxStage": 2,
+    "baseFormId": 231,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/231.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/231.gif"
+  },
+  "232": {
+    "id": 232,
+    "generation": 2,
+    "nameKo": "코리갑",
+    "nameEn": "donphan",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 231,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/232.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/232.gif"
+  },
+  "233": {
+    "id": 233,
+    "generation": 2,
+    "nameKo": "폴리곤2",
+    "nameEn": "porygon2",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 233,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/233.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/233.gif"
+  },
+  "234": {
+    "id": 234,
+    "generation": 2,
+    "nameKo": "노라키",
+    "nameEn": "stantler",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 234,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/234.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/234.gif"
+  },
+  "235": {
+    "id": 235,
+    "generation": 2,
+    "nameKo": "루브도",
+    "nameEn": "smeargle",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 235,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/235.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/235.gif"
+  },
+  "236": {
+    "id": 236,
+    "generation": 2,
+    "nameKo": "배루키",
+    "nameEn": "tyrogue",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      237
+    ],
+    "maxStage": 2,
+    "baseFormId": 236,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/236.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/236.gif"
+  },
+  "237": {
+    "id": 237,
+    "generation": 2,
+    "nameKo": "카포에라",
+    "nameEn": "hitmontop",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 236,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/237.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/237.gif"
+  },
+  "238": {
+    "id": 238,
+    "generation": 2,
+    "nameKo": "뽀뽀라",
+    "nameEn": "smoochum",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 238,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/238.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/238.gif"
+  },
+  "239": {
+    "id": 239,
+    "generation": 2,
+    "nameKo": "에레키드",
+    "nameEn": "elekid",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 239,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/239.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/239.gif"
+  },
+  "240": {
+    "id": 240,
+    "generation": 2,
+    "nameKo": "마그비",
+    "nameEn": "magby",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 240,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/240.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/240.gif"
+  },
+  "241": {
+    "id": 241,
+    "generation": 2,
+    "nameKo": "밀탱크",
+    "nameEn": "miltank",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 241,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/241.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/241.gif"
+  },
+  "242": {
+    "id": 242,
+    "generation": 2,
+    "nameKo": "해피너스",
+    "nameEn": "blissey",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 242,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/242.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/242.gif"
+  },
+  "243": {
+    "id": 243,
+    "generation": 2,
+    "nameKo": "라이코",
+    "nameEn": "raikou",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 243,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/243.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/243.gif"
+  },
+  "244": {
+    "id": 244,
+    "generation": 2,
+    "nameKo": "앤테이",
+    "nameEn": "entei",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 244,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/244.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/244.gif"
+  },
+  "245": {
+    "id": 245,
+    "generation": 2,
+    "nameKo": "스이쿤",
+    "nameEn": "suicune",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 245,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/245.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/245.gif"
+  },
+  "246": {
+    "id": 246,
+    "generation": 2,
+    "nameKo": "애버라스",
+    "nameEn": "larvitar",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      247
+    ],
+    "maxStage": 3,
+    "baseFormId": 246,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/246.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/246.gif"
+  },
+  "247": {
+    "id": 247,
+    "generation": 2,
+    "nameKo": "데기라스",
+    "nameEn": "pupitar",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      248
+    ],
+    "maxStage": 3,
+    "baseFormId": 246,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/247.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/247.gif"
+  },
+  "248": {
+    "id": 248,
+    "generation": 2,
+    "nameKo": "마기라스",
+    "nameEn": "tyranitar",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 246,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/248.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/248.gif"
+  },
+  "249": {
+    "id": 249,
+    "generation": 2,
+    "nameKo": "루기아",
+    "nameEn": "lugia",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 249,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/249.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/249.gif"
+  },
+  "250": {
+    "id": 250,
+    "generation": 2,
+    "nameKo": "칠색조",
+    "nameEn": "ho-oh",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 250,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/250.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/250.gif"
+  },
+  "251": {
+    "id": 251,
+    "generation": 2,
+    "nameKo": "세레비",
+    "nameEn": "celebi",
+    "captureRate": 45,
+    "tier": "mythical",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 251,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/251.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/251.gif"
   }
 }
