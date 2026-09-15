@@ -96,16 +96,17 @@ function stageThresholds(tier, maxStage) {
  * firstHatch: 게임 시작 후 첫 부화인가 — true면 common/uncommon 중에서만 뽑는다
  *   (사용자 요청: 첫 포켓몬이 하필 진화 없는 에픽 같은 걸로 뽑히면 중간 이벤트 없이
  *   그 등급 총량을 한 번에 다 채워야 해서 초반 체감이 안 좋음 — 딱 첫 판만 완화)
+ * maxGen: 지금 해금된 최대 세대(예: 1이면 2세대 종은 부화 후보에서 아예 제외)
  *
  * 반환: { event: 'none'|'hatch'|'evolve'|'graduate', ...업데이트된 companion }
  */
-function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch) {
+function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch, maxGen) {
   // 알 상태 (아직 부화 전) — 일반 알이든 등급 알이든 똑같이 HATCH_THRESHOLD를 채워야
   // 부화한다. 등급 알은 "부화하면 뭐가 나올지 등급만 보장됨"이지 즉시 나오는 게 아님.
   if (!companion || companion.state === "egg") {
     const progressTokens = totalTokens - (companion?.eggStartTotal ?? 0);
     if (progressTokens >= HATCH_THRESHOLD) {
-      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, companion?.guaranteedGrade, firstHatch);
+      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, companion?.guaranteedGrade, firstHatch, maxGen);
       // 이로치는 부화 시점에 확정되고 이후 진화해도 유지됨(아래 evolve/graduate 분기의
       // `...companion` 스프레드가 그대로 물려줌 — 여기서만 한 번 굴리면 됨).
       const isShiny = Math.random() < 1 / SHINY_DENOMINATOR;
@@ -176,12 +177,20 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch)
  * 제외(게임 시작 후 첫 부화 전용 완화, evaluate()의 firstHatch 인자 참고). minTier와
  * 동시에 쓰일 일은 실제로 없다(첫 알은 등급 알일 수 없음 — 등급 알은 알 보관함에서만
  * 나오고 알 보관함은 진화/졸업해야 쌓이는데 그러려면 이미 첫 부화를 지난 뒤라서).
+ *
+ * maxGen이 주어지면 그 세대보다 나중 세대 종은 후보에서 아예 뺀다(예: 1이면 2세대
+ * 미해금 상태 — 1세대 도감을 151/151 채워야 2세대가 열리는 구조, main.js의
+ * checkGenUnlock() 참고). 생략하면 세대 제한 없음.
  */
-function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier, firstHatch) {
+function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier, firstHatch, maxGen) {
   const minRank = minTier ? TIER_RANK[minTier] ?? 0 : 0;
   const maxRank = firstHatch ? TIER_RANK.uncommon : Infinity;
   const starters = Object.values(gen1Data).filter(
-    (p) => p.stage === 1 && (TIER_RANK[p.tier] ?? 0) >= minRank && (TIER_RANK[p.tier] ?? 0) <= maxRank
+    (p) =>
+      p.stage === 1 &&
+      (TIER_RANK[p.tier] ?? 0) >= minRank &&
+      (TIER_RANK[p.tier] ?? 0) <= maxRank &&
+      (maxGen == null || p.generation <= maxGen)
   );
   const weights = starters.map((p) =>
     ownedSpeciesIds?.has(p.id) ? Math.max(1, p.captureRate / 2) : Math.max(1, p.captureRate)
