@@ -18,7 +18,7 @@ const DEFAULT_WIDGET = { enabled: false, opacity: 0.85, x: null, y: null };
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET }, unlockedGen: 1 };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
@@ -51,13 +51,13 @@ function loadState(userDataDir) {
     // widget(항상 떠있는 위젯 설정) 추가 전 저장 파일 호환 — 기본값 위에 기존 저장분을
     // 덮어써서 일부 필드만 있던 경우도 나머지는 기본값으로 채운다.
     state.widget = { ...DEFAULT_WIDGET, ...(state.widget || {}) };
-    // unlockedGen(해금된 최대 세대) 추가 전 저장 파일 호환 — 다들 1세대만 있던
-    // 시절이니 기본값 1(아직 2세대 안 열림).
-    state.unlockedGen ??= 1;
+    // unlockedGen(세대별 단계적 잠금) 걷어낸 뒤 남아있을 수 있는 옛 필드 정리 —
+    // 이제 세대 제한 자체가 없어져서 이 값을 아무도 안 읽음.
+    delete state.unlockedGen;
     return state;
   } catch (err) {
     console.error("State file corrupted, resetting:", err.message);
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET }, unlockedGen: 1 };
+    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
   }
 }
 

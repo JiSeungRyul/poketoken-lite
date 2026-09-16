@@ -292,14 +292,7 @@ function tick() {
   const preTransitionTier = state.companion.state !== "egg" ? state.companion.tier : null;
 
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
-  const result = evaluate(
-    state.companion,
-    gen1Data,
-    totalTokens,
-    ownedSpeciesIds,
-    !state.firstHatchDone,
-    state.unlockedGen
-  );
+  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds, !state.firstHatchDone);
   state.companion = result.companion;
 
   if (result.event === "hatch") {
@@ -333,7 +326,6 @@ function tick() {
   }
 
   grantWeeklyTicketIfDue(new Date());
-  checkGenUnlock();
 
   saveState(app.getPath("userData"), state);
   updateTrayIcon(totalTokens);
@@ -362,7 +354,7 @@ function buildStatusPayload(totalTokens) {
       needed: HATCH_THRESHOLD,
       hasNextEvolution: false, // 알 자체가 이미 미스터리라 "다음 포켓몬???" 힌트는 안 보여줌
       pokedexCount: buildDexAggregate().size,
-      pokedexTotal: unlockedSpeciesCount(), // 잠겨있으면 151, 2세대 해금되면 251
+      pokedexTotal: totalSpeciesCount(),
       eggBoxCount: state.eggBox.length,
       storedCount: state.storedCompanions.length,
     };
@@ -390,7 +382,7 @@ function buildStatusPayload(totalTokens) {
     // null이 아니게 나와 진화가 없는 종한테도 힌트가 잘못 뜨는 버그가 있었음(실제 확인됨).
     hasNextEvolution: needed != null && species.evolvesTo.length > 0,
     pokedexCount: buildDexAggregate().size,
-    pokedexTotal: unlockedSpeciesCount(), // 잠겨있으면 151, 2세대 해금되면 251
+    pokedexTotal: totalSpeciesCount(),
     eggBoxCount: state.eggBox.length,
     storedCount: state.storedCompanions.length,
   };
@@ -494,24 +486,12 @@ function buildDexAggregate() {
   return bySpecies;
 }
 
-// 지금 해금된 세대까지 알려진 종 총 개수 — 도감 "N/151"·"N/251" 표시의 분모로 씀.
-function unlockedSpeciesCount() {
-  return Object.values(gen1Data).filter((s) => s.generation <= state.unlockedGen).length;
-}
-
-// 1세대 도감을 151/151 다 채우면 2세대 해금(사용자 확정 조건). 이미 최대 세대까지
-// 열려있으면 더 볼 것 없음. buildDexAggregate()는 "발견한 종 전체"를 세대 구분 없이
-// 주니까, 여기서 1세대분(generation===1)만 걸러서 151과 비교한다.
-function checkGenUnlock() {
-  if (state.unlockedGen >= 2) return;
-  const discovered = buildDexAggregate();
-  const gen1Total = Object.values(gen1Data).filter((s) => s.generation === 1).length;
-  const gen1Discovered = [...discovered.keys()].filter((id) => gen1Data[id]?.generation === 1).length;
-  if (gen1Discovered >= gen1Total) {
-    state.unlockedGen = 2;
-    console.log(`2세대 해금! (1세대 도감 ${gen1Discovered}/${gen1Total} 달성)`);
-    notify("🔓 2세대 해금!", "1세대 도감을 다 채웠어요! 이제 2세대 포켓몬도 만날 수 있어요.");
-  }
+// 알려진 종 총 개수(1+2세대 전부) — 도감 "N/251" 표시의 분모로 씀. 레퍼런스
+// (PokeTokenBar) 확인 결과 세대별 단계적 잠금 없이 전체 범위를 처음부터 하나의
+// 풀로 쓰는 방식이라, 우리도 "1세대 다 모아야 2세대" 잠금을 걷어내고 맞춤(사용자
+// 확정) — 그래서 이 값은 항상 고정(세대별로 다시 안 나눔).
+function totalSpeciesCount() {
+  return Object.keys(gen1Data).length;
 }
 
 // 도감 목록 — 발견한 종(buildDexAggregate 기준)만, 졸업한 것부터 최근 졸업순으로,
@@ -865,7 +845,7 @@ app.whenReady().then(() => {
   backfillMissingFrozenProgress();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
-  ipcMain.handle("get-pokedex", () => ({ total: unlockedSpeciesCount(), rows: buildPokedexPayload() }));
+  ipcMain.handle("get-pokedex", () => ({ total: totalSpeciesCount(), rows: buildPokedexPayload() }));
   ipcMain.handle("get-egg-box", () => buildEggBoxPayload());
   ipcMain.handle("hatch-egg", (event, eggId) => startIncubatingEgg(eggId));
   ipcMain.handle("get-storage", () => buildStoragePayload());
