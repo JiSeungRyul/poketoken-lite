@@ -1,4 +1,4 @@
-const { app, Tray, Menu, BrowserWindow, nativeImage, ipcMain, screen } = require("electron");
+const { app, Tray, Menu, BrowserWindow, nativeImage, ipcMain, screen, Notification } = require("electron");
 const path = require("path");
 const fs = require("fs");
 
@@ -21,6 +21,41 @@ let widgetMenuItem = null; // 트레이 체크박스 참조 — 코드에서 위
 let gen1Data = null;
 let state = null;
 let lastTotalTokens = 0; // tick()에서 갱신, 팝업이 열릴 때마다 로그 전체를 재파싱하지 않기 위한 캐시
+
+// 한글 받침 유무에 따라 조사를 고른다("이/가", "을/를", "으로/로" 등). 한글
+// 음절(U+AC00~U+D7A3)의 마지막 글자 코드에서 받침 유무를 계산 — 한글이 아니면
+// (숫자/영문 등) 안전하게 받침 있는 쪽을 기본값으로 씀.
+function josa(word, withBatchim, withoutBatchim) {
+  const code = word.charCodeAt(word.length - 1);
+  if (code < 0xac00 || code > 0xd7a3) return withBatchim;
+  const hasBatchim = (code - 0xac00) % 28 !== 0;
+  return hasBatchim ? withBatchim : withoutBatchim;
+}
+
+// Windows 알림. 지원 안 되는 환경(OS 설정으로 꺼둔 경우 등)이면 조용히 무시.
+// 클릭하면 전체 창을 열어줌 — ensurePopupOpen()은 아래에서 선언되지만 함수
+// 선언은 호이스팅되니 순서 문제 없음.
+function notify(title, body) {
+  if (!Notification.isSupported()) return;
+  const n = new Notification({ title, body, icon: path.join(__dirname, "..", "assets", "icon.ico") });
+  n.on("click", () => ensurePopupOpen());
+  n.show();
+}
+
+// 부화/진화/졸업 이벤트에 맞는 알림 문구를 고른다.
+function notifyForEvent(event, companion) {
+  const species = gen1Data[companion.speciesId];
+  if (!species) return;
+  const name = species.nameKo;
+  const shinyMark = companion.isShiny ? " ✨" : "";
+  if (event === "hatch") {
+    notify("🥚 부화!", `${name}${shinyMark}${josa(name, "이", "가")} 태어났어요!`);
+  } else if (event === "evolve") {
+    notify("✨ 진화!", `${name}${shinyMark}${josa(name, "으로", "로")} 진화했어요!`);
+  } else if (event === "graduate") {
+    notify("🎓 졸업!", `${name}${shinyMark}${josa(name, "이", "가")} 도감에 등록됐어요!`);
+  }
+}
 
 // 변수명은 gen1Data 그대로 유지(growth.js/main.js 전역에 넓게 쓰여서 순수 리네이밍만
 // 하기엔 위험도 대비 득이 적음) — 이제 실제로는 1+2세대(1~251) 전부 들어있음.
@@ -231,7 +266,7 @@ function grantWeeklyTicketIfDue(now) {
   });
   state.lastWeeklyTicketAt = boundary.toISOString();
   console.log(`Weekly egg ticket granted: ${grade} (boundary: ${boundary.toISOString()})`);
-  // TODO: 알림(Notification) 붙이기 — 부화/진화/졸업이랑 같이 처리 (README 백로그 참고)
+  notify("🎁 주간 알 티켓 도착", `${grade.toUpperCase()} 등급 알이 알 보관함에 쌓였어요!`);
 }
 
 function tick() {
@@ -306,7 +341,7 @@ function tick() {
 
   if (result.event !== "none") {
     console.log(`event: ${result.event}`, graduatedCompanion ?? state.companion, `(eggBox: ${state.eggBox.length})`);
-    // TODO: 알림(Notification) 붙이기
+    notifyForEvent(result.event, graduatedCompanion ?? state.companion);
   }
 }
 
@@ -475,7 +510,7 @@ function checkGenUnlock() {
   if (gen1Discovered >= gen1Total) {
     state.unlockedGen = 2;
     console.log(`2세대 해금! (1세대 도감 ${gen1Discovered}/${gen1Total} 달성)`);
-    // TODO: 알림(Notification) 붙이기 — 다른 이벤트들과 같은 TODO
+    notify("🔓 2세대 해금!", "1세대 도감을 다 채웠어요! 이제 2세대 포켓몬도 만날 수 있어요.");
   }
 }
 
