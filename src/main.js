@@ -74,7 +74,7 @@ function notifyForEvent(event, companion) {
 }
 
 // 변수명은 gen1Data 그대로 유지(growth.js/main.js 전역에 넓게 쓰여서 순수 리네이밍만
-// 하기엔 위험도 대비 득이 적음) — 이제 실제로는 1+2세대(1~251) 전부 들어있음.
+// 하기엔 위험도 대비 득이 적음) — 이제 실제로는 1~3세대(1~386) 전부 들어있음.
 function loadGen1Data() {
   const p = path.join(__dirname, "..", "data", "pokedex.json");
   if (!fs.existsSync(p)) {
@@ -522,7 +522,8 @@ function buildDexAggregate() {
   return bySpecies;
 }
 
-// 알려진 종 총 개수(1+2세대 전부) — 도감 "N/251" 표시의 분모로 씀. 레퍼런스
+// 알려진 종 총 개수(1~3세대 전부) — 도감 "N/전체" 표시의 분모로 씀(gen1Data 크기를
+// 그대로 쓰니 세대가 더 늘어도 이 함수는 안 건드려도 됨). 레퍼런스
 // (PokeTokenBar) 확인 결과 세대별 단계적 잠금 없이 전체 범위를 처음부터 하나의
 // 풀로 쓰는 방식이라, 우리도 "1세대 다 모아야 2세대" 잠금을 걷어내고 맞춤(사용자
 // 확정) — 그래서 이 값은 항상 고정(세대별로 다시 안 나눔).
@@ -530,7 +531,7 @@ function totalSpeciesCount() {
   return Object.keys(gen1Data).length;
 }
 
-// 도감 목록 — 251마리 전체를 도감번호 오름차순으로 반환("전체 다 보여주고 안 잡은
+// 도감 목록 — 전체 종을 도감번호 오름차순으로 반환("전체 다 보여주고 안 잡은
 // 건 실루엣" 요청으로 확장). 발견 못 한 종은 스포일러 없이 discovered:false만 반환
 // (evo-chain의 ?? 처리와 같은 방식). gen1Data에 없는 speciesId(원인 불명의 손상
 // 데이터)가 섞여 있어도 전체가 죽지 않게 그 항목만 건너뛴다.

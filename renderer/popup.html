@@ -483,8 +483,8 @@
       return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
     }
 
-    // entries는 이제 251마리 전체(발견 못 한 것도 포함) — discovered/total은 도감
-    // 제목의 "N/251" 표시용 발견 개수/전체 개수(둘 다 rows.length랑 다름에 주의).
+    // entries는 이제 전체 종(발견 못 한 것도 포함) — discovered/total은 도감
+    // 제목의 "N/전체" 표시용 발견 개수/전체 개수(둘 다 rows.length랑 다름에 주의).
     function renderPokedex({ discovered, total, rows: entries }) {
       document.getElementById("pokedexTitle").textContent = `도감 (${discovered}/${total})`;
 

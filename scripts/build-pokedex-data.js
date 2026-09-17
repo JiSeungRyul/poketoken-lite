@@ -30,6 +30,7 @@ const POKEAPI = "https://pokeapi.co/api/v2";
 const GENERATIONS = [
   { gen: 1, min: 1, max: 151 },
   { gen: 2, min: 152, max: 251 },
+  { gen: 3, min: 252, max: 386 },
 ];
 
 // 희귀도 티어 경계값 — 레퍼런스(PokeTokenBar) CompanionModel.swift의 Rarity.captureRateCeiling

@@ -186,15 +186,16 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, options = {
 /**
  * 1단 진화(species.stage === 1)인 것들 중에서 부화 시 시작 종을 뽑는다.
  * PokéAPI capture_rate에 비례한 가중치 랜덤 — capture_rate가 낮을수록(잡기 어려울수록)
- * 뽑힐 확률도 낮아짐. 예전엔 균등 랜덤이라 legendary(24/68종)가 35%나 나왔는데,
- * "legendary는 희귀해야 한다"는 의도에 안 맞아서 원본(PokeTokenBar)처럼 가중치를 줬다.
+ * 뽑힐 확률도 낮아짐. 예전엔 균등 랜덤이라 legendary(1세대 기준 24/68종)가 35%나
+ * 나왔는데, "legendary는 희귀해야 한다"는 의도에 안 맞아서 원본(PokeTokenBar)처럼
+ * 가중치를 줬다(이후 2·3세대가 추가되면서 전체 stage:1 후보 풀도 같이 늘어남).
  *
  * ownedSpeciesIds가 주어지면, 이미 도감에 있는 종은 가중치를 절반으로 깎는다(완전 배제는
  * 아님) — 원본이 "새 종을 2배 더 잘 나오게 하되, 재부화·샤이니 사냥은 막지 않는다"는
  * 의도로 쓰는 방식을 그대로 따름.
  *
  * minTier가 주어지면 그 등급 미만인 후보는 아예 제외한다(등급 알 부화용 — "이 등급
- * 이상 보장"). 생략하면 전체 68종 대상.
+ * 이상 보장"). 생략하면 stage:1인 종 전체가 대상.
  *
  * options.firstHatch가 true면 그 반대로 상한을 건다 — common/uncommon보다 높은
  * 등급(에픽 이상)은 제외(게임 시작 후 첫 부화 전용 완화, evaluate()의 firstHatch
@@ -205,10 +206,11 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, options = {
  * options.useWeighting이 false면 capture_rate 가중치를 아예 안 쓰고 후보 전체
  * 균등 랜덤(설정 화면의 "부화 가중치" 토글 — 기본 true).
  *
- * 세대 제한 없음 — 1·2세대 전부 처음부터 후보(레퍼런스 PokeTokenBar 확인 결과
+ * 세대 제한 없음 — 1~3세대 전부 처음부터 후보(레퍼런스 PokeTokenBar 확인 결과
  * "1~649번 전체를 처음부터 하나의 풀로 쓰고 희귀도로만 자연스럽게 조절"하는
  * 방식이라, 우리도 "1세대 다 모아야 2세대 해금" 단계적 잠금을 걷어내고 이 방식으로
- * 맞춤 — 사용자 확정).
+ * 맞춤 — 사용자 확정). 세대가 늘어나도 이 함수는 안 건드려도 됨(`gen1Data`에
+ * 들어있는 species 전체를 그대로 훑기 때문).
  */
 function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier, options = {}) {
   const { firstHatch, useWeighting = true } = options;
