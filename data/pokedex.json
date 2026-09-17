@@ -17475,5 +17475,2323 @@
       "비행"
     ],
     "description": "When it flies to this land from across the sea, the bitter winter comes to an end. According to legend, this Pokémon's love gives rise to the budding of fresh life across Hisui."
+  },
+  "906": {
+    "id": 906,
+    "generation": 9,
+    "nameKo": "나오하",
+    "nameEn": "sprigatito",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      907
+    ],
+    "maxStage": 3,
+    "baseFormId": 906,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/906.png",
+    "types": [
+      "풀"
+    ],
+    "description": "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out."
+  },
+  "907": {
+    "id": 907,
+    "generation": 9,
+    "nameKo": "나로테",
+    "nameEn": "floragato",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      908
+    ],
+    "maxStage": 3,
+    "baseFormId": 906,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/907.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/907.png",
+    "types": [
+      "풀"
+    ],
+    "description": "Floragato deftly wields the vine hidden beneath its long fur, slamming the hard flower bud against its opponents."
+  },
+  "908": {
+    "id": 908,
+    "generation": 9,
+    "nameKo": "마스카나",
+    "nameEn": "meowscarada",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 906,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/908.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/908.png",
+    "types": [
+      "풀",
+      "악"
+    ],
+    "description": "This Pokémon uses the reflective fur lining its cape to camouflage the stem of its flower, creating the illusion that the flower is floating."
+  },
+  "909": {
+    "id": 909,
+    "generation": 9,
+    "nameKo": "뜨아거",
+    "nameEn": "fuecoco",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      910
+    ],
+    "maxStage": 3,
+    "baseFormId": 909,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/909.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/909.png",
+    "types": [
+      "불꽃"
+    ],
+    "description": "It lies on warm rocks and uses the heat absorbed by its square-shaped scales to create fire energy."
+  },
+  "910": {
+    "id": 910,
+    "generation": 9,
+    "nameKo": "악뜨거",
+    "nameEn": "crocalor",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      911
+    ],
+    "maxStage": 3,
+    "baseFormId": 909,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/910.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/910.png",
+    "types": [
+      "불꽃"
+    ],
+    "description": "The combination of Crocalor’s fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pokémon’s head."
+  },
+  "911": {
+    "id": 911,
+    "generation": 9,
+    "nameKo": "라우드본",
+    "nameEn": "skeledirge",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 909,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/911.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/911.png",
+    "types": [
+      "불꽃",
+      "고스트"
+    ],
+    "description": "The fiery bird changes shape when Skeledirge sings. Rumor has it that the bird was born when the fireball on Skeledirge’s head gained a soul."
+  },
+  "912": {
+    "id": 912,
+    "generation": 9,
+    "nameKo": "꾸왁스",
+    "nameEn": "quaxly",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      913
+    ],
+    "maxStage": 3,
+    "baseFormId": 912,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/912.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/912.png",
+    "types": [
+      "물"
+    ],
+    "description": "This Pokémon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime."
+  },
+  "913": {
+    "id": 913,
+    "generation": 9,
+    "nameKo": "아꾸왁",
+    "nameEn": "quaxwell",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      914
+    ],
+    "maxStage": 3,
+    "baseFormId": 912,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/913.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/913.png",
+    "types": [
+      "물"
+    ],
+    "description": "These Pokémon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully."
+  },
+  "914": {
+    "id": 914,
+    "generation": 9,
+    "nameKo": "웨이니발",
+    "nameEn": "quaquaval",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 912,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/914.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/914.png",
+    "types": [
+      "물",
+      "격투"
+    ],
+    "description": "A single kick from a Quaquaval can send a truck rolling. This Pokémon uses its powerful legs to perform striking dances from far-off lands."
+  },
+  "915": {
+    "id": 915,
+    "generation": 9,
+    "nameKo": "맛보돈",
+    "nameEn": "lechonk",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      916
+    ],
+    "maxStage": 2,
+    "baseFormId": 915,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/915.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/915.png",
+    "types": [
+      "노말"
+    ],
+    "description": "It searches for food all day. It possesses a keen sense of smell but doesn’t use it for anything other than foraging."
+  },
+  "916": {
+    "id": 916,
+    "generation": 9,
+    "nameKo": "퍼퓨돈",
+    "nameEn": "oinkologne",
+    "captureRate": 100,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 915,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/916.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/916.png",
+    "types": [
+      "노말"
+    ],
+    "description": "Oinkologne is proud of its fine, glossy skin. It emits a concentrated scent from the tip of its tail."
+  },
+  "917": {
+    "id": 917,
+    "generation": 9,
+    "nameKo": "타랜툴라",
+    "nameEn": "tarountula",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      918
+    ],
+    "maxStage": 2,
+    "baseFormId": 917,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/917.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/917.png",
+    "types": [
+      "벌레"
+    ],
+    "description": "The ball of threads wrapped around its body is elastic enough to deflect the scythes of Scyther, this Pokémon’s natural enemy."
+  },
+  "918": {
+    "id": 918,
+    "generation": 9,
+    "nameKo": "트래피더",
+    "nameEn": "spidops",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 917,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/918.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/918.png",
+    "types": [
+      "벌레"
+    ],
+    "description": "It clings to branches and ceilings using its threads and moves without a sound. It takes out its prey before the prey even notices it."
+  },
+  "919": {
+    "id": 919,
+    "generation": 9,
+    "nameKo": "콩알뚜기",
+    "nameEn": "nymble",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      920
+    ],
+    "maxStage": 2,
+    "baseFormId": 919,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/919.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/919.png",
+    "types": [
+      "벌레"
+    ],
+    "description": "It has its third set of legs folded up. When it’s in a tough spot, this Pokémon jumps over 30 feet using the strength of its legs."
+  },
+  "920": {
+    "id": 920,
+    "generation": 9,
+    "nameKo": "엑스레그",
+    "nameEn": "lokix",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 919,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/920.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/920.png",
+    "types": [
+      "벌레",
+      "악"
+    ],
+    "description": "When it decides to fight all out, it stands on its previously folded legs to enter Showdown Mode. It neutralizes its enemies in short order."
+  },
+  "921": {
+    "id": 921,
+    "generation": 9,
+    "nameKo": "빠모",
+    "nameEn": "pawmi",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      922
+    ],
+    "maxStage": 3,
+    "baseFormId": 921,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/921.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/921.png",
+    "types": [
+      "전기"
+    ],
+    "description": "It has underdeveloped electric sacs on its cheeks. These sacs can produce electricity only if Pawmi rubs them furiously with the pads on its forepaws."
+  },
+  "922": {
+    "id": 922,
+    "generation": 9,
+    "nameKo": "빠모트",
+    "nameEn": "pawmo",
+    "captureRate": 80,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      923
+    ],
+    "maxStage": 3,
+    "baseFormId": 921,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/922.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/922.png",
+    "types": [
+      "전기",
+      "격투"
+    ],
+    "description": "When its group is attacked, Pawmo is the first to leap into battle, defeating enemies with a fighting technique that utilizes electric shocks."
+  },
+  "923": {
+    "id": 923,
+    "generation": 9,
+    "nameKo": "빠르모트",
+    "nameEn": "pawmot",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 921,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/923.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/923.png",
+    "types": [
+      "전기",
+      "격투"
+    ],
+    "description": "This Pokémon normally is slow to react, but once it enters battle, it will strike down its enemies with lightning-fast movements."
+  },
+  "924": {
+    "id": 924,
+    "generation": 9,
+    "nameKo": "두리쥐",
+    "nameEn": "tandemaus",
+    "captureRate": 150,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      925
+    ],
+    "maxStage": 2,
+    "baseFormId": 924,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/924.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/924.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "Exhibiting great teamwork, they use their incisors to cut pieces out of any material that might be useful for a nest, then make off with them."
+  },
+  "925": {
+    "id": 925,
+    "generation": 9,
+    "nameKo": "파밀리쥐",
+    "nameEn": "maushold",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 924,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/925.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/925.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "The two little ones just appeared one day. The group might be a family of related Pokémon, but nobody knows for sure."
+  },
+  "926": {
+    "id": 926,
+    "generation": 9,
+    "nameKo": "쫀도기",
+    "nameEn": "fidough",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      927
+    ],
+    "maxStage": 2,
+    "baseFormId": 926,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/926.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/926.png",
+    "types": [
+      "페어리"
+    ],
+    "description": "This Pokémon is smooth and moist to the touch. Yeast in Fidough’s breath induces fermentation in the Pokémon’s vicinity."
+  },
+  "927": {
+    "id": 927,
+    "generation": 9,
+    "nameKo": "바우첼",
+    "nameEn": "dachsbun",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 926,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/927.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/927.png",
+    "types": [
+      "페어리"
+    ],
+    "description": "The pleasant aroma that emanates from this Pokémon’s body helps wheat grow, so Dachsbun has been treasured by farming villages."
+  },
+  "928": {
+    "id": 928,
+    "generation": 9,
+    "nameKo": "미니브",
+    "nameEn": "smoliv",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      929
+    ],
+    "maxStage": 3,
+    "baseFormId": 928,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/928.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/928.png",
+    "types": [
+      "풀",
+      "노말"
+    ],
+    "description": "It protects itself from enemies by emitting oil from the fruit on its head. This oil is bitter and astringent enough to make someone flinch."
+  },
+  "929": {
+    "id": 929,
+    "generation": 9,
+    "nameKo": "올리뇨",
+    "nameEn": "dolliv",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      930
+    ],
+    "maxStage": 3,
+    "baseFormId": 928,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/929.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/929.png",
+    "types": [
+      "풀",
+      "노말"
+    ],
+    "description": "Dolliv shares its tasty, fresh-scented oil with others. This species has coexisted with humans since times long gone."
+  },
+  "930": {
+    "id": 930,
+    "generation": 9,
+    "nameKo": "올리르바",
+    "nameEn": "arboliva",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 928,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/930.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/930.png",
+    "types": [
+      "풀",
+      "노말"
+    ],
+    "description": "This calm Pokémon is very compassionate. It will share its delicious, nutrient-rich oil with weakened Pokémon."
+  },
+  "931": {
+    "id": 931,
+    "generation": 9,
+    "nameKo": "시비꼬",
+    "nameEn": "squawkabilly",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 931,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/931.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/931.png",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "These Pokémon prefer to live in cities. They form flocks based on the color of their feathers, and they fight over territory."
+  },
+  "932": {
+    "id": 932,
+    "generation": 9,
+    "nameKo": "베베솔트",
+    "nameEn": "nacli",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      933
+    ],
+    "maxStage": 3,
+    "baseFormId": 932,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/932.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/932.gif",
+    "types": [
+      "바위"
+    ],
+    "description": "It was born in a layer of rock salt deep under the earth. This species was particularly treasured in the old days, as they would share precious salt."
+  },
+  "933": {
+    "id": 933,
+    "generation": 9,
+    "nameKo": "스태솔트",
+    "nameEn": "naclstack",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      934
+    ],
+    "maxStage": 3,
+    "baseFormId": 932,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/933.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/933.png",
+    "types": [
+      "바위"
+    ],
+    "description": "This Pokémon dry cures its prey by spraying salt over them. The curing process steals away the water in the prey’s body."
+  },
+  "934": {
+    "id": 934,
+    "generation": 9,
+    "nameKo": "콜로솔트",
+    "nameEn": "garganacl",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 932,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/934.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/934.png",
+    "types": [
+      "바위"
+    ],
+    "description": "Garganacl will rub its fingertips together and sprinkle injured Pokémon with salt. Even severe wounds will promptly heal afterward."
+  },
+  "935": {
+    "id": 935,
+    "generation": 9,
+    "nameKo": "카르본",
+    "nameEn": "charcadet",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      936,
+      937
+    ],
+    "maxStage": 2,
+    "baseFormId": 935,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/935.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/935.png",
+    "types": [
+      "불꽃"
+    ],
+    "description": "Burnt charcoal came to life and became a Pokémon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents."
+  },
+  "936": {
+    "id": 936,
+    "generation": 9,
+    "nameKo": "카디나르마",
+    "nameEn": "armarouge",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 935,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/936.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/936.png",
+    "types": [
+      "불꽃",
+      "에스퍼"
+    ],
+    "description": "Armarouge evolved through the use of a set of armor that belonged to a distinguished warrior. This Pokémon is incredibly loyal."
+  },
+  "937": {
+    "id": 937,
+    "generation": 9,
+    "nameKo": "파라블레이즈",
+    "nameEn": "ceruledge",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 935,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/937.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/937.png",
+    "types": [
+      "불꽃",
+      "고스트"
+    ],
+    "description": "The fiery blades on its arms burn fiercely with the lingering resentment of a sword wielder who fell before accomplishing their goal."
+  },
+  "938": {
+    "id": 938,
+    "generation": 9,
+    "nameKo": "빈나두",
+    "nameEn": "tadbulb",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      939
+    ],
+    "maxStage": 2,
+    "baseFormId": 938,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/938.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/938.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "Tadbulb shakes its tail to generate electricity. If it senses danger, it will make its head blink on and off to alert its allies."
+  },
+  "939": {
+    "id": 939,
+    "generation": 9,
+    "nameKo": "찌리배리",
+    "nameEn": "bellibolt",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 938,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/939.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/939.png",
+    "types": [
+      "전기"
+    ],
+    "description": "When this Pokémon expands and contracts its wobbly body, the belly-button dynamo in its stomach produces a huge amount of electricity."
+  },
+  "940": {
+    "id": 940,
+    "generation": 9,
+    "nameKo": "찌리비",
+    "nameEn": "wattrel",
+    "captureRate": 180,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      941
+    ],
+    "maxStage": 2,
+    "baseFormId": 940,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/940.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/940.png",
+    "types": [
+      "전기",
+      "비행"
+    ],
+    "description": "When its wings catch the wind, the bones within produce electricity. This Pokémon dives into the ocean, catching prey by electrocuting them."
+  },
+  "941": {
+    "id": 941,
+    "generation": 9,
+    "nameKo": "찌리비크",
+    "nameEn": "kilowattrel",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 940,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/941.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/941.png",
+    "types": [
+      "전기",
+      "비행"
+    ],
+    "description": "Kilowattrel inflates its throat sac to amplify its electricity. By riding the wind, this Pokémon can fly over 430 miles in a day."
+  },
+  "942": {
+    "id": 942,
+    "generation": 9,
+    "nameKo": "오라티프",
+    "nameEn": "maschiff",
+    "captureRate": 150,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      943
+    ],
+    "maxStage": 2,
+    "baseFormId": 942,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/942.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/942.png",
+    "types": [
+      "악"
+    ],
+    "description": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff’s face."
+  },
+  "943": {
+    "id": 943,
+    "generation": 9,
+    "nameKo": "마피티프",
+    "nameEn": "mabosstiff",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 942,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/943.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/943.png",
+    "types": [
+      "악"
+    ],
+    "description": "This Pokémon can store energy in its large dewlap. Mabosstiff unleashes this energy all at once to blow away enemies."
+  },
+  "944": {
+    "id": 944,
+    "generation": 9,
+    "nameKo": "땃쭈르",
+    "nameEn": "shroodle",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      945
+    ],
+    "maxStage": 2,
+    "baseFormId": 944,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/944.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/944.png",
+    "types": [
+      "독",
+      "노말"
+    ],
+    "description": "Though usually a mellow Pokémon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire."
+  },
+  "945": {
+    "id": 945,
+    "generation": 9,
+    "nameKo": "태깅구르",
+    "nameEn": "grafaiai",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 944,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/945.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/945.png",
+    "types": [
+      "독",
+      "노말"
+    ],
+    "description": "The color of the poisonous saliva depends on what the Pokémon eats. Grafaiai covers its fingers in its saliva and draws patterns on trees in forests."
+  },
+  "946": {
+    "id": 946,
+    "generation": 9,
+    "nameKo": "그푸리",
+    "nameEn": "bramblin",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      947
+    ],
+    "maxStage": 2,
+    "baseFormId": 946,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/946.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/946.png",
+    "types": [
+      "풀",
+      "고스트"
+    ],
+    "description": "A soul unable to move on to the afterlife was blown around by the wind until it got tangled up with dried grass and became a Pokémon."
+  },
+  "947": {
+    "id": 947,
+    "generation": 9,
+    "nameKo": "공푸리",
+    "nameEn": "brambleghast",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 946,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/947.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/947.png",
+    "types": [
+      "풀",
+      "고스트"
+    ],
+    "description": "It will open the branches of its head to envelop its prey. Once it absorbs all the life energy it needs, it expels the prey and discards it."
+  },
+  "948": {
+    "id": 948,
+    "generation": 9,
+    "nameKo": "들눈해",
+    "nameEn": "toedscool",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      949
+    ],
+    "maxStage": 2,
+    "baseFormId": 948,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/948.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/948.png",
+    "types": [
+      "땅",
+      "풀"
+    ],
+    "description": "Toedscool lives in muggy forests. The flaps that fall from its body are chewy and very delicious."
+  },
+  "949": {
+    "id": 949,
+    "generation": 9,
+    "nameKo": "육파리",
+    "nameEn": "toedscruel",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 948,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/949.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/949.png",
+    "types": [
+      "땅",
+      "풀"
+    ],
+    "description": "These Pokémon gather into groups and form colonies deep within forests. They absolutely hate it when strangers approach."
+  },
+  "950": {
+    "id": 950,
+    "generation": 9,
+    "nameKo": "절벼게",
+    "nameEn": "klawf",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 950,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/950.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/950.png",
+    "types": [
+      "바위"
+    ],
+    "description": "Klawf hangs upside-down from cliffs, waiting for prey. But Klawf can’t remain in this position for long because its blood rushes to its head."
+  },
+  "951": {
+    "id": 951,
+    "generation": 9,
+    "nameKo": "캡싸이",
+    "nameEn": "capsakid",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      952
+    ],
+    "maxStage": 2,
+    "baseFormId": 951,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/951.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/951.png",
+    "types": [
+      "풀"
+    ],
+    "description": "The more sunlight this Pokémon bathes in, the more spicy chemicals are produced by its body, and thus the spicier its moves become."
+  },
+  "952": {
+    "id": 952,
+    "generation": 9,
+    "nameKo": "스코빌런",
+    "nameEn": "scovillain",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 951,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/952.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/952.png",
+    "types": [
+      "풀",
+      "불꽃"
+    ],
+    "description": "The red head converts spicy chemicals into fire energy and blasts the surrounding area with a super spicy stream of flame."
+  },
+  "953": {
+    "id": 953,
+    "generation": 9,
+    "nameKo": "구르데",
+    "nameEn": "rellor",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      954
+    ],
+    "maxStage": 2,
+    "baseFormId": 953,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/953.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/953.png",
+    "types": [
+      "벌레"
+    ],
+    "description": "This Pokémon creates a mud ball by mixing sand and dirt with psychic energy. It treasures its mud ball more than its own life."
+  },
+  "954": {
+    "id": 954,
+    "generation": 9,
+    "nameKo": "베라카스",
+    "nameEn": "rabsca",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 953,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/954.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/954.png",
+    "types": [
+      "벌레",
+      "에스퍼"
+    ],
+    "description": "The body that supports the ball barely moves. Therefore, it is thought that the true body of this Pokémon is actually inside the ball."
+  },
+  "955": {
+    "id": 955,
+    "generation": 9,
+    "nameKo": "하느라기",
+    "nameEn": "flittle",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      956
+    ],
+    "maxStage": 2,
+    "baseFormId": 955,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/955.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/955.png",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "Flittle’s toes levitate about half an inch above the ground because of the psychic power emitted from the frills on the Pokémon’s belly."
+  },
+  "956": {
+    "id": 956,
+    "generation": 9,
+    "nameKo": "클레스퍼트라",
+    "nameEn": "espathra",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 955,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/956.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/956.png",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "It immobilizes opponents by bathing them in psychic power from its large eyes. Despite its appearance, it has a vicious temperament."
+  },
+  "957": {
+    "id": 957,
+    "generation": 9,
+    "nameKo": "어리짱",
+    "nameEn": "tinkatink",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      958
+    ],
+    "maxStage": 3,
+    "baseFormId": 957,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/957.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/957.png",
+    "types": [
+      "페어리",
+      "강철"
+    ],
+    "description": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pokémon that eat metal."
+  },
+  "958": {
+    "id": 958,
+    "generation": 9,
+    "nameKo": "벼리짱",
+    "nameEn": "tinkatuff",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      959
+    ],
+    "maxStage": 3,
+    "baseFormId": 957,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/958.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/958.png",
+    "types": [
+      "페어리",
+      "강철"
+    ],
+    "description": "This Pokémon will attack groups of Pawniard and Bisharp, gathering metal from them in order to create a large and sturdy hammer."
+  },
+  "959": {
+    "id": 959,
+    "generation": 9,
+    "nameKo": "두드리짱",
+    "nameEn": "tinkaton",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 957,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/959.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/959.png",
+    "types": [
+      "페어리",
+      "강철"
+    ],
+    "description": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight."
+  },
+  "960": {
+    "id": 960,
+    "generation": 9,
+    "nameKo": "바다그다",
+    "nameEn": "wiglett",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      961
+    ],
+    "maxStage": 2,
+    "baseFormId": 960,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/960.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/960.png",
+    "types": [
+      "물"
+    ],
+    "description": "This Pokémon can pick up the scent of a Veluza just over 65 feet away and will hide itself in the sand."
+  },
+  "961": {
+    "id": 961,
+    "generation": 9,
+    "nameKo": "바닥트리오",
+    "nameEn": "wugtrio",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 960,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/961.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/961.png",
+    "types": [
+      "물"
+    ],
+    "description": "It has a vicious temperament, contrary to what its appearance may suggest. It wraps its long bodies around prey, then drags the prey into its den."
+  },
+  "962": {
+    "id": 962,
+    "generation": 9,
+    "nameKo": "떨구새",
+    "nameEn": "bombirdier",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 962,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/962.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/962.png",
+    "types": [
+      "비행",
+      "악"
+    ],
+    "description": "It gathers things up in an apron made from shed feathers added to the Pokémon’s chest feathers, then drops those things from high places for fun."
+  },
+  "963": {
+    "id": 963,
+    "generation": 9,
+    "nameKo": "맨돌핀",
+    "nameEn": "finizen",
+    "captureRate": 200,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      964
+    ],
+    "maxStage": 2,
+    "baseFormId": 963,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/963.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/963.png",
+    "types": [
+      "물"
+    ],
+    "description": "It likes playing with others of its kind using the water ring on its tail. It uses ultrasonic waves to sense the emotions of other living creatures."
+  },
+  "964": {
+    "id": 964,
+    "generation": 9,
+    "nameKo": "돌핀맨",
+    "nameEn": "palafin",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 963,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/964.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/964.png",
+    "types": [
+      "물"
+    ],
+    "description": "This Pokémon changes its appearance if it hears its allies calling for help. Palafin will never show anybody its moment of transformation."
+  },
+  "965": {
+    "id": 965,
+    "generation": 9,
+    "nameKo": "부르롱",
+    "nameEn": "varoom",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      966
+    ],
+    "maxStage": 2,
+    "baseFormId": 965,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/965.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/965.png",
+    "types": [
+      "강철",
+      "독"
+    ],
+    "description": "It is said that this Pokémon was born when an unknown poison Pokémon entered and inspirited an engine left at a scrap-processing factory."
+  },
+  "966": {
+    "id": 966,
+    "generation": 9,
+    "nameKo": "부르르룸",
+    "nameEn": "revavroom",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 965,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/966.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/966.png",
+    "types": [
+      "강철",
+      "독"
+    ],
+    "description": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders—now numbering eight—to generate energy."
+  },
+  "967": {
+    "id": 967,
+    "generation": 9,
+    "nameKo": "모토마",
+    "nameEn": "cyclizar",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 967,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/967.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/967.png",
+    "types": [
+      "드래곤",
+      "노말"
+    ],
+    "description": "Apparently Cyclizar has been allowing people to ride on its back since ancient times. Depictions of this have been found in 10,000-year-old murals."
+  },
+  "968": {
+    "id": 968,
+    "generation": 9,
+    "nameKo": "꿈트렁",
+    "nameEn": "orthworm",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 968,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/968.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/968.png",
+    "types": [
+      "강철"
+    ],
+    "description": "When attacked, this Pokémon will wield the tendrils on its body like fists and pelt the opponent with a storm of punches."
+  },
+  "969": {
+    "id": 969,
+    "generation": 9,
+    "nameKo": "초롱순",
+    "nameEn": "glimmet",
+    "captureRate": 70,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      970
+    ],
+    "maxStage": 2,
+    "baseFormId": 969,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/969.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/969.gif",
+    "types": [
+      "바위",
+      "독"
+    ],
+    "description": "It absorbs nutrients from cave walls. The petals it wears are made of crystallized poison."
+  },
+  "970": {
+    "id": 970,
+    "generation": 9,
+    "nameKo": "킬라플로르",
+    "nameEn": "glimmora",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 969,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/970.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/970.png",
+    "types": [
+      "바위",
+      "독"
+    ],
+    "description": "When this Pokémon detects danger, it will open up its crystalline petals and fire beams from its conical body."
+  },
+  "971": {
+    "id": 971,
+    "generation": 9,
+    "nameKo": "망망이",
+    "nameEn": "greavard",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      972
+    ],
+    "maxStage": 2,
+    "baseFormId": 971,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/971.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/971.png",
+    "types": [
+      "고스트"
+    ],
+    "description": "It is said that a dog Pokémon that died in the wild without ever interacting with a human was reborn as this Pokémon."
+  },
+  "972": {
+    "id": 972,
+    "generation": 9,
+    "nameKo": "묘두기",
+    "nameEn": "houndstone",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 971,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/972.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/972.png",
+    "types": [
+      "고스트"
+    ],
+    "description": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pokémon, this one is most loyal to its master."
+  },
+  "973": {
+    "id": 973,
+    "generation": 9,
+    "nameKo": "꼬이밍고",
+    "nameEn": "flamigo",
+    "captureRate": 100,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 973,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/973.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/973.png",
+    "types": [
+      "비행",
+      "격투"
+    ],
+    "description": "This Pokémon apparently ties the base of its neck into a knot so that energy stored in its belly does not escape from its beak."
+  },
+  "974": {
+    "id": 974,
+    "generation": 9,
+    "nameKo": "터벅고래",
+    "nameEn": "cetoddle",
+    "captureRate": 150,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      975
+    ],
+    "maxStage": 2,
+    "baseFormId": 974,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/974.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/974.png",
+    "types": [
+      "얼음"
+    ],
+    "description": "This species left the ocean and began living on land a very long time ago. It seems to be closely related to Wailmer."
+  },
+  "975": {
+    "id": 975,
+    "generation": 9,
+    "nameKo": "우락고래",
+    "nameEn": "cetitan",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 974,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/975.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/975.png",
+    "types": [
+      "얼음"
+    ],
+    "description": "This Pokémon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin."
+  },
+  "976": {
+    "id": 976,
+    "generation": 9,
+    "nameKo": "가비루사",
+    "nameEn": "veluza",
+    "captureRate": 100,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 976,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/976.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/976.png",
+    "types": [
+      "물",
+      "에스퍼"
+    ],
+    "description": "When Veluza discards unnecessary flesh, its mind becomes honed and its psychic power increases. The spare flesh has a mild but delicious flavor."
+  },
+  "977": {
+    "id": 977,
+    "generation": 9,
+    "nameKo": "어써러셔",
+    "nameEn": "dondozo",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 977,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/977.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/977.png",
+    "types": [
+      "물"
+    ],
+    "description": "This Pokémon is a glutton, but it’s bad at getting food. It teams up with a Tatsugiri to catch prey."
+  },
+  "978": {
+    "id": 978,
+    "generation": 9,
+    "nameKo": "싸리용",
+    "nameEn": "tatsugiri",
+    "captureRate": 100,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 978,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/978.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/978.gif",
+    "types": [
+      "드래곤",
+      "물"
+    ],
+    "description": "This is a small dragon Pokémon. It lives inside the mouth of Dondozo to protect itself from enemies on the outside."
+  },
+  "979": {
+    "id": 979,
+    "generation": 9,
+    "nameKo": "저승갓숭",
+    "nameEn": "annihilape",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 979,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/979.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/979.png",
+    "types": [
+      "격투",
+      "고스트"
+    ],
+    "description": "When its anger rose beyond a critical point, this Pokémon gained power that is unfettered by the limits of its physical body."
+  },
+  "980": {
+    "id": 980,
+    "generation": 9,
+    "nameKo": "토오",
+    "nameEn": "clodsire",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 980,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/980.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/980.gif",
+    "types": [
+      "독",
+      "땅"
+    ],
+    "description": "When attacked, this Pokémon will retaliate by sticking thick spines out from its body. It’s a risky move that puts everything on the line."
+  },
+  "981": {
+    "id": 981,
+    "generation": 9,
+    "nameKo": "키키링",
+    "nameEn": "farigiraf",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 981,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/981.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/981.png",
+    "types": [
+      "노말",
+      "에스퍼"
+    ],
+    "description": "Now that the brain waves from the head and tail are synced up, the psychic power of this Pokémon is 10 times stronger than Girafarig’s."
+  },
+  "982": {
+    "id": 982,
+    "generation": 9,
+    "nameKo": "노고고치",
+    "nameEn": "dudunsparce",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 982,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/982.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/982.png",
+    "types": [
+      "노말"
+    ],
+    "description": "This Pokémon uses its hard tail to make its nest by boring holes into bedrock deep underground. The nest can reach lengths of over six miles."
+  },
+  "983": {
+    "id": 983,
+    "generation": 9,
+    "nameKo": "대도각참",
+    "nameEn": "kingambit",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 983,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/983.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/983.png",
+    "types": [
+      "악",
+      "강철"
+    ],
+    "description": "Only a Bisharp that stands above all others in its vast army can evolve into Kingambit."
+  },
+  "984": {
+    "id": 984,
+    "generation": 9,
+    "nameKo": "위대한엄니",
+    "nameEn": "great-tusk",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 984,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/984.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/984.gif",
+    "types": [
+      "땅",
+      "격투"
+    ],
+    "description": "Sightings of this Pokémon have occurred in recent years. The name Great Tusk was taken from a creature listed in a certain book."
+  },
+  "985": {
+    "id": 985,
+    "generation": 9,
+    "nameKo": "우렁찬꼬리",
+    "nameEn": "scream-tail",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 985,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/985.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/985.png",
+    "types": [
+      "페어리",
+      "에스퍼"
+    ],
+    "description": "There has been only one reported sighting of this Pokémon. It resembles a mysterious creature depicted in an old expedition journal."
+  },
+  "986": {
+    "id": 986,
+    "generation": 9,
+    "nameKo": "사나운버섯",
+    "nameEn": "brute-bonnet",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 986,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/986.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/986.png",
+    "types": [
+      "풀",
+      "악"
+    ],
+    "description": "It is possible that the creature listed as Brute Bonnet in a certain book could actually be this Pokémon."
+  },
+  "987": {
+    "id": 987,
+    "generation": 9,
+    "nameKo": "날개치는머리",
+    "nameEn": "flutter-mane",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 987,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/987.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/987.gif",
+    "types": [
+      "고스트",
+      "페어리"
+    ],
+    "description": "This Pokémon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book."
+  },
+  "988": {
+    "id": 988,
+    "generation": 9,
+    "nameKo": "땅을기는날개",
+    "nameEn": "slither-wing",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 988,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/988.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/988.png",
+    "types": [
+      "벌레",
+      "격투"
+    ],
+    "description": "This mysterious Pokémon has some similarities to a creature that an old book introduced as Slither Wing."
+  },
+  "989": {
+    "id": 989,
+    "generation": 9,
+    "nameKo": "모래털가죽",
+    "nameEn": "sandy-shocks",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 989,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/989.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/989.png",
+    "types": [
+      "전기",
+      "땅"
+    ],
+    "description": "No records exist of this Pokémon being caught. Data is lacking, but the Pokémon’s traits match up with a creature shown in an expedition journal."
+  },
+  "990": {
+    "id": 990,
+    "generation": 9,
+    "nameKo": "무쇠바퀴",
+    "nameEn": "iron-treads",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 990,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/990.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/990.png",
+    "types": [
+      "땅",
+      "강철"
+    ],
+    "description": "This Pokémon closely resembles a scientific weapon that a paranormal magazine claimed was sent to this planet by aliens."
+  },
+  "991": {
+    "id": 991,
+    "generation": 9,
+    "nameKo": "무쇠보따리",
+    "nameEn": "iron-bundle",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 991,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/991.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/991.png",
+    "types": [
+      "얼음",
+      "물"
+    ],
+    "description": "Its shape is similar to a robot featured in a paranormal magazine article. The robot was said to have been created by an ancient civilization."
+  },
+  "992": {
+    "id": 992,
+    "generation": 9,
+    "nameKo": "무쇠손",
+    "nameEn": "iron-hands",
+    "captureRate": 50,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 992,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/992.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/992.gif",
+    "types": [
+      "격투",
+      "전기"
+    ],
+    "description": "It is very similar to a cyborg covered exclusively by a paranormal magazine. The cyborg was said to be the modified form of a certain athlete."
+  },
+  "993": {
+    "id": 993,
+    "generation": 9,
+    "nameKo": "무쇠머리",
+    "nameEn": "iron-jugulis",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 993,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/993.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/993.png",
+    "types": [
+      "악",
+      "비행"
+    ],
+    "description": "It resembles a certain Pokémon introduced in a paranormal magazine, described as the offspring of a Hydreigon that fell in love with a robot."
+  },
+  "994": {
+    "id": 994,
+    "generation": 9,
+    "nameKo": "무쇠독나방",
+    "nameEn": "iron-moth",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 994,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/994.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/994.gif",
+    "types": [
+      "불꽃",
+      "독"
+    ],
+    "description": "This Pokémon resembles an unknown object described in a paranormal magazine as a UFO sent to observe humanity."
+  },
+  "995": {
+    "id": 995,
+    "generation": 9,
+    "nameKo": "무쇠가시",
+    "nameEn": "iron-thorns",
+    "captureRate": 30,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 995,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/995.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/995.gif",
+    "types": [
+      "바위",
+      "전기"
+    ],
+    "description": "It has some similarities to a Pokémon introduced in a dubious magazine as a Tyranitar from one billion years into the future."
+  },
+  "996": {
+    "id": 996,
+    "generation": 9,
+    "nameKo": "드니차",
+    "nameEn": "frigibax",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      997
+    ],
+    "maxStage": 3,
+    "baseFormId": 996,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/996.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/996.gif",
+    "types": [
+      "드래곤",
+      "얼음"
+    ],
+    "description": "Frigibax absorbs heat through its dorsal fin and converts the heat into ice energy. The higher the temperature, the more energy Frigibax stores."
+  },
+  "997": {
+    "id": 997,
+    "generation": 9,
+    "nameKo": "드니꽁",
+    "nameEn": "arctibax",
+    "captureRate": 25,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      998
+    ],
+    "maxStage": 3,
+    "baseFormId": 996,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/997.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/997.gif",
+    "types": [
+      "드래곤",
+      "얼음"
+    ],
+    "description": "Arctibax freezes the air around it, protecting its face with an ice mask and turning its dorsal fin into a blade of ice."
+  },
+  "998": {
+    "id": 998,
+    "generation": 9,
+    "nameKo": "드닐레이브",
+    "nameEn": "baxcalibur",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 996,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/998.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/998.png",
+    "types": [
+      "드래곤",
+      "얼음"
+    ],
+    "description": "This Pokémon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava."
+  },
+  "999": {
+    "id": 999,
+    "generation": 9,
+    "nameKo": "모으령",
+    "nameEn": "gimmighoul",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      1000
+    ],
+    "maxStage": 2,
+    "baseFormId": 999,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/999.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/999.gif",
+    "types": [
+      "고스트"
+    ],
+    "description": "This Pokémon was born inside a treasure chest about 1,500 years ago. It sucks the life-force out of scoundrels who try to steal the treasure."
+  },
+  "1000": {
+    "id": 1000,
+    "generation": 9,
+    "nameKo": "타부자고",
+    "nameEn": "gholdengo",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 999,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1000.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1000.gif",
+    "types": [
+      "강철",
+      "고스트"
+    ],
+    "description": "Its body seems to be made up of 1,000 coins. This Pokémon gets along well with others and is quick to make friends with anybody."
+  },
+  "1001": {
+    "id": 1001,
+    "generation": 9,
+    "nameKo": "총지엔",
+    "nameEn": "wo-chien",
+    "captureRate": 6,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1001,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1001.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1001.gif",
+    "types": [
+      "악",
+      "풀"
+    ],
+    "description": "The grudge of a person punished for writing the king’s evil deeds upon wooden tablets has clad itself in dead leaves to become a Pokémon."
+  },
+  "1002": {
+    "id": 1002,
+    "generation": 9,
+    "nameKo": "파오젠",
+    "nameEn": "chien-pao",
+    "captureRate": 6,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1002,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1002.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1002.gif",
+    "types": [
+      "악",
+      "얼음"
+    ],
+    "description": "This Pokémon can control 100 tons of fallen snow. It plays around innocently by leaping in and out of avalanches it has caused."
+  },
+  "1003": {
+    "id": 1003,
+    "generation": 9,
+    "nameKo": "딩루",
+    "nameEn": "ting-lu",
+    "captureRate": 6,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1003,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1003.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1003.gif",
+    "types": [
+      "악",
+      "땅"
+    ],
+    "description": "The fear poured into an ancient ritual vessel has clad itself in rocks and dirt to become a Pokémon."
+  },
+  "1004": {
+    "id": 1004,
+    "generation": 9,
+    "nameKo": "위유이",
+    "nameEn": "chi-yu",
+    "captureRate": 6,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1004,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1004.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1004.gif",
+    "types": [
+      "악",
+      "불꽃"
+    ],
+    "description": "It controls flames burning at over 5,400 degrees Fahrenheit. It casually swims through the sea of lava it creates by melting rock and sand."
+  },
+  "1005": {
+    "id": 1005,
+    "generation": 9,
+    "nameKo": "고동치는달",
+    "nameEn": "roaring-moon",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1005,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1005.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1005.png",
+    "types": [
+      "드래곤",
+      "악"
+    ],
+    "description": "It is possible that this is the creature listed as Roaring Moon in an expedition journal that still holds many mysteries."
+  },
+  "1006": {
+    "id": 1006,
+    "generation": 9,
+    "nameKo": "무쇠무인",
+    "nameEn": "iron-valiant",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1006,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1006.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1006.gif",
+    "types": [
+      "페어리",
+      "격투"
+    ],
+    "description": "It has some similarities to a mad scientist’s invention covered in a paranormal magazine."
+  },
+  "1007": {
+    "id": 1007,
+    "generation": 9,
+    "nameKo": "코라이돈",
+    "nameEn": "koraidon",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1007,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1007.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1007.png",
+    "types": [
+      "격투",
+      "드래곤"
+    ],
+    "description": "This seems to be the Winged King mentioned in an old expedition journal. It was said to have split the land with its bare fists."
+  },
+  "1008": {
+    "id": 1008,
+    "generation": 9,
+    "nameKo": "미라이돈",
+    "nameEn": "miraidon",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1008,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1008.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1008.gif",
+    "types": [
+      "전기",
+      "드래곤"
+    ],
+    "description": "Much remains unknown about this creature. It resembles Cyclizar, but it is far more ruthless and powerful."
+  },
+  "1009": {
+    "id": 1009,
+    "generation": 9,
+    "nameKo": "굽이치는물결",
+    "nameEn": "walking-wake",
+    "captureRate": 5,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1009,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1009.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1009.png",
+    "types": [
+      "물",
+      "드래곤"
+    ],
+    "description": "This ferocious creature is shrouded in mystery. It's named after an aquatic monster mentioned in an old expedition journal."
+  },
+  "1010": {
+    "id": 1010,
+    "generation": 9,
+    "nameKo": "무쇠잎새",
+    "nameEn": "iron-leaves",
+    "captureRate": 5,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1010,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1010.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1010.png",
+    "types": [
+      "풀",
+      "에스퍼"
+    ],
+    "description": "Many of its physical characteristics match those of a Virizion from the future that was covered in a paranormal magazine."
+  },
+  "1011": {
+    "id": 1011,
+    "generation": 9,
+    "nameKo": "과미르",
+    "nameEn": "dipplin",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      1019
+    ],
+    "maxStage": 2,
+    "baseFormId": 1011,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1011.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1011.png",
+    "types": [
+      "풀",
+      "드래곤"
+    ],
+    "description": "Dipplin is two creatures in one Pokémon. Its evolution was triggered by a special apple grown only in one place."
+  },
+  "1012": {
+    "id": 1012,
+    "generation": 9,
+    "nameKo": "차데스",
+    "nameEn": "poltchageist",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      1013
+    ],
+    "maxStage": 2,
+    "baseFormId": 1012,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1012.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1012.png",
+    "types": [
+      "풀",
+      "고스트"
+    ],
+    "description": "Supposedly, the regrets of a tea ceremony master who died before perfecting his craft lingered in some matcha and became a Pokémon."
+  },
+  "1013": {
+    "id": 1013,
+    "generation": 9,
+    "nameKo": "그우린차",
+    "nameEn": "sinistcha",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 1012,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1013.png",
+    "types": [
+      "풀",
+      "고스트"
+    ],
+    "description": "It pretends to be tea, trying to fool people into drinking it so it can drain their life-force. Its ruse is generally unsuccessful."
+  },
+  "1014": {
+    "id": 1014,
+    "generation": 9,
+    "nameKo": "조타구",
+    "nameEn": "okidogi",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1014,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1014.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1014.png",
+    "types": [
+      "독",
+      "격투"
+    ],
+    "description": "After all its muscles were stimulated by the toxic chain around its neck, Okidogi transformed and gained a powerful physique."
+  },
+  "1015": {
+    "id": 1015,
+    "generation": 9,
+    "nameKo": "이야후",
+    "nameEn": "munkidori",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1015,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1015.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1015.png",
+    "types": [
+      "독",
+      "에스퍼"
+    ],
+    "description": "The chain is made from toxins that enhance capabilities. It stimulated Munkidori's brain and caused the Pokémon's psychic powers to bloom."
+  },
+  "1016": {
+    "id": 1016,
+    "generation": 9,
+    "nameKo": "기로치",
+    "nameEn": "fezandipiti",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1016,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1016.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1016.png",
+    "types": [
+      "독",
+      "페어리"
+    ],
+    "description": "Fezandipiti owes its beautiful looks and lovely voice to the toxic stimulants emanating from the chain wrapped around its body."
+  },
+  "1017": {
+    "id": 1017,
+    "generation": 9,
+    "nameKo": "오거폰",
+    "nameEn": "ogerpon",
+    "captureRate": 5,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1017,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1017.png",
+    "types": [
+      "풀"
+    ],
+    "description": "This Pokémon's type changes based on which mask it's wearing. It confounds its enemies with nimble movements and kicks."
+  },
+  "1018": {
+    "id": 1018,
+    "generation": 9,
+    "nameKo": "브리두라스",
+    "nameEn": "archaludon",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1018,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1018.png",
+    "types": [
+      "강철",
+      "드래곤"
+    ],
+    "description": "It gathers static electricity from its surroundings. The beams it launches when down on all fours are tremendously powerful."
+  },
+  "1019": {
+    "id": 1019,
+    "generation": 9,
+    "nameKo": "과미드라",
+    "nameEn": "hydrapple",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 1011,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1019.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1019.gif",
+    "types": [
+      "풀",
+      "드래곤"
+    ],
+    "description": "Seven syrpents live inside an apple made of syrup. The syrpent in the center is the commander."
+  },
+  "1020": {
+    "id": 1020,
+    "generation": 9,
+    "nameKo": "꿰뚫는화염",
+    "nameEn": "gouging-fire",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1020,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1020.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1020.gif",
+    "types": [
+      "불꽃",
+      "드래곤"
+    ],
+    "description": "There are scant few reports of this creature being sighted. One short video shows it rampaging and spouting pillars of flame."
+  },
+  "1021": {
+    "id": 1021,
+    "generation": 9,
+    "nameKo": "날뛰는우레",
+    "nameEn": "raging-bolt",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1021,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1021.png",
+    "types": [
+      "전기",
+      "드래곤"
+    ],
+    "description": "It's said to incinerate everything around it with lightning launched from its fur. Very little is known about this creature."
+  },
+  "1022": {
+    "id": 1022,
+    "generation": 9,
+    "nameKo": "무쇠암석",
+    "nameEn": "iron-boulder",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1022,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1022.png",
+    "types": [
+      "바위",
+      "에스퍼"
+    ],
+    "description": "It resembles a Pokémon described in a dubious magazine as a Terrakion that had been modified by an evil organization."
+  },
+  "1023": {
+    "id": 1023,
+    "generation": 9,
+    "nameKo": "무쇠감투",
+    "nameEn": "iron-crown",
+    "captureRate": 10,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1023,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1023.png",
+    "types": [
+      "강철",
+      "에스퍼"
+    ],
+    "description": "It resembles a mysterious object introduced in a paranormal magazine as a cutting-edge weapon shaped like a Cobalion."
+  },
+  "1024": {
+    "id": 1024,
+    "generation": 9,
+    "nameKo": "테라파고스",
+    "nameEn": "terapagos",
+    "captureRate": 255,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1024,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1024.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1024.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "Terapagos protects itself using its power to transform energy into hard crystals. This Pokémon is the source of the Terastal phenomenon."
+  },
+  "1025": {
+    "id": 1025,
+    "generation": 9,
+    "nameKo": "복숭악동",
+    "nameEn": "pecharunt",
+    "captureRate": 3,
+    "tier": "mythical",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 1025,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1025.png",
+    "types": [
+      "독",
+      "고스트"
+    ],
+    "description": "It feeds others toxic mochi that draw out desires and capabilities. Those who eat the mochi fall under Pecharunt’s control, chained to its will."
   }
 }
