@@ -35,6 +35,9 @@ function loadState(userDataDir) {
       firstHatchDone: false,
       widget: { ...DEFAULT_WIDGET },
       settings: { ...DEFAULT_SETTINGS },
+      tokensSpent: 0,
+      rareCandyCount: 0,
+      ownsShinyCharm: false,
     };
   }
   try {
@@ -73,6 +76,10 @@ function loadState(userDataDir) {
     delete state.unlockedGen;
     // settings(설정 화면) 추가 전 저장 파일 호환 — widget과 같은 병합 패턴.
     state.settings = { ...DEFAULT_SETTINGS, ...(state.settings || {}) };
+    // 상점(재화/가방) 추가 전 저장 파일 호환.
+    state.tokensSpent ??= 0;
+    state.rareCandyCount ??= 0;
+    state.ownsShinyCharm ??= false;
     return state;
   } catch (err) {
     console.error("State file corrupted, resetting:", err.message);
@@ -84,6 +91,9 @@ function loadState(userDataDir) {
       firstHatchDone: false,
       widget: { ...DEFAULT_WIDGET },
       settings: { ...DEFAULT_SETTINGS },
+      tokensSpent: 0,
+      rareCandyCount: 0,
+      ownsShinyCharm: false,
     };
   }
 }

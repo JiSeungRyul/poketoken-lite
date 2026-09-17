@@ -110,6 +110,9 @@ function stageThresholds(tier, maxStage, difficulty = 1) {
  * options.useWeighting: false면 capture_rate 가중치 없이 균등 랜덤으로 부화
  *   (설정 화면의 "부화 가중치" 토글 — 기본 true)
  * options.difficulty: 졸업/부화 임계치에 곱하는 난이도 배율(설정 화면, 기본 1)
+ * options.shinyDenominator: 이로치 확률 분모(기본 SHINY_DENOMINATOR) — 이로치 부적
+ *   보유 여부는 상점(src/shop.js) 소관이라 growth.js가 직접 알 필요 없게, 호출부
+ *   (main.js)가 유효 분모를 계산해서 넘긴다.
  *
  * firstHatch/useWeighting/difficulty를 옵션 객체로 묶은 이유: 위치 인자로 계속
  * 늘리면(이미 5개) 호출부에서 순서 헷갈리기 쉬워서.
@@ -117,7 +120,7 @@ function stageThresholds(tier, maxStage, difficulty = 1) {
  * 반환: { event: 'none'|'hatch'|'evolve'|'graduate', ...업데이트된 companion }
  */
 function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, options = {}) {
-  const { firstHatch, useWeighting = true, difficulty = 1 } = options;
+  const { firstHatch, useWeighting = true, difficulty = 1, shinyDenominator = SHINY_DENOMINATOR } = options;
   // 알 상태 (아직 부화 전) — 일반 알이든 등급 알이든 똑같이 HATCH_THRESHOLD를 채워야
   // 부화한다. 등급 알은 "부화하면 뭐가 나올지 등급만 보장됨"이지 즉시 나오는 게 아님.
   if (!companion || companion.state === "egg") {
@@ -129,7 +132,7 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, options = {
       });
       // 이로치는 부화 시점에 확정되고 이후 진화해도 유지됨(아래 evolve/graduate 분기의
       // `...companion` 스프레드가 그대로 물려줌 — 여기서만 한 번 굴리면 됨).
-      const isShiny = Math.random() < 1 / SHINY_DENOMINATOR;
+      const isShiny = Math.random() < 1 / shinyDenominator;
       // 등급도 부화한 기본형의 등급으로 여기서 딱 한 번 고정. 진화해도 절대 안 바뀜 —
       // 예전엔 진화할 때마다 그 단계 종 자신의 capture_rate로 다시 계산해서, 예를 들어
       // 두두(common)로 부화했는데 두트리오(legendary)로 진화하는 순간 갑자기 등급이
@@ -233,10 +236,23 @@ function newEgg(currentTotalTokens, guaranteedGrade) {
   return { state: "egg", eggStartTotal: currentTotalTokens, guaranteedGrade };
 }
 
+// 이상한 사탕(상점 아이템) 사용 — 진행도를 즉시 amount만큼 앞당긴다. 이 앱은 진행도를
+// 저장된 XP 누적치가 아니라 항상 totalTokens - hatchedAtTotal(또는 eggStartTotal)로
+// 실시간 파생 계산하기 때문에("XP를 더한다" == 기준점을 과거로 당긴다), resumeStoredCompanion()이
+// frozenProgress로부터 hatchedAtTotal을 역산하는 것과 같은 패턴을 재사용한다.
+function applyRareCandy(companion, amount) {
+  if (!companion) return companion;
+  if (companion.state === "egg") {
+    return { ...companion, eggStartTotal: companion.eggStartTotal - amount };
+  }
+  return { ...companion, hatchedAtTotal: companion.hatchedAtTotal - amount };
+}
+
 module.exports = {
   evaluate,
   stageThresholds,
   newEgg,
+  applyRareCandy,
   pickHatchSpecies,
   pickWeeklyTicketGrade,
   HATCH_THRESHOLD,

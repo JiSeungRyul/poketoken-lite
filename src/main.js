@@ -3,8 +3,24 @@ const path = require("path");
 const fs = require("fs");
 
 const { getTotalTokens, getTotalTokensAsOf } = require("./logParser");
-const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, pickWeeklyTicketGrade } = require("./growth");
+const {
+  evaluate,
+  newEgg,
+  applyRareCandy,
+  HATCH_THRESHOLD,
+  GRADUATION_TOTAL,
+  SHINY_DENOMINATOR,
+  stageThresholds,
+  pickWeeklyTicketGrade,
+} = require("./growth");
 const { loadState, saveState } = require("./state");
+const {
+  RARE_CANDY_XP,
+  RARE_CANDY_PRICE,
+  SHINY_CHARM_PRICE,
+  SHINY_CHARM_DENOMINATOR,
+  eggPrice,
+} = require("./shop");
 
 
 // 알 상태일 때 보여줄 정적 스프라이트. PokéAPI엔 종별 데이터만 있어서 gen1.json엔
@@ -292,10 +308,12 @@ function tick() {
   const preTransitionTier = state.companion.state !== "egg" ? state.companion.tier : null;
 
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
+  const shinyDenominator = state.ownsShinyCharm ? SHINY_CHARM_DENOMINATOR : SHINY_DENOMINATOR;
   const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds, {
     firstHatch: !state.firstHatchDone,
     useWeighting: state.settings.hatchWeightingEnabled,
     difficulty: state.settings.difficulty,
+    shinyDenominator,
   });
   state.companion = result.companion;
 
@@ -882,6 +900,98 @@ function updateSettings(partial) {
   return getSettingsPayload();
 }
 
+// 상점 — 재화(spendableTokens) = 누적 토큰 − 상점에서 이미 쓴 토큰. 이 값은 성장
+// 진행도(hatchedAtTotal 기준 실시간 파생값)와 완전히 독립이라, 상점에서 아무리
+// 사도 지금 키우는 개체의 진화 속도엔 영향이 없다.
+function buildShopPayload() {
+  const spendableTokens = Math.max(0, lastTotalTokens - (state.tokensSpent || 0));
+  return {
+    spendableTokens,
+    rareCandy: { price: RARE_CANDY_PRICE, canBuy: spendableTokens >= RARE_CANDY_PRICE },
+    shinyCharm: {
+      price: SHINY_CHARM_PRICE,
+      owned: !!state.ownsShinyCharm,
+      canBuy: !state.ownsShinyCharm && spendableTokens >= SHINY_CHARM_PRICE,
+    },
+    eggs: Object.keys(GRADUATION_TOTAL).map((tier) => {
+      const price = eggPrice(tier);
+      return { tier, price, canBuy: spendableTokens >= price };
+    }),
+  };
+}
+
+function buildBagPayload() {
+  const rareCandyCount = state.rareCandyCount || 0;
+  return { rareCandyCount, canUseRareCandy: !!state.companion && rareCandyCount > 0 };
+}
+
+function buyRareCandy() {
+  const spendableTokens = Math.max(0, lastTotalTokens - (state.tokensSpent || 0));
+  if (spendableTokens < RARE_CANDY_PRICE) {
+    return { ok: false, reason: "not-enough-tokens", shop: buildShopPayload() };
+  }
+  state.tokensSpent = (state.tokensSpent || 0) + RARE_CANDY_PRICE;
+  state.rareCandyCount = (state.rareCandyCount || 0) + 1;
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
+  return { ok: true, status: buildStatusPayload(lastTotalTokens), shop: buildShopPayload(), bag: buildBagPayload() };
+}
+
+function buyShinyCharm() {
+  const spendableTokens = Math.max(0, lastTotalTokens - (state.tokensSpent || 0));
+  if (state.ownsShinyCharm) {
+    return { ok: false, reason: "already-owned", shop: buildShopPayload() };
+  }
+  if (spendableTokens < SHINY_CHARM_PRICE) {
+    return { ok: false, reason: "not-enough-tokens", shop: buildShopPayload() };
+  }
+  state.tokensSpent = (state.tokensSpent || 0) + SHINY_CHARM_PRICE;
+  state.ownsShinyCharm = true;
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
+  return { ok: true, status: buildStatusPayload(lastTotalTokens), shop: buildShopPayload() };
+}
+
+// 등급 보장 알 구매 — 즉시 폐기+교체(레퍼런스 방식)가 아니라, 기존 "알 보관함 →
+// 품기 시작" 플로우에 그대로 얹는다(진화/졸업 드롭·주간 무료 티켓과 완전히 같은
+// eggBox 엔트리 모양).
+function buyGuaranteedEgg(tier) {
+  const price = GRADUATION_TOTAL[tier] ? eggPrice(tier) : null;
+  if (price === null) {
+    return { ok: false, reason: "invalid-tier", shop: buildShopPayload() };
+  }
+  const spendableTokens = Math.max(0, lastTotalTokens - (state.tokensSpent || 0));
+  if (spendableTokens < price) {
+    return { ok: false, reason: "not-enough-tokens", shop: buildShopPayload() };
+  }
+  state.tokensSpent = (state.tokensSpent || 0) + price;
+  state.eggBox.push({
+    id: `egg-shop-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    grade: tier,
+    createdAt: new Date().toISOString(),
+  });
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
+  return { ok: true, status: buildStatusPayload(lastTotalTokens), shop: buildShopPayload() };
+}
+
+// 이상한 사탕 사용 — 진행도를 즉시 앞당긴 뒤 그 자리에서 tick()을 한 번 더 돌려서
+// (refresh IPC 핸들러와 동일한 패턴) 부화/진화/졸업이 다음 폴링까지 안 기다리고
+// 바로 반영되게 한다. eggBox 적립·알림 등 tick()의 부수효과도 자동으로 따라온다.
+function useRareCandy() {
+  if (!state.companion || (state.rareCandyCount || 0) <= 0) {
+    return { ok: false, reason: "no-candy", bag: buildBagPayload() };
+  }
+  state.rareCandyCount -= 1;
+  state.companion = applyRareCandy(state.companion, RARE_CANDY_XP);
+  saveState(app.getPath("userData"), state);
+  tick();
+  return { ok: true, status: buildStatusPayload(lastTotalTokens), bag: buildBagPayload() };
+}
+
 app.whenReady().then(() => {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
@@ -905,6 +1015,12 @@ app.whenReady().then(() => {
   ipcMain.handle("enable-widget", () => setWidgetEnabled(true));
   ipcMain.handle("get-settings", () => getSettingsPayload());
   ipcMain.handle("update-settings", (event, partial) => updateSettings(partial || {}));
+  ipcMain.handle("get-shop", () => buildShopPayload());
+  ipcMain.handle("get-bag", () => buildBagPayload());
+  ipcMain.handle("buy-rare-candy", () => buyRareCandy());
+  ipcMain.handle("buy-shiny-charm", () => buyShinyCharm());
+  ipcMain.handle("buy-egg", (event, tier) => buyGuaranteedEgg(tier));
+  ipcMain.handle("use-rare-candy", () => useRareCandy());
   ipcMain.handle("get-widget-position", () => (widgetWindow ? widgetWindow.getPosition() : [0, 0]));
   ipcMain.handle("move-widget-to", (event, x, y) => {
     if (widgetWindow) widgetWindow.setPosition(Math.round(x), Math.round(y));

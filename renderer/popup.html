@@ -102,6 +102,14 @@
   .egg-row .egg-icon { font-size: 22px; }
   .egg-row .egg-grade { flex: 1; font-size: 13px; }
 
+  .shop-wallet {
+    padding: 10px; margin-bottom: 8px; background: #23233a; border-radius: 8px;
+  }
+  .shop-wallet-label { font-size: 11px; color: #888; }
+  .shop-wallet-amount { font-size: 20px; font-weight: bold; margin: 2px 0; }
+  .shop-wallet-hint { font-size: 10px; color: #666; }
+  .shop-row-desc { display: block; font-size: 10px; color: #888; margin-top: 2px; }
+
   #nextHint { color: #888; font-size: 11px; margin-top: 4px; }
   #eggBoxLink { color: #ffd43b; }
 
@@ -191,6 +199,9 @@
       <button id="widgetBtn">🔘 위젯으로 보기</button>
       <br />
       <button id="settingsLink" class="link-btn">⚙️ 설정</button>
+      <br />
+      <button id="shopLink" class="link-btn">🛍️ 상점</button>
+      <button id="bagLink" class="link-btn">🎒 가방</button>
     </div>
 
     <div id="pokedex-subview" hidden>
@@ -250,6 +261,27 @@
           <input type="checkbox" id="openAtLoginCheck" />
         </label>
       </div>
+    </div>
+
+    <div id="shop-subview" hidden>
+      <div class="pokedex-header">
+        <button id="shopBackBtn" class="link-btn">← 뒤로</button>
+        <h3>상점</h3>
+      </div>
+      <div class="shop-wallet">
+        <div class="shop-wallet-label">사용 가능 토큰</div>
+        <div class="shop-wallet-amount" id="shopWalletAmount">0</div>
+        <div class="shop-wallet-hint">누적 토큰 − 상점에서 이미 쓴 토큰이에요. 성장 진행과는 무관해요.</div>
+      </div>
+      <div id="shopList" class="pokedex-list"></div>
+    </div>
+
+    <div id="bag-subview" hidden>
+      <div class="pokedex-header">
+        <button id="bagBackBtn" class="link-btn">← 뒤로</button>
+        <h3>가방</h3>
+      </div>
+      <div id="bagList" class="pokedex-list"></div>
     </div>
   </div>
 
@@ -684,6 +716,134 @@
     });
     openAtLoginCheck.addEventListener("change", (e) => {
       window.api.updateSettings({ openAtLogin: e.target.checked });
+    });
+
+    // --- 상점 보기 ---
+    const shopSubview = document.getElementById("shop-subview");
+    const shopList = document.getElementById("shopList");
+    const shopWalletAmount = document.getElementById("shopWalletAmount");
+    const ITEM_ICON = { rareCandy: "🍬", shinyCharm: "🍀" };
+
+    function renderShop(shop) {
+      shopWalletAmount.textContent = `${shop.spendableTokens.toLocaleString()} 토큰`;
+
+      const rows = [];
+      rows.push(`
+        <div class="egg-row">
+          <span class="egg-icon">${ITEM_ICON.rareCandy}</span>
+          <span class="egg-grade">이상한 사탕<span class="shop-row-desc">가방에 보관, 나중에 사용하면 진행도 +${shop.rareCandy.price.toLocaleString()}</span></span>
+          <button class="buy-btn" data-kind="rareCandy" ${shop.rareCandy.canBuy ? "" : "disabled"}>${shop.rareCandy.price.toLocaleString()} 구매</button>
+        </div>`);
+
+      if (shop.shinyCharm.owned) {
+        rows.push(`
+          <div class="egg-row">
+            <span class="egg-icon">${ITEM_ICON.shinyCharm}</span>
+            <span class="egg-grade">이로치 부적<span class="shop-row-desc">보유 중 — 이로치 확률 2배 적용됨</span></span>
+            <span class="dex-count">✔ 보유</span>
+          </div>`);
+      } else {
+        rows.push(`
+          <div class="egg-row">
+            <span class="egg-icon">${ITEM_ICON.shinyCharm}</span>
+            <span class="egg-grade">이로치 부적<span class="shop-row-desc">1회 구매, 이로치 확률 영구 2배</span></span>
+            <button class="buy-btn" data-kind="shinyCharm" ${shop.shinyCharm.canBuy ? "" : "disabled"}>${shop.shinyCharm.price.toLocaleString()} 구매</button>
+          </div>`);
+      }
+
+      shop.eggs.forEach((e) => {
+        rows.push(`
+          <div class="egg-row">
+            <span class="egg-icon">${GRADE_ICON[e.tier] ?? "🥚"}</span>
+            <span class="egg-grade">${TIER_LABELS[e.tier] ?? e.tier} 알 <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${GRADE_HINT[e.tier] ?? e.tier}</span></span>
+            <button class="buy-btn" data-kind="egg" data-tier="${e.tier}" ${e.canBuy ? "" : "disabled"}>${e.price.toLocaleString()} 구매</button>
+          </div>`);
+      });
+
+      shopList.innerHTML = rows.join("");
+    }
+
+    // 되돌릴 수 없는 소비 행동이라 네이티브 confirm() 없이 버튼 자체 상태로 2단계
+    // 확인(첫 클릭 → 라벨이 "정말 구매?"로 바뀜 → 두 번째 클릭에서 실제 구매).
+    // 3초 안에 다시 안 누르면 원래 라벨로 자동 복귀.
+    shopList.addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".buy-btn");
+      if (!btn) return;
+
+      if (btn.dataset.confirming !== "1") {
+        btn.dataset.confirming = "1";
+        btn.dataset.originalLabel = btn.textContent;
+        btn.textContent = "정말 구매? (다시 클릭)";
+        clearTimeout(btn._confirmTimer);
+        btn._confirmTimer = setTimeout(() => {
+          btn.dataset.confirming = "0";
+          btn.textContent = btn.dataset.originalLabel;
+        }, 3000);
+        return;
+      }
+
+      clearTimeout(btn._confirmTimer);
+      btn.disabled = true;
+      btn.textContent = "구매 중...";
+      const kind = btn.dataset.kind;
+      const action =
+        kind === "rareCandy" ? window.api.buyRareCandy()
+        : kind === "shinyCharm" ? window.api.buyShinyCharm()
+        : window.api.buyEgg(btn.dataset.tier);
+
+      action.then((result) => {
+        if (result.status) render(result.status);
+        if (result.shop) renderShop(result.shop);
+        else window.api.getShop().then(renderShop);
+      });
+    });
+
+    document.getElementById("shopLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      shopSubview.hidden = false;
+      window.api.getShop().then(renderShop);
+    });
+    document.getElementById("shopBackBtn").addEventListener("click", () => {
+      shopSubview.hidden = true;
+      companionSubview.hidden = false;
+    });
+
+    // --- 가방 보기 ---
+    const bagSubview = document.getElementById("bag-subview");
+    const bagList = document.getElementById("bagList");
+
+    function renderBag(bag) {
+      if (bag.rareCandyCount <= 0) {
+        bagList.innerHTML = `<div class="pokedex-empty">가진 아이템이 없어요.<br />상점에서 이상한 사탕을 사보세요.</div>`;
+        return;
+      }
+      bagList.innerHTML = `
+        <div class="egg-row">
+          <span class="egg-icon">${ITEM_ICON.rareCandy}</span>
+          <span class="egg-grade">이상한 사탕 <span class="dex-count">${bag.rareCandyCount}개</span></span>
+          <button class="use-candy-btn" ${bag.canUseRareCandy ? "" : "disabled"}>사용</button>
+        </div>`;
+    }
+
+    bagList.addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".use-candy-btn");
+      if (!btn) return;
+      btn.disabled = true;
+      btn.textContent = "사용 중...";
+      window.api.useRareCandy().then((result) => {
+        if (result.status) render(result.status);
+        if (result.bag) renderBag(result.bag);
+      });
+    });
+
+    document.getElementById("bagLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      bagSubview.hidden = false;
+      window.api.getBag().then(renderBag);
+    });
+    document.getElementById("bagBackBtn").addEventListener("click", () => {
+      bagSubview.hidden = true;
+      companionSubview.hidden = false;
     });
   </script>
 </body>
