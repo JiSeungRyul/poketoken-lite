@@ -31,6 +31,7 @@ const GENERATIONS = [
   { gen: 1, min: 1, max: 151 },
   { gen: 2, min: 152, max: 251 },
   { gen: 3, min: 252, max: 386 },
+  { gen: 4, min: 387, max: 493 },
 ];
 
 // 희귀도 티어 경계값 — 레퍼런스(PokeTokenBar) CompanionModel.swift의 Rarity.captureRateCeiling
@@ -88,8 +89,24 @@ async function fetchJson(url) {
 
 // evolution-chain 응답을 순회하며 { speciesId: { stage, evolvesTo: [speciesId,...] } } 로
 // 변환하되, [minId, maxId] 범위 밖 노드는 기록만 안 하고(그 자손은 계속 내려가며 "범위
-// 안 조상 기준 상대 stage"를 매김). relativeStage: 지금까지 거쳐온 범위 안 조상 수 기준
-// 단계(범위 안 조상이 아직 없으면 undefined).
+// 안 조상 기준 상대 stage"를 매김). relativeStage: 지금까지 거쳐온, 끊기지 않고 이어진
+// 범위 안 조상 수 기준 단계(범위 안 조상이 아직 없거나 방금 범위 밖 노드를 거쳐서
+// 끊겼으면 undefined — 아래 참고).
+//
+// 범위 밖 노드를 지날 땐 relativeStage를 무조건 undefined로 리셋한다(이어받지 않음).
+// 안 그러면 "양 끝은 같은 세대, 중간만 다른 세대"인 샌드위치 체인(예: 꼬몽울(4세대
+// #406)→로젤리아(3세대 #315)→로즈레이드(4세대 #407))에서 실제로 겪은 버그가 재현됨:
+// 4세대 빌드에서 로젤리아를 건너뛰면서도 relativeStage 값(2)을 그대로 로즈레이드에
+// 물려줘서 로즈레이드가 stage:2로 기록되고, 같은 체인 캐시를 공유하는 꼬몽울의
+// maxStage까지 2로 끌려 올라갔다 — 그런데 evolvesTo 엣지는 직접 인접한 노드끼리만
+// 잇기 때문에(범위 밖 노드를 건너뛴 간접 연결은 안 만듦) 꼬몽울→로즈레이드 엣지는
+// 끝내 없어서, 꼬몽울이 "2단계짜리인데 다음 단계로 갈 evolvesTo가 없는" 모순 상태가
+// 됐었다(evaluate()가 이럴 때 nextSpeciesId를 자기 자신으로 폴백해서, 실제로는 안
+// 바뀌면서 겉으로만 "진화/졸업" 이벤트가 뜨는 버그로 이어짐). 리셋하면 꼬몽울·
+// 로즈레이드 둘 다 이 세대 안에선 독립된 1단(stage:1, maxStage:1) 종으로 정직하게
+// 분리되어, 피츄→피카츄·루리리→마릴 같은 이미 검증된 2단 크로스세대 케이스와
+// 완전히 같은 방식으로 처리된다(둘 다 애초에 범위 밖 노드를 한 번만 거치므로 이
+// 변경으로 동작이 안 바뀜 — 3단 이상 걸친 샌드위치 체인에서만 차이가 생김).
 function flattenChain(node, out, minId, maxId, relativeStage) {
   const id = idFromUrl(node.species.url);
   const inRange = id >= minId && id <= maxId;
@@ -106,7 +123,7 @@ function flattenChain(node, out, minId, maxId, relativeStage) {
       out[id].evolvesTo.push(nextId);
     }
     // 자손은 범위 밖 노드 밑이라도 계속 탐색 — 그 밑에 범위 안 후손이 있을 수 있음.
-    flattenChain(next, out, minId, maxId, inRange ? stage + 1 : relativeStage);
+    flattenChain(next, out, minId, maxId, inRange ? stage + 1 : undefined);
   }
   return out;
 }
