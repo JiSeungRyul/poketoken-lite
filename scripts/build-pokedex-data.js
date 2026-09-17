@@ -34,6 +34,7 @@ const GENERATIONS = [
   { gen: 4, min: 387, max: 493 },
   { gen: 5, min: 494, max: 649 },
   { gen: 6, min: 650, max: 721 },
+  { gen: 7, min: 722, max: 809 },
 ];
 
 // 희귀도 티어 경계값 — 레퍼런스(PokeTokenBar) CompanionModel.swift의 Rarity.captureRateCeiling
