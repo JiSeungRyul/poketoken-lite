@@ -60,6 +60,17 @@
   .dex-count { font-size: 10px; color: #74c0fc; }
   .pokedex-row .raise-btn { margin: 0; padding: 3px 8px; font-size: 11px; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
+
+  #settings-subview { text-align: left; }
+  .settings-list { display: flex; flex-direction: column; gap: 14px; }
+  .settings-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; font-size: 13px;
+  }
+  .settings-row select, .settings-row input[type="checkbox"] { margin: 0; }
+  .settings-row-col { flex-direction: column; align-items: stretch; gap: 4px; }
+  .settings-row-col input[type="range"] { width: 100%; margin: 0; }
+  .settings-hint { font-size: 10px; color: #888; }
   .pokedex-row.locked { opacity: 0.45; cursor: default; }
   .pokedex-row .dex-unknown-img {
     width: 32px; height: 32px; border-radius: 4px; background: #333;
@@ -170,6 +181,8 @@
       <button id="refreshBtn">🔄 새로고침</button>
       <button id="boxAndNewEggBtn" hidden>📦 보관하고 새 알 시작</button>
       <button id="widgetBtn">🔘 위젯으로 보기</button>
+      <br />
+      <button id="settingsLink" class="link-btn">⚙️ 설정</button>
     </div>
 
     <div id="pokedex-subview" hidden>
@@ -194,6 +207,41 @@
         <h3 id="eggBoxTitle">알 보관함</h3>
       </div>
       <div id="eggBoxList" class="pokedex-list"></div>
+    </div>
+
+    <div id="settings-subview" hidden>
+      <div class="pokedex-header">
+        <button id="settingsBackBtn" class="link-btn">← 뒤로</button>
+        <h3>설정</h3>
+      </div>
+      <div class="settings-list">
+        <label class="settings-row">
+          <span>새로고침 주기</span>
+          <select id="pollIntervalSelect">
+            <option value="1">1분</option>
+            <option value="2">2분</option>
+            <option value="5">5분</option>
+            <option value="10">10분</option>
+          </select>
+        </label>
+        <label class="settings-row">
+          <span>부화 가중치(희귀도 반영)</span>
+          <input type="checkbox" id="hatchWeightingCheck" />
+        </label>
+        <div class="settings-row settings-row-col">
+          <span>난이도 <span id="difficultyValue"></span></span>
+          <input type="range" id="difficultySlider" min="0.1" max="2" step="0.1" />
+          <span class="settings-hint">낮을수록 빠르고 쉬움 · 높을수록 느리고 어려움</span>
+        </div>
+        <label class="settings-row">
+          <span>Windows 알림</span>
+          <input type="checkbox" id="notificationsCheck" />
+        </label>
+        <label class="settings-row">
+          <span>Windows 시작 시 자동 실행</span>
+          <input type="checkbox" id="openAtLoginCheck" />
+        </label>
+      </div>
     </div>
   </div>
 
@@ -573,6 +621,54 @@
     document.getElementById("eggBoxBackBtn").addEventListener("click", () => {
       eggBoxSubview.hidden = true;
       companionSubview.hidden = false;
+    });
+
+    // --- 설정 보기 ---
+    const settingsSubview = document.getElementById("settings-subview");
+    const pollIntervalSelect = document.getElementById("pollIntervalSelect");
+    const hatchWeightingCheck = document.getElementById("hatchWeightingCheck");
+    const difficultySlider = document.getElementById("difficultySlider");
+    const difficultyValue = document.getElementById("difficultyValue");
+    const notificationsCheck = document.getElementById("notificationsCheck");
+    const openAtLoginCheck = document.getElementById("openAtLoginCheck");
+
+    function renderSettings(s) {
+      pollIntervalSelect.value = String(s.pollIntervalMinutes);
+      hatchWeightingCheck.checked = s.hatchWeightingEnabled;
+      difficultySlider.value = s.difficulty;
+      difficultyValue.textContent = `${s.difficulty}x`;
+      notificationsCheck.checked = s.notificationsEnabled;
+      openAtLoginCheck.checked = s.openAtLogin;
+    }
+
+    document.getElementById("settingsLink").addEventListener("click", () => {
+      companionSubview.hidden = true;
+      settingsSubview.hidden = false;
+      window.api.getSettings().then(renderSettings);
+    });
+    document.getElementById("settingsBackBtn").addEventListener("click", () => {
+      settingsSubview.hidden = true;
+      companionSubview.hidden = false;
+    });
+
+    pollIntervalSelect.addEventListener("change", (e) => {
+      window.api.updateSettings({ pollIntervalMinutes: Number(e.target.value) });
+    });
+    hatchWeightingCheck.addEventListener("change", (e) => {
+      window.api.updateSettings({ hatchWeightingEnabled: e.target.checked });
+    });
+    // 슬라이더 드래그 중엔 숫자만 바로 갱신(가벼움), 손 뗄 때(change)만 실제로 저장.
+    difficultySlider.addEventListener("input", (e) => {
+      difficultyValue.textContent = `${e.target.value}x`;
+    });
+    difficultySlider.addEventListener("change", (e) => {
+      window.api.updateSettings({ difficulty: Number(e.target.value) });
+    });
+    notificationsCheck.addEventListener("change", (e) => {
+      window.api.updateSettings({ notificationsEnabled: e.target.checked });
+    });
+    openAtLoginCheck.addEventListener("change", (e) => {
+      window.api.updateSettings({ openAtLogin: e.target.checked });
     });
   </script>
 </body>

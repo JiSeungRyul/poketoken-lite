@@ -54,6 +54,11 @@ function pickWeeklyTicketGrade() {
   return entries[entries.length - 1][0]; // 부동소수 오차 대비 fallback
 }
 
+// 설정 화면의 난이도 배율을 값 하나에 적용. 최소 1토큰은 넘게(0이나 음수로 안 깨지게).
+function scale(base, difficulty) {
+  return Math.max(1, Math.round(base * (difficulty ?? 1)));
+}
+
 /**
  * tier(그 개체의 진화 라인 전체에 고정된 등급) + maxStage(진화 체인 총 단계 수)로
  * 진화 단계별 누적 임계치 배열을 계산. 예: maxStage=3(3단 진화)면 [1→2단, 2→3단]
@@ -68,9 +73,14 @@ function pickWeeklyTicketGrade() {
  * 예전엔 빈 배열을 반환했는데, evaluate()가 빈 배열을 "체크할 임계치 없음"으로
  * 처리해서 이런 종은 아무리 토큰을 모아도 영원히 졸업 판정이 안 나는 버그가 있었다.
  * 진화가 없어도 "부화 → 졸업"까지 1단계는 있는 걸로 취급해서 최소 1개는 반환한다.
+ *
+ * difficulty: 설정 화면의 난이도 배율(기본 1, 0.1~2.0). 레퍼런스(PokeTokenBar)의
+ * `PokemonBalance.scaled(base, by: difficulty)`와 같은 방식 — GRADUATION_TOTAL
+ * 상수표 자체는 안 건드리고 여기 소비 지점에서만 곱한다(등급 알 가격 등 다른 곳이
+ * 상수표를 그대로 참조하는 데가 있어서, 표를 직접 바꾸면 그쪽까지 같이 움직여버림).
  */
-function stageThresholds(tier, maxStage) {
-  const total = GRADUATION_TOTAL[tier] ?? GRADUATION_TOTAL.common;
+function stageThresholds(tier, maxStage, difficulty = 1) {
+  const total = scale(GRADUATION_TOTAL[tier] ?? GRADUATION_TOTAL.common, difficulty);
   const stagesToClimb = Math.max(maxStage - 1, 1);
   const denom = (stagesToClimb * (stagesToClimb + 1)) / 2;
 
@@ -93,19 +103,30 @@ function stageThresholds(tier, maxStage) {
  * gen1Data: build-gen1-data.js가 만든 전체 데이터 맵
  * totalTokens: 현재까지 누적 토큰
  * ownedSpeciesIds: 이미 도감에 있는 speciesId의 Set — 부화 가중치 계산용(선택)
- * firstHatch: 게임 시작 후 첫 부화인가 — true면 common/uncommon 중에서만 뽑는다
- *   (사용자 요청: 첫 포켓몬이 하필 진화 없는 에픽 같은 걸로 뽑히면 중간 이벤트 없이
- *   그 등급 총량을 한 번에 다 채워야 해서 초반 체감이 안 좋음 — 딱 첫 판만 완화)
+ * options.firstHatch: 게임 시작 후 첫 부화인가 — true면 common/uncommon 중에서만
+ *   뽑는다(사용자 요청: 첫 포켓몬이 하필 진화 없는 에픽 같은 걸로 뽑히면 중간
+ *   이벤트 없이 그 등급 총량을 한 번에 다 채워야 해서 초반 체감이 안 좋음 — 딱
+ *   첫 판만 완화)
+ * options.useWeighting: false면 capture_rate 가중치 없이 균등 랜덤으로 부화
+ *   (설정 화면의 "부화 가중치" 토글 — 기본 true)
+ * options.difficulty: 졸업/부화 임계치에 곱하는 난이도 배율(설정 화면, 기본 1)
+ *
+ * firstHatch/useWeighting/difficulty를 옵션 객체로 묶은 이유: 위치 인자로 계속
+ * 늘리면(이미 5개) 호출부에서 순서 헷갈리기 쉬워서.
  *
  * 반환: { event: 'none'|'hatch'|'evolve'|'graduate', ...업데이트된 companion }
  */
-function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch) {
+function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, options = {}) {
+  const { firstHatch, useWeighting = true, difficulty = 1 } = options;
   // 알 상태 (아직 부화 전) — 일반 알이든 등급 알이든 똑같이 HATCH_THRESHOLD를 채워야
   // 부화한다. 등급 알은 "부화하면 뭐가 나올지 등급만 보장됨"이지 즉시 나오는 게 아님.
   if (!companion || companion.state === "egg") {
     const progressTokens = totalTokens - (companion?.eggStartTotal ?? 0);
-    if (progressTokens >= HATCH_THRESHOLD) {
-      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, companion?.guaranteedGrade, firstHatch);
+    if (progressTokens >= scale(HATCH_THRESHOLD, difficulty)) {
+      const newSpecies = pickHatchSpecies(gen1Data, ownedSpeciesIds, companion?.guaranteedGrade, {
+        firstHatch,
+        useWeighting,
+      });
       // 이로치는 부화 시점에 확정되고 이후 진화해도 유지됨(아래 evolve/graduate 분기의
       // `...companion` 스프레드가 그대로 물려줌 — 여기서만 한 번 굴리면 됨).
       const isShiny = Math.random() < 1 / SHINY_DENOMINATOR;
@@ -131,7 +152,7 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch)
 
   // 성장 중
   const species = gen1Data[companion.speciesId];
-  const thresholds = stageThresholds(companion.tier, species.maxStage);
+  const thresholds = stageThresholds(companion.tier, species.maxStage, difficulty);
   const progressSinceHatch = totalTokens - companion.hatchedAtTotal;
 
   const nextStageIndex = companion.stage; // stage=1이면 다음은 thresholds[0](1→2단)
@@ -172,25 +193,31 @@ function evaluate(companion, gen1Data, totalTokens, ownedSpeciesIds, firstHatch)
  * minTier가 주어지면 그 등급 미만인 후보는 아예 제외한다(등급 알 부화용 — "이 등급
  * 이상 보장"). 생략하면 전체 68종 대상.
  *
- * firstHatch가 true면 그 반대로 상한을 건다 — common/uncommon보다 높은 등급(에픽 이상)은
- * 제외(게임 시작 후 첫 부화 전용 완화, evaluate()의 firstHatch 인자 참고). minTier와
- * 동시에 쓰일 일은 실제로 없다(첫 알은 등급 알일 수 없음 — 등급 알은 알 보관함에서만
- * 나오고 알 보관함은 진화/졸업해야 쌓이는데 그러려면 이미 첫 부화를 지난 뒤라서).
+ * options.firstHatch가 true면 그 반대로 상한을 건다 — common/uncommon보다 높은
+ * 등급(에픽 이상)은 제외(게임 시작 후 첫 부화 전용 완화, evaluate()의 firstHatch
+ * 옵션 참고). minTier와 동시에 쓰일 일은 실제로 없다(첫 알은 등급 알일 수 없음 —
+ * 등급 알은 알 보관함에서만 나오고 알 보관함은 진화/졸업해야 쌓이는데 그러려면
+ * 이미 첫 부화를 지난 뒤라서).
+ *
+ * options.useWeighting이 false면 capture_rate 가중치를 아예 안 쓰고 후보 전체
+ * 균등 랜덤(설정 화면의 "부화 가중치" 토글 — 기본 true).
  *
  * 세대 제한 없음 — 1·2세대 전부 처음부터 후보(레퍼런스 PokeTokenBar 확인 결과
  * "1~649번 전체를 처음부터 하나의 풀로 쓰고 희귀도로만 자연스럽게 조절"하는
  * 방식이라, 우리도 "1세대 다 모아야 2세대 해금" 단계적 잠금을 걷어내고 이 방식으로
  * 맞춤 — 사용자 확정).
  */
-function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier, firstHatch) {
+function pickHatchSpecies(gen1Data, ownedSpeciesIds, minTier, options = {}) {
+  const { firstHatch, useWeighting = true } = options;
   const minRank = minTier ? TIER_RANK[minTier] ?? 0 : 0;
   const maxRank = firstHatch ? TIER_RANK.uncommon : Infinity;
   const starters = Object.values(gen1Data).filter(
     (p) => p.stage === 1 && (TIER_RANK[p.tier] ?? 0) >= minRank && (TIER_RANK[p.tier] ?? 0) <= maxRank
   );
-  const weights = starters.map((p) =>
-    ownedSpeciesIds?.has(p.id) ? Math.max(1, p.captureRate / 2) : Math.max(1, p.captureRate)
-  );
+  const weights = starters.map((p) => {
+    if (!useWeighting) return 1; // 가중치 꺼져있으면 전부 동일 확률
+    return ownedSpeciesIds?.has(p.id) ? Math.max(1, p.captureRate / 2) : Math.max(1, p.captureRate);
+  });
   const totalWeight = weights.reduce((sum, w) => sum + w, 0);
 
   let roll = Math.random() * totalWeight;

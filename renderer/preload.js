@@ -16,6 +16,8 @@ contextBridge.exposeInMainWorld("api", {
   boxAndNewEgg: () => ipcRenderer.invoke("box-and-new-egg"),
   widgetContextMenu: () => ipcRenderer.invoke("widget-context-menu"),
   enableWidget: () => ipcRenderer.invoke("enable-widget"),
+  getSettings: () => ipcRenderer.invoke("get-settings"),
+  updateSettings: (partial) => ipcRenderer.invoke("update-settings", partial),
   getWidgetPosition: () => ipcRenderer.invoke("get-widget-position"),
   moveWidgetTo: (x, y) => ipcRenderer.invoke("move-widget-to", x, y),
   onStatusUpdate: (callback) => ipcRenderer.on("status-update", (event, status) => callback(status)),

@@ -6,7 +6,6 @@ const { getTotalTokens, getTotalTokensAsOf } = require("./logParser");
 const { evaluate, newEgg, HATCH_THRESHOLD, stageThresholds, pickWeeklyTicketGrade } = require("./growth");
 const { loadState, saveState } = require("./state");
 
-const POLL_INTERVAL_MS = 2 * 60 * 1000; // 2분 (원본 PokeTokenBar 기본값과 동일)
 
 // 알 상태일 때 보여줄 정적 스프라이트. PokéAPI엔 종별 데이터만 있어서 gen1.json엔
 // 없고, PokeAPI/sprites 저장소에 있는 공용 알 이미지를 그대로 씀(움직이는 GIF는
@@ -36,6 +35,7 @@ function josa(word, withBatchim, withoutBatchim) {
 // 클릭하면 전체 창을 열어줌 — ensurePopupOpen()은 아래에서 선언되지만 함수
 // 선언은 호이스팅되니 순서 문제 없음.
 function notify(title, body) {
+  if (!state.settings.notificationsEnabled) return; // 설정 화면 토글
   if (!Notification.isSupported()) return;
   const n = new Notification({ title, body, icon: path.join(__dirname, "..", "assets", "icon.ico") });
   n.on("click", () => ensurePopupOpen());
@@ -292,7 +292,11 @@ function tick() {
   const preTransitionTier = state.companion.state !== "egg" ? state.companion.tier : null;
 
   const ownedSpeciesIds = new Set(state.pokedex.map((e) => e.speciesId));
-  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds, !state.firstHatchDone);
+  const result = evaluate(state.companion, gen1Data, totalTokens, ownedSpeciesIds, {
+    firstHatch: !state.firstHatchDone,
+    useWeighting: state.settings.hatchWeightingEnabled,
+    difficulty: state.settings.difficulty,
+  });
   state.companion = result.companion;
 
   if (result.event === "hatch") {
@@ -337,6 +341,20 @@ function tick() {
   }
 }
 
+// 고정 setInterval 대신 자기재귀 setTimeout — 매번 state.settings.pollIntervalMinutes를
+// 새로 읽어서 스케줄하니까 값이 바뀌어도 코드 재시작 없이 반영됨. 지금 대기 중인
+// 타이머에도 바로 적용하려면(다음 tick까지 기다리지 않고) update-settings
+// 핸들러에서 이 함수를 다시 호출해 재시작함.
+let tickTimer = null;
+function scheduleNextTick() {
+  clearTimeout(tickTimer);
+  const minutes = state.settings.pollIntervalMinutes || 2;
+  tickTimer = setTimeout(() => {
+    tick();
+    scheduleNextTick();
+  }, minutes * 60 * 1000);
+}
+
 // get-status IPC 응답 페이로드: 렌더러가 바로 그릴 수 있게 평이한 값으로 가공
 function buildStatusPayload(totalTokens) {
   const companion = state.companion;
@@ -361,7 +379,7 @@ function buildStatusPayload(totalTokens) {
   }
 
   const species = gen1Data[companion.speciesId];
-  const thresholds = stageThresholds(companion.tier, species.maxStage);
+  const thresholds = stageThresholds(companion.tier, species.maxStage, state.settings.difficulty);
   const needed = thresholds[companion.stage - 1] ?? null; // null이면 최종 진화(다음 tick에 졸업 처리)
   const progress = totalTokens - companion.hatchedAtTotal;
   const isShiny = !!companion.isShiny;
@@ -842,6 +860,26 @@ function togglePopup() {
   popup.on("closed", () => (popup = null));
 }
 
+// 설정 화면 응답 — openAtLogin은 state에 안 두고 OS/Electron이 들고 있는 값을
+// 그대로 읽음(진실의 원천 하나로 유지).
+function getSettingsPayload() {
+  return { ...state.settings, openAtLogin: app.getLoginItemSettings().openAtLogin };
+}
+
+// 설정 변경. openAtLogin은 별도 처리(Electron API 호출), 나머지는 state.settings에
+// 병합 후 저장. 새로고침 주기가 바뀌면 지금 대기 중인 타이머도 바로 재시작해서
+// 다음 tick까지 기다리지 않고 반영되게 함.
+function updateSettings(partial) {
+  if ("openAtLogin" in partial) {
+    app.setLoginItemSettings({ openAtLogin: !!partial.openAtLogin });
+  }
+  const { openAtLogin, ...rest } = partial;
+  Object.assign(state.settings, rest);
+  saveState(app.getPath("userData"), state);
+  if ("pollIntervalMinutes" in rest) scheduleNextTick();
+  return getSettingsPayload();
+}
+
 app.whenReady().then(() => {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
@@ -863,6 +901,8 @@ app.whenReady().then(() => {
   ipcMain.handle("box-and-new-egg", () => boxAndStartNewEgg());
   ipcMain.handle("widget-context-menu", () => showWidgetContextMenu());
   ipcMain.handle("enable-widget", () => setWidgetEnabled(true));
+  ipcMain.handle("get-settings", () => getSettingsPayload());
+  ipcMain.handle("update-settings", (event, partial) => updateSettings(partial || {}));
   ipcMain.handle("get-widget-position", () => (widgetWindow ? widgetWindow.getPosition() : [0, 0]));
   ipcMain.handle("move-widget-to", (event, x, y) => {
     if (widgetWindow) widgetWindow.setPosition(Math.round(x), Math.round(y));
@@ -876,7 +916,7 @@ app.whenReady().then(() => {
   // 위젯을 쓰는 의미가 없음), 아니었으면 기존처럼 exe 실행 직후 팝업이 바로 뜨게.
   if (state.widget.enabled) createOrShowWidget();
   else togglePopup();
-  setInterval(tick, POLL_INTERVAL_MS);
+  scheduleNextTick();
 });
 
 app.on("window-all-closed", (e) => e.preventDefault()); // 트레이 상주, 창 닫아도 종료 안 함

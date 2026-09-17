@@ -15,10 +15,27 @@ function getStatePath(userDataDir) {
 // 여기 하나로 관리. x/y는 화면 해상도 기준값이라 저장 안 해둔(null) 상태가 기본.
 const DEFAULT_WIDGET = { enabled: false, opacity: 0.85, x: null, y: null };
 
+// 설정 화면 기본값. openAtLogin(자동 실행)은 여기 안 둠 — OS/Electron이 이미
+// 진실의 원천을 갖고 있어서(app.getLoginItemSettings()) 중복 저장 안 함.
+const DEFAULT_SETTINGS = {
+  pollIntervalMinutes: 2,
+  hatchWeightingEnabled: true,
+  difficulty: 1.0,
+  notificationsEnabled: true,
+};
+
 function loadState(userDataDir) {
   const p = getStatePath(userDataDir);
   if (!fs.existsSync(p)) {
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
+    return {
+      companion: null,
+      pokedex: [],
+      eggBox: [],
+      storedCompanions: [],
+      firstHatchDone: false,
+      widget: { ...DEFAULT_WIDGET },
+      settings: { ...DEFAULT_SETTINGS },
+    };
   }
   try {
     const state = JSON.parse(fs.readFileSync(p, "utf-8"));
@@ -54,10 +71,20 @@ function loadState(userDataDir) {
     // unlockedGen(세대별 단계적 잠금) 걷어낸 뒤 남아있을 수 있는 옛 필드 정리 —
     // 이제 세대 제한 자체가 없어져서 이 값을 아무도 안 읽음.
     delete state.unlockedGen;
+    // settings(설정 화면) 추가 전 저장 파일 호환 — widget과 같은 병합 패턴.
+    state.settings = { ...DEFAULT_SETTINGS, ...(state.settings || {}) };
     return state;
   } catch (err) {
     console.error("State file corrupted, resetting:", err.message);
-    return { companion: null, pokedex: [], eggBox: [], storedCompanions: [], firstHatchDone: false, widget: { ...DEFAULT_WIDGET } };
+    return {
+      companion: null,
+      pokedex: [],
+      eggBox: [],
+      storedCompanions: [],
+      firstHatchDone: false,
+      widget: { ...DEFAULT_WIDGET },
+      settings: { ...DEFAULT_SETTINGS },
+    };
   }
 }
 
