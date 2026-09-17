@@ -494,23 +494,34 @@ function totalSpeciesCount() {
   return Object.keys(gen1Data).length;
 }
 
-// 도감 목록 — 발견한 종(buildDexAggregate 기준)만, 졸업한 것부터 최근 졸업순으로,
-// 아직 졸업 전(발견만 한) 것들은 그 뒤에 도감번호순으로. gen1Data에 없는 speciesId
-// (원인 불명의 손상 데이터)가 섞여 있어도 전체가 죽지 않게 그 항목만 건너뛴다.
+// 도감 목록 — 251마리 전체를 도감번호 오름차순으로 반환("전체 다 보여주고 안 잡은
+// 건 실루엣" 요청으로 확장). 발견 못 한 종은 스포일러 없이 discovered:false만 반환
+// (evo-chain의 ?? 처리와 같은 방식). gen1Data에 없는 speciesId(원인 불명의 손상
+// 데이터)가 섞여 있어도 전체가 죽지 않게 그 항목만 건너뛴다.
 function buildPokedexPayload() {
   const bySpecies = buildDexAggregate();
   const discoveredIds = new Set(bySpecies.keys());
 
+  const allIds = Object.keys(gen1Data)
+    .map(Number)
+    .sort((a, b) => a - b);
+
   const rows = [];
-  for (const [id, agg] of bySpecies) {
+  for (const id of allIds) {
     const species = gen1Data[id];
     if (!species) {
       console.error(`Pokedex entry has unknown speciesId: ${id}`);
       continue;
     }
+    const agg = bySpecies.get(id);
+    if (!agg) {
+      rows.push({ speciesId: id, discovered: false });
+      continue;
+    }
     const isShiny = agg.shinyCount > 0 || agg.liveShiny;
     rows.push({
       speciesId: id,
+      discovered: true,
       nameKo: species.nameKo,
       sprite: isShiny ? species.spriteShiny : species.sprite,
       isShiny,
@@ -523,12 +534,7 @@ function buildPokedexPayload() {
     });
   }
 
-  return rows.sort((a, b) => {
-    if (a.graduatedAt && b.graduatedAt) return a.graduatedAt < b.graduatedAt ? 1 : -1;
-    if (a.graduatedAt) return -1;
-    if (b.graduatedAt) return 1;
-    return a.speciesId - b.speciesId; // 둘 다 졸업 전이면 도감번호순
-  });
+  return rows; // 이미 도감번호 오름차순
 }
 
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
@@ -845,7 +851,11 @@ app.whenReady().then(() => {
   backfillMissingFrozenProgress();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
-  ipcMain.handle("get-pokedex", () => ({ total: totalSpeciesCount(), rows: buildPokedexPayload() }));
+  ipcMain.handle("get-pokedex", () => ({
+    discovered: buildDexAggregate().size,
+    total: totalSpeciesCount(),
+    rows: buildPokedexPayload(),
+  }));
   ipcMain.handle("get-egg-box", () => buildEggBoxPayload());
   ipcMain.handle("hatch-egg", (event, eggId) => startIncubatingEgg(eggId));
   ipcMain.handle("get-storage", () => buildStoragePayload());
