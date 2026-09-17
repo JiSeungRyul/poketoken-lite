@@ -7,8 +7,9 @@ Claude Code 토큰 사용량으로 포켓몬(1·2세대, 251마리)을 키우는
 
 부화 → 진화 → 졸업, 도감(251마리 전체 표시·미발견은 실루엣, 1·2세대 전부
 처음부터 후보, 행 펼치면 타입/설명까지), 보관함(성장 중 교체), 알 보관함(등급별
-부화 + 매주 무료 티켓), 이로치, 애니메이션 스프라이트, 항상 떠있는 위젯,
-설정 화면(새로고침 주기/부화 가중치/난이도 배율/알림/자동 실행)까지 Windows
+부화 + 매주 무료 티켓), 상점(이상한 사탕/이로치 부적/등급 보장 알을 토큰으로
+구매) + 가방(사탕 보관 후 사용), 이로치, 애니메이션 스프라이트, 항상 떠있는
+위젯, 설정 화면(새로고침 주기/부화 가중치/난이도 배율/알림/자동 실행)까지 Windows
 실기에서 직접 확인 완료. Windows
 알림·시작 시 자동 실행은 코드는 붙였는데, 실제 동작(토스트/로그인 자동실행)은
 아직 Windows 실기 확인 전(WSL/Linux는 Electron이 이 두 API를 지원 안 함).
@@ -29,7 +30,8 @@ npm run dist            # 포터블 exe 빌드 (dist/ 폴더에 생성, 설치 �
 src/
   logParser.js   Claude Code JSONL 로그 읽어서 누적 토큰 계산 (WSL 로그 경로도 자동 탐색)
   growth.js      등급별(common/uncommon/epic/legendary/mythical) 임계치로 부화/진화/졸업 판정
-  state.js       컴패니언/도감/보관함/알 보관함을 로컬 JSON에 저장
+  shop.js        상점 가격/효과량 상수(이상한 사탕/이로치 부적/등급 알)
+  state.js       컴패니언/도감/보관함/알 보관함/상점 재화·가방을 로컬 JSON에 저장
   main.js        Electron 메인 프로세스, 트레이 아이콘, IPC, 폴링
 scripts/
   build-pokedex-data.js   PokéAPI → data/pokedex.json 빌드 스크립트(세대별 독립 범위)
@@ -69,6 +71,28 @@ capture_rate 가중치로만 자연스럽게 희귀도를 조절함. 우리도 �
 `gen1Data`라는 변수/전역명은 그대로 유지(20곳 넘게 쓰여서 순수 리네이밍 값어치가
 없음) — 이제 1+2세대 다 담겨있다는 점만 로딩 부분 주석으로 남겨둠.
 
+## 상점 + 가방 — 완료
+
+백로그 "알 구매/퀘스트/보상 시스템"을 레퍼런스(PokeTokenBar) `ShopView.swift`/
+`CompanionStore.swift`로 직접 확인해보니 **퀘스트는 레퍼런스에 없어서**(관련
+파일 자체가 없음) "상점"으로 스코프를 좁혔다. 민트(성격 리롤)는 우리가 성격
+시스템 자체가 없어서 스킵.
+
+재화(`spendableTokens` = 누적 토큰 − `state.tokensSpent`)는 성장 진행도
+(`hatchedAtTotal` 기준 실시간 파생값)와 완전히 독립 — 상점에서 아무리 사도
+지금 키우는 개체의 진화 속도엔 영향이 없다(레퍼런스 `availableTokens =
+usedSinceInstall - spentTokens`와 동일 원칙). 이 앱은 저장된 XP 누적치가
+없고 진행도를 항상 `totalTokens - hatchedAtTotal`로 실시간 계산하기 때문에,
+이상한 사탕의 "XP를 더한다" 효과는 곧 `hatchedAtTotal`(알이면 `eggStartTotal`)을
+과거로 당기는 것과 동치다(`resumeStoredCompanion()`의 `frozenProgress` 역산과
+같은 패턴 — `growth.js`의 `applyRareCandy()`).
+
+판매 아이템: 이상한 사탕(가방에 보관 후 사용 — 사용 시 진행도 즉시 +500만,
+`HATCH_THRESHOLD`와 동급), 이로치 부적(1회성, 보유하면 이로치 확률 영구 2배),
+등급 보장 알(가격은 `GRADUATION_TOTAL[tier]`의 20% — 레퍼런스는 구매 즉시
+현재 개체를 폐기+교체하지만, 우리는 기존 "알 보관함 → 품기 시작" 경로가 더
+단순하고 일관적이라 그대로 재사용).
+
 ## 다음 단계 (우선순위 낮음)
 
 - **5시간/주간 한도 도달 시 "이상한 사탕" 보상 — 보류.** 한도 정보(`/status`에
@@ -77,8 +101,6 @@ capture_rate 가중치로만 자연스럽게 희귀도를 조절함. 우리도 �
   안 하기로 함) — 로컬 로그만으로는 "한도 도달"을 감지할 방법이 없어서 착수
   자체가 막혀있음. 나중에 감지 방법이 생기거나(공식 API 등), 순수 토큰
   총량 임의 기준으로 근사하는 걸로 타협하면 재검토.
-- 알 구매/퀘스트/보상 시스템 (상점) — 지금은 진화/졸업할 때마다 등급 알 1개,
-  매주 월요일 10시마다 무료 알 티켓 1개가 알 보관함에 적립되는 것만 있음
 - Codex/Gemini 탭 실제 구현 (지금은 팝업에 탭만 있고 "다음 라운드 예정" 플레이스홀더)
 - **Electron → 네이티브 전환 검토** — Tauri(Rust, popup.html 거의 그대로 재사용
   가능·OS 내장 웹뷰라 크로미움 번들 없음)가 WPF/WinUI 3보다 현실적. 지금
@@ -118,3 +140,12 @@ capture_rate 가중치로만 자연스럽게 희귀도를 조절함. 우리도 �
 `scripts/build-pokedex-data.js`의 `TIER_BOUNDS` — capture_rate 기준 희귀도
 경계값(epic≤45, uncommon≤120, 그 이상 common). 전설/환상은 capture_rate가
 아니라 PokéAPI `is_legendary`/`is_mythical` 플래그로 판정.
+
+`src/shop.js` (상점 가격/효과량 — growth.js 상수를 참조만 하고 growth.js는
+이 파일을 모름, 단방향 의존성):
+- `RARE_CANDY_XP`/`RARE_CANDY_PRICE` (이상한 사탕 효과량/가격, 둘 다
+  `HATCH_THRESHOLD`와 동급인 500만 — 1:1, "지금 당겨쓰기"의 대가)
+- `SHINY_CHARM_PRICE`/`SHINY_CHARM_DENOMINATOR` (이로치 부적 가격 = epic
+  졸업 총량과 동급인 고가 럭셔리 아이템, 분모는 `SHINY_DENOMINATOR`의 절반 =
+  확률 2배)
+- `EGG_PRICE_RATIO` (등급 보장 알 가격 = 그 등급 `GRADUATION_TOTAL`의 20%)
