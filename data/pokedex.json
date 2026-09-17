@@ -12525,5 +12525,1410 @@
       "강철"
     ],
     "description": "플라스마단에게 개조당한 고대의 벌레포켓몬이다. 등에 있는 대포의 파워가 올라갔다."
+  },
+  "650": {
+    "id": 650,
+    "generation": 6,
+    "nameKo": "도치마론",
+    "nameEn": "chespin",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      651
+    ],
+    "maxStage": 3,
+    "baseFormId": 650,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/650.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/650.png",
+    "types": [
+      "풀"
+    ],
+    "description": "머리의 가시는 평소에는 부드럽지만 힘을 주면 뾰족하고 날카로워지며 바위를 뚫어 버릴 정도로 단단해진다."
+  },
+  "651": {
+    "id": 651,
+    "generation": 6,
+    "nameKo": "도치보구",
+    "nameEn": "quilladin",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      652
+    ],
+    "maxStage": 3,
+    "baseFormId": 650,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/651.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/651.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "몸을 둘러싼 단단한 껍질이 적의 공격을 튕겨내고 날카로운 가시로 반격한다."
+  },
+  "652": {
+    "id": 652,
+    "generation": 6,
+    "nameKo": "브리가론",
+    "nameEn": "chesnaught",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 650,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/652.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/652.png",
+    "types": [
+      "풀",
+      "격투"
+    ],
+    "description": "몸통박치기로 50톤 전차를 뒤집는 파워를 지녔다. 자신이 방패가 되어 동료를 지킨다."
+  },
+  "653": {
+    "id": 653,
+    "generation": 6,
+    "nameKo": "푸호꼬",
+    "nameEn": "fennekin",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      654
+    ],
+    "maxStage": 3,
+    "baseFormId": 653,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/653.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/653.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "잔가지를 먹으면 힘이 나서 섭씨 200도가 넘는 열기를 커다란 귀에서 내뿜는다."
+  },
+  "654": {
+    "id": 654,
+    "generation": 6,
+    "nameKo": "테르나",
+    "nameEn": "braixen",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      655
+    ],
+    "maxStage": 3,
+    "baseFormId": 653,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/654.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/654.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "나뭇가지를 꼬리에 꽂고 있다. 꼬리털의 마찰열로 가지에 불을 붙여 싸운다."
+  },
+  "655": {
+    "id": 655,
+    "generation": 6,
+    "nameKo": "마폭시",
+    "nameEn": "delphox",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 653,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/655.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/655.png",
+    "types": [
+      "불꽃",
+      "에스퍼"
+    ],
+    "description": "지팡이 끝의 타오르는 불꽃을 바라보며 정신을 통일하면 미래에 일어날 일을 내다볼 수 있다."
+  },
+  "656": {
+    "id": 656,
+    "generation": 6,
+    "nameKo": "개구마르",
+    "nameEn": "froakie",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      657
+    ],
+    "maxStage": 3,
+    "baseFormId": 656,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/656.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/656.gif",
+    "types": [
+      "물"
+    ],
+    "description": "가슴과 등에서 거품을 내뿜는다. 탄력 있는 거품으로 공격을 막아내고 데미지를 줄인다."
+  },
+  "657": {
+    "id": 657,
+    "generation": 6,
+    "nameKo": "개굴반장",
+    "nameEn": "frogadier",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      658
+    ],
+    "maxStage": 3,
+    "baseFormId": 656,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/657.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/657.png",
+    "types": [
+      "물"
+    ],
+    "description": "거품으로 싸인 돌멩이를 던지는 기술을 쓴다. 30m 앞에 있는 빈 캔을 맞출 정도로 컨트롤이 좋다."
+  },
+  "658": {
+    "id": 658,
+    "generation": 6,
+    "nameKo": "개굴닌자",
+    "nameEn": "greninja",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 656,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/658.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/658.gif",
+    "types": [
+      "물",
+      "악"
+    ],
+    "description": "물을 압축시켜 수리검을 만들어 낸다. 고속으로 회전시키며 던지면 금속도 두 동강이 난다."
+  },
+  "659": {
+    "id": 659,
+    "generation": 6,
+    "nameKo": "파르빗",
+    "nameEn": "bunnelby",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      660
+    ],
+    "maxStage": 2,
+    "baseFormId": 659,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/659.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/659.png",
+    "types": [
+      "노말"
+    ],
+    "description": "커다란 귀로 땅을 파고 보금자리를 만든다. 하룻밤 동안 쉬지 않고 계속 팔 수 있다."
+  },
+  "660": {
+    "id": 660,
+    "generation": 6,
+    "nameKo": "파르토",
+    "nameEn": "diggersby",
+    "captureRate": 127,
+    "tier": "common",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 659,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/660.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/660.png",
+    "types": [
+      "노말",
+      "땅"
+    ],
+    "description": "커다란 귀에는 무게가 1톤을 넘는 바위를 가뿐히 들어 올릴 만한 파워가 있다. 공사 현장에서 대활약한다."
+  },
+  "661": {
+    "id": 661,
+    "generation": 6,
+    "nameKo": "화살꼬빈",
+    "nameEn": "fletchling",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      662
+    ],
+    "maxStage": 3,
+    "baseFormId": 661,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/661.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/661.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "사람을 잘 따르는 성격이다. 아름다운 지저귐과 꽁지를 흔드는 움직임으로 동료에게 신호를 보낸다."
+  },
+  "662": {
+    "id": 662,
+    "generation": 6,
+    "nameKo": "불화살빈",
+    "nameEn": "fletchinder",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      663
+    ],
+    "maxStage": 3,
+    "baseFormId": 661,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/662.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/662.gif",
+    "types": [
+      "불꽃",
+      "비행"
+    ],
+    "description": "부리에서 불꽃을 뿜어 풀숲을 태우고 놀라서 뛰쳐나온 사냥감을 잡는다."
+  },
+  "663": {
+    "id": 663,
+    "generation": 6,
+    "nameKo": "파이어로",
+    "nameEn": "talonflame",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 661,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/663.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/663.gif",
+    "types": [
+      "불꽃",
+      "비행"
+    ],
+    "description": "격렬한 싸움으로 흥분하게 되면 온몸의 깃털 사이에서 불꽃을 뿜어내며 비행한다."
+  },
+  "664": {
+    "id": 664,
+    "generation": 6,
+    "nameKo": "분이벌레",
+    "nameEn": "scatterbug",
+    "captureRate": 255,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      665
+    ],
+    "maxStage": 3,
+    "baseFormId": 664,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/664.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/664.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "새포켓몬에게 습격당하면 검은 가루를 흩뿌린다. 만지면 마비되는 독가루다."
+  },
+  "665": {
+    "id": 665,
+    "generation": 6,
+    "nameKo": "분떠도리",
+    "nameEn": "spewpa",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      666
+    ],
+    "maxStage": 3,
+    "baseFormId": 664,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/665.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/665.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "수풀의 그늘에 숨어 산다. 적에게 공격당하면 몸의 털을 뾰족하게 곤두세우며 위협한다."
+  },
+  "666": {
+    "id": 666,
+    "generation": 6,
+    "nameKo": "비비용",
+    "nameEn": "vivillon",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 664,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/666.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/666.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "세계에는 다양한 무늬의 날개를 가진 비비용이 있다. 살고 있는 곳의 기후에 영향을 받는 것 같다."
+  },
+  "667": {
+    "id": 667,
+    "generation": 6,
+    "nameKo": "레오꼬",
+    "nameEn": "litleo",
+    "captureRate": 220,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      668
+    ],
+    "maxStage": 2,
+    "baseFormId": 667,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/667.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/667.gif",
+    "types": [
+      "불꽃",
+      "노말"
+    ],
+    "description": "강한 상대에게 맞설 때일수록 갈기의 온도가 높아지고 전신에 힘이 넘쳐난다."
+  },
+  "668": {
+    "id": 668,
+    "generation": 6,
+    "nameKo": "화염레오",
+    "nameEn": "pyroar",
+    "captureRate": 65,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 667,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/668.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/668.gif",
+    "types": [
+      "불꽃",
+      "노말"
+    ],
+    "description": "무리 중에서 가장 커다란 불꽃 갈기를 지닌 수컷이 리더로서 동료들을 이끈다."
+  },
+  "669": {
+    "id": 669,
+    "generation": 6,
+    "nameKo": "플라베베",
+    "nameEn": "flabebe",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      670
+    ],
+    "maxStage": 3,
+    "baseFormId": 669,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/669.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/669.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "꽃의 숨겨진 힘을 끌어내어 자유자재로 조종한다. 플라베베가 지닌 꽃은 이미 몸의 일부다."
+  },
+  "670": {
+    "id": 670,
+    "generation": 6,
+    "nameKo": "플라엣테",
+    "nameEn": "floette",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      671
+    ],
+    "maxStage": 3,
+    "baseFormId": 669,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/670.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/670.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "꽃밭을 날아다니며 말라가는 꽃을 보살핀다. 꽃의 숨겨진 힘을 끌어내어 싸운다."
+  },
+  "671": {
+    "id": 671,
+    "generation": 6,
+    "nameKo": "플라제스",
+    "nameEn": "florges",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 669,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/671.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/671.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "멋진 화원이 영역이다. 화초가 내보내는 에너지를 쬐어 자신의 파워로 삼는다."
+  },
+  "672": {
+    "id": 672,
+    "generation": 6,
+    "nameKo": "메이클",
+    "nameEn": "skiddo",
+    "captureRate": 200,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      673
+    ],
+    "maxStage": 2,
+    "baseFormId": 672,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/672.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/672.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "사람과 살기 시작한 최초의 포켓몬이라고 한다. 온화한 성격의 포켓몬이다."
+  },
+  "673": {
+    "id": 673,
+    "generation": 6,
+    "nameKo": "고고트",
+    "nameEn": "gogoat",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 672,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/673.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/673.png",
+    "types": [
+      "풀"
+    ],
+    "description": "뿔을 잡을 때 느껴지는 작은 차이로 트레이너의 마음을 읽어낼 수 있기에 하나가 되어 달릴 수 있는 것이다."
+  },
+  "674": {
+    "id": 674,
+    "generation": 6,
+    "nameKo": "판짱",
+    "nameEn": "pancham",
+    "captureRate": 220,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      675
+    ],
+    "maxStage": 2,
+    "baseFormId": 674,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/674.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/674.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "적이 얕잡아 보지 못하도록 열심히 노려보지만, 효과가 약하다. 물고 있는 잎사귀가 트레이드마크다."
+  },
+  "675": {
+    "id": 675,
+    "generation": 6,
+    "nameKo": "부란다",
+    "nameEn": "pangoro",
+    "captureRate": 65,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 674,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/675.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/675.gif",
+    "types": [
+      "격투",
+      "악"
+    ],
+    "description": "성질이 거칠어 툭하면 싸우려 들지만 약자를 괴롭히는 일은 용서하지 않는다. 잎사귀로 적의 움직임을 읽는다."
+  },
+  "676": {
+    "id": 676,
+    "generation": 6,
+    "nameKo": "트리미앙",
+    "nameEn": "furfrou",
+    "captureRate": 160,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 676,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/676.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/676.png",
+    "types": [
+      "노말"
+    ],
+    "description": "복슬복슬한 털을 깎고 다듬으면 모습이 아름다워질 뿐만 아니라 몸의 움직임도 좋아진다."
+  },
+  "677": {
+    "id": 677,
+    "generation": 6,
+    "nameKo": "냐스퍼",
+    "nameEn": "espurr",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      678
+    ],
+    "maxStage": 2,
+    "baseFormId": 677,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/677.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/677.png",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "강력한 사이코 파워가 새어 나가지 않도록 방출되는 기관을 귀로 막고 있다."
+  },
+  "678": {
+    "id": 678,
+    "generation": 6,
+    "nameKo": "냐오닉스",
+    "nameEn": "meowstic",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 677,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/678.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/678.png",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "위험이 다가오면 귀를 들어 올리고 10톤 트럭을 눌러 부술 정도의 사이코 파워를 방출한다."
+  },
+  "679": {
+    "id": 679,
+    "generation": 6,
+    "nameKo": "단칼빙",
+    "nameEn": "honedge",
+    "captureRate": 180,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      680
+    ],
+    "maxStage": 3,
+    "baseFormId": 679,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/679.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/679.gif",
+    "types": [
+      "강철",
+      "고스트"
+    ],
+    "description": "죽은 자의 혼이 고대의 검에 깃들어 태어났다고 한다. 사람에게 씌어 생명을 빨아들인다."
+  },
+  "680": {
+    "id": 680,
+    "generation": 6,
+    "nameKo": "쌍검킬",
+    "nameEn": "doublade",
+    "captureRate": 90,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [
+      681
+    ],
+    "maxStage": 3,
+    "baseFormId": 679,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/680.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/680.png",
+    "types": [
+      "강철",
+      "고스트"
+    ],
+    "description": "진화하여 2자루로 분열되었다. 텔레파시로 서로 대화하며 연계 공격으로 적을 조각낸다."
+  },
+  "681": {
+    "id": 681,
+    "generation": 6,
+    "nameKo": "킬가르도",
+    "nameEn": "aegislash",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 679,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/681.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/681.gif",
+    "types": [
+      "강철",
+      "고스트"
+    ],
+    "description": "역대 왕들이 데리고 있었다. 영험한 힘으로 사람이나 포켓몬의 마음을 조종하여 복종하게 한다."
+  },
+  "682": {
+    "id": 682,
+    "generation": 6,
+    "nameKo": "슈쁘",
+    "nameEn": "spritzee",
+    "captureRate": 200,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      683
+    ],
+    "maxStage": 2,
+    "baseFormId": 682,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/682.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/682.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "냄새를 맡은 자를 황홀하게 만드는 향기를 몸에서 풍긴다. 먹은 먹이에 따라 향기가 달라진다."
+  },
+  "683": {
+    "id": 683,
+    "generation": 6,
+    "nameKo": "프레프티르",
+    "nameEn": "aromatisse",
+    "captureRate": 140,
+    "tier": "common",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 682,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/683.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/683.png",
+    "types": [
+      "페어리"
+    ],
+    "description": "여러 가지 향기를 만들어 낸다. 상대가 싫어하는 냄새를 내보내 싸움을 유리하게 이끌어 나간다."
+  },
+  "684": {
+    "id": 684,
+    "generation": 6,
+    "nameKo": "나룸퍼프",
+    "nameEn": "swirlix",
+    "captureRate": 200,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      685
+    ],
+    "maxStage": 2,
+    "baseFormId": 684,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/684.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/684.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "솜사탕 같은 달고 끈적끈적한 하얀 실을 내뿜어 상대를 휘감고 움직이지 못하게 한다."
+  },
+  "685": {
+    "id": 685,
+    "generation": 6,
+    "nameKo": "나루림",
+    "nameEn": "slurpuff",
+    "captureRate": 140,
+    "tier": "common",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 684,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/685.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/685.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "아주 약간의 냄새도 구별할 수 있는 민감한 후각을 살려 파티시에를 돕고 있다."
+  },
+  "686": {
+    "id": 686,
+    "generation": 6,
+    "nameKo": "오케이징",
+    "nameEn": "inkay",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      687
+    ],
+    "maxStage": 2,
+    "baseFormId": 686,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/686.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/686.gif",
+    "types": [
+      "악",
+      "에스퍼"
+    ],
+    "description": "깜빡이는 발광체를 바라본 상대는 눈앞이 어두컴컴해져 전의를 상실해버리고 만다."
+  },
+  "687": {
+    "id": 687,
+    "generation": 6,
+    "nameKo": "칼라마네로",
+    "nameEn": "malamar",
+    "captureRate": 80,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 686,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/687.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/687.gif",
+    "types": [
+      "악",
+      "에스퍼"
+    ],
+    "description": "포켓몬 중에서 가장 강력한 최면술을 쓴다. 상대를 자기 마음대로 조종해버린다."
+  },
+  "688": {
+    "id": 688,
+    "generation": 6,
+    "nameKo": "거북손손",
+    "nameEn": "binacle",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      689
+    ],
+    "maxStage": 2,
+    "baseFormId": 688,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/688.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/688.gif",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "2마리의 거북손손이 하나의 바위에서 산다. 서로 싸우면 한쪽이 다른 바위로 옮겨 간다."
+  },
+  "689": {
+    "id": 689,
+    "generation": 6,
+    "nameKo": "거북손데스",
+    "nameEn": "barbaracle",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 688,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/689.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/689.png",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "진화할 때 2마리의 거북손손이 7마리로 분열된 포켓몬이다. 7마리분의 파워로 싸운다."
+  },
+  "690": {
+    "id": 690,
+    "generation": 6,
+    "nameKo": "수레기",
+    "nameEn": "skrelp",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      691
+    ],
+    "maxStage": 2,
+    "baseFormId": 690,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/690.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/690.png",
+    "types": [
+      "독",
+      "물"
+    ],
+    "description": "썩은 해조로 위장한다. 눈치채지 못하고 가까이 다가온 사냥감에 독액을 끼얹어 잡는다."
+  },
+  "691": {
+    "id": 691,
+    "generation": 6,
+    "nameKo": "드래캄",
+    "nameEn": "dragalge",
+    "captureRate": 55,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 690,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/691.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/691.gif",
+    "types": [
+      "독",
+      "드래곤"
+    ],
+    "description": "유조선의 선체를 썩게 할 정도의 맹독을 영역 안에 들어 온 것에 무턱대고 끼얹는다"
+  },
+  "692": {
+    "id": 692,
+    "generation": 6,
+    "nameKo": "완철포",
+    "nameEn": "clauncher",
+    "captureRate": 225,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      693
+    ],
+    "maxStage": 2,
+    "baseFormId": 692,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/692.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/692.gif",
+    "types": [
+      "물"
+    ],
+    "description": "커다란 집게발로 압축한 물을 권총처럼 쏘아 날고 있는 사냥감을 떨어뜨린다."
+  },
+  "693": {
+    "id": 693,
+    "generation": 6,
+    "nameKo": "블로스터",
+    "nameEn": "clawitzer",
+    "captureRate": 55,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 692,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/693.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/693.gif",
+    "types": [
+      "물"
+    ],
+    "description": "물 포탄을 발사하는 거대한 집게발을 지녔다. 유조선의 선체를 뚫어 버린다."
+  },
+  "694": {
+    "id": 694,
+    "generation": 6,
+    "nameKo": "목도리키텔",
+    "nameEn": "helioptile",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      695
+    ],
+    "maxStage": 2,
+    "baseFormId": 694,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/694.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/694.gif",
+    "types": [
+      "전기",
+      "노말"
+    ],
+    "description": "사막에서 생활한다. 태양의 빛을 쬐고 발전하면 먹이를 먹지 않아도 괜찮다."
+  },
+  "695": {
+    "id": 695,
+    "generation": 6,
+    "nameKo": "일레도리자드",
+    "nameEn": "heliolisk",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 694,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/695.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/695.png",
+    "types": [
+      "전기",
+      "노말"
+    ],
+    "description": "목의 깃을 펼쳐 발전한다. 일레도리자드 1마리로 고층 빌딩에 필요한 전기를 만들어 낼 수 있다."
+  },
+  "696": {
+    "id": 696,
+    "generation": 6,
+    "nameKo": "티고라스",
+    "nameEn": "tyrunt",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      697
+    ],
+    "maxStage": 2,
+    "baseFormId": 696,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/696.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/696.gif",
+    "types": [
+      "바위",
+      "드래곤"
+    ],
+    "description": "화석에서 부활한 포켓몬이다. 마음에 들지 않는 일이 있으면 짜증을 내며 난동을 부린다."
+  },
+  "697": {
+    "id": 697,
+    "generation": 6,
+    "nameKo": "견고라스",
+    "nameEn": "tyrantrum",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 696,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/697.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/697.gif",
+    "types": [
+      "바위",
+      "드래곤"
+    ],
+    "description": "두꺼운 철판을 종잇장처럼 물어뜯는 커다란 턱 덕분에 고대 세계에서는 무적이었다."
+  },
+  "698": {
+    "id": 698,
+    "generation": 6,
+    "nameKo": "아마루스",
+    "nameEn": "amaura",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      699
+    ],
+    "maxStage": 2,
+    "baseFormId": 698,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/698.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/698.gif",
+    "types": [
+      "바위",
+      "얼음"
+    ],
+    "description": "1억 년 전부터 빙하로 뒤덮여 있던 몸의 일부에서 부활한 고대의 포켓몬이다."
+  },
+  "699": {
+    "id": 699,
+    "generation": 6,
+    "nameKo": "아마루르가",
+    "nameEn": "aurorus",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 698,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/699.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/699.png",
+    "types": [
+      "바위",
+      "얼음"
+    ],
+    "description": "마이너스 150도의 냉기를 마름모꼴의 결정에서 내뿜어 적을 감싸 얼어붙게 한다."
+  },
+  "700": {
+    "id": 700,
+    "generation": 6,
+    "nameKo": "님피아",
+    "nameEn": "sylveon",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 700,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/700.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/700.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "리본 모양의 더듬이에서 마음을 온화하게 하는 파동을 보내 싸움을 그만두게 한다."
+  },
+  "701": {
+    "id": 701,
+    "generation": 6,
+    "nameKo": "루차불",
+    "nameEn": "hawlucha",
+    "captureRate": 100,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 701,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/701.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/701.png",
+    "types": [
+      "격투",
+      "비행"
+    ],
+    "description": "체격은 작지만 괴력몬이나 하리뭉 등의 커다란 포켓몬과 막상막하로 싸우는 테크니션이다."
+  },
+  "702": {
+    "id": 702,
+    "generation": 6,
+    "nameKo": "데덴네",
+    "nameEn": "dedenne",
+    "captureRate": 180,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 702,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/702.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/702.gif",
+    "types": [
+      "전기",
+      "페어리"
+    ],
+    "description": "수염이 안테나의 역할을 한다. 전파를 송수신해서 멀리 떨어진 동료와 서로 연락하는 것이다."
+  },
+  "703": {
+    "id": 703,
+    "generation": 6,
+    "nameKo": "멜리시",
+    "nameEn": "carbink",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 703,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/703.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/703.gif",
+    "types": [
+      "바위",
+      "페어리"
+    ],
+    "description": "지하 깊은 곳에 있는 고온, 고압의 환경에서 태어났다. 머리의 돌에서 에너지를 방출한다."
+  },
+  "704": {
+    "id": 704,
+    "generation": 6,
+    "nameKo": "미끄메라",
+    "nameEn": "goomy",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 1,
+    "evolvesTo": [
+      705
+    ],
+    "maxStage": 3,
+    "baseFormId": 704,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/704.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/704.gif",
+    "types": [
+      "드래곤"
+    ],
+    "description": "가장 약한 드래곤포켓몬이다. 미끌미끌한 몸이 마르지 않도록 축축한 그늘에서 산다."
+  },
+  "705": {
+    "id": 705,
+    "generation": 6,
+    "nameKo": "미끄네일",
+    "nameEn": "sliggoo",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [
+      706
+    ],
+    "maxStage": 3,
+    "baseFormId": 704,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/705.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/705.gif",
+    "types": [
+      "드래곤"
+    ],
+    "description": "무엇이든 녹여버리는 점액을 분비해 적을 격퇴한다. 눈은 퇴화하여 보이지 않는다."
+  },
+  "706": {
+    "id": 706,
+    "generation": 6,
+    "nameKo": "미끄래곤",
+    "nameEn": "goodra",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 3,
+    "evolvesTo": [],
+    "maxStage": 3,
+    "baseFormId": 704,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/706.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/706.gif",
+    "types": [
+      "드래곤"
+    ],
+    "description": "사람을 잘 따르는 드래곤포켓몬이다. 좋아하는 트레이너에게 달려들어 미끈미끈한 점액투성이로 만들어 버린다."
+  },
+  "707": {
+    "id": 707,
+    "generation": 6,
+    "nameKo": "클레피",
+    "nameEn": "klefki",
+    "captureRate": 75,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 707,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/707.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/707.gif",
+    "types": [
+      "강철",
+      "페어리"
+    ],
+    "description": "열쇠를 모으는 습성이 있다. 적에게 습격당하면 열쇠로 짤랑짤랑 소리를 내어 위협한다."
+  },
+  "708": {
+    "id": 708,
+    "generation": 6,
+    "nameKo": "나목령",
+    "nameEn": "phantump",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      709
+    ],
+    "maxStage": 2,
+    "baseFormId": 708,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/708.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/708.gif",
+    "types": [
+      "고스트",
+      "풀"
+    ],
+    "description": "썩은 그루터기에 혼이 깃들어 포켓몬이 되었다. 사람이 가까이 가지 않는 숲에 산다."
+  },
+  "709": {
+    "id": 709,
+    "generation": 6,
+    "nameKo": "대로트",
+    "nameEn": "trevenant",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 708,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/709.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/709.gif",
+    "types": [
+      "고스트",
+      "풀"
+    ],
+    "description": "다른 나무들을 자유자재로 조종한다. 숲을 어지럽히는 인간은 죽을 때까지 숲에서 벗어나지 못하게 한다."
+  },
+  "710": {
+    "id": 710,
+    "generation": 6,
+    "nameKo": "호바귀",
+    "nameEn": "pumpkaboo",
+    "captureRate": 120,
+    "tier": "uncommon",
+    "stage": 1,
+    "evolvesTo": [
+      711
+    ],
+    "maxStage": 2,
+    "baseFormId": 710,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/710.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/710.png",
+    "types": [
+      "고스트",
+      "풀"
+    ],
+    "description": "성불하지 못한 혼을 호박으로 된 몸속에 담고 있다. 해가 지면 활동하기 시작한다."
+  },
+  "711": {
+    "id": 711,
+    "generation": 6,
+    "nameKo": "펌킨인",
+    "nameEn": "gourgeist",
+    "captureRate": 60,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 710,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/711.png",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/711.png",
+    "types": [
+      "고스트",
+      "풀"
+    ],
+    "description": "초승달이 뜬 밤에 기분 나쁜 목소리로 노래를 부르며 마을 안을 헤맨다. 그 노래를 들으면 저주를 받는다."
+  },
+  "712": {
+    "id": 712,
+    "generation": 6,
+    "nameKo": "꽁어름",
+    "nameEn": "bergmite",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      713
+    ],
+    "maxStage": 2,
+    "baseFormId": 712,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/712.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/712.gif",
+    "types": [
+      "얼음"
+    ],
+    "description": "몸을 둘러싼 얼음이 적의 공격을 막는다. 깨져도 냉기로 재빨리 얼음을 얼린다."
+  },
+  "713": {
+    "id": 713,
+    "generation": 6,
+    "nameKo": "크레베이스",
+    "nameEn": "avalugg",
+    "captureRate": 55,
+    "tier": "uncommon",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 712,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/713.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/713.gif",
+    "types": [
+      "얼음"
+    ],
+    "description": "얼어붙은 몸은 강철처럼 단단하다. 앞을 가로막는 것을 커다란 몸으로 파괴하며 이동한다."
+  },
+  "714": {
+    "id": 714,
+    "generation": 6,
+    "nameKo": "음뱃",
+    "nameEn": "noibat",
+    "captureRate": 190,
+    "tier": "common",
+    "stage": 1,
+    "evolvesTo": [
+      715
+    ],
+    "maxStage": 2,
+    "baseFormId": 714,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/714.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/714.gif",
+    "types": [
+      "비행",
+      "드래곤"
+    ],
+    "description": "캄캄한 동굴에서 산다. 20만Hz의 초음파를 커다란 귀에서 발사한다."
+  },
+  "715": {
+    "id": 715,
+    "generation": 6,
+    "nameKo": "음번",
+    "nameEn": "noivern",
+    "captureRate": 45,
+    "tier": "epic",
+    "stage": 2,
+    "evolvesTo": [],
+    "maxStage": 2,
+    "baseFormId": 714,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/715.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/715.png",
+    "types": [
+      "비행",
+      "드래곤"
+    ],
+    "description": "달빛조차 없는 어둠 속을 날며 방심하고 있는 사냥감을 덮친다. 어둠 속의 싸움에서는 무적이다."
+  },
+  "716": {
+    "id": 716,
+    "generation": 6,
+    "nameKo": "제르네아스",
+    "nameEn": "xerneas",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 716,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/716.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/716.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "영원한 생명을 나누어 준다고 한다. 수목의 모습으로 1000년 동안 잠들고 부활한다."
+  },
+  "717": {
+    "id": 717,
+    "generation": 6,
+    "nameKo": "이벨타르",
+    "nameEn": "yveltal",
+    "captureRate": 45,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 717,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/717.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/717.gif",
+    "types": [
+      "악",
+      "비행"
+    ],
+    "description": "날개와 꼬리를 펼치고 빨갛게 빛날 때 살아 있는 생명을 빨아들이는 전설의 포켓몬."
+  },
+  "718": {
+    "id": 718,
+    "generation": 6,
+    "nameKo": "지가르데",
+    "nameEn": "zygarde",
+    "captureRate": 3,
+    "tier": "legendary",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 718,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/718.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/718.gif",
+    "types": [
+      "드래곤",
+      "땅"
+    ],
+    "description": "칼로스지방의 생태계가 무너지면 모습을 나타내어 숨겨진 힘을 발휘한다고 한다."
+  },
+  "719": {
+    "id": 719,
+    "generation": 6,
+    "nameKo": "디안시",
+    "nameEn": "diancie",
+    "captureRate": 3,
+    "tier": "mythical",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 719,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/719.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/719.gif",
+    "types": [
+      "바위",
+      "페어리"
+    ],
+    "description": "멜리시의 돌연변이다. 분홍빛으로 빛나는 몸은 세계에서 가장 아름답다고 일컬어진다."
+  },
+  "720": {
+    "id": 720,
+    "generation": 6,
+    "nameKo": "후파",
+    "nameEn": "hoopa",
+    "captureRate": 3,
+    "tier": "mythical",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 720,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/720.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/720.gif",
+    "types": [
+      "에스퍼",
+      "고스트"
+    ],
+    "description": "공간을 뒤트는 링으로 모든 것을 멀리 떨어진 곳으로 날려버리고 마는 트러블메이커다."
+  },
+  "721": {
+    "id": 721,
+    "generation": 6,
+    "nameKo": "볼케니온",
+    "nameEn": "volcanion",
+    "captureRate": 3,
+    "tier": "mythical",
+    "stage": 1,
+    "evolvesTo": [],
+    "maxStage": 1,
+    "baseFormId": 721,
+    "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/721.gif",
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/721.gif",
+    "types": [
+      "불꽃",
+      "물"
+    ],
+    "description": "수증기를 뿜어내어 자신의 모습을 짙은 안개 속에 숨긴다. 사람이 오지 않는 산에 산다고 한다."
   }
 }
