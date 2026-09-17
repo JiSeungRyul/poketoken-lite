@@ -74,7 +74,7 @@ function notifyForEvent(event, companion) {
 }
 
 // 변수명은 gen1Data 그대로 유지(growth.js/main.js 전역에 넓게 쓰여서 순수 리네이밍만
-// 하기엔 위험도 대비 득이 적음) — 이제 실제로는 1~4세대(1~493) 전부 들어있음.
+// 하기엔 위험도 대비 득이 적음) — 이제 실제로는 1~5세대(1~649) 전부 들어있음.
 function loadGen1Data() {
   const p = path.join(__dirname, "..", "data", "pokedex.json");
   if (!fs.existsSync(p)) {
@@ -522,7 +522,7 @@ function buildDexAggregate() {
   return bySpecies;
 }
 
-// 알려진 종 총 개수(1~4세대 전부) — 도감 "N/전체" 표시의 분모로 씀(gen1Data 크기를
+// 알려진 종 총 개수(1~5세대 전부) — 도감 "N/전체" 표시의 분모로 씀(gen1Data 크기를
 // 그대로 쓰니 세대가 더 늘어도 이 함수는 안 건드려도 됨). 레퍼런스
 // (PokeTokenBar) 확인 결과 세대별 단계적 잠금 없이 전체 범위를 처음부터 하나의
 // 풀로 쓰는 방식이라, 우리도 "1세대 다 모아야 2세대" 잠금을 걷어내고 맞춤(사용자
