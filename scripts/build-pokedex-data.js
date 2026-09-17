@@ -59,6 +59,26 @@ function classifyTier(captureRate, isLegendary, isMythical) {
   return "common";
 }
 
+// PokéAPI는 타입 이름을 영문 slug로만 줘서(예: "grass") 직접 한글로 매핑한다.
+// 전체 타입 수가 18개로 고정돼있어서 API 호출 없이 표로 두는 게 더 단순함.
+const TYPE_KO = {
+  normal: "노말", fire: "불꽃", water: "물", electric: "전기", grass: "풀",
+  ice: "얼음", fighting: "격투", poison: "독", ground: "땅", flying: "비행",
+  psychic: "에스퍼", bug: "벌레", rock: "바위", ghost: "고스트", dragon: "드래곤",
+  dark: "악", steel: "강철", fairy: "페어리",
+};
+
+// 도감 설명(flavor text) — 한글 버전 중 첫 번째를 쓰고, 게임판마다 들어있는
+// 줄바꿈(\n, \f 폼피드)을 공백으로 정리한다. 한글이 없으면(이론상 1·2세대는
+// 다 있음) 영문으로 폴백.
+function pickDescription(flavorTextEntries) {
+  const entry =
+    flavorTextEntries.find((f) => f.language.name === "ko") ||
+    flavorTextEntries.find((f) => f.language.name === "en");
+  if (!entry) return "";
+  return entry.flavor_text.replace(/[\n\f]/g, " ").replace(/\s+/g, " ").trim();
+}
+
 async function fetchJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`fetch failed ${res.status}: ${url}`);
@@ -158,6 +178,10 @@ async function buildGeneration({ gen, min, max }, chainMapCache, result) {
       baseFormId,
       sprite: animated?.front_default || pokemon.sprites.front_default,
       spriteShiny: animated?.front_shiny || pokemon.sprites.front_shiny,
+      // 도감 상세 팝업용(타입/설명) — 이미 fetch해둔 species/pokemon 응답에서
+      // 뽑는 것뿐이라 API 호출이 추가로 늘지 않음.
+      types: pokemon.types.sort((a, b) => a.slot - b.slot).map((t) => TYPE_KO[t.type.name] ?? t.type.name),
+      description: pickDescription(species.flavor_text_entries),
     };
   }
   process.stdout.write("\n");

@@ -13,7 +13,12 @@
     "maxStage": 3,
     "baseFormId": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/1.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/1.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "태어났을 때부터 등에 이상한 씨앗이 심어져 있으며 몸과 함께 자란다고 한다."
   },
   "2": {
     "id": 2,
@@ -29,7 +34,12 @@
     "maxStage": 3,
     "baseFormId": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/2.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/2.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/2.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "꽃봉오리가 등에 붙어 있으며 양분을 흡수해가면 커다란 꽃이 핀다고 한다."
   },
   "3": {
     "id": 3,
@@ -43,7 +53,12 @@
     "maxStage": 3,
     "baseFormId": 1,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/3.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/3.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/3.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "큰 꽃잎을 펼쳐 햇빛을 받고 있으면 몸에 힘이 넘쳐흐른다."
   },
   "4": {
     "id": 4,
@@ -59,7 +74,11 @@
     "maxStage": 3,
     "baseFormId": 4,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/4.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/4.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/4.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "꼬리의 불꽃은 파이리의 생명력의 상징이다. 건강할 때 왕성하게 불타오른다."
   },
   "5": {
     "id": 5,
@@ -75,7 +94,11 @@
     "maxStage": 3,
     "baseFormId": 4,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/5.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/5.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/5.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "꼬리를 휘둘러 상대를 쓰러트리고 날카로운 발톱으로 갈기갈기 찢어버린다."
   },
   "6": {
     "id": 6,
@@ -89,7 +112,12 @@
     "maxStage": 3,
     "baseFormId": 4,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/6.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/6.gif",
+    "types": [
+      "불꽃",
+      "비행"
+    ],
+    "description": "입에서 작렬하는 불꽃을 토해낼 때 꼬리의 끝이 더욱 붉고 격렬하게 타오른다."
   },
   "7": {
     "id": 7,
@@ -105,7 +133,11 @@
     "maxStage": 3,
     "baseFormId": 7,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/7.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/7.gif",
+    "types": [
+      "물"
+    ],
+    "description": "등껍질에 숨어 몸을 보호한다. 상대의 빈틈을 놓치지 않고 물을 뿜어내어 반격한다."
   },
   "8": {
     "id": 8,
@@ -121,7 +153,11 @@
     "maxStage": 3,
     "baseFormId": 7,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/8.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/8.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/8.gif",
+    "types": [
+      "물"
+    ],
+    "description": "딱 하고 머리를 맞을 때 등껍질로 숨어서 피한다. 하지만 꼬리가 살짝 삐져나와 있다."
   },
   "9": {
     "id": 9,
@@ -135,7 +171,11 @@
     "maxStage": 3,
     "baseFormId": 7,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/9.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/9.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/9.gif",
+    "types": [
+      "물"
+    ],
+    "description": "무거운 몸으로 상대를 덮쳐서 기절시킨다. 위기에 처하면 등껍질에 숨는다."
   },
   "10": {
     "id": 10,
@@ -151,7 +191,11 @@
     "maxStage": 3,
     "baseFormId": 10,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/10.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/10.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "머리의 더듬이로부터 강렬한 냄새를 내어 적을 물리치고 몸을 보호한다."
   },
   "11": {
     "id": 11,
@@ -167,7 +211,11 @@
     "maxStage": 3,
     "baseFormId": 10,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/11.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/11.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/11.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "강철같이 단단한 껍질로 부드러운 몸을 보호하고 있다. 진화할 때까지 가만히 참고 있다."
   },
   "12": {
     "id": 12,
@@ -181,7 +229,12 @@
     "maxStage": 3,
     "baseFormId": 10,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/12.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/12.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/12.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "꽃의 꿀을 매우 좋아한다. 약간의 꽃가루만으로 꽃밭이 있는 장소를 찾아낼 수 있다."
   },
   "13": {
     "id": 13,
@@ -197,7 +250,12 @@
     "maxStage": 3,
     "baseFormId": 13,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/13.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/13.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/13.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "숲이나 풀밭에 많이 서식한다. 머리끝에 5cm 정도의 작고 날카로운 독침을 지니고 있다."
   },
   "14": {
     "id": 14,
@@ -213,7 +271,12 @@
     "maxStage": 3,
     "baseFormId": 13,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/14.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/14.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/14.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "스스로는 거의 움직일 수 없지만 위험할 때는 단단해져서 몸을 보호하고 있는 것 같다."
   },
   "15": {
     "id": 15,
@@ -227,7 +290,12 @@
     "maxStage": 3,
     "baseFormId": 13,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/15.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/15.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/15.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "양손과 엉덩이에 있는 3개의 독침으로 상대를 찌르고 찌르고 또 찌르며 공격한다."
   },
   "16": {
     "id": 16,
@@ -243,7 +311,12 @@
     "maxStage": 3,
     "baseFormId": 16,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/16.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/16.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/16.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "숲이나 수풀에 많이 분포해 있다. 땅에서도 격렬한 날갯짓으로 모래를 뿌리기도 한다."
   },
   "17": {
     "id": 17,
@@ -259,7 +332,12 @@
     "maxStage": 3,
     "baseFormId": 16,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/17.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/17.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/17.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "발톱이 발달해 있다. 먹이인 아라리를 잡아 100km 떨어져 있는 둥지까지 나른다."
   },
   "18": {
     "id": 18,
@@ -273,7 +351,12 @@
     "maxStage": 3,
     "baseFormId": 16,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/18.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/18.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/18.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "먹이를 찾을 때 수면을 아슬아슬하게 미끄러지듯 날아 잉어킹 등을 움켜잡는다."
   },
   "19": {
     "id": 19,
@@ -289,7 +372,11 @@
     "maxStage": 2,
     "baseFormId": 19,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/19.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/19.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/19.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "먹을 것이 있는 곳이라면 어디서든 서식한다. 온종일 먹이를 찾아다닌다."
   },
   "20": {
     "id": 20,
@@ -303,7 +390,11 @@
     "maxStage": 2,
     "baseFormId": 19,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/20.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/20.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/20.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "계속 자라는 앞니를 갈아내려고 딱딱한 것을 갉는 습성이 있다. 벽돌로 된 벽도 갉아서 부순다."
   },
   "21": {
     "id": 21,
@@ -319,7 +410,12 @@
     "maxStage": 2,
     "baseFormId": 21,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/21.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/21.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/21.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "자신의 영역을 지키기 위해 작은 날개를 쳐서 바쁘게 주위를 날아 맴돈다."
   },
   "22": {
     "id": 22,
@@ -333,7 +429,12 @@
     "maxStage": 2,
     "baseFormId": 21,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/22.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/22.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/22.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "커다란 날개로 넓은 하늘을 계속 날 수 있다. 한 번도 내려앉지 않아도 괜찮다."
   },
   "23": {
     "id": 23,
@@ -349,7 +450,11 @@
     "maxStage": 2,
     "baseFormId": 23,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/23.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/23.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/23.gif",
+    "types": [
+      "독"
+    ],
+    "description": "성장할수록 점점 길어진다. 밤에는 나뭇가지에 몸을 돌돌 말고 쉰다."
   },
   "24": {
     "id": 24,
@@ -363,7 +468,11 @@
     "maxStage": 2,
     "baseFormId": 23,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/24.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/24.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/24.gif",
+    "types": [
+      "독"
+    ],
+    "description": "배의 무늬가 무서운 얼굴로 보인다. 약한 적은 그 무늬만 보고도 도망치고 만다."
   },
   "25": {
     "id": 25,
@@ -379,7 +488,11 @@
     "maxStage": 2,
     "baseFormId": 25,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/25.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/25.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "꼬리를 세우고 주변의 상황을 살피다 보면 가끔 꼬리에 번개가 친다."
   },
   "26": {
     "id": 26,
@@ -393,7 +506,11 @@
     "maxStage": 2,
     "baseFormId": 25,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/26.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/26.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/26.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "전기가 모이면 근육이 자극되어 여느 때보다 공격적이 된다."
   },
   "27": {
     "id": 27,
@@ -409,7 +526,11 @@
     "maxStage": 2,
     "baseFormId": 27,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/27.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/27.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/27.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "지면에 구멍을 파고 산다. 자신에게 위험이 닥쳐오면 둥글게 말아서 몸을 보호한다."
   },
   "28": {
     "id": 28,
@@ -423,7 +544,11 @@
     "maxStage": 2,
     "baseFormId": 27,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/28.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/28.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/28.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "굉장한 기세로 지면을 파면 가시와 발톱이 부러져 버리지만 다음 날에는 바로 돋아나 있다."
   },
   "29": {
     "id": 29,
@@ -439,7 +564,11 @@
     "maxStage": 3,
     "baseFormId": 29,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/29.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/29.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/29.gif",
+    "types": [
+      "독"
+    ],
+    "description": "몸은 작지만 독침을 지니고 있기 때문에 주의가 필요하다. 암컷의 뿔이 더 작다."
   },
   "30": {
     "id": 30,
@@ -455,7 +584,11 @@
     "maxStage": 3,
     "baseFormId": 29,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/30.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/30.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/30.gif",
+    "types": [
+      "독"
+    ],
+    "description": "암컷으로 성격은 온화하다. 입에서 내보내는 초음파는 상대를 혼란시키는 힘이 있다."
   },
   "31": {
     "id": 31,
@@ -469,7 +602,12 @@
     "maxStage": 3,
     "baseFormId": 29,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/31.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/31.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/31.gif",
+    "types": [
+      "독",
+      "땅"
+    ],
+    "description": "비늘로 뒤덮인 튼튼한 몸으로 둥지의 입구를 막아 상대로부터 새끼들을 지킨다."
   },
   "32": {
     "id": 32,
@@ -485,7 +623,11 @@
     "maxStage": 3,
     "baseFormId": 32,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/32.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/32.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/32.gif",
+    "types": [
+      "독"
+    ],
+    "description": "풀밭 위로 귀만 내어 주위의 낌새를 살핀다. 맹독의 뿔로 몸을 보호한다."
   },
   "33": {
     "id": 33,
@@ -501,7 +643,11 @@
     "maxStage": 3,
     "baseFormId": 32,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/33.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/33.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/33.gif",
+    "types": [
+      "독"
+    ],
+    "description": "발달한 귀를 세워 주위의 낌새를 살핀다. 무슨 일이 생기면 바로 덤벼든다."
   },
   "34": {
     "id": 34,
@@ -515,7 +661,12 @@
     "maxStage": 3,
     "baseFormId": 32,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/34.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/34.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/34.gif",
+    "types": [
+      "독",
+      "땅"
+    ],
+    "description": "돌처럼 딱딱한 피부와 길게 뻗은 뿔이 특징이다. 뿔에는 독이 있으니 주의해야 한다."
   },
   "35": {
     "id": 35,
@@ -531,7 +682,11 @@
     "maxStage": 2,
     "baseFormId": 35,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/35.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/35.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/35.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "보름달 밤에 삐삐가 모여 춤을 추는 모습을 보면 행복해진다고 전해진다."
   },
   "36": {
     "id": 36,
@@ -545,7 +700,11 @@
     "maxStage": 2,
     "baseFormId": 35,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/36.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/36.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/36.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "1km 전방에 떨어진 바늘 소리도 분간할 수 있는 우수한 귀를 가지고 있다. 조용한 산속에 살고 있다."
   },
   "37": {
     "id": 37,
@@ -561,7 +720,11 @@
     "maxStage": 2,
     "baseFormId": 37,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/37.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/37.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/37.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "태어났을 때는 꼬리가 새하얗고 하나밖에 없다. 성장하면 끝이 갈라지며 꼬리 수가 늘어난다."
   },
   "38": {
     "id": 38,
@@ -575,7 +738,11 @@
     "maxStage": 2,
     "baseFormId": 37,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/38.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/38.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/38.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "황금빛으로 빛나는 털과 9개의 긴 꼬리를 지녔다. 1000년을 산다고 한다."
   },
   "39": {
     "id": 39,
@@ -591,7 +758,12 @@
     "maxStage": 2,
     "baseFormId": 39,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/39.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/39.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/39.gif",
+    "types": [
+      "노말",
+      "페어리"
+    ],
+    "description": "동그랗고 커다란 눈동자로 유인하고 기분 좋은 노래를 불러 상대방을 잠들게 한다."
   },
   "40": {
     "id": 40,
@@ -605,7 +777,12 @@
     "maxStage": 2,
     "baseFormId": 39,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/40.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/40.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/40.gif",
+    "types": [
+      "노말",
+      "페어리"
+    ],
+    "description": "2마리가 바싹 붙어 있으면 서로의 털이 너무 기분 좋아서 떨어지지 않게 되어버린다."
   },
   "41": {
     "id": 41,
@@ -621,7 +798,12 @@
     "maxStage": 2,
     "baseFormId": 41,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/41.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/41.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/41.gif",
+    "types": [
+      "독",
+      "비행"
+    ],
+    "description": "입에서 내는 초음파로 두 눈이 없어도 주위의 장애물을 탐색할 수 있다."
   },
   "42": {
     "id": 42,
@@ -635,7 +817,12 @@
     "maxStage": 2,
     "baseFormId": 41,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/42.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/42.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/42.gif",
+    "types": [
+      "독",
+      "비행"
+    ],
+    "description": "물리면 끝이다. 죽을 정도로 피를 빨아들이기 때문에 무거워져서 날 수 없게 될 때도 있다."
   },
   "43": {
     "id": 43,
@@ -651,7 +838,12 @@
     "maxStage": 3,
     "baseFormId": 43,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/43.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/43.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/43.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "낮에는 태양을 피하려고 차가운 땅속에 들어가 있다. 달빛을 쬐어 성장한다."
   },
   "44": {
     "id": 44,
@@ -667,7 +859,12 @@
     "maxStage": 3,
     "baseFormId": 43,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/44.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/44.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/44.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "강렬한 악취가 난다! 그럼에도 불구하고 1000명에 한 명 정도 이 냄새를 즐겨 맡는 사람이 있다."
   },
   "45": {
     "id": 45,
@@ -681,7 +878,12 @@
     "maxStage": 3,
     "baseFormId": 43,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/45.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/45.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/45.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "꽃잎이 클수록 많은 꽃가루를 만들어 내지만 머리가 무거워서 지쳐버린다고 한다."
   },
   "46": {
     "id": 46,
@@ -697,7 +899,12 @@
     "maxStage": 2,
     "baseFormId": 46,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/46.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/46.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/46.gif",
+    "types": [
+      "벌레",
+      "풀"
+    ],
+    "description": "벌레의 등에 돋아나 있는 것은 동충하초라는 버섯이다. 성장하면 버섯도 커진다."
   },
   "47": {
     "id": 47,
@@ -711,7 +918,12 @@
     "maxStage": 2,
     "baseFormId": 46,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/47.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/47.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/47.gif",
+    "types": [
+      "벌레",
+      "풀"
+    ],
+    "description": "몸보다 큰 버섯이 파라섹트를 조종하고 있다. 독 포자를 여기저기 뿌린다."
   },
   "48": {
     "id": 48,
@@ -727,7 +939,12 @@
     "maxStage": 2,
     "baseFormId": 48,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/48.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/48.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/48.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "작은 눈이 많이 모여 큰 눈을 이루고 있다. 밤이 되면 불빛을 향해 모여든다."
   },
   "49": {
     "id": 49,
@@ -741,7 +958,12 @@
     "maxStage": 2,
     "baseFormId": 48,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/49.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/49.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/49.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "흩뿌려진 날개 가루에 닿으면 몸의 감각이 이상해져서 똑바로 서 있을 수 없게 된다."
   },
   "50": {
     "id": 50,
@@ -757,7 +979,11 @@
     "maxStage": 2,
     "baseFormId": 50,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/50.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/50.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/50.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "지하 1m 정도를 파고들어 가서 나무뿌리 등을 씹어 먹고 산다. 가끔 지상으로 얼굴을 내민다."
   },
   "51": {
     "id": 51,
@@ -771,7 +997,11 @@
     "maxStage": 2,
     "baseFormId": 50,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/51.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/51.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/51.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "땅속을 파고들어 가 상대가 방심하고 있을 때 다른 곳에서 공격한다."
   },
   "52": {
     "id": 52,
@@ -787,7 +1017,11 @@
     "maxStage": 2,
     "baseFormId": 52,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/52.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/52.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/52.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "한밤중에 움직이는 습성이 있다. 반짝반짝 빛나는 것을 발견하면 그에 못지않게 눈동자가 반짝인다."
   },
   "53": {
     "id": 53,
@@ -801,7 +1035,11 @@
     "maxStage": 2,
     "baseFormId": 52,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/53.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/53.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/53.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "털의 결이 아름다워 애완용으로 기르려는 사람이 많지만, 곧잘 할퀴려 들기 때문에 쉽지 않다."
   },
   "54": {
     "id": 54,
@@ -817,7 +1055,11 @@
     "maxStage": 2,
     "baseFormId": 54,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/54.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/54.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/54.gif",
+    "types": [
+      "물"
+    ],
+    "description": "항상 두통에 시달리고 있다. 이 두통이 심해지면 이상한 힘을 쓰기 시작한다."
   },
   "55": {
     "id": 55,
@@ -831,7 +1073,11 @@
     "maxStage": 2,
     "baseFormId": 54,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/55.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/55.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/55.gif",
+    "types": [
+      "물"
+    ],
+    "description": "해 질 무렵 강가에 모습을 나타낸다. 이마가 이상하게 빛날 때 신통력을 발휘한다고 전해진다."
   },
   "56": {
     "id": 56,
@@ -847,7 +1093,11 @@
     "maxStage": 2,
     "baseFormId": 56,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/56.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/56.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/56.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "이유 없이 화내고 날뛰기 시작하면 동료도 구별하지 못하기 때문에 가까이 가는 것은 매우 위험하다."
   },
   "57": {
     "id": 57,
@@ -861,7 +1111,11 @@
     "maxStage": 2,
     "baseFormId": 56,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/57.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/57.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/57.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "주위에 아무도 없을 때만은 화를 내지 않고 있다. 그러나 그 모습을 보기가 어렵다."
   },
   "58": {
     "id": 58,
@@ -877,7 +1131,11 @@
     "maxStage": 2,
     "baseFormId": 58,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/58.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/58.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/58.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "사람을 잘 따르는 충실한 성격이다. 적에게는 짖거나 물며 쫓아내려고 한다."
   },
   "59": {
     "id": 59,
@@ -891,7 +1149,11 @@
     "maxStage": 2,
     "baseFormId": 58,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/59.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/59.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/59.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "옛날부터 많은 사람의 마음을 사로잡은 아름다운 포켓몬이다. 날듯이 경쾌하게 달린다."
   },
   "60": {
     "id": 60,
@@ -907,7 +1169,11 @@
     "maxStage": 3,
     "baseFormId": 60,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/60.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/60.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/60.gif",
+    "types": [
+      "물"
+    ],
+    "description": "매끄럽고 검은 피부는 얇고 축축하다. 내장 일부가 비쳐서 소용돌이 모양으로 보인다."
   },
   "61": {
     "id": 61,
@@ -923,7 +1189,11 @@
     "maxStage": 3,
     "baseFormId": 60,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/61.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/61.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/61.gif",
+    "types": [
+      "물"
+    ],
+    "description": "육지에서도 수중에서도 살 수 있다. 지상에서는 항상 땀을 흘려서 피부를 미끌미끌하게 하고 있다."
   },
   "62": {
     "id": 62,
@@ -937,7 +1207,12 @@
     "maxStage": 3,
     "baseFormId": 60,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/62.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/62.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/62.gif",
+    "types": [
+      "물",
+      "격투"
+    ],
+    "description": "강인한 근육을 가지고 있다. 태평양을 쉬지 않고 계속 헤엄칠 수 있다."
   },
   "63": {
     "id": 63,
@@ -953,7 +1228,11 @@
     "maxStage": 3,
     "baseFormId": 63,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/63.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/63.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/63.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "하루에 18시간은 자고 있다. 자는 동안에도 다양한 초능력을 사용한다."
   },
   "64": {
     "id": 64,
@@ -969,7 +1248,11 @@
     "maxStage": 3,
     "baseFormId": 63,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/64.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/64.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/64.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "초능력을 발휘하면 강한 알파파를 내어 정밀 기계를 고장 내 버린다."
   },
   "65": {
     "id": 65,
@@ -983,7 +1266,11 @@
     "maxStage": 3,
     "baseFormId": 63,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/65.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/65.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/65.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "뇌세포는 항상 분열해서 죽을 때까지 늘어나기 때문에 모든 것을 기억해 놓을 수 있다."
   },
   "66": {
     "id": 66,
@@ -999,7 +1286,11 @@
     "maxStage": 3,
     "baseFormId": 66,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/66.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/66.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/66.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "데구리를 수없이 들었다 놨다 하며 전신의 근육을 단련한다. 모든 격투기를 사용한다."
   },
   "67": {
     "id": 67,
@@ -1015,7 +1306,11 @@
     "maxStage": 3,
     "baseFormId": 66,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/67.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/67.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/67.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "엄청나게 강한 육체를 지녔기 때문에 파워 세이브 벨트를 차서 힘을 제어하고 있다."
   },
   "68": {
     "id": 68,
@@ -1029,7 +1324,11 @@
     "maxStage": 3,
     "baseFormId": 66,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/68.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/68.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/68.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "발달한 4개의 팔은 2초 동안 1000번의 펀치를 날릴 수 있다."
   },
   "69": {
     "id": 69,
@@ -1045,7 +1344,12 @@
     "maxStage": 3,
     "baseFormId": 69,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/69.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/69.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/69.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "홀쭉한 체격이지만 먹이를 잡을 때의 움직임은 눈에 보이지 않을 정도로 빠르다."
   },
   "70": {
     "id": 70,
@@ -1061,7 +1365,12 @@
     "maxStage": 3,
     "baseFormId": 69,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/70.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/70.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/70.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "잎사귀 부분은 칼날이 되어 상대를 베어버린다. 입에서는 무엇이든 녹이는 액체를 뿜어낸다."
   },
   "71": {
     "id": 71,
@@ -1075,7 +1384,12 @@
     "maxStage": 3,
     "baseFormId": 69,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/71.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/71.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/71.gif",
+    "types": [
+      "풀",
+      "독"
+    ],
+    "description": "정글의 안쪽에 우츠보트만 있는 지대가 있어서 한 번 가면 두 번 다시 돌아올 수 없다."
   },
   "72": {
     "id": 72,
@@ -1091,7 +1405,12 @@
     "maxStage": 2,
     "baseFormId": 72,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/72.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/72.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/72.gif",
+    "types": [
+      "물",
+      "독"
+    ],
+    "description": "몸 대부분이 수분이다. 수정 같은 눈에서 이상한 빔을 발사한다."
   },
   "73": {
     "id": 73,
@@ -1105,7 +1424,12 @@
     "maxStage": 2,
     "baseFormId": 72,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/73.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/73.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/73.gif",
+    "types": [
+      "물",
+      "독"
+    ],
+    "description": "촉수는 평소에는 짧고 먹이를 찌를 때 길게 늘어나 휘감는다."
   },
   "74": {
     "id": 74,
@@ -1121,7 +1445,12 @@
     "maxStage": 3,
     "baseFormId": 74,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/74.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/74.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/74.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "초원이나 산에 서식한다. 돌멩이와 닮은 탓에 알아채지 못하고 밟거나 발이 걸려 넘어지기도 한다."
   },
   "75": {
     "id": 75,
@@ -1137,7 +1466,12 @@
     "maxStage": 3,
     "baseFormId": 74,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/75.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/75.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/75.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "산에서 굴러 떨어질 때 몸의 여기저기가 부서져도 신경 쓰지 않는 호쾌한 성격이다."
   },
   "76": {
     "id": 76,
@@ -1151,7 +1485,12 @@
     "maxStage": 3,
     "baseFormId": 74,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/76.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/76.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/76.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "산 정상에서 산기슭까지 이어지는 움푹 패인 홈은 딱구리가 굴러 다니는 길이므로 주의가 필요하다."
   },
   "77": {
     "id": 77,
@@ -1167,7 +1506,11 @@
     "maxStage": 2,
     "baseFormId": 77,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/77.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/77.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/77.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "막 태어나서는 겨우 일어설 수 있을 정도이지만 많이 달리면 하반신이 단련되어 달리는 속도가 빨라진다."
   },
   "78": {
     "id": 78,
@@ -1181,7 +1524,11 @@
     "maxStage": 2,
     "baseFormId": 77,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/78.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/78.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/78.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "빠르게 움직이는 물체를 보면 경주를 하고 싶어져서 맹렬한 스피드로 쫓아가기 시작한다."
   },
   "79": {
     "id": 79,
@@ -1197,7 +1544,12 @@
     "maxStage": 2,
     "baseFormId": 79,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/79.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/79.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/79.gif",
+    "types": [
+      "물",
+      "에스퍼"
+    ],
+    "description": "항상 멍하니 있으므로 무슨 생각을 하고 있는지 알 수 없다. 꼬리로 먹이를 낚는 것이 특기다."
   },
   "80": {
     "id": 80,
@@ -1211,7 +1563,12 @@
     "maxStage": 2,
     "baseFormId": 79,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/80.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/80.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/80.gif",
+    "types": [
+      "물",
+      "에스퍼"
+    ],
+    "description": "붙어 있는 셀러는 꼬리에서 배어 나오는 맛을 좋아해서 계속 떨어지지 않는다."
   },
   "81": {
     "id": 81,
@@ -1227,7 +1584,12 @@
     "maxStage": 2,
     "baseFormId": 81,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/81.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/81.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/81.gif",
+    "types": [
+      "전기",
+      "강철"
+    ],
+    "description": "좌우의 유닛에서 중력을 차단하는 힘을 발휘하기에 공중에 뜰 수 있다."
   },
   "82": {
     "id": 82,
@@ -1241,7 +1603,12 @@
     "maxStage": 2,
     "baseFormId": 81,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/82.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/82.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/82.gif",
+    "types": [
+      "전기",
+      "강철"
+    ],
+    "description": "다수의 코일이 연결되어 강력한 자기장과 높은 전압을 방사한다."
   },
   "83": {
     "id": 83,
@@ -1255,7 +1622,12 @@
     "maxStage": 1,
     "baseFormId": 83,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/83.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/83.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/83.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "가지고 있는 파 줄기는 소중한 무기이기도 하며 칼을 휘두르듯 다양한 것을 자를 수 있다."
   },
   "84": {
     "id": 84,
@@ -1271,7 +1643,12 @@
     "maxStage": 2,
     "baseFormId": 84,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/84.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/84.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/84.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "돌연변이로 발견된 두 개의 머리를 지닌 포켓몬이다. 시속 100km로 달린다."
   },
   "85": {
     "id": 85,
@@ -1285,7 +1662,12 @@
     "maxStage": 2,
     "baseFormId": 84,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/85.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/85.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/85.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "3개의 머리가 보고 있는 앞에서 조금이라도 빈틈을 보이면 부리로 격렬하게 쪼아댄다."
   },
   "86": {
     "id": 86,
@@ -1301,7 +1683,11 @@
     "maxStage": 2,
     "baseFormId": 86,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/86.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/86.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/86.gif",
+    "types": [
+      "물"
+    ],
+    "description": "빙산에 사는 포켓몬이다. 머리의 뾰족하게 돌출된 부분으로 얼음을 깨고 바다를 헤엄친다."
   },
   "87": {
     "id": 87,
@@ -1315,7 +1701,12 @@
     "maxStage": 2,
     "baseFormId": 86,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/87.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/87.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/87.gif",
+    "types": [
+      "물",
+      "얼음"
+    ],
+    "description": "전신이 새하얀 털로 뒤덮여 있다. 추위에 강해서 오히려 추울수록 힘이 넘쳐 난다."
   },
   "88": {
     "id": 88,
@@ -1331,7 +1722,11 @@
     "maxStage": 2,
     "baseFormId": 88,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/88.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/88.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/88.gif",
+    "types": [
+      "독"
+    ],
+    "description": "달로부터의 X선을 쬔 오물이 질퍽이로 변화했다. 더러운 것을 좋아한다."
   },
   "89": {
     "id": 89,
@@ -1345,7 +1740,11 @@
     "maxStage": 2,
     "baseFormId": 88,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/89.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/89.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/89.gif",
+    "types": [
+      "독"
+    ],
+    "description": "진흙이 쌓여 악취가 나는 장소를 좋아해서 모여들기 때문에 주변은 더욱 악취가 난다."
   },
   "90": {
     "id": 90,
@@ -1361,7 +1760,11 @@
     "maxStage": 2,
     "baseFormId": 90,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/90.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/90.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/90.gif",
+    "types": [
+      "물"
+    ],
+    "description": "단단한 껍데기는 어떤 공격도 튕겨낸다. 껍데기를 벌리고 있을 때 안쪽을 공격당하는 것에는 약하다."
   },
   "91": {
     "id": 91,
@@ -1375,7 +1778,12 @@
     "maxStage": 2,
     "baseFormId": 90,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/91.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/91.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/91.gif",
+    "types": [
+      "물",
+      "얼음"
+    ],
+    "description": "조수의 흐름이 격한 바다에 서식하고 있는 파르셀의 껍질의 가시는 크고 날카롭다."
   },
   "92": {
     "id": 92,
@@ -1391,7 +1799,12 @@
     "maxStage": 3,
     "baseFormId": 92,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/92.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/92.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/92.gif",
+    "types": [
+      "고스트",
+      "독"
+    ],
+    "description": "가스로 만들어진 몸은 어떠한 크기의 상대라도 둘러싸서 숨을 못 쉬게 한다."
   },
   "93": {
     "id": 93,
@@ -1407,7 +1820,12 @@
     "maxStage": 3,
     "baseFormId": 92,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/93.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/93.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/93.gif",
+    "types": [
+      "고스트",
+      "독"
+    ],
+    "description": "어둠 속에서 아무도 없는데도 누군가가 보고 있다는 느낌이 들면 그곳에 고우스트가 있는 것이다."
   },
   "94": {
     "id": 94,
@@ -1421,7 +1839,12 @@
     "maxStage": 3,
     "baseFormId": 92,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/94.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/94.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/94.gif",
+    "types": [
+      "고스트",
+      "독"
+    ],
+    "description": "그림자에 모습을 숨긴다. 팬텀이 숨어 있는 방은 온도가 5도 내려간다고 전해진다."
   },
   "95": {
     "id": 95,
@@ -1435,7 +1858,12 @@
     "maxStage": 1,
     "baseFormId": 95,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/95.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/95.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/95.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "땅속을 엄청난 기세로 뚫고 나아가며 먹이를 찾는다. 지나간 곳은 디그다의 보금자리가 된다."
   },
   "96": {
     "id": 96,
@@ -1451,7 +1879,11 @@
     "maxStage": 2,
     "baseFormId": 96,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/96.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/96.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/96.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "잠들게 한 뒤 꿈을 먹지만 나쁜 꿈만 먹고 있으면 배탈이 날 때도 있는 것 같다."
   },
   "97": {
     "id": 97,
@@ -1465,7 +1897,11 @@
     "maxStage": 2,
     "baseFormId": 96,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/97.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/97.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/97.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "추 같은 것을 들고 다닌다. 어린아이에게 최면술을 걸어 어딘가로 데려가 버린 사건이 있었다."
   },
   "98": {
     "id": 98,
@@ -1481,7 +1917,11 @@
     "maxStage": 2,
     "baseFormId": 98,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/98.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/98.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/98.gif",
+    "types": [
+      "물"
+    ],
+    "description": "위험이 닥치면 입에서 뿜어내는 거품으로 전신을 감싸서 몸을 크게 보이려고 한다."
   },
   "99": {
     "id": 99,
@@ -1495,7 +1935,11 @@
     "maxStage": 2,
     "baseFormId": 98,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/99.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/99.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/99.gif",
+    "types": [
+      "물"
+    ],
+    "description": "단단한 집게는 1만 마력의 파워를 지녔지만 너무 커서 움직임이 둔하다."
   },
   "100": {
     "id": 100,
@@ -1511,7 +1955,11 @@
     "maxStage": 2,
     "baseFormId": 100,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/100.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/100.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/100.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "몬스터볼이 팔리기 시작했을 때와 같은 시기에 발견되었다. 뭔가 관계가 있다고 전해진다."
   },
   "101": {
     "id": 101,
@@ -1525,7 +1973,11 @@
     "maxStage": 2,
     "baseFormId": 100,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/101.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/101.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/101.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "작은 자극에도 반응해서 폭발한다. 폭탄볼이라 불리며 두려움의 대상이 되고 있다."
   },
   "102": {
     "id": 102,
@@ -1541,7 +1993,12 @@
     "maxStage": 2,
     "baseFormId": 102,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/102.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/102.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/102.gif",
+    "types": [
+      "풀",
+      "에스퍼"
+    ],
+    "description": "텔레파시로 대화를 하기 때문에 아라리를 갈라놓으려 해도 바로 모여들어 6마리가 된다."
   },
   "103": {
     "id": 103,
@@ -1555,7 +2012,12 @@
     "maxStage": 2,
     "baseFormId": 102,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/103.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/103.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/103.gif",
+    "types": [
+      "풀",
+      "에스퍼"
+    ],
+    "description": "3개의 머리는 생각하는 것이 각각 다르지만 사이가 좋아서 싸우지 않는 것 같다."
   },
   "104": {
     "id": 104,
@@ -1571,7 +2033,11 @@
     "maxStage": 2,
     "baseFormId": 104,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/104.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/104.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/104.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "죽은 어미의 해골을 머리에 쓰고 있다. 외로울 때는 큰 소리로 운다고 한다."
   },
   "105": {
     "id": 105,
@@ -1585,7 +2051,11 @@
     "maxStage": 2,
     "baseFormId": 104,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/105.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/105.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/105.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "몸집도 작으며 원래는 약했다. 뼈를 쓰기 시작하면서 성격이 흉포해졌다."
   },
   "106": {
     "id": 106,
@@ -1599,7 +2069,11 @@
     "maxStage": 1,
     "baseFormId": 106,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/106.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/106.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/106.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "다리를 자유자재로 늘였다 줄였다 한다. 멀리 떨어져 있을 때도 상대를 차올릴 수 있다."
   },
   "107": {
     "id": 107,
@@ -1613,7 +2087,11 @@
     "maxStage": 1,
     "baseFormId": 107,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/107.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/107.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/107.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "팔을 비틀며 날리는 펀치는 콘크리트도 부스러뜨린다. 3분 싸우면 잠시 쉰다."
   },
   "108": {
     "id": 108,
@@ -1627,7 +2105,11 @@
     "maxStage": 1,
     "baseFormId": 108,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/108.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/108.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/108.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "긴 혀는 끈적끈적한 침으로 덮여 있다. 어떤 것이든 달라붙어서 매우 편리하다."
   },
   "109": {
     "id": 109,
@@ -1643,7 +2125,11 @@
     "maxStage": 2,
     "baseFormId": 109,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/109.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/109.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/109.gif",
+    "types": [
+      "독"
+    ],
+    "description": "얇고 풍선 같은 몸에 맹독 가스가 차있다. 가까이 오면 역겨운 냄새가 난다."
   },
   "110": {
     "id": 110,
@@ -1657,7 +2143,11 @@
     "maxStage": 2,
     "baseFormId": 109,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/110.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/110.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/110.gif",
+    "types": [
+      "독"
+    ],
+    "description": "한쪽이 부풀어 오르면 다른 한쪽은 오그라드는 쌍둥이 또가스. 항상 체내의 독가스를 섞고 있다."
   },
   "111": {
     "id": 111,
@@ -1673,7 +2163,12 @@
     "maxStage": 2,
     "baseFormId": 111,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/111.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/111.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/111.gif",
+    "types": [
+      "땅",
+      "바위"
+    ],
+    "description": "머리는 나쁘지만 힘이 세서 고층 빌딩도 몸통박치기로 산산조각 낸다."
   },
   "112": {
     "id": 112,
@@ -1687,7 +2182,12 @@
     "maxStage": 2,
     "baseFormId": 111,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/112.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/112.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/112.gif",
+    "types": [
+      "땅",
+      "바위"
+    ],
+    "description": "전신을 갑옷 같은 피부로 보호하고 있다. 2000도의 마그마 속에서도 살 수 있다."
   },
   "113": {
     "id": 113,
@@ -1701,7 +2201,11 @@
     "maxStage": 1,
     "baseFormId": 113,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/113.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/113.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/113.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "행복을 가져다준다고 전해진다. 상처 입은 사람에게 알을 나눠주는 상냥한 포켓몬이다."
   },
   "114": {
     "id": 114,
@@ -1715,7 +2219,11 @@
     "maxStage": 1,
     "baseFormId": 114,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/114.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/114.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/114.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "수많은 움직이는 덩굴에 둘러싸여 정체불명이다. 파란 덩굴은 평생 자란다."
   },
   "115": {
     "id": 115,
@@ -1729,7 +2237,11 @@
     "maxStage": 1,
     "baseFormId": 115,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/115.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/115.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/115.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "배의 주머니에서 새끼를 키운다. 안전할 때만 새끼를 주머니에서 꺼내어 놀게 한다."
   },
   "116": {
     "id": 116,
@@ -1745,7 +2257,11 @@
     "maxStage": 2,
     "baseFormId": 116,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/116.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/116.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/116.gif",
+    "types": [
+      "물"
+    ],
+    "description": "수면에서 힘차게 먹물을 발사해서 날고 있는 벌레를 맞춰서 떨어뜨릴 때가 있다고 한다."
   },
   "117": {
     "id": 117,
@@ -1759,7 +2275,11 @@
     "maxStage": 2,
     "baseFormId": 116,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/117.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/117.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/117.gif",
+    "types": [
+      "물"
+    ],
+    "description": "섣불리 만지려고 하면 몸 전체에서 돋아나는 가시에 찔려 기절할 수도 있다."
   },
   "118": {
     "id": 118,
@@ -1775,7 +2295,11 @@
     "maxStage": 2,
     "baseFormId": 118,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/118.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/118.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/118.gif",
+    "types": [
+      "물"
+    ],
+    "description": "5노트의 스피드로 헤엄친다. 몸에 위험을 느끼면 날카로운 뿔로 반격한다."
   },
   "119": {
     "id": 119,
@@ -1789,7 +2313,11 @@
     "maxStage": 2,
     "baseFormId": 118,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/119.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/119.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/119.gif",
+    "types": [
+      "물"
+    ],
+    "description": "가을이 오면 산란을 위해 힘차게 강물을 거슬러 올라가며 헤엄치는 모습을 볼 수 있다."
   },
   "120": {
     "id": 120,
@@ -1805,7 +2333,11 @@
     "maxStage": 2,
     "baseFormId": 120,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/120.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/120.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/120.gif",
+    "types": [
+      "물"
+    ],
+    "description": "몸의 중심에서 빛나는 핵이 있는 한 몸이 찢겨나가도 재생할 수 있다."
   },
   "121": {
     "id": 121,
@@ -1819,7 +2351,12 @@
     "maxStage": 2,
     "baseFormId": 120,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/121.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/121.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/121.gif",
+    "types": [
+      "물",
+      "에스퍼"
+    ],
+    "description": "코어라고 불리는 중심 부분은 일곱 빛깔로 빛난다. 이것을 보석으로 삼는 사람도 있다고 한다."
   },
   "122": {
     "id": 122,
@@ -1833,7 +2370,12 @@
     "maxStage": 1,
     "baseFormId": 122,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/122.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/122.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/122.gif",
+    "types": [
+      "에스퍼",
+      "페어리"
+    ],
+    "description": "손가락 끝에서 내는 파동이 공기를 굳혀서 벽을 만든다. 격렬한 공격도 튕겨 낸다."
   },
   "123": {
     "id": 123,
@@ -1847,7 +2389,12 @@
     "maxStage": 1,
     "baseFormId": 123,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/123.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/123.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/123.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "날카로운 낫으로 먹이를 베고 숨통을 끊는다. 매우 드물게 날개를 사용해서 난다."
   },
   "124": {
     "id": 124,
@@ -1861,7 +2408,12 @@
     "maxStage": 1,
     "baseFormId": 124,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/124.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/124.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/124.gif",
+    "types": [
+      "얼음",
+      "에스퍼"
+    ],
+    "description": "허리를 흔드는 듯이 걷고 있다. 방심하면 엉겁결에 따라서 춤춰버린다고 한다."
   },
   "125": {
     "id": 125,
@@ -1875,7 +2427,11 @@
     "maxStage": 1,
     "baseFormId": 125,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/125.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/125.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/125.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "몸의 표면에는 전기가 흐르고 있다. 주변이 어두우면 전신이 푸르스름하게 빛난다."
   },
   "126": {
     "id": 126,
@@ -1889,7 +2445,11 @@
     "maxStage": 1,
     "baseFormId": 126,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/126.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/126.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/126.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "화산의 분화구 근처에서 발견되었다. 입에서 불꽃을 뿜어낸다. 체온은 1200도나 된다."
   },
   "127": {
     "id": 127,
@@ -1903,7 +2463,11 @@
     "maxStage": 1,
     "baseFormId": 127,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/127.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/127.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/127.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "2개의 뿔 사이에 먹이를 끼우고 조각날 때까지 놓지 않는다. 조각나지 않으면 저편으로 세게 내던진다."
   },
   "128": {
     "id": 128,
@@ -1917,7 +2481,11 @@
     "maxStage": 1,
     "baseFormId": 128,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/128.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/128.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/128.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "3개의 꼬리로 자신을 때려서 투지가 끓어오르면 전속력으로 돌진해온다."
   },
   "129": {
     "id": 129,
@@ -1933,7 +2501,11 @@
     "maxStage": 2,
     "baseFormId": 129,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/129.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/129.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/129.gif",
+    "types": [
+      "물"
+    ],
+    "description": "힘도 스피드도 거의 없다. 세상에서 가장 약하고 한심한 포켓몬이다."
   },
   "130": {
     "id": 130,
@@ -1947,7 +2519,12 @@
     "maxStage": 2,
     "baseFormId": 129,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/130.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/130.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/130.gif",
+    "types": [
+      "물",
+      "비행"
+    ],
+    "description": "분쟁이 일어난 마을을 다 태워버렸다는 기록이 고문서에 남아 있다."
   },
   "131": {
     "id": 131,
@@ -1961,7 +2538,12 @@
     "maxStage": 1,
     "baseFormId": 131,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/131.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/131.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/131.gif",
+    "types": [
+      "물",
+      "얼음"
+    ],
+    "description": "부드러운 마음의 소유자다. 좀처럼 다투지 않아 많이 잡혔기 때문에 수가 줄었다."
   },
   "132": {
     "id": 132,
@@ -1975,7 +2557,11 @@
     "maxStage": 1,
     "baseFormId": 132,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/132.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/132.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/132.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "전신의 세포를 재구성해서 본 것의 모양과 똑 닮게 변신하는 능력을 가지고 있다."
   },
   "133": {
     "id": 133,
@@ -1993,7 +2579,11 @@
     "maxStage": 2,
     "baseFormId": 133,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/133.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/133.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/133.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "진화할 때 모습과 능력이 바뀜으로써 혹독한 환경에 적응하는 희귀한 포켓몬이다."
   },
   "134": {
     "id": 134,
@@ -2007,7 +2597,11 @@
     "maxStage": 2,
     "baseFormId": 133,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/134.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/134.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/134.gif",
+    "types": [
+      "물"
+    ],
+    "description": "아름다운 물가를 좋아한다. 세포가 물의 분자구조와 닮아서 물에 녹는 것도 가능하다."
   },
   "135": {
     "id": 135,
@@ -2021,7 +2615,11 @@
     "maxStage": 2,
     "baseFormId": 133,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/135.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/135.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/135.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "체내에 전기가 모이면 전신의 털이 모두 날카롭게 곤두서기 시작한다."
   },
   "136": {
     "id": 136,
@@ -2035,7 +2633,11 @@
     "maxStage": 2,
     "baseFormId": 133,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/136.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/136.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/136.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "체내에 불꽃 주머니를 가지고 있다. 싸움이 시작되기 직전에는 체온이 900도까지 올라간다."
   },
   "137": {
     "id": 137,
@@ -2049,7 +2651,11 @@
     "maxStage": 1,
     "baseFormId": 137,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/137.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/137.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/137.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "연구 끝에 태어난 인공 포켓몬이다. 기본적인 동작만 프로그램되어 있다."
   },
   "138": {
     "id": 138,
@@ -2065,7 +2671,12 @@
     "maxStage": 2,
     "baseFormId": 138,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/138.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/138.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/138.gif",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "먼 옛날 바다에서 살고 있던 고대 포켓몬. 10개의 다리를 구불거리며 헤엄친다."
   },
   "139": {
     "id": 139,
@@ -2079,7 +2690,12 @@
     "maxStage": 2,
     "baseFormId": 138,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/139.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/139.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/139.gif",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "촉수가 팔다리처럼 발달해 있다. 달라붙자마자 문다."
   },
   "140": {
     "id": 140,
@@ -2095,7 +2711,12 @@
     "maxStage": 2,
     "baseFormId": 140,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/140.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/140.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/140.gif",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "3억 년 전에 모래 해변에서 살고 있었던 것으로 추측된다. 단단한 껍질이 몸을 보호한다."
   },
   "141": {
     "id": 141,
@@ -2109,7 +2730,12 @@
     "maxStage": 2,
     "baseFormId": 140,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/141.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/141.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/141.gif",
+    "types": [
+      "바위",
+      "물"
+    ],
+    "description": "수중을 이동할 때 손발을 작게 접고 등껍질을 구부려 빠르게 헤엄친다."
   },
   "142": {
     "id": 142,
@@ -2123,7 +2749,12 @@
     "maxStage": 1,
     "baseFormId": 142,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/142.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/142.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/142.gif",
+    "types": [
+      "바위",
+      "비행"
+    ],
+    "description": "호박에 남아 있던 공룡의 유전자에서 부활시켰다. 높은 소리로 울며 난다."
   },
   "143": {
     "id": 143,
@@ -2137,7 +2768,11 @@
     "maxStage": 1,
     "baseFormId": 143,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/143.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/143.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/143.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "하루에 먹을 것을 400kg 먹지 않으면 성에 차지 않는다. 다 먹으면 잠이 들어 버린다."
   },
   "144": {
     "id": 144,
@@ -2151,7 +2786,12 @@
     "maxStage": 1,
     "baseFormId": 144,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/144.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/144.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/144.gif",
+    "types": [
+      "얼음",
+      "비행"
+    ],
+    "description": "전설의 새포켓몬이다. 공기 중의 수분을 얼려 눈보라를 만들어 낼 수 있다."
   },
   "145": {
     "id": 145,
@@ -2165,7 +2805,12 @@
     "maxStage": 1,
     "baseFormId": 145,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/145.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/145.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/145.gif",
+    "types": [
+      "전기",
+      "비행"
+    ],
+    "description": "구름 위에서 거대한 번개를 내리치며 나타난다. 전설의 새포켓몬이다."
   },
   "146": {
     "id": 146,
@@ -2179,7 +2824,12 @@
     "maxStage": 1,
     "baseFormId": 146,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/146.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/146.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/146.gif",
+    "types": [
+      "불꽃",
+      "비행"
+    ],
+    "description": "오래전부터 불새의 전설로 알려져 있다. 날갯짓할 때마다 날개가 눈부시게 불타올라서 아름답다."
   },
   "147": {
     "id": 147,
@@ -2195,7 +2845,11 @@
     "maxStage": 3,
     "baseFormId": 147,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/147.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/147.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/147.gif",
+    "types": [
+      "드래곤"
+    ],
+    "description": "목격자가 적기 때문에 환상의 포켓몬이라고 불리고 있다. 탈피한 껍질이 발견되고 있다."
   },
   "148": {
     "id": 148,
@@ -2211,7 +2865,11 @@
     "maxStage": 3,
     "baseFormId": 147,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/148.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/148.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/148.gif",
+    "types": [
+      "드래곤"
+    ],
+    "description": "수정 같은 구슬에는 날씨를 자유롭게 조종하는 능력이 담겨 있는 듯하다."
   },
   "149": {
     "id": 149,
@@ -2225,7 +2883,12 @@
     "maxStage": 3,
     "baseFormId": 147,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/149.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/149.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/149.gif",
+    "types": [
+      "드래곤",
+      "비행"
+    ],
+    "description": "커다란 몸집으로 하늘을 난다. 지구를 약 16시간 만에 일주한다."
   },
   "150": {
     "id": 150,
@@ -2239,7 +2902,11 @@
     "maxStage": 1,
     "baseFormId": 150,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/150.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/150.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/150.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "한 과학자가 몇 년에 걸쳐 무서운 유전자의 연구를 계속한 결과 탄생했다."
   },
   "151": {
     "id": 151,
@@ -2253,7 +2920,11 @@
     "maxStage": 1,
     "baseFormId": 151,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/151.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/151.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/151.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "모든 기술을 사용하기 때문에 포켓몬의 조상이라고 생각하는 학자가 많다."
   },
   "152": {
     "id": 152,
@@ -2269,7 +2940,11 @@
     "maxStage": 3,
     "baseFormId": 152,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/152.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/152.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/152.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "머리의 잎사귀에서 살짝 달콤한 향기가 감돈다. 얌전하며 햇볕을 쬐는 것을 매우 좋아한다."
   },
   "153": {
     "id": 153,
@@ -2285,7 +2960,11 @@
     "maxStage": 3,
     "baseFormId": 152,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/153.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/153.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/153.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "목 주변에서 발산하는 향신료 같은 향기에는 힘을 내도록 하는 효과가 있다."
   },
   "154": {
     "id": 154,
@@ -2299,7 +2978,11 @@
     "maxStage": 3,
     "baseFormId": 152,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/154.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/154.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/154.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "꽃잎에서 발산되는 향기에는 다투는 마음을 가라앉게 하는 성분이 담겨 있다."
   },
   "155": {
     "id": 155,
@@ -2315,7 +2998,11 @@
     "maxStage": 3,
     "baseFormId": 155,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/155.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/155.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/155.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "겁이 많아서 늘 몸을 웅크리고 있다. 습격당하면 등의 불꽃을 타오르게 해서 몸을 보호한다."
   },
   "156": {
     "id": 156,
@@ -2331,7 +3018,11 @@
     "maxStage": 3,
     "baseFormId": 155,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/156.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/156.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/156.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "싸우기 전에 등을 보이며 자신의 불꽃이 얼마나 대단한지 상대에게 일부러 보여준다."
   },
   "157": {
     "id": 157,
@@ -2345,7 +3036,11 @@
     "maxStage": 3,
     "baseFormId": 155,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/157.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/157.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/157.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "분노가 정점에 달했을 때 건드린 자를 모두 순식간에 불태워버릴 정도로 뜨겁다."
   },
   "158": {
     "id": 158,
@@ -2361,7 +3056,11 @@
     "maxStage": 3,
     "baseFormId": 158,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/158.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/158.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/158.gif",
+    "types": [
+      "물"
+    ],
+    "description": "작아도 성격은 아주 거칠다. 눈앞에서 움직이는 것이 있으면 무조건 물어버린다."
   },
   "159": {
     "id": 159,
@@ -2377,7 +3076,11 @@
     "maxStage": 3,
     "baseFormId": 158,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/159.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/159.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/159.gif",
+    "types": [
+      "물"
+    ],
+    "description": "이빨이 빠져도 계속해서 자란다. 항상 입안에는 48개의 이빨이 나 있다."
   },
   "160": {
     "id": 160,
@@ -2391,7 +3094,11 @@
     "maxStage": 3,
     "baseFormId": 158,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/160.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/160.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/160.gif",
+    "types": [
+      "물"
+    ],
+    "description": "평소에는 느긋하게 움직이지만 먹이를 물 때에는 눈에 보이지 않는 엄청난 스피드를 낸다."
   },
   "161": {
     "id": 161,
@@ -2407,7 +3114,11 @@
     "maxStage": 2,
     "baseFormId": 161,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/161.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/161.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/161.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "망보기 역은 날카롭게 울거나 꼬리로 땅을 쳐서 동료에게 위험을 알린다."
   },
   "162": {
     "id": 162,
@@ -2421,7 +3132,11 @@
     "maxStage": 2,
     "baseFormId": 161,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/162.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/162.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/162.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "엄마 포켓몬이 가늘고 긴 몸으로 새끼를 감싸 안아 재운다. 빠른 움직임으로 상대를 몰아붙인다."
   },
   "163": {
     "id": 163,
@@ -2437,7 +3152,12 @@
     "maxStage": 2,
     "baseFormId": 163,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/163.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/163.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/163.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "체내의 시간 감각은 어느 때든 정확해서 규칙적인 리듬으로 목을 기울인다."
   },
   "164": {
     "id": 164,
@@ -2451,7 +3171,12 @@
     "maxStage": 2,
     "baseFormId": 163,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/164.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/164.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/164.gif",
+    "types": [
+      "노말",
+      "비행"
+    ],
+    "description": "양쪽 눈이 특수한 구조다. 적은 양의 빛이라도 잘 모아 어둠 속에서도 주위를 분별한다."
   },
   "165": {
     "id": 165,
@@ -2467,7 +3192,12 @@
     "maxStage": 2,
     "baseFormId": 165,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/165.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/165.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/165.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "추워지면 여기저기로부터 레디바가 많이 모여들어 바싹 붙어 서로 따뜻하게 해준다."
   },
   "166": {
     "id": 166,
@@ -2481,7 +3211,12 @@
     "maxStage": 2,
     "baseFormId": 165,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/166.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/166.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/166.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "밤하늘의 별이 깜빡일 때 반짝이는 가루를 흩뿌리며 훨훨 날아간다."
   },
   "167": {
     "id": 167,
@@ -2497,7 +3232,12 @@
     "maxStage": 2,
     "baseFormId": 167,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/167.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/167.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/167.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "가늘고 튼튼한 실을 뿜어 엮어서 덫을 만들고 먹이가 걸리기만을 기다린다."
   },
   "168": {
     "id": 168,
@@ -2511,7 +3251,12 @@
     "maxStage": 2,
     "baseFormId": 167,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/168.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/168.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/168.gif",
+    "types": [
+      "벌레",
+      "독"
+    ],
+    "description": "엉덩이뿐 아니라 입에서도 실을 내기 때문에 봐서는 어느 쪽이 머리인지 모른다."
   },
   "169": {
     "id": 169,
@@ -2525,7 +3270,12 @@
     "maxStage": 1,
     "baseFormId": 169,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/169.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/169.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/169.gif",
+    "types": [
+      "독",
+      "비행"
+    ],
+    "description": "4장으로 수가 늘어난 날개로 어둠 속을 조용히 날아간다. 주위를 지나쳐도 눈치채지 못한다."
   },
   "170": {
     "id": 170,
@@ -2541,7 +3291,12 @@
     "maxStage": 2,
     "baseFormId": 170,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/170.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/170.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/170.gif",
+    "types": [
+      "물",
+      "전기"
+    ],
+    "description": "어두운 해저에서는 항상 깜빡거리고 있는 촉수의 빛만이 통신수단이다."
   },
   "171": {
     "id": 171,
@@ -2555,7 +3310,12 @@
     "maxStage": 2,
     "baseFormId": 170,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/171.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/171.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/171.gif",
+    "types": [
+      "물",
+      "전기"
+    ],
+    "description": "심해를 헤엄치는 랜턴의 불빛은 수면까지 다다른다. 심해의 별이라고 불리고 있다."
   },
   "172": {
     "id": 172,
@@ -2569,7 +3329,11 @@
     "maxStage": 1,
     "baseFormId": 172,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/172.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/172.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/172.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "동료와 꼬리의 끝을 맞추면서 불티를 튀기는 놀이를 한다. 담력 시험을 하고 있는 듯하다."
   },
   "173": {
     "id": 173,
@@ -2583,7 +3347,11 @@
     "maxStage": 1,
     "baseFormId": 173,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/173.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/173.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/173.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "별님 같은 실루엣이다. 그 모습 때문에 별똥별을 타고 온다고 여겨진다."
   },
   "174": {
     "id": 174,
@@ -2597,7 +3365,12 @@
     "maxStage": 1,
     "baseFormId": 174,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/174.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/174.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/174.gif",
+    "types": [
+      "노말",
+      "페어리"
+    ],
+    "description": "짧은 다리로 걷는 것보다는 부드러운 몸으로 튀어 오르며 돌아다닌다."
   },
   "175": {
     "id": 175,
@@ -2613,7 +3386,11 @@
     "maxStage": 2,
     "baseFormId": 175,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/175.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/175.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/175.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "껍질 안에 행복이 가득 차 있어서 상냥하게 대하면 행운을 나누어 준다고 한다."
   },
   "176": {
     "id": 176,
@@ -2627,7 +3404,12 @@
     "maxStage": 2,
     "baseFormId": 175,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/176.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/176.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/176.gif",
+    "types": [
+      "페어리",
+      "비행"
+    ],
+    "description": "상냥한 사람 곁에 있지 않으면 기운이 나지 않게 되어버린다. 날개를 움직이지 않고 뜰 수 있다."
   },
   "177": {
     "id": 177,
@@ -2643,7 +3425,12 @@
     "maxStage": 2,
     "baseFormId": 177,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/177.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/177.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/177.gif",
+    "types": [
+      "에스퍼",
+      "비행"
+    ],
+    "description": "날개가 아직 잘 발달하지 못해서 뛰어오르는 것처럼 이동한다. 항상 뭔가를 바라보고 있다."
   },
   "178": {
     "id": 178,
@@ -2657,7 +3444,12 @@
     "maxStage": 2,
     "baseFormId": 177,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/178.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/178.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/178.gif",
+    "types": [
+      "에스퍼",
+      "비행"
+    ],
+    "description": "선명하게 떠오르는 태양을 조용히 바라보며 기도를 올리면 거의 움직이지 않고 하루가 간다."
   },
   "179": {
     "id": 179,
@@ -2673,7 +3465,11 @@
     "maxStage": 3,
     "baseFormId": 179,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/179.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/179.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/179.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "푹신푹신한 털은 정전기가 쌓이면 2배로 부풀어 오른다. 만지면 감전되어 버린다."
   },
   "180": {
     "id": 180,
@@ -2689,7 +3485,11 @@
     "maxStage": 3,
     "baseFormId": 179,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/180.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/180.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/180.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "푹신푹신한 털은 전기를 모으기 쉽지만 고무 같은 피부 덕분에 자신은 마비되지 않는다."
   },
   "181": {
     "id": 181,
@@ -2703,7 +3503,11 @@
     "maxStage": 3,
     "baseFormId": 179,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/181.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/181.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/181.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "꼬리 끝이 빛나며 반짝인다. 빛이 아득히 먼 곳까지 닿아서 길 잃은 자들의 이정표가 된다."
   },
   "182": {
     "id": 182,
@@ -2717,7 +3521,11 @@
     "maxStage": 1,
     "baseFormId": 182,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/182.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/182.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/182.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "가끔 아르코가 모여서 춤을 추는 듯한 동작을 보인다. 태양을 부르는 의식이라 전해진다."
   },
   "183": {
     "id": 183,
@@ -2733,7 +3541,12 @@
     "maxStage": 2,
     "baseFormId": 183,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/183.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/183.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/183.gif",
+    "types": [
+      "물",
+      "페어리"
+    ],
+    "description": "전신의 털은 물을 튕겨내는 성질을 지녀 물을 끼얹어도 말라 있다."
   },
   "184": {
     "id": 184,
@@ -2747,7 +3560,12 @@
     "maxStage": 2,
     "baseFormId": 183,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/184.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/184.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/184.gif",
+    "types": [
+      "물",
+      "페어리"
+    ],
+    "description": "긴 귀는 우수한 센서다. 강바닥에서 움직이는 생명체의 소리를 분간할 수 있다."
   },
   "185": {
     "id": 185,
@@ -2761,7 +3579,11 @@
     "maxStage": 1,
     "baseFormId": 185,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/185.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/185.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/185.gif",
+    "types": [
+      "바위"
+    ],
+    "description": "항상 나무인 척하고 있다. 몸의 구조는 식물보다 돌이나 바위에 가까운 듯하다."
   },
   "186": {
     "id": 186,
@@ -2775,7 +3597,11 @@
     "maxStage": 1,
     "baseFormId": 186,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/186.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/186.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/186.gif",
+    "types": [
+      "물"
+    ],
+    "description": "3마리 이상 왕구리가 모이면 반드시 고함치는 듯한 울음소리로 합창하기 시작한다."
   },
   "187": {
     "id": 187,
@@ -2791,7 +3617,12 @@
     "maxStage": 3,
     "baseFormId": 187,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/187.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/187.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/187.gif",
+    "types": [
+      "풀",
+      "비행"
+    ],
+    "description": "매우 가벼운 몸을 가졌다. 바람에 날아가지 않도록 단단히 지면을 밟아 지탱하고 있다."
   },
   "188": {
     "id": 188,
@@ -2807,7 +3638,12 @@
     "maxStage": 3,
     "baseFormId": 187,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/188.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/188.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/188.gif",
+    "types": [
+      "풀",
+      "비행"
+    ],
+    "description": "머리 위에 핀 꽃은 기온에 따라 펴지거나 오므라드는 성질을 가졌다."
   },
   "189": {
     "id": 189,
@@ -2821,7 +3657,12 @@
     "maxStage": 3,
     "baseFormId": 187,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/189.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/189.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/189.gif",
+    "types": [
+      "풀",
+      "비행"
+    ],
+    "description": "계절풍에 날려서 세계 일주를 해 버린다. 도중에 솜 포자를 흩뿌린다."
   },
   "190": {
     "id": 190,
@@ -2835,7 +3676,11 @@
     "maxStage": 1,
     "baseFormId": 190,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/190.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/190.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/190.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "높은 나무 위에서 살고 있다. 나뭇가지에서 가지로 건너뛸 때 꼬리로 능숙하게 밸런스를 잡는다."
   },
   "191": {
     "id": 191,
@@ -2851,7 +3696,11 @@
     "maxStage": 2,
     "baseFormId": 191,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/191.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/191.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/191.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "어느 날 아침 갑자기 떨어진다. 깨비참에게 습격당하면 잎사귀를 세차게 흔들어서 쫓아 버린다."
   },
   "192": {
     "id": 192,
@@ -2865,7 +3714,11 @@
     "maxStage": 2,
     "baseFormId": 191,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/192.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/192.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/192.gif",
+    "types": [
+      "풀"
+    ],
+    "description": "더운 계절이 다가오면 얼굴의 꽃잎이 선명해지고 활발하게 움직이게 된다."
   },
   "193": {
     "id": 193,
@@ -2879,7 +3732,12 @@
     "maxStage": 1,
     "baseFormId": 193,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/193.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/193.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/193.gif",
+    "types": [
+      "벌레",
+      "비행"
+    ],
+    "description": "얼굴을 움직이지 않고 360도 전부 볼 수 있는 눈을 가지고 있어서 바로 뒤의 먹이도 놓치지 않는다."
   },
   "194": {
     "id": 194,
@@ -2895,7 +3753,12 @@
     "maxStage": 2,
     "baseFormId": 194,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/194.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/194.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/194.gif",
+    "types": [
+      "물",
+      "땅"
+    ],
+    "description": "차가운 물속에서 생활한다. 근처가 선선해지면 먹이를 찾으러 지상에도 나타난다."
   },
   "195": {
     "id": 195,
@@ -2909,7 +3772,12 @@
     "maxStage": 2,
     "baseFormId": 194,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/195.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/195.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/195.gif",
+    "types": [
+      "물",
+      "땅"
+    ],
+    "description": "느긋한 성격이다. 강바닥에서 입을 벌려 먹이가 들어오는 것을 한결같이 기다린다."
   },
   "196": {
     "id": 196,
@@ -2923,7 +3791,11 @@
     "maxStage": 1,
     "baseFormId": 196,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/196.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/196.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/196.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "상대의 움직임을 예지할 때 두 갈래로 갈라져 있는 꼬리의 끝이 미세하게 떨리고 있다."
   },
   "197": {
     "id": 197,
@@ -2937,7 +3809,11 @@
     "maxStage": 1,
     "baseFormId": 197,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/197.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/197.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/197.gif",
+    "types": [
+      "악"
+    ],
+    "description": "달빛이 이브이의 유전자를 변화시켰다. 어둠에 숨어 먹이를 기다린다."
   },
   "198": {
     "id": 198,
@@ -2951,7 +3827,12 @@
     "maxStage": 1,
     "baseFormId": 198,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/198.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/198.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/198.gif",
+    "types": [
+      "악",
+      "비행"
+    ],
+    "description": "반짝이는 물건을 주워 비밀 장소에 숨겨 둔다. 나옹과 자주 쟁탈전을 벌인다."
   },
   "199": {
     "id": 199,
@@ -2965,7 +3846,12 @@
     "maxStage": 1,
     "baseFormId": 199,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/199.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/199.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/199.gif",
+    "types": [
+      "물",
+      "에스퍼"
+    ],
+    "description": "대단한 지성과 번뜩이는 재치를 가지고 있다. 어떤 때라도 당황하거나 소란 피우지 않고 느긋하게 있다."
   },
   "200": {
     "id": 200,
@@ -2979,7 +3865,11 @@
     "maxStage": 1,
     "baseFormId": 200,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/200.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/200.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/200.gif",
+    "types": [
+      "고스트"
+    ],
+    "description": "무서워하는 마음을 빨간 구슬로 흡수해 영양분으로 만든다. 낮에는 어두운 곳에서 잠자고 있다."
   },
   "201": {
     "id": 201,
@@ -2993,7 +3883,11 @@
     "maxStage": 1,
     "baseFormId": 201,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/201.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/201.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/201.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "몸 자체는 굉장히 얇고 항상 벽에 들러붙어 있다. 모습에는 뭔가 의미가 있는 듯하다."
   },
   "202": {
     "id": 202,
@@ -3007,7 +3901,11 @@
     "maxStage": 1,
     "baseFormId": 202,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/202.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/202.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/202.gif",
+    "types": [
+      "에스퍼"
+    ],
+    "description": "빛과 쇼크를 싫어한다. 공격받으면 몸이 부풀어 올라 반격이 강력해진다."
   },
   "203": {
     "id": 203,
@@ -3021,7 +3919,12 @@
     "maxStage": 1,
     "baseFormId": 203,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/203.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/203.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/203.gif",
+    "types": [
+      "노말",
+      "에스퍼"
+    ],
+    "description": "잠자는 동안 꼬리의 머리가 주위를 망보고 있다. 꼬리는 잠을 잘 필요가 없다."
   },
   "204": {
     "id": 204,
@@ -3037,7 +3940,11 @@
     "maxStage": 2,
     "baseFormId": 204,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/204.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/204.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/204.gif",
+    "types": [
+      "벌레"
+    ],
+    "description": "나무껍질을 짜 맞춰서 껍질을 두껍게 하는 것을 좋아한다. 무거워져도 신경 쓰지 않는다."
   },
   "205": {
     "id": 205,
@@ -3051,7 +3958,12 @@
     "maxStage": 2,
     "baseFormId": 204,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/205.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/205.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/205.gif",
+    "types": [
+      "벌레",
+      "강철"
+    ],
+    "description": "강철 껍질이 몸을 보호하고 있다. 틈새에서 엿보고 있는 눈이 있지만 내용물의 정체는 수수께끼다."
   },
   "206": {
     "id": 206,
@@ -3065,7 +3977,11 @@
     "maxStage": 1,
     "baseFormId": 206,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/206.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/206.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/206.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "누군가에게 들키면 꼬리로 땅을 파서 뒤쪽으로 도망친다."
   },
   "207": {
     "id": 207,
@@ -3079,7 +3995,12 @@
     "maxStage": 1,
     "baseFormId": 207,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/207.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/207.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/207.gif",
+    "types": [
+      "땅",
+      "비행"
+    ],
+    "description": "보통은 벼랑에 붙어 있다. 먹이를 발견하면 날개를 펼쳐 바람을 타고 날아 덮친다."
   },
   "208": {
     "id": 208,
@@ -3093,7 +4014,12 @@
     "maxStage": 1,
     "baseFormId": 208,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/208.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/208.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/208.gif",
+    "types": [
+      "강철",
+      "땅"
+    ],
+    "description": "땅속의 높은 압력과 열로 단련된 몸은 어떠한 금속보다도 단단하다."
   },
   "209": {
     "id": 209,
@@ -3109,7 +4035,11 @@
     "maxStage": 2,
     "baseFormId": 209,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/209.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/209.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/209.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "활발하고 노는 것을 좋아하는 성격. 잘 따르기 때문에 함께 놀고 싶어 하는 여성들이 많다."
   },
   "210": {
     "id": 210,
@@ -3123,7 +4053,11 @@
     "maxStage": 2,
     "baseFormId": 209,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/210.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/210.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/210.gif",
+    "types": [
+      "페어리"
+    ],
+    "description": "얼굴에 어울리지 않게 겁이 많다. 그러나 한번 화내기 시작하면 큰 이빨로 반격한다."
   },
   "211": {
     "id": 211,
@@ -3137,7 +4071,12 @@
     "maxStage": 1,
     "baseFormId": 211,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/211.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/211.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/211.gif",
+    "types": [
+      "물",
+      "독"
+    ],
+    "description": "전신의 독침을 날리기 위해 10리터의 물을 단번에 마시고 몸을 부풀린다."
   },
   "212": {
     "id": 212,
@@ -3151,7 +4090,12 @@
     "maxStage": 1,
     "baseFormId": 212,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/212.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/212.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/212.gif",
+    "types": [
+      "벌레",
+      "강철"
+    ],
+    "description": "강철이 함유된 집게로 잡은 것은 아무리 딱딱해도 산산조각이 난다."
   },
   "213": {
     "id": 213,
@@ -3165,7 +4109,12 @@
     "maxStage": 1,
     "baseFormId": 213,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/213.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/213.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/213.gif",
+    "types": [
+      "벌레",
+      "바위"
+    ],
+    "description": "항아리 같은 등껍질 속에 모은 나무열매는 어느샌가 걸쭉한 주스로 변한다."
   },
   "214": {
     "id": 214,
@@ -3179,7 +4128,12 @@
     "maxStage": 1,
     "baseFormId": 214,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/214.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/214.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/214.gif",
+    "types": [
+      "벌레",
+      "격투"
+    ],
+    "description": "자랑스러운 뿔을 상대의 배 밑에 틀어박고 단번에 들어 올려 집어 던지는 천하장사다."
   },
   "215": {
     "id": 215,
@@ -3193,7 +4147,12 @@
     "maxStage": 1,
     "baseFormId": 215,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/215.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/215.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/215.gif",
+    "types": [
+      "악",
+      "얼음"
+    ],
+    "description": "거처에서 알을 가로채어 먹어 버린다. 날카로운 갈고리 손톱이 상대의 급소를 베어 가른다."
   },
   "216": {
     "id": 216,
@@ -3209,7 +4168,11 @@
     "maxStage": 2,
     "baseFormId": 216,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/216.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/216.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/216.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "꿀을 발견하면 초승달 모양이 빛난다. 달콤한꿀이 배어든 손바닥을 항상 핥고 있다."
   },
   "217": {
     "id": 217,
@@ -3223,7 +4186,11 @@
     "maxStage": 2,
     "baseFormId": 216,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/217.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/217.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/217.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "어떠한 냄새라도 구별할 수 있다. 땅속 깊이 파묻혀 있는 먹이도 남김없이 찾아낸다."
   },
   "218": {
     "id": 218,
@@ -3239,7 +4206,11 @@
     "maxStage": 2,
     "baseFormId": 218,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/218.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/218.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/218.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "화산 지대에 많이 나타난다. 따뜻한 곳을 찾아서 느릿느릿 기어 다니고 있다."
   },
   "219": {
     "id": 219,
@@ -3253,7 +4224,12 @@
     "maxStage": 2,
     "baseFormId": 218,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/219.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/219.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/219.gif",
+    "types": [
+      "불꽃",
+      "바위"
+    ],
+    "description": "등껍질은 깨어지기 쉬우며 가끔 체내를 순환하고 있는 고열의 불꽃을 뿜어낸다."
   },
   "220": {
     "id": 220,
@@ -3269,7 +4245,12 @@
     "maxStage": 2,
     "baseFormId": 220,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/220.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/220.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/220.gif",
+    "types": [
+      "얼음",
+      "땅"
+    ],
+    "description": "먹이를 찾기 위해 코를 바닥에 비벼 땅을 파고 있다. 가끔 온천을 찾아낸다."
   },
   "221": {
     "id": 221,
@@ -3283,7 +4264,12 @@
     "maxStage": 2,
     "baseFormId": 220,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/221.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/221.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/221.gif",
+    "types": [
+      "얼음",
+      "땅"
+    ],
+    "description": "4개의 다리는 짧지만 발굽이 넓고 거칠거칠하므로 눈 위도 미끄러지지 않고 걸을 수 있다."
   },
   "222": {
     "id": 222,
@@ -3297,7 +4283,12 @@
     "maxStage": 1,
     "baseFormId": 222,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/222.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/222.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/222.gif",
+    "types": [
+      "물",
+      "바위"
+    ],
+    "description": "점점 자라면서 다시 돋아나는 머리의 끝이 아름다워 보물로서 인기가 많다."
   },
   "223": {
     "id": 223,
@@ -3313,7 +4304,11 @@
     "maxStage": 2,
     "baseFormId": 223,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/223.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/223.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/223.gif",
+    "types": [
+      "물"
+    ],
+    "description": "조준이 정확하다. 뿜어낸 물은 100m 앞에서 움직이는 먹이를 반드시 명중시킨다."
   },
   "224": {
     "id": 224,
@@ -3327,7 +4322,11 @@
     "maxStage": 2,
     "baseFormId": 223,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/224.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/224.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/224.gif",
+    "types": [
+      "물"
+    ],
+    "description": "구멍에 들어가고 싶어 하는 성질로 바위굴이나 항아리를 좋아해 거기서 먹물을 뿜어내 공격한다."
   },
   "225": {
     "id": 225,
@@ -3341,7 +4340,12 @@
     "maxStage": 1,
     "baseFormId": 225,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/225.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/225.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/225.gif",
+    "types": [
+      "얼음",
+      "비행"
+    ],
+    "description": "꼬리로 먹이를 싸서 운반한다. 산에서 조난당한 사람에게 먹이를 나눠주는 습성이 있다."
   },
   "226": {
     "id": 226,
@@ -3355,7 +4359,12 @@
     "maxStage": 1,
     "baseFormId": 226,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/226.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/226.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/226.gif",
+    "types": [
+      "물",
+      "비행"
+    ],
+    "description": "헤엄쳐서 스피드가 빨라지면 파도 위에 뛰어올라 그대로 100m나 활공한다."
   },
   "227": {
     "id": 227,
@@ -3369,7 +4378,12 @@
     "maxStage": 1,
     "baseFormId": 227,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/227.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/227.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/227.gif",
+    "types": [
+      "강철",
+      "비행"
+    ],
+    "description": "가시나무 안에 둥지를 만든다. 가시에 상처를 입어가며 자라난 새끼들의 날개는 단단해진다."
   },
   "228": {
     "id": 228,
@@ -3385,7 +4399,12 @@
     "maxStage": 2,
     "baseFormId": 228,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/228.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/228.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/228.gif",
+    "types": [
+      "악",
+      "불꽃"
+    ],
+    "description": "새벽녘에 주변 일대에 울려 퍼지는 기분 나쁜 울음소리로 자신들의 영역을 어필한다."
   },
   "229": {
     "id": 229,
@@ -3399,7 +4418,12 @@
     "maxStage": 2,
     "baseFormId": 228,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/229.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/229.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/229.gif",
+    "types": [
+      "악",
+      "불꽃"
+    ],
+    "description": "헬가가 으스스하게 멀리서 짖으면 지옥에서 사신이 부르는 소리라고 옛날 사람들은 상상하고 있었다."
   },
   "230": {
     "id": 230,
@@ -3413,7 +4437,12 @@
     "maxStage": 1,
     "baseFormId": 230,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/230.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/230.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/230.gif",
+    "types": [
+      "물",
+      "드래곤"
+    ],
+    "description": "평소에는 해저동굴에 몸을 숨기고 있는 것 같다. 하품으로 소용돌이를 발생시킨다."
   },
   "231": {
     "id": 231,
@@ -3429,7 +4458,11 @@
     "maxStage": 2,
     "baseFormId": 231,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/231.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/231.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/231.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "애정 표현으로 코를 부딪쳐 오지만 힘이 있기 때문에 조심하지 않으면 날아가 버린다."
   },
   "232": {
     "id": 232,
@@ -3443,7 +4476,11 @@
     "maxStage": 2,
     "baseFormId": 231,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/232.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/232.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/232.gif",
+    "types": [
+      "땅"
+    ],
+    "description": "예리하고 단단한 이빨과 더욱 튼튼한 피부의 몸통박치기는 집도 부술 정도다."
   },
   "233": {
     "id": 233,
@@ -3457,7 +4494,11 @@
     "maxStage": 1,
     "baseFormId": 233,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/233.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/233.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/233.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "더욱 연구가 진행되어 능력이 올라갔다. 가끔 프로그램에 없는 행동을 보인다."
   },
   "234": {
     "id": 234,
@@ -3471,7 +4512,11 @@
     "maxStage": 1,
     "baseFormId": 234,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/234.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/234.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/234.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "뿔을 응시하고 있으면 원의 중심에 빨려 들어가는 것 같은 이상한 기분이 든다."
   },
   "235": {
     "id": 235,
@@ -3485,7 +4530,11 @@
     "maxStage": 1,
     "baseFormId": 235,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/235.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/235.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/235.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "꼬리를 붓처럼 써서 영역에 마크를 그린다. 그 종류는 5000개 이상이다."
   },
   "236": {
     "id": 236,
@@ -3501,7 +4550,11 @@
     "maxStage": 2,
     "baseFormId": 236,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/236.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/236.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/236.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "항상 기운이 넘친다. 강해지기 위해 계속 져도 상대에게 맞선다."
   },
   "237": {
     "id": 237,
@@ -3515,7 +4568,11 @@
     "maxStage": 2,
     "baseFormId": 236,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/237.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/237.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/237.gif",
+    "types": [
+      "격투"
+    ],
+    "description": "팽이처럼 회전하면서 싸운다. 원심력의 파워로 파괴력은 10배다."
   },
   "238": {
     "id": 238,
@@ -3529,7 +4586,12 @@
     "maxStage": 1,
     "baseFormId": 238,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/238.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/238.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/238.gif",
+    "types": [
+      "얼음",
+      "에스퍼"
+    ],
+    "description": "입술이 제일 민감하다. 뭐든지 먼저 입술로 건드려서 어떤 것인지 확인한다."
   },
   "239": {
     "id": 239,
@@ -3543,7 +4605,11 @@
     "maxStage": 1,
     "baseFormId": 239,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/239.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/239.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/239.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "양팔을 빙글빙글 휘둘러서 전기를 발생시킨다. 그러나 만들어낸 전기는 모아둘 수 없다."
   },
   "240": {
     "id": 240,
@@ -3557,7 +4623,11 @@
     "maxStage": 1,
     "baseFormId": 240,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/240.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/240.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/240.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "작은 몸이지만 체온은 600도다. 숨을 들이쉬고 내쉴 때마다 입과 코에서 불꽃이 샌다."
   },
   "241": {
     "id": 241,
@@ -3571,7 +4641,11 @@
     "maxStage": 1,
     "baseFormId": 241,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/241.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/241.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/241.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "새끼가 태어났을 때에 짜낸 우유는 평상시보다 영양이 듬뿍 담겨 있다."
   },
   "242": {
     "id": 242,
@@ -3585,7 +4659,11 @@
     "maxStage": 1,
     "baseFormId": 242,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/242.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/242.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/242.gif",
+    "types": [
+      "노말"
+    ],
+    "description": "해피너스가 낳은 알에는 행복이 담겨 있어서 한 입 먹으면 누구든지 웃음 띤 얼굴이 된다."
   },
   "243": {
     "id": 243,
@@ -3599,7 +4677,11 @@
     "maxStage": 1,
     "baseFormId": 243,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/243.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/243.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/243.gif",
+    "types": [
+      "전기"
+    ],
+    "description": "비구름을 짊어지고 있어서 어떤 때라도 번개를 칠 수 있다. 번개와 함께 떨어졌다고 한다."
   },
   "244": {
     "id": 244,
@@ -3613,7 +4695,11 @@
     "maxStage": 1,
     "baseFormId": 244,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/244.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/244.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/244.gif",
+    "types": [
+      "불꽃"
+    ],
+    "description": "새로운 화산이 생길 때마다 태어난다고 전해지는 대지를 달리는 포켓몬이다."
   },
   "245": {
     "id": 245,
@@ -3627,7 +4713,11 @@
     "maxStage": 1,
     "baseFormId": 245,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/245.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/245.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/245.gif",
+    "types": [
+      "물"
+    ],
+    "description": "세계 곳곳을 뛰어다니며 오염된 물을 정화시킨다. 북풍과 함께 달려나간다."
   },
   "246": {
     "id": 246,
@@ -3643,7 +4733,12 @@
     "maxStage": 3,
     "baseFormId": 246,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/246.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/246.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/246.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "흙을 먹으며 살고 있다. 큰 산을 하나 다 먹으면 성장을 위해 잠자기 시작한다."
   },
   "247": {
     "id": 247,
@@ -3659,7 +4754,12 @@
     "maxStage": 3,
     "baseFormId": 246,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/247.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/247.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/247.gif",
+    "types": [
+      "바위",
+      "땅"
+    ],
+    "description": "암반 같은 단단한 몸이다. 압축한 가스를 분사해서 마치 로켓같이 날아간다."
   },
   "248": {
     "id": 248,
@@ -3673,7 +4773,12 @@
     "maxStage": 3,
     "baseFormId": 246,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/248.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/248.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/248.gif",
+    "types": [
+      "바위",
+      "악"
+    ],
+    "description": "한쪽 팔을 움직이는 것만으로도 산을 무너뜨리고 땅을 울리게 하는 엄청난 힘을 감추고 있다."
   },
   "249": {
     "id": 249,
@@ -3687,7 +4792,12 @@
     "maxStage": 1,
     "baseFormId": 249,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/249.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/249.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/249.gif",
+    "types": [
+      "에스퍼",
+      "비행"
+    ],
+    "description": "깊은 해구의 밑바닥에서 잠잔다. 루기아가 날개를 치면 40일 동안 폭풍우가 계속된다고 전해진다."
   },
   "250": {
     "id": 250,
@@ -3701,7 +4811,12 @@
     "maxStage": 1,
     "baseFormId": 250,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/250.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/250.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/250.gif",
+    "types": [
+      "불꽃",
+      "비행"
+    ],
+    "description": "몸은 일곱 빛으로 빛나고 날아간 자리에는 무지개가 생긴다는 신화 속에 남아 있는 포켓몬이다."
   },
   "251": {
     "id": 251,
@@ -3715,6 +4830,11 @@
     "maxStage": 1,
     "baseFormId": 251,
     "sprite": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/251.gif",
-    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/251.gif"
+    "spriteShiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/shiny/251.gif",
+    "types": [
+      "에스퍼",
+      "풀"
+    ],
+    "description": "시간을 넘어 여기저기를 방황한다. 세레비가 모습을 나타낸 숲은 초목이 무성해진다고 한다."
   }
 }

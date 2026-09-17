@@ -78,8 +78,9 @@
     font-size: 14px; color: #888;
   }
 
-  .evo-chain { display: none; gap: 10px; padding: 8px 4px 2px 42px; align-items: center; }
+  .evo-chain { display: none; flex-direction: column; gap: 8px; padding: 8px 4px 2px 42px; }
   .evo-chain.expanded { display: flex; }
+  .evo-chain-steps { display: flex; gap: 10px; align-items: center; }
   .evo-chain .evo-step { display: flex; flex-direction: column; align-items: center; gap: 2px; }
   .evo-chain img { width: 28px; height: 28px; margin: 0; }
   .evo-chain .evo-name { font-size: 10px; color: #bbb; }
@@ -89,6 +90,13 @@
     display: flex; align-items: center; justify-content: center;
     font-size: 13px; color: #888;
   }
+  .dex-detail { display: flex; flex-direction: column; gap: 6px; }
+  .type-badge {
+    display: inline-block; padding: 2px 8px; border-radius: 999px;
+    font-size: 10px; font-weight: bold; letter-spacing: .03em; color: #fff;
+    background: #495057; margin-right: 4px;
+  }
+  .dex-desc { font-size: 11px; color: #aaa; line-height: 1.4; }
 
   .egg-row { display: flex; align-items: center; gap: 8px; padding: 8px 4px; border-bottom: 1px solid #2a2a3a; }
   .egg-row .egg-icon { font-size: 22px; }
@@ -469,29 +477,36 @@
                 <span class="date">${formatDate(e.graduatedAt)}</span>
               </div>
               <div class="evo-chain" data-chain-index="${i}">
-                ${e.evolutionChain
-                  .map(
-                    (step, si) => `
-                      ${si > 0 ? '<span class="evo-arrow">→</span>' : ""}
-                      <div class="evo-step">
-                        ${
-                          step.discovered
-                            ? `<img src="${step.sprite}" alt="${step.nameKo}" />`
-                            : `<div class="evo-unknown-img">?</div>`
-                        }
-                        <span class="evo-name">${step.discovered ? step.nameKo : "?????"}</span>
-                      </div>`
-                  )
-                  .join("")}
+                <div class="dex-detail">
+                  <div class="dex-types">
+                    ${(e.types || []).map((t) => `<span class="type-badge">${t}</span>`).join("")}
+                  </div>
+                  ${e.description ? `<p class="dex-desc">${e.description}</p>` : ""}
+                </div>
+                <div class="evo-chain-steps">
+                  ${e.evolutionChain
+                    .map(
+                      (step, si) => `
+                        ${si > 0 ? '<span class="evo-arrow">→</span>' : ""}
+                        <div class="evo-step">
+                          ${
+                            step.discovered
+                              ? `<img src="${step.sprite}" alt="${step.nameKo}" />`
+                              : `<div class="evo-unknown-img">?</div>`
+                          }
+                          <span class="evo-name">${step.discovered ? step.nameKo : "?????"}</span>
+                        </div>`
+                    )
+                    .join("")}
+                </div>
               </div>
             </div>`;
         })
         .join("");
     }
 
-    // 도감 행을 클릭하면 그 종의 진화 라인(미진화→...→최종진화)을 나열해서 보여줌.
-    // 발견 못 한(잠긴) 행은 펼칠 내용 자체가 없어서 무시. 나중엔 여기를 눌렀을 때
-    // 상세 정보 팝업으로 바꿀 예정.
+    // 도감 행을 클릭하면 타입/설명 + 진화 라인(미진화→...→최종진화)을 펼쳐서 보여줌.
+    // 발견 못 한(잠긴) 행은 펼칠 내용 자체가 없어서 무시.
     pokedexList.addEventListener("click", (ev) => {
       const row = ev.target.closest(".pokedex-row");
       if (!row) return;

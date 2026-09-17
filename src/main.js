@@ -548,6 +548,8 @@ function buildPokedexPayload() {
       isLive: agg.isLive, // 지금 실제로 키우는 중/보관 중인 개체가 있어야만 true("육성 중" 표시용)
       shinyCount: agg.shinyCount,
       graduatedAt: agg.latestGraduatedAt, // null이면 발견은 했지만 아직 졸업 전
+      types: species.types,
+      description: species.description,
       evolutionChain: buildEvolutionChain(id, discoveredIds, agg.tier ?? species.tier),
     });
   }
