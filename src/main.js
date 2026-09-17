@@ -576,6 +576,24 @@ function buildPokedexPayload() {
   return rows; // 이미 도감번호 오름차순
 }
 
+// 지금 알을 품고 있는 중이면(부화 전) 잃어버리지 않게 알 보관함으로 돌려보낸다 —
+// eggStartTotal을 그대로 들고 가서 나중에 다시 "품기 시작"하면 지금까지 모은
+// 부화 진행률이 이어진다. 버그로 실제로 확인됨: resumeStoredCompanion()이 이 처리
+// 없이 알 상태에서도 그냥 state.companion을 덮어써서, 알을 품던 중 보관함에서 다른
+// 애를 꺼내면 그 알(과 진행률)이 통째로 증발했었음. startIncubatingEgg()가 알끼리
+// 바꿔치기할 때 진행률을 새 알로 "병합"하는 것과 원칙은 같은데, 여긴 병합할 대상
+// (새 알)이 없으니 "보관함으로 복귀"시키는 방식으로 처리.
+function boxCurrentEggIfIncubating() {
+  if (state.companion && state.companion.state === "egg") {
+    state.eggBox.push({
+      id: `egg-resumed-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      grade: state.companion.guaranteedGrade ?? "common", // 보장 없는 알은 "전체 랜덤"인 common과 동치
+      createdAt: new Date().toISOString(),
+      eggStartTotal: state.companion.eggStartTotal,
+    });
+  }
+}
+
 // 지금 키우던 애가 "성장 중"이면 잃어버리지 않게 보관함에 저장. 알 상태면 아직
 // 특정 개체가 안 정해진 상태라 보관 없이 그냥 교체됨(부화 진행률은 호출부에서 별도 처리).
 function boxCurrentCompanionIfGrowing() {
@@ -612,7 +630,10 @@ function buildEggBoxPayload() {
  * 알"과 동일 — 등급 알도 재인큐베이션이 필요함, 즉시 안 나옴). 지금 뭔가 성장
  * 중이어도 가능 — 그 컴패니언은 버려지지 않고 보관함(storedCompanions)으로 들어가서
  * 나중에 다시 꺼내 키울 수 있다. 지금 알 상태였다면 그 알이 모아둔 부화 진행률은
- * 버리지 않고 새 등급 알의 진행률로 이어받는다.
+ * 버리지 않고 새 등급 알의 진행률로 이어받는다. 고르는 알 자체가 예전에
+ * boxCurrentEggIfIncubating()으로 보관함에 돌아갔던 알(자기 진행률을 들고 있음)이면
+ * 그 진행률에서 이어서 시작(단, 지금 활성 알의 진행률이 있으면 그게 우선 — 여러
+ * 알의 진행률을 동시에 따로 안 따라가는 기존 원칙 그대로).
  * 반환: { ok: boolean, reason?: string, status: buildStatusPayload() }
  */
 function startIncubatingEgg(eggId) {
@@ -623,7 +644,9 @@ function startIncubatingEgg(eggId) {
 
   const egg = state.eggBox[eggIndex];
   const wasEgg = state.companion?.state === "egg";
-  const eggStartTotal = wasEgg ? state.companion.eggStartTotal : lastTotalTokens;
+  const eggStartTotal = wasEgg
+    ? state.companion.eggStartTotal
+    : (egg.eggStartTotal ?? lastTotalTokens);
 
   boxCurrentCompanionIfGrowing();
 
@@ -662,7 +685,9 @@ function buildStoragePayload() {
 
 /**
  * 보관함에서 꺼내서 다시 키우기 시작(티켓 소모 없음 — 이미 갖고 있던 애를 꺼내는 거라).
- * 지금 성장 중인 애가 있으면 그 애가 대신 보관함으로 들어간다(자리 교환).
+ * 지금 성장 중인 애가 있으면 그 애가 대신 보관함으로 들어가고(자리 교환), 지금 알을
+ * 품고 있던 중이면 그 알은 진행률을 들고 알 보관함으로 돌아간다(boxCurrentEggIfIncubating()
+ * 참고 — 예전엔 이 처리가 없어서 알이 통째로 사라지는 버그가 있었음).
  */
 function resumeStoredCompanion(index) {
   if (index < 0 || index >= state.storedCompanions.length) {
@@ -670,6 +695,7 @@ function resumeStoredCompanion(index) {
   }
 
   boxCurrentCompanionIfGrowing();
+  boxCurrentEggIfIncubating();
 
   const [resumed] = state.storedCompanions.splice(index, 1);
   // 보관 시점에 고정해둔 진행률(frozenProgress)을 지금 시점 기준으로 되살림 —
