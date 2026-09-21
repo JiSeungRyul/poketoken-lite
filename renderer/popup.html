@@ -8,6 +8,9 @@
   img { width: 96px; image-rendering: pixelated; }
   .bar-bg { background: #333; border-radius: 8px; height: 14px; overflow: hidden; margin-top: 12px; }
   .bar-fill { background: #4caf50; height: 100%; width: 0%; transition: width .3s; }
+  .boost-bar-bg { margin-top: 6px; height: 10px; }
+  .boost-bar-fill { background: #ff9800; }
+  #boostProgressText { font-size: 11px; color: #ffb74d; margin: 2px 0 0; }
   button {
     margin-top: 14px; padding: 6px 14px; border: none; border-radius: 6px;
     background: #333; color: #eee; cursor: pointer; font-size: 13px;
@@ -187,6 +190,8 @@
       </div>
       <div class="bar-bg"><div class="bar-fill" id="bar"></div></div>
       <p id="progress"></p>
+      <div class="bar-bg boost-bar-bg" id="boostBarWrap" hidden><div class="bar-fill boost-bar-fill" id="boostBar"></div></div>
+      <p id="boostProgressText" hidden></p>
       <p id="nextHint" hidden>다음 포켓몬: ???</p>
       <button id="pokedexLink" class="link-btn"></button>
       <br />
@@ -196,6 +201,7 @@
       <br />
       <button id="refreshBtn">🔄 새로고침</button>
       <button id="boxAndNewEggBtn" hidden>📦 보관하고 새 알 시작</button>
+      <button id="boostBtn" hidden>🔥 부스트</button>
       <button id="widgetBtn">🔘 위젯으로 보기</button>
       <br />
       <button id="settingsLink" class="link-btn">⚙️ 설정</button>
@@ -411,6 +417,19 @@
       // 알 상태일 땐 보관할 대상이 없으니 숨김 — 성장 중일 때만 노출.
       document.getElementById("boxAndNewEggBtn").hidden = s.state !== "growing";
 
+      // 부스트 — 성장 중일 때만 토글 버튼 노출, 부스팅 중엔 라벨 전환 + 보조 게이지 바.
+      const boostBtn = document.getElementById("boostBtn");
+      boostBtn.hidden = s.state !== "growing";
+      boostBtn.textContent = s.boosting ? "🔥 부스트 중... (취소)" : "🔥 부스트";
+      document.getElementById("boostBarWrap").hidden = !s.boosting;
+      document.getElementById("boostProgressText").hidden = !s.boosting;
+      if (s.boosting) {
+        const boostPct = Math.min(100, Math.round((s.boostProgress / s.boostNeeded) * 100));
+        document.getElementById("boostBar").style.width = boostPct + "%";
+        document.getElementById("boostProgressText").textContent =
+          `🔥 ${s.boostProgress.toLocaleString()} / ${s.boostNeeded.toLocaleString()} 토큰`;
+      }
+
       document.getElementById("pokedexLink").textContent = `도감 ${s.pokedexCount}/${s.pokedexTotal} 보기 →`;
       document.getElementById("storageLink").textContent = `📦 보관함 ${s.storedCount}마리 보기 →`;
       document.getElementById("eggBoxLink").textContent = `🥚 알 보관함 ${s.eggBoxCount}개 보기 →`;
@@ -451,6 +470,14 @@
           lastRendered = null; // 종이 바뀌었으니 반짝임 없이 바로 새 알로 전환
           render(result.status);
         }
+      });
+    });
+
+    // 부스트 토글 — 켜면 진행도가 멈추고 게이지가 쌓이기 시작, 다시 누르면(게이지
+    // 다 차기 전) 보상 없이 취소. 종 자체 바뀌는 연출은 없어서 lastRendered 유지.
+    document.getElementById("boostBtn").addEventListener("click", () => {
+      window.api.toggleBoost().then((result) => {
+        if (result.status) render(result.status);
       });
     });
 

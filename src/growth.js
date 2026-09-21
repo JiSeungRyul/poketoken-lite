@@ -250,11 +250,20 @@ function applyRareCandy(companion, amount) {
   return { ...companion, hatchedAtTotal: companion.hatchedAtTotal - amount };
 }
 
+// 부스트 기믹용 — 부스팅 중엔 진화 진행도가 안 움직이게, 토큰이 늘어난 만큼(delta)
+// hatchedAtTotal도 같이 밀어서 progress = totalTokens - hatchedAtTotal 값 자체를
+// 그대로 묶어둔다(egg 상태는 부스팅 대상이 아니라 그대로 통과).
+function freezeProgress(companion, delta) {
+  if (!companion || companion.state !== "growing") return companion;
+  return { ...companion, hatchedAtTotal: companion.hatchedAtTotal + delta };
+}
+
 module.exports = {
   evaluate,
   stageThresholds,
   newEgg,
   applyRareCandy,
+  freezeProgress,
   pickHatchSpecies,
   pickWeeklyTicketGrade,
   HATCH_THRESHOLD,

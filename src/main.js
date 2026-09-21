@@ -7,6 +7,7 @@ const {
   evaluate,
   newEgg,
   applyRareCandy,
+  freezeProgress,
   HATCH_THRESHOLD,
   GRADUATION_TOTAL,
   SHINY_DENOMINATOR,
@@ -21,6 +22,7 @@ const {
   SHINY_CHARM_DENOMINATOR,
   eggPrice,
 } = require("./shop");
+const { BOOST_GAUGE_THRESHOLD, candiesFromBoost } = require("./boost");
 
 
 // 알 상태일 때 보여줄 정적 스프라이트. PokéAPI엔 종별 데이터만 있어서 gen1.json엔
@@ -286,8 +288,15 @@ function grantWeeklyTicketIfDue(now) {
 }
 
 function tick() {
+  const prevTotalTokens = lastTotalTokens; // 부스트 프리즈 델타 계산용(아래) — 덮어쓰기 전에 떠둠
   const totalTokens = getTotalTokens();
   lastTotalTokens = totalTokens;
+  // prevTotalTokens가 0이면 이 프로세스의 첫 tick(모듈 최상단 초기값 그대로)이라 "직전
+  // tick 대비 증가분"이라는 전제 자체가 성립 안 함 — 이 경우 델타를 totalTokens 전체로
+  // 계산하면(부스팅 중이던 저장분을 재시작 후 불러온 경우 등) hatchedAtTotal이 통째로
+  // 미래로 밀려버려 진행도가 음수로 깨지는 버그가 실제로 있었음. 첫 tick만 델타 0으로
+  // 취급(다음 tick부터는 정상적으로 직전 tick 대비 증가분을 씀).
+  const tokenDelta = prevTotalTokens > 0 ? totalTokens - prevTotalTokens : 0;
 
   // 지난 tick에서 막 졸업한 채로(state:"graduated") 남아있었다면 이번 tick에 새
   // 알로 넘긴다 — 졸업 이벤트 자체가 발생한 바로 그 tick에 곧장 새 알로 덮어써
@@ -300,6 +309,26 @@ function tick() {
 
   if (!state.companion) {
     state.companion = newEgg(totalTokens);
+  }
+
+  // 부스트 기믹 — 부스팅 중이면 이번 tick의 토큰 증가분을 진행도 대신 게이지에
+  // 쌓는다(freezeProgress로 hatchedAtTotal을 같이 밀어서 progress는 그대로 고정
+  // — 그래서 아래 evaluate()가 이번 tick만큼은 진행이 안 된 것으로 봐서 부스팅
+  // 중엔 자동으로 진화/졸업이 안 터짐). 게이지가 임계치를 넘으면 즉시 완료 —
+  // 모은 양(×보너스)을 사탕으로 반올림 환전해서 가방에 적립하고 부스팅 해제
+  // (해제 이후엔 hatchedAtTotal이 그 시점에 멈춰있던 값 그대로라 자연스럽게
+  // 성장 재개 — 별도 "캐치업" 없음, BACKLOG.md 참고).
+  if (state.companion.state === "growing" && state.companion.boosting) {
+    state.companion = freezeProgress(state.companion, tokenDelta);
+    const boostGauge = totalTokens - state.companion.boostStartTotal;
+    if (boostGauge >= BOOST_GAUGE_THRESHOLD) {
+      const candies = candiesFromBoost(boostGauge);
+      state.rareCandyCount = (state.rareCandyCount || 0) + candies;
+      delete state.companion.boosting;
+      delete state.companion.boostStartTotal;
+      console.log(`event: boost-complete +${candies} candy (gauge: ${boostGauge})`);
+      notify("🔥 부스트 완료!", `이상한 사탕 ${candies}개를 얻었어요!`);
+    }
   }
 
   // 진화/졸업으로 등급 알을 적립할 때 등급 기준으로 쓸, "진화하기 직전" 개체의 고정된
@@ -421,6 +450,9 @@ function buildStatusPayload(totalTokens) {
     pokedexTotal: totalSpeciesCount(),
     eggBoxCount: state.eggBox.length,
     storedCount: state.storedCompanions.length,
+    boosting: !!companion.boosting,
+    boostProgress: companion.boosting ? totalTokens - companion.boostStartTotal : null,
+    boostNeeded: companion.boosting ? BOOST_GAUGE_THRESHOLD : null,
   };
 }
 
@@ -1019,6 +1051,27 @@ function useRareCandy() {
   return { ok: true, status: buildStatusPayload(lastTotalTokens), bag: buildBagPayload() };
 }
 
+// 부스트 토글 — 켜면 그 순간부터 진행도가 멈추고 게이지가 쌓이기 시작(tick() 참고),
+// 다시 누르면(게이지 다 차기 전) 보상 없이 취소. 종 제한 없음 — 지금 성장 중인
+// 컴패니언이면 누구나 가능(메가진화/기가맥스/테라스탈 종 목록은 코스메틱 전용,
+// 이 토글 자체엔 안 씀 — BACKLOG.md 참고).
+function toggleBoost() {
+  if (!state.companion || state.companion.state !== "growing") {
+    return { ok: false, reason: "not-growing", status: buildStatusPayload(lastTotalTokens) };
+  }
+  if (state.companion.boosting) {
+    delete state.companion.boosting;
+    delete state.companion.boostStartTotal;
+  } else {
+    state.companion.boosting = true;
+    state.companion.boostStartTotal = lastTotalTokens;
+  }
+  saveState(app.getPath("userData"), state);
+  updateTrayIcon(lastTotalTokens);
+  pushWidgetStatus();
+  return { ok: true, status: buildStatusPayload(lastTotalTokens) };
+}
+
 app.whenReady().then(() => {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
@@ -1048,6 +1101,7 @@ app.whenReady().then(() => {
   ipcMain.handle("buy-shiny-charm", () => buyShinyCharm());
   ipcMain.handle("buy-egg", (event, tier) => buyGuaranteedEgg(tier));
   ipcMain.handle("use-rare-candy", () => useRareCandy());
+  ipcMain.handle("toggle-boost", () => toggleBoost());
   ipcMain.handle("get-widget-position", () => (widgetWindow ? widgetWindow.getPosition() : [0, 0]));
   ipcMain.handle("move-widget-to", (event, x, y) => {
     if (widgetWindow) widgetWindow.setPosition(Math.round(x), Math.round(y));

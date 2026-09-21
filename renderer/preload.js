@@ -24,6 +24,7 @@ contextBridge.exposeInMainWorld("api", {
   buyShinyCharm: () => ipcRenderer.invoke("buy-shiny-charm"),
   buyEgg: (tier) => ipcRenderer.invoke("buy-egg", tier),
   useRareCandy: () => ipcRenderer.invoke("use-rare-candy"),
+  toggleBoost: () => ipcRenderer.invoke("toggle-boost"),
   getWidgetPosition: () => ipcRenderer.invoke("get-widget-position"),
   moveWidgetTo: (x, y) => ipcRenderer.invoke("move-widget-to", x, y),
   onStatusUpdate: (callback) => ipcRenderer.on("status-update", (event, status) => callback(status)),

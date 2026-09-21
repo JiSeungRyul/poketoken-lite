@@ -13,6 +13,8 @@ Claude Code 토큰 사용량으로 포켓몬(1~9세대, 1025마리)을 키우는
 실기에서 직접 확인 완료. Windows
 알림·시작 시 자동 실행은 코드는 붙였는데, 실제 동작(토스트/로그인 자동실행)은
 아직 Windows 실기 확인 전(WSL/Linux는 Electron이 이 두 API를 지원 안 함).
+**부스트 기믹**(토글로 진행도 프리즈 → 게이지 → 완료 시 이상한 사탕으로
+환전)도 구현·헤드리스 테스트 완료했지만 아직 Windows 실기 확인 전.
 `npm run dist`로 포터블 exe 빌드도 가능.
 
 ## 실행 순서
@@ -31,6 +33,7 @@ src/
   logParser.js   Claude Code JSONL 로그 읽어서 누적 토큰 계산 (WSL 로그 경로도 자동 탐색)
   growth.js      등급별(common/uncommon/epic/legendary/mythical) 임계치로 부화/진화/졸업 판정
   shop.js        상점 가격/효과량 상수(이상한 사탕/이로치 부적/등급 알)
+  boost.js       부스트 기믹 상수(게이지 임계치/보너스 배율/사탕 환전 계산)
   state.js       컴패니언/도감/보관함/알 보관함/상점 재화·가방을 로컬 JSON에 저장
   main.js        Electron 메인 프로세스, 트레이 아이콘, IPC, 폴링
 scripts/
@@ -81,3 +84,9 @@ renderer/
   졸업 총량과 동급인 고가 럭셔리 아이템, 분모는 `SHINY_DENOMINATOR`의 절반 =
   확률 2배)
 - `EGG_PRICE_RATIO` (등급 보장 알 가격 = 그 등급 `GRADUATION_TOTAL`의 20%)
+
+`src/boost.js` (부스트 기믹 — growth.js/shop.js를 참조만 하는 단방향 의존성):
+- `BOOST_GAUGE_THRESHOLD` (부스트 게이지 임계치, `HATCH_THRESHOLD`의 3배인
+  1,500만 — 다 채우면 자동 완료)
+- `BOOST_BONUS_MULTIPLIER` (완료 시 모은 양에 곱하는 보너스 배율, 1.3배 —
+  실사용 페이스 보고 조절 여지 있음)
