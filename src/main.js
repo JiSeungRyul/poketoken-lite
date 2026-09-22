@@ -866,15 +866,24 @@ function setWidgetOpacity(value) {
 // 팝업이 이미 떠있으면 그대로 두고, 없으면 새로 연다(토글이 아니라 "확실히 열기").
 // 위젯에서 전체 창을 여는 유일한 경로 — 더블클릭은 Windows에서 이 작은 창
 // 위에서 잘 안 먹는 경우가 있어(실제로 겪음) 아예 안 쓰고 우클릭 메뉴로만 제공.
-function ensurePopupOpen() {
-  if (!popup) togglePopup(); // togglePopup 내부에서 위젯도 알아서 꺼짐
+// view를 넘기면("settings") 팝업이 열린 뒤(이미 열려 있었으면 바로) 렌더러에
+// show-view IPC를 보내 해당 서브뷰로 전환시킨다 — 위젯 우클릭 메뉴에서 설정을
+// 바로 열 때 씀. 새로 만든 창은 아직 로드 전이라 did-finish-load를 기다렸다 보냄.
+function ensurePopupOpen(view) {
+  if (!popup) {
+    togglePopup(); // togglePopup 내부에서 위젯도 알아서 꺼짐
+    if (view) popup.webContents.once("did-finish-load", () => popup.webContents.send("show-view", view));
+  } else if (view) {
+    popup.webContents.send("show-view", view);
+  }
 }
 
-// 위젯 우클릭 시 뜨는 메뉴 — 전체 창 전환 + 투명도 조절 + 숨기기.
+// 위젯 우클릭 시 뜨는 메뉴 — 전체 창 전환 + 설정 + 투명도 조절 + 숨기기.
 function showWidgetContextMenu() {
   if (!widgetWindow) return;
   const menu = Menu.buildFromTemplate([
     { label: "전체 창 보기", click: () => ensurePopupOpen() },
+    { label: "⚙️ 설정", click: () => ensurePopupOpen("settings") },
     { type: "separator" },
     { label: "투명도 25%", click: () => setWidgetOpacity(0.25) },
     { label: "투명도 50%", click: () => setWidgetOpacity(0.5) },
@@ -927,7 +936,7 @@ function togglePopup() {
   if (state.widget.enabled) setWidgetEnabled(false);
   popup = new BrowserWindow({
     width: 380,
-    height: 600,
+    height: 660,
     show: true,
     frame: true,
     webPreferences: {

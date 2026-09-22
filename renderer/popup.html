@@ -872,6 +872,21 @@
       bagSubview.hidden = true;
       companionSubview.hidden = false;
     });
+
+    // 위젯 우클릭 메뉴 "⚙️ 설정"에서 옴 — 팝업이 방금 새로 열렸든(컴패니언 뷰가
+    // 기본으로 보이는 상태) 이미 다른 서브뷰가 열려 있었든 상관없이 확실히 설정
+    // 화면으로 전환한다.
+    window.api.onShowView((view) => {
+      if (view !== "settings") return;
+      companionSubview.hidden = true;
+      pokedexSubview.hidden = true;
+      storageSubview.hidden = true;
+      eggBoxSubview.hidden = true;
+      shopSubview.hidden = true;
+      bagSubview.hidden = true;
+      settingsSubview.hidden = false;
+      window.api.getSettings().then(renderSettings);
+    });
   </script>
 </body>
 </html>

@@ -28,4 +28,5 @@ contextBridge.exposeInMainWorld("api", {
   getWidgetPosition: () => ipcRenderer.invoke("get-widget-position"),
   moveWidgetTo: (x, y) => ipcRenderer.invoke("move-widget-to", x, y),
   onStatusUpdate: (callback) => ipcRenderer.on("status-update", (event, status) => callback(status)),
+  onShowView: (callback) => ipcRenderer.on("show-view", (event, view) => callback(view)),
 });
