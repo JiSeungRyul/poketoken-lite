@@ -681,6 +681,12 @@ function startIncubatingEgg(eggId) {
     : (egg.eggStartTotal ?? lastTotalTokens);
 
   boxCurrentCompanionIfGrowing();
+  // 지금 품고 있던 알(부화 전)을 버리지 않고 보관함으로 되돌린다 — resumeStoredCompanion()과
+  // 같은 처리. 이게 없으면 알 보관함에서 다른 알을 연달아 "품기 시작"할 때마다 그 전에
+  // 품고 있던 알이 그냥 사라지는 버그가 있었음(실제 확인됨: 등급 알 4개를 사서 하나씩
+  // 골라 품기 시작할 때마다 이전 알이 없어지고 마지막 알만 남음). eggIndex는 이 push보다
+  // 앞서 이미 구했고 push는 배열 끝에 추가되니 인덱스가 안 밀려서 splice는 그대로 안전.
+  boxCurrentEggIfIncubating();
 
   state.eggBox.splice(eggIndex, 1);
   state.companion = newEgg(eggStartTotal, egg.grade);
