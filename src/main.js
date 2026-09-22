@@ -610,11 +610,16 @@ function buildPokedexPayload() {
 
 // 지금 알을 품고 있는 중이면(부화 전) 잃어버리지 않게 알 보관함으로 돌려보낸다 —
 // eggStartTotal을 그대로 들고 가서 나중에 다시 "품기 시작"하면 지금까지 모은
-// 부화 진행률이 이어진다. 버그로 실제로 확인됨: resumeStoredCompanion()이 이 처리
-// 없이 알 상태에서도 그냥 state.companion을 덮어써서, 알을 품던 중 보관함에서 다른
-// 애를 꺼내면 그 알(과 진행률)이 통째로 증발했었음. startIncubatingEgg()가 알끼리
-// 바꿔치기할 때 진행률을 새 알로 "병합"하는 것과 원칙은 같은데, 여긴 병합할 대상
-// (새 알)이 없으니 "보관함으로 복귀"시키는 방식으로 처리.
+// 부화 진행률이 이어진다. startIncubatingEgg()(알 보관함에서 다른 알로 갈아탈 때)
+// 전용 — 알 보관함에서 알 하나를 꺼내는(-1) 것과 정확히 1:1로 맞물려서 순증가가
+// 없다(지금 품던 알 반납 +1, 새로 고른 알 반출 -1). resumeStoredCompanion()(보관함
+// 컴패니언으로 갈아탈 때)에는 일부러 안 씀 — 거기 붙였다가 실제 버그가 났었음:
+// 알 보관함에선 아무것도 안 빠지는데 이 함수가 +1만 하니, "보관하고 새 알 시작"
+// (진행도 0짜리 빈 알을 즉시 채워 넣음)과 "다시 키우기"를 번갈아 누르는 것만으로
+// 토큰 소모 없이 등급 알 티켓이 무한정 늘어나는 버그가 있었음(사용자가 실제로 확인
+// 함). 다시 키우기로 갈아탈 때 품던 알을 버리는 손해는 감수하고, 그 알의 진행률을
+// 지키고 싶으면 갈아타기 전에 먼저 부화시키거나 알 보관함 알끼리의 교환(위 1:1 경로)만
+// 쓰도록 함 — 자동 보존 기능 자체를 없애는 게 더 단순하고 안전하다는 판단(사용자 확정).
 function boxCurrentEggIfIncubating() {
   if (state.companion && state.companion.state === "egg") {
     state.eggBox.push({
@@ -724,16 +729,19 @@ function buildStoragePayload() {
 /**
  * 보관함에서 꺼내서 다시 키우기 시작(티켓 소모 없음 — 이미 갖고 있던 애를 꺼내는 거라).
  * 지금 성장 중인 애가 있으면 그 애가 대신 보관함으로 들어가고(자리 교환), 지금 알을
- * 품고 있던 중이면 그 알은 진행률을 들고 알 보관함으로 돌아간다(boxCurrentEggIfIncubating()
- * 참고 — 예전엔 이 처리가 없어서 알이 통째로 사라지는 버그가 있었음).
+ * 품고 있던 중이었으면 그 알(과 진행률)은 그냥 버려진다 — boxCurrentEggIfIncubating()
+ * 주석 참고: 여기서 자동 보존해주면 "보관하고 새 알 시작"과 번갈아 누르는 것만으로
+ * 알 보관함이 무한정 늘어나는 버그가 있었다(실제 확인됨).
  */
 function resumeStoredCompanion(index) {
   if (index < 0 || index >= state.storedCompanions.length) {
     return { ok: false, reason: "invalid-index", status: buildStatusPayload(lastTotalTokens) };
   }
 
+  // 지금 품던 알(부화 전)이 있었으면 그냥 버려진다(알 보관함으로 자동 보존 안 함) —
+  // boxCurrentEggIfIncubating() 주석 참고: 여기서 보존하면 "보관하고 새 알 시작"과
+  // 번갈아 누르는 것만으로 알 보관함이 무한정 늘어나는 버그가 있었음.
   boxCurrentCompanionIfGrowing();
-  boxCurrentEggIfIncubating();
 
   const [resumed] = state.storedCompanions.splice(index, 1);
   // 보관 시점에 고정해둔 진행률(frozenProgress)을 지금 시점 기준으로 되살림 —
