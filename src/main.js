@@ -962,10 +962,28 @@ function togglePopup() {
   popup.on("closed", () => (popup = null));
 }
 
+// 자동 실행에 등록할 실행 경로. 기본값(process.execPath)은 두 경우에 틀림:
+// - portable 빌드: 실행할 때마다 임시 폴더에 풀린 exe가 돌아서 execPath가 그 임시
+//   경로임 → 앱 종료 시 지워져서 다음 부팅 때 실행 실패. 원래 exe 경로는
+//   electron-builder가 PORTABLE_EXECUTABLE_FILE 환경변수로 넘겨줌.
+// - 개발 모드(npm start): execPath가 node_modules의 electron.exe라 앱 경로를 인자로
+//   안 붙이면 Electron 기본 화면만 뜸.
+// Windows의 getLoginItemSettings도 같은 path/args로 물어봐야 등록 여부를 맞게 읽으므로
+// 등록·조회 양쪽에서 이 함수를 같이 씀.
+function loginItemOptions() {
+  if (process.env.PORTABLE_EXECUTABLE_FILE) {
+    return { path: process.env.PORTABLE_EXECUTABLE_FILE, args: [] };
+  }
+  if (!app.isPackaged) {
+    return { path: process.execPath, args: [path.resolve(app.getAppPath())] };
+  }
+  return { path: process.execPath, args: [] };
+}
+
 // 설정 화면 응답 — openAtLogin은 state에 안 두고 OS/Electron이 들고 있는 값을
 // 그대로 읽음(진실의 원천 하나로 유지).
 function getSettingsPayload() {
-  return { ...state.settings, openAtLogin: app.getLoginItemSettings().openAtLogin };
+  return { ...state.settings, openAtLogin: app.getLoginItemSettings(loginItemOptions()).openAtLogin };
 }
 
 // 설정 변경. openAtLogin은 별도 처리(Electron API 호출), 나머지는 state.settings에
@@ -973,7 +991,7 @@ function getSettingsPayload() {
 // 다음 tick까지 기다리지 않고 반영되게 함.
 function updateSettings(partial) {
   if ("openAtLogin" in partial) {
-    app.setLoginItemSettings({ openAtLogin: !!partial.openAtLogin });
+    app.setLoginItemSettings({ openAtLogin: !!partial.openAtLogin, ...loginItemOptions() });
   }
   const { openAtLogin, ...rest } = partial;
   Object.assign(state.settings, rest);
@@ -1095,7 +1113,28 @@ function toggleBoost() {
   return { ok: true, status: buildStatusPayload(lastTotalTokens) };
 }
 
-app.whenReady().then(() => {
+// 중복 실행 방지 — 자동 실행으로 이미 떠있는데 exe를 또 누르면 트레이 아이콘이 둘 생기고
+// 두 프로세스가 같은 state.json을 번갈아 덮어씀. 두 번째 인스턴스는 바로 종료하고,
+// 기존 인스턴스는 팝업(또는 위젯)을 앞으로 띄워서 "눌렀는데 반응 없음"이 안 되게 함.
+if (!app.requestSingleInstanceLock()) {
+  app.quit();
+} else {
+  app.on("second-instance", () => {
+    if (!state) return; // 아직 초기화 전
+    if (popup) {
+      if (popup.isMinimized()) popup.restore();
+      popup.show();
+      popup.focus();
+    } else if (state.widget.enabled) {
+      createOrShowWidget();
+    } else {
+      togglePopup();
+    }
+  });
+  app.whenReady().then(onReady);
+}
+
+function onReady() {
   loadGen1Data();
   state = loadState(app.getPath("userData"));
   fixCorruptedPokedexEntries();
@@ -1139,6 +1178,6 @@ app.whenReady().then(() => {
   if (state.widget.enabled) createOrShowWidget();
   else togglePopup();
   scheduleNextTick();
-});
+}
 
 app.on("window-all-closed", (e) => e.preventDefault()); // 트레이 상주, 창 닫아도 종료 안 함
