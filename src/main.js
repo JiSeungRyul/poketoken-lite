@@ -712,15 +712,21 @@ function buildStoragePayload() {
       return;
     }
     const isShiny = !!c.isShiny;
+    const tier = c.tier ?? species.tier; // 고정 등급 우선, 예전 저장분(없음)은 현재 종 tier로 폴백
+    // 경험치 게이지 — 보관 중엔 진행이 멈춰 있으니 frozenProgress 그대로. 임계치는
+    // buildStatusPayload()와 같은 계산(현재 난이도 기준)이라 다시 꺼냈을 때 게이지와 일치.
+    const thresholds = stageThresholds(tier, species.maxStage, state.settings.difficulty);
     result.push({
       index,
       speciesId: c.speciesId,
       nameKo: species.nameKo,
       sprite: isShiny ? species.spriteShiny : species.sprite,
       isShiny,
-      tier: c.tier ?? species.tier, // 고정 등급 우선, 예전 저장분(없음)은 현재 종 tier로 폴백
+      tier,
       stage: c.stage,
       storedAt: c.storedAt,
+      progress: c.frozenProgress ?? 0,
+      needed: thresholds[c.stage - 1] ?? null,
     });
   });
   return result;

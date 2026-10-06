@@ -66,6 +66,9 @@
   .pokedex-row .date { font-size: 10px; color: #888; }
   .dex-count { font-size: 10px; color: #74c0fc; }
   .pokedex-row .raise-btn { margin: 0; padding: 3px 8px; font-size: 11px; }
+  .storage-exp { display: flex; align-items: center; gap: 6px; padding-left: 42px; }
+  .storage-exp .bar-bg { flex: 1; height: 6px; margin-top: 0; }
+  .storage-exp-text { font-size: 10px; color: #888; white-space: nowrap; }
   .pokedex-empty { color: #888; font-size: 13px; padding: 24px 0; text-align: center; }
 
   #settings-subview { text-align: left; }
@@ -593,6 +596,19 @@
     const storageSubview = document.getElementById("storage-subview");
     const storageList = document.getElementById("storageList");
 
+    // 보관 시점에 멈춰 있는 경험치 게이지 — 메인 화면 진행률 바와 같은 계산.
+    function storageExpBar(e) {
+      const pct = e.needed ? Math.min(100, Math.round((e.progress / e.needed) * 100)) : 100;
+      const text = e.needed != null
+        ? `${e.progress.toLocaleString()} / ${e.needed.toLocaleString()} 토큰 (${pct}%)`
+        : `${e.progress.toLocaleString()} 토큰`;
+      return `
+        <div class="storage-exp">
+          <div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div>
+          <span class="storage-exp-text">${text}</span>
+        </div>`;
+    }
+
     function renderStorage(entries) {
       document.getElementById("storageTitle").textContent = `보관함 (${entries.length}마리)`;
 
@@ -605,10 +621,13 @@
         .map(
           (e) => `
             <div class="pokedex-row">
-              <span class="dex-no">${formatDexNo(e.speciesId)}</span>
-              <img src="${e.sprite}" alt="${e.nameKo}" />
-              <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
-              <button class="raise-btn" data-index="${e.index}">다시 키우기</button>
+              <div class="row-main">
+                <span class="dex-no">${formatDexNo(e.speciesId)}</span>
+                <img src="${e.sprite}" alt="${e.nameKo}" />
+                <span class="name">${e.nameKo}${e.isShiny ? " ✨" : ""} <span class="tier-badge ${e.tier}" style="font-size:9px;padding:1px 6px;">${TIER_LABELS[e.tier] ?? e.tier}</span></span>
+                <button class="raise-btn" data-index="${e.index}">다시 키우기</button>
+              </div>
+              ${storageExpBar(e)}
             </div>`
         )
         .join("");
