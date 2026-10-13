@@ -976,14 +976,28 @@ function togglePopup() {
 //   안 붙이면 Electron 기본 화면만 뜸.
 // Windows의 getLoginItemSettings도 같은 path/args로 물어봐야 등록 여부를 맞게 읽으므로
 // 등록·조회 양쪽에서 이 함수를 같이 씀.
+// AUTOSTART_ARG: 자동 실행으로 뜬 건지 구분하는 표시. 부팅 시엔 팝업 대신 위젯으로
+// 뜨게 하려고 붙임(직접 exe를 누른 경우는 기존처럼 팝업).
+const AUTOSTART_ARG = "--autostart";
 function loginItemOptions() {
   if (process.env.PORTABLE_EXECUTABLE_FILE) {
-    return { path: process.env.PORTABLE_EXECUTABLE_FILE, args: [] };
+    return { path: process.env.PORTABLE_EXECUTABLE_FILE, args: [AUTOSTART_ARG] };
   }
   if (!app.isPackaged) {
-    return { path: process.execPath, args: [path.resolve(app.getAppPath())] };
+    return { path: process.execPath, args: [path.resolve(app.getAppPath()), AUTOSTART_ARG] };
   }
-  return { path: process.execPath, args: [] };
+  return { path: process.execPath, args: [AUTOSTART_ARG] };
+}
+
+// AUTOSTART_ARG 추가 전에 자동 실행을 켜둔 경우, 레지스트리엔 인자 없는 옛 명령줄이
+// 남아있어서 (1) 부팅 시 위젯 모드로 안 뜨고 (2) 설정 화면 체크박스도 꺼진 걸로 보임.
+// 옛 형식으로 등록돼 있으면 새 형식으로 덮어씀(같은 Run 값 이름이라 교체됨).
+function migrateLoginItemArgs() {
+  const opts = loginItemOptions();
+  const legacy = { ...opts, args: opts.args.filter((a) => a !== AUTOSTART_ARG) };
+  if (app.getLoginItemSettings(legacy).openAtLogin && !app.getLoginItemSettings(opts).openAtLogin) {
+    app.setLoginItemSettings({ openAtLogin: true, ...opts });
+  }
 }
 
 // 설정 화면 응답 — openAtLogin은 state에 안 두고 OS/Electron이 들고 있는 값을
@@ -1147,6 +1161,7 @@ function onReady() {
   fixCorruptedCompanion();
   migrateMissingTier();
   backfillMissingFrozenProgress();
+  migrateLoginItemArgs();
   createTray();
   ipcMain.handle("get-status", () => buildStatusPayload(lastTotalTokens));
   ipcMain.handle("get-pokedex", () => ({
@@ -1179,9 +1194,11 @@ function onReady() {
     return buildStatusPayload(lastTotalTokens);
   });
   tick();
-  // 지난 세션에 위젯을 켜놨었으면 그대로 위젯으로 복원(팝업은 안 띄움 — 둘 다 뜨면
-  // 위젯을 쓰는 의미가 없음), 아니었으면 기존처럼 exe 실행 직후 팝업이 바로 뜨게.
-  if (state.widget.enabled) createOrShowWidget();
+  // 부팅 시 자동 실행이면 항상 위젯으로(setWidgetEnabled로 켜서 트레이 체크박스·state도
+  // 맞춤). 직접 실행이면 지난 세션에 위젯을 켜놨을 때만 위젯으로 복원(팝업은 안 띄움 —
+  // 둘 다 뜨면 위젯을 쓰는 의미가 없음), 아니었으면 기존처럼 exe 실행 직후 팝업이 바로 뜨게.
+  if (process.argv.includes(AUTOSTART_ARG)) setWidgetEnabled(true);
+  else if (state.widget.enabled) createOrShowWidget();
   else togglePopup();
   scheduleNextTick();
 }
